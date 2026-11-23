@@ -1,0 +1,862 @@
+mr,hi,de,es,fr,ja,pt,ar | 
+                : count +   [calculation-history.js]
+mr,hi,de,es,fr,ja,pt,ar | 
+                ? 0
+                : num(  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | 
+            : BASE_TITLE +   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | 
+            ].join(  [calculation-history.js]
+mr,hi,de,es,fr,ja,pt,ar | 
+        : formatNumber(lastCalculation.totalWeight / 1000, 4) +
+              [plate.js]
+mr,hi,de,es,fr,ja,pt,ar | 
+        ? formatNumber(lastCalculation.totalWeight * KG_TO_LB, 4) +   [plate.js]
+mr,hi,de,es,fr,ja,pt,ar | 
+        ].join(  [calculation-history.js,internet-connection-manager.js]
+mr,hi,de,es,fr,ja,pt,ar | 
+     * apart from   [internet-connection-manager.js]
+mr,hi,de,es,fr,ja,pt,ar |  — no verified product standard is available for this product.   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  : (calculation.unit ||   [calculation-history.js]
+mr,hi,de,es,fr,ja,pt,ar |  ? -pad : pad), mid,   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  &&
+                path.indexOf(  [dashboard.js]
+mr,hi,de,es,fr,ja,pt,ar |  +
+                        OK_LABEL +   [add-shortcut.js]
+mr,hi,de,es,fr,ja,pt,ar |  +
+                    (op.bold ?   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  +
+                    lenText(id) +   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  +
+                    lenText(R) +   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  +
+                  formatNumber(window.MWNumber ? MWNumber.parse(customValue) : Number(customValue), 3) +
+                    [box-channel.js,c-channel.js,circular-plate.js,e-section.js,flange-plate.js,hexagon-bar.js,hexagonal-bar-with-round-hole.js,i-channel.js,l-channel.js,pipe.js,plate.js,round-bar.js,round-bar-with-hexagonal-hole.js,shell.js,solid-cone.js,sphere-ball.js,square-bar.js,t-channel.js,trapezium-bar.js,trapezoidal-bar.js,triangular-bar.js,truncated-cone.js]
+mr,hi,de,es,fr,ja,pt,ar |  +
+                lenText(R) +   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  +
+                NYLON_INSERT_MM +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  +
+                unitLabel() +   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  +
+            (mmOnly ?   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  +
+            ariaLabel +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  +
+            standard.edition + published +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  +
+            text +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  +
+        diameter +   [circular-plate.js]
+mr,hi,de,es,fr,ja,pt,ar |  +
+        formatDimension(innerHeight) +   [box-channel.js]
+mr,hi,de,es,fr,ja,pt,ar |  +
+        formatNumber(grossAreaMM2, 2) +   [flange-plate.js]
+mr,hi,de,es,fr,ja,pt,ar |  +
+        formatNumber(material.density, 2) +
+          [box-channel.js,c-channel.js,circular-plate.js,e-section.js,flange-plate.js,hexagon-bar.js,hexagonal-bar-with-round-hole.js,i-channel.js,l-channel.js,pipe.js,plate.js,round-bar.js,round-bar-with-hexagonal-hole.js,shell.js,solid-cone.js,sphere-ball.js,square-bar.js,t-channel.js,trapezium-bar.js,trapezoidal-bar.js,triangular-bar.js,truncated-cone.js]
+mr,hi,de,es,fr,ja,pt,ar |  +
+        formatNumber(removedPercent, 1) +   [flange-plate.js]
+mr,hi,de,es,fr,ja,pt,ar |  +
+        length +   [plate.js]
+mr,hi,de,es,fr,ja,pt,ar |  +
+        thickness +   [circular-plate.js,plate.js]
+mr,hi,de,es,fr,ja,pt,ar |  +
+        width +   [plate.js]
+mr,hi,de,es,fr,ja,pt,ar |  + (extra || "") +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + (installed ? "Installed" : "Download App") +   [add-shortcut.js]
+mr,hi,de,es,fr,ja,pt,ar |  + area +   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  + artId +   [dashboard.js]
+mr,hi,de,es,fr,ja,pt,ar |  + category +
+                  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + cls +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(bottom - chamfer) +
+              [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(bottom - chamfer) +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(bottom - sideChamferDrop) +
+              [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(bottom) +
+              [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(bottom) +
+                  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(bx - nx) +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(bx + nx) +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(by - ny) +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(by + ny) +
+              [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(cx) +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(cy) +
+              [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(elbow) +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(endX - chamfer) +
+              [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(endX - chamfer) +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(endX) +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(headLeft + headChamferAxialPx) +
+                  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(headLeft + headChamferAxialPx) +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(headLeft) +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(headW) +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(left + sideChamferRun) +
+              [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(left + sideChamferRun) +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(left) +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(leftX + chamfer) +
+              [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(leftX + chamfer) +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(leftX) +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(right - sideChamferRun) +
+              [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(right - sideChamferRun) +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(right) +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(shankStart) +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(sideHeight / 2 * sl) +
+                  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(startX) +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(startY) +
+                  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(target[0]) +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(top + chamfer) +
+              [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(top + sideChamferDrop) +
+              [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(top + sideChamferDrop) +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(top) +
+              [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(top) +
+                  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(underHead) +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(viewBottom - headChamferRadialPx) +
+                  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(viewBottom) +
+                  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(viewBottom) +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(viewTop + headChamferRadialPx) +
+                  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(viewTop) +
+                  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(x) +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(x1) +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(x2) +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(y) +
+              [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(y) + ')  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(y1) +
+              [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + coord(y2) +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + currentUnit :   [flange-plate.js]
+mr,hi,de,es,fr,ja,pt,ar |  + currentUnit +
+          [circular-plate.js,flange-plate.js,round-bar.js]
+mr,hi,de,es,fr,ja,pt,ar |  + d +   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  + dec +   [numeric-keypad.js]
+mr,hi,de,es,fr,ja,pt,ar |  + dimText(blankDia) :   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  + enterHint +   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  + escapeHtml(category.name + ", " + count + " tools") +   [dashboard.js]
+mr,hi,de,es,fr,ja,pt,ar |  + escapeHtml(href) +   [dashboard.js]
+mr,hi,de,es,fr,ja,pt,ar |  + escapeHtml(name) +   [dashboard.js]
+mr,hi,de,es,fr,ja,pt,ar |  + escapeHtml(title) +   [dashboard.js]
+mr,hi,de,es,fr,ja,pt,ar |  + escapeHtml(tone) +   [dashboard.js]
+mr,hi,de,es,fr,ja,pt,ar |  + escapeHtml(tool.category) +   [dashboard.js]
+mr,hi,de,es,fr,ja,pt,ar |  + escapeHtml(tool.id) +   [dashboard.js]
+mr,hi,de,es,fr,ja,pt,ar |  + exampleExpression(type, r) +   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  + field.symbol +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + fieldLabel(key).toLowerCase() +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + fill +   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  + fmt(360 / N, 2) +   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  + fmt(ex[key], 0) +   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  + fmt(EXAMPLE_DENSITY, 0) +   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  + formatDimension(d.a) +   [round-bar-with-hexagonal-hole.js,trapezium-bar.js,trapezoidal-bar.js]
+mr,hi,de,es,fr,ja,pt,ar |  + formatDimension(d.b) +   [c-channel.js,e-section.js,i-channel.js,square-bar.js,t-channel.js,trapezium-bar.js,trapezoidal-bar.js]
+mr,hi,de,es,fr,ja,pt,ar |  + formatDimension(d.d) +   [hexagonal-bar-with-round-hole.js]
+mr,hi,de,es,fr,ja,pt,ar |  + formatDimension(d.diameter) +   [solid-cone.js]
+mr,hi,de,es,fr,ja,pt,ar |  + formatDimension(d.h) +   [box-channel.js,c-channel.js,e-section.js,i-channel.js,t-channel.js,trapezium-bar.js,trapezoidal-bar.js,triangular-bar.js]
+mr,hi,de,es,fr,ja,pt,ar |  + formatDimension(d.height) +   [truncated-cone.js]
+mr,hi,de,es,fr,ja,pt,ar |  + formatDimension(d.legA) +   [l-channel.js]
+mr,hi,de,es,fr,ja,pt,ar |  + formatDimension(d.length) +   [box-channel.js,c-channel.js,e-section.js,hexagon-bar.js,hexagonal-bar-with-round-hole.js,i-channel.js,l-channel.js,pipe.js,round-bar-with-hexagonal-hole.js,shell.js,square-bar.js,t-channel.js,trapezium-bar.js,trapezoidal-bar.js,triangular-bar.js]
+mr,hi,de,es,fr,ja,pt,ar |  + formatDimension(d.od - 2 * d.thickness) +   [shell.js]
+mr,hi,de,es,fr,ja,pt,ar |  + formatDimension(d.od - 2 * d.wall) +   [pipe.js]
+mr,hi,de,es,fr,ja,pt,ar |  + formatDimension(d.smallDiameter) +   [truncated-cone.js]
+mr,hi,de,es,fr,ja,pt,ar |  + formatDimension(d.t) +   [box-channel.js,l-channel.js]
+mr,hi,de,es,fr,ja,pt,ar |  + formatDimension(d.tf) +   [c-channel.js,e-section.js,i-channel.js,t-channel.js]
+mr,hi,de,es,fr,ja,pt,ar |  + formatDimension(d.thickness) +   [shell.js,truncated-cone.js]
+mr,hi,de,es,fr,ja,pt,ar |  + formatDimension(d.tw) +   [c-channel.js,e-section.js,i-channel.js,t-channel.js]
+mr,hi,de,es,fr,ja,pt,ar |  + formatDimension(d.wall) +   [pipe.js]
+mr,hi,de,es,fr,ja,pt,ar |  + formatDimension(diameter) +   [round-bar.js]
+mr,hi,de,es,fr,ja,pt,ar |  + formatDimension(innerWidth) +   [box-channel.js]
+mr,hi,de,es,fr,ja,pt,ar |  + formatDimension(length) +   [round-bar.js]
+mr,hi,de,es,fr,ja,pt,ar |  + formatNumber(holeAreaMM2, 2) +   [flange-plate.js]
+mr,hi,de,es,fr,ja,pt,ar |  + formatNumber(material.density, 2) +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + formatNumber(tpi, 0) +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + formatNumber(value, 2) +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + hint +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + holeDiameter +   [flange-plate.js]
+mr,hi,de,es,fr,ja,pt,ar |  + holes +
+          [flange-plate.js]
+mr,hi,de,es,fr,ja,pt,ar |  + id +   [flange-plate.js]
+mr,hi,de,es,fr,ja,pt,ar |  + item.q +   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  + key +
+              [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  + key +   [dish-ends.js,nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + materialName +
+          [circular-plate.js,flange-plate.js,plate.js,round-bar.js]
+mr,hi,de,es,fr,ja,pt,ar |  + materialName +   [box-channel.js,c-channel.js,e-section.js,hexagon-bar.js,hexagonal-bar-with-round-hole.js,i-channel.js,l-channel.js,pipe.js,round-bar-with-hexagonal-hole.js,shell.js,solid-cone.js,sphere-ball.js,square-bar.js,t-channel.js,trapezium-bar.js,trapezoidal-bar.js,triangular-bar.js,truncated-cone.js]
+mr,hi,de,es,fr,ja,pt,ar |  + meta.notation +   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  + min +   [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar |  + N +   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  + noun +   [calculation-history.js]
+mr,hi,de,es,fr,ja,pt,ar |  + od +   [flange-plate.js]
+mr,hi,de,es,fr,ja,pt,ar |  + opts.arrow +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + parts.join(  [calculation-history.js]
+mr,hi,de,es,fr,ja,pt,ar |  + pcd +   [flange-plate.js]
+mr,hi,de,es,fr,ja,pt,ar |  + placeholder +   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  + points +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + prefix +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + raw + (item.unit ?   [flange-plate.js]
+mr,hi,de,es,fr,ja,pt,ar |  + result.divisions +   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  + round2(op.x) +   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  + round2(op.x1) +   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  + round2(op.x2) +   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  + round2(op.y1) +
+                      [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  + round2(op.y2) +
+                      [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  + SHEET.height + '  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + SHEET.width +   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  + size.label +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + standard.name +
+                  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + standard.published +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + standard.source +
+              [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + standard.title +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + standard.verificationNote :   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + state.sizeLabel :   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + style.dash.join(" ") +   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  + style.stroke +
+                      [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  + style.stroke +   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  + style.width +   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  + svgEscape(op.text) +   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  + text +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + thickness +   [flange-plate.js]
+mr,hi,de,es,fr,ja,pt,ar |  + tools.map(cardTemplate).join("") +   [dashboard.js]
+mr,hi,de,es,fr,ja,pt,ar |  + top +   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  + unit :   [calculation-history.js]
+mr,hi,de,es,fr,ja,pt,ar |  + unit +
+          [box-channel.js,c-channel.js,e-section.js,hexagon-bar.js,hexagonal-bar-with-round-hole.js,i-channel.js,l-channel.js,pipe.js,round-bar-with-hexagonal-hole.js,shell.js,solid-cone.js,square-bar.js,t-channel.js,trapezium-bar.js,trapezoidal-bar.js,triangular-bar.js,truncated-cone.js]
+mr,hi,de,es,fr,ja,pt,ar |  + unitWord()
+                :   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + unitWord(),
+                content),
+            caption: product.name +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + unitWord(), content),
+            caption: product.name + (enlarged
+                ?   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar |  + value +   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  + weightText(r.weight) +   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  and no value.
+ * When a valid value is entered: that label moves outside to a clear
+ * position and shows   [round-bar-with-hexagonal-hole.js]
+mr,hi,de,es,fr,ja,pt,ar |  and, together with 404/405, is what a plain
+           static host answers for /api/*. It must be treated as   [calc-api.js]
+mr,hi,de,es,fr,ja,pt,ar |  cannot be longer than the overall length.  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar |  density   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  instead of linking to a missing copy. */
+        if ((document.documentElement.lang ||   [dashboard.js]
+mr,hi,de,es,fr,ja,pt,ar |  is required. Please enter a valid positive number.  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar |  on the drawing instead of   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  or   [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar |  pcs  [calculation-history.js,box-channel.js,c-channel.js,circular-plate.js,dish-ends.js,e-section.js,flange-plate.js,hexagon-bar.js,hexagonal-bar-with-round-hole.js,i-channel.js,l-channel.js,pipe.js,plate.js,round-bar.js,round-bar-with-hexagonal-hole.js,shell.js,solid-cone.js,sphere-ball.js,square-bar.js,t-channel.js,trapezium-bar.js,trapezoidal-bar.js,triangular-bar.js,truncated-cone.js]
+mr,hi,de,es,fr,ja,pt,ar |  pieces  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar |  V 107.4  [round-bar-with-hexagonal-hole.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+                    cache:   [internet-connection-manager.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+                    credentials:   [internet-connection-manager.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+                    mode:   [internet-connection-manager.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+                cache:   [calc-api.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+                density: EXAMPLE_DENSITY,
+                quantity: 1,
+                divisions: state.divisions,
+                materialName:   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+                escapeHtml(field.unit),
+                  [calculation-history.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+                symbol:   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+            category:   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+            country:   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+            drawing:   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+            edition:   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+            escapeHtml(formatDensity(record.density, record.densityUnit)),
+              [calculation-history.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+            escapeHtml(formatTimestamp(record.timestamp)),
+              [calculation-history.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+            escapeHtml(formatWeight(record.totalWeight)),
+              [calculation-history.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+            escapeHtml(formatWeight(record.unitWeight)),
+              [calculation-history.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+            escapeHtml(quantityText),
+              [calculation-history.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+            escapeHtml(record.densityUnit ||   [calculation-history.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+            escapeHtml(record.material),
+              [calculation-history.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+            escapeHtml(record.weightUnit),
+              [calculation-history.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+            family:   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+            fields: [  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+            from: [
+                [countersunk ? headLeft : underHead, Math.max(viewBottom, bottom)],
+                [endX, bottom - chamfer]
+            ],
+            key:   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+            from: [
+                [endX - chamfer - 2, top],
+                [endX - chamfer - 2, bottom]
+            ],
+            key:   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+            from: [
+                [frontCx + frontRadius - 1, frontTop],
+                [frontCx + frontRadius - 1, frontBottom]
+            ],
+            key:   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+            from: [
+                [leftX, bottom - chamfer],
+                [endX, bottom - chamfer]
+            ],
+            key:   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+            hint:   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+            metric: false,
+            inch: false,
+            sizes: [],
+            title:   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+            name:   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+            organization:   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+            published:   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+            rotated: /rotate/.test(label.getAttribute(  [dimension-values.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+            shortName:   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+            size: 11,
+            kind:   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+            source:   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+            symbol:   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+            verification:   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+            verificationNote:   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+        familyFallback: false,
+        sizeLabel:   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+        labelId:   [round-bar-with-hexagonal-hole.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+        name:   [round-bar-with-hexagonal-hole.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+        output:   [flange-plate.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+        symbol:   [flange-plate.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+        unit:   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+    shapeName:   [box-channel.js,c-channel.js,circular-plate.js,e-section.js,flange-plate.js,hexagon-bar.js,hexagonal-bar-with-round-hole.js,i-channel.js,l-channel.js,pipe.js,plate.js,round-bar-with-hexagonal-hole.js,shell.js,solid-cone.js,sphere-ball.js,square-bar.js,t-channel.js,trapezium-bar.js,trapezoidal-bar.js,triangular-bar.js,truncated-cone.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+                icon:   [dashboard.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+                name:   [dashboard.js]
+mr,hi,de,es,fr,ja,pt,ar | ,
+                tone:   [dashboard.js]
+mr,hi,de,es,fr,ja,pt,ar | , active ?   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | , anchor:   [round-bar-with-hexagonal-hole.js]
+mr,hi,de,es,fr,ja,pt,ar | , ar:   [numeric-keypad.js]
+mr,hi,de,es,fr,ja,pt,ar | , cache:   [internet-connection-manager.js]
+mr,hi,de,es,fr,ja,pt,ar | , currentStandard().name, 24, 32,   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | , cx - radius - 14, cy, cx + radius + 14, cy) +
+            svgLine(  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | , de:   [numeric-keypad.js]
+mr,hi,de,es,fr,ja,pt,ar | , decimal:   [numeric-keypad.js]
+mr,hi,de,es,fr,ja,pt,ar | , defaultLengthForProduct(product, fieldMM(  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | , dims.sf), outerL,   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | , es:   [numeric-keypad.js]
+mr,hi,de,es,fr,ja,pt,ar | , fr:   [numeric-keypad.js]
+mr,hi,de,es,fr,ja,pt,ar | , fromX[0], y1, pastX, y1) +
+                lineMarkup(  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | , frontMid) +
+            viewCaption(  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | , h:   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | , hi:   [numeric-keypad.js]
+mr,hi,de,es,fr,ja,pt,ar | , ja:   [numeric-keypad.js]
+mr,hi,de,es,fr,ja,pt,ar | , keep ?   [dashboard.js]
+mr,hi,de,es,fr,ja,pt,ar | , kr:   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | , label:   [calc-engine.js,box-channel.js,c-channel.js,circular-plate.js,dish-ends.js,e-section.js,flange-plate.js,hexagon-bar.js,hexagonal-bar-with-round-hole.js,i-channel.js,l-channel.js,nut-bolt.js,pipe.js,plate.js,round-bar-with-hexagonal-hole.js,shell.js,solid-cone.js,sphere-ball.js,square-bar.js,t-channel.js,trapezium-bar.js,trapezoidal-bar.js,triangular-bar.js,truncated-cone.js]
+mr,hi,de,es,fr,ja,pt,ar | , localizeLabel(  [numeric-keypad.js]
+mr,hi,de,es,fr,ja,pt,ar | , mr:   [numeric-keypad.js]
+mr,hi,de,es,fr,ja,pt,ar | , name:   [e-section.js,flange-plate.js,hexagonal-bar-with-round-hole.js,nut-bolt.js,round-bar-with-hexagonal-hole.js,trapezium-bar.js,trapezoidal-bar.js,triangular-bar.js]
+mr,hi,de,es,fr,ja,pt,ar | , notation:   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | , note:   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | , open ?   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | , output:   [flange-plate.js]
+mr,hi,de,es,fr,ja,pt,ar | , pt:   [numeric-keypad.js]
+mr,hi,de,es,fr,ja,pt,ar | , SCRIPT_URL).href
+        :   [internet-connection-manager.js]
+mr,hi,de,es,fr,ja,pt,ar | , sf:   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | , sideMid) +
+            (nylon
+                ? svgText(  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | , size: 11, kind:   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | , symbol:   [flange-plate.js]
+mr,hi,de,es,fr,ja,pt,ar | , t:   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | , title:   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | , x1, cy - rootPx, x2, cy - rootPx) +
+            svgLine(  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | , x1, fromY[0], x1, y + 6) +
+                lineMarkup(  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | , x1, y1, 2.4) +
+            lineMarkup(  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | , y:   [round-bar-with-hexagonal-hole.js]
+mr,hi,de,es,fr,ja,pt,ar | ' + (anchor ||   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ' + (extra ||   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ' + (symbol ||   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ' + cls + '  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ' + coord(cx) + '  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ' + coord(cy) +
+            '  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ' + coord(Math.max(r, 0.5)) + '  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ' + coord(r) + '  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ' + coord(x) + '  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ' + coord(y) +
+            '  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ' + d + '  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ' + key +
+            '  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ' + op.anchor +
+                    '  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | ' + op.size + '  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | ' + points + '  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ' + prefix + 'Hatch  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ' + round2(op.y) +
+                    '  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | ' + TEXT_CLASS[op.kind] + '  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | ' + TEXT_COLOR[op.kind] + '  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | ') +
+            labelMarkup(key, (x1 + x2) / 2, y + (opts.labelBelow ? 19 : -9),
+                  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | (any-pointer: fine)  [numeric-keypad.js]
+mr,hi,de,es,fr,ja,pt,ar | (display-mode: fullscreen)  [smart-install-popup.js]
+mr,hi,de,es,fr,ja,pt,ar | (display-mode: minimal-ui)  [smart-install-popup.js]
+mr,hi,de,es,fr,ja,pt,ar | (display-mode: standalone)  [smart-install-popup.js]
+mr,hi,de,es,fr,ja,pt,ar | (display-mode: window-controls-overlay)  [smart-install-popup.js]
+mr,hi,de,es,fr,ja,pt,ar | (max-width: 599px)  [dashboard.js]
+mr,hi,de,es,fr,ja,pt,ar | (pointer: coarse)  [numeric-keypad.js]
+mr,hi,de,es,fr,ja,pt,ar | )
+            .trim() ||   [calculation-history.js]
+mr,hi,de,es,fr,ja,pt,ar | ) +
+                (state.sizeLabel ?   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ) +
+            svgLine(  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ) +
+            svgText(  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ) +
+            viewCaption(  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ) +
+            viewCaption(enlarged ?   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ) + (unit ?   [calculation-history.js]
+mr,hi,de,es,fr,ja,pt,ar | ) + round2(p[0]) +   [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | ).setAttribute(
+          [circular-plate.js,flange-plate.js,plate.js]
+mr,hi,de,es,fr,ja,pt,ar | ).trim() :   [calculation-history.js,nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | )) || 0,
+            anchor: label.getAttribute(  [dimension-values.js]
+mr,hi,de,es,fr,ja,pt,ar | )) || 0,
+            y: parseFloat(label.getAttribute(  [dimension-values.js]
+mr,hi,de,es,fr,ja,pt,ar | ],
+            ellipsoidal: [  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | ],
+            hemispherical: [  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | ],
+            template: [  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | ],
+            torispherical: [  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | ],
+        arab: [  [numeric-keypad.js]
+mr,hi,de,es,fr,ja,pt,ar | ],
+        ellipsoidal: [  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | ],
+        hemispherical: [  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | ],
+        template: [  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | ],
+        torispherical: [  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | 2023 edition (sixth revision)  [nut-bolt.js]
+mr,hi,de,es,fr,pt,ar | 2026 edition (sixth revision)  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | A 2:1 head has D &divide; 2H = 2, so H = ID &divide; 4: 250 mm for ID 1000 mm. The results show the D &divide; 2H ratio of the values you entered, so you can confirm the profile before relying on the weight.  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | A double-curved surface cannot be flattened without stretching. The circle is the area-equivalent blank, 2 &times; &radic;(A &divide; &pi;): a flat plate of that diameter has the same surface area as the head, so it is the minimum plate size before allowances.  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | A flanged flat head is a flat crown bent down into a straight flange through a corner radius R. The crown stays at the level of the top of that bend, so its height above the tangent line where the knuckle turns vertical equals the knuckle radius. The flat crown diameter is then ID &minus; 2R.  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | A half sphere is fully defined by its diameter: the crown height is the inside radius, H = R = ID &divide; 2. The calculator shows R as a calculated field beside the diameter, so the two can never disagree.  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | AbortError  [calc-api.js]
+mr,hi,de,es,fr,ja,pt,ar | Across Flats:   [hexagon-bar.js]
+mr,hi,de,es,fr,ja,pt,ar | Adjacent bolt holes overlap. Reduce the bolt hole diameter or the number of holes, or increase the PCD.  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | Angular Step  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | any-pointer: fine  [numeric-keypad.js]
+mr,hi,de,es,fr,pt,ar | Are inside or outside dimensions used?  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | ArrowLeft  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ArrowRight  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | asc-dialog__btn asc-dialog__btn--primary  [add-shortcut.js]
+mr,hi,de,es,fr,ja,pt,ar | asc-dialog__btn asc-dialog__btn--secondary  [add-shortcut.js]
+mr,hi,de,es,fr,ja,pt,ar | Assumptions  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | Automatic install isn't available in this browser. Use your browser menu to install or add a shortcut.  [smart-install-popup.js]
+mr,hi,de,es,fr,ja,pt,ar | Base:   [triangular-bar.js]
+mr,hi,de,es,fr,pt,ar | Blank Area  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | Body dimensional tables correspond to ISO 4014:2011/ISO 4017:2011. M7 is omitted because it was added after the 2014 edition. The JSA paid text was not accessed.  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Body table checked against the publicly accessible JIS B 1181:2014 text; it includes M1.6 to M64 with M7 as a non-preferred size, and its M7/M8 heights are 5.5/6.5 mm. The JSA paid text was not accessed.  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Body Tables 15–18 correspond to ISO 4017. M7 is omitted because it was added after the 2014 edition. The JSA paid text was not accessed.  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Bolt holes cross the outside edge. Reduce the PCD or the bolt hole diameter, or increase the outer diameter.  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | Bolt holes overlap the central bore. Increase the PCD, or reduce the inner diameter or the bolt hole diameter.  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | browser will not offer its install or shortcut prompt. Open the HTTPS version of the   [add-shortcut.js]
+mr,hi,de,es,fr,ja,pt,ar | BS EN ISO 4014:2022  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | BS EN ISO 4017:2022  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | BS EN ISO 4032:2023  [nut-bolt.js]
+mr,hi,de,es,fr,pt,ar | C.R = ID is the standard 100% crown proportion for torispherical heads, normally used with a knuckle of about 6% to 10% of the diameter. Fixing the crown radius leaves the diameter, the knuckle radius, the straight flange and the thickness as the only inputs.  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | Calculation cancelled.  [calc-api.js]
+mr,hi,de,es,fr,pt,ar | Carriage Bolt  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | choose a type  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | constant cross-section × length  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | Content-Type  [calc-api.js]
+mr,hi,de,es,fr,pt,ar | Countersunk Socket Screw  [calc-engine.js]
+mr,hi,de,es,fr,pt,ar | Crown Arc Angle  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Crown Radius (C.R)  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | Crown radius is taken as the inside diameter; the crown zone and the knuckle torus are both counted.  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | Crown radius taken as the inside diameter; R is the knuckle radius as entered.  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | Current GSO edition and ISO 4017:2014 adoption verified; dimensions use the adopted ISO table without M7.  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Custom dimensions are active; no unrelated standard has been substituted.  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | CustomEvent  [smart-install-popup.js]
+mr,hi,de,es,fr,ja,pt,ar | Density entered manually; the selected material name is kept for reference.  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | Density is not configured  [calc-api.js]
+mr,hi,de,es,fr,ja,pt,ar | desktop, or chrome://apps (edge://apps in Edge). If its shortcut was removed, remove the app   [add-shortcut.js]
+mr,hi,de,es,fr,ja,pt,ar | Development Divisions  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Diameter (D)  [round-bar.js]
+mr,hi,de,es,fr,ja,pt,ar | Diameter:   [round-bar-with-hexagonal-hole.js,sphere-ball.js]
+mr,hi,de,es,fr,ja,pt,ar | DIMENSIONS IN INCHES  [nut-bolt.js]
+mr,hi,de,es,fr,pt,ar | DIMENSIONS IN MM  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | DIN EN ISO 4014:2022-10  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | DIN EN ISO 4017:2022-10  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | DIN EN ISO 4032:2023-12  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Dish height  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | Dish Height (H)  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Dish Surface Area  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Does the knuckle radius change the calculated weight?  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Does the template include the straight flange?  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Double End Stud  [calc-engine.js]
+mr,hi,de,es,fr,pt,ar | Each station is reported at its azimuth. Blank X and Y give the point on the blank circumference at that azimuth, so the rim can be divided into the same angles; the meridian length in the table is then stepped out along that radial line from the centre to place the station.  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | Elementos de fijación — Tornillos de cabeza hexagonal — Grados de producto A y B (ISO 4014:2022)  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Elementos de fijación — Tornillos de cabeza hexagonal — Grados de producto A y B (ISO 4017:2022)  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Elementos de fijación — Tuercas hexagonales regulares (estilo 1) — Grados de producto A y B (ISO 4032:2023)  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Ellipsoidal Head Weight Calculator  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Elliptical Head Template Calculator  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Elliptical head template with radial divisions, section and developed blank  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | Enter  [dish-ends.js,round-bar.js]
+mr,hi,de,es,fr,pt,ar | Enter a custom density greater than zero.  [nut-bolt.js]
+mr,hi,de,es,fr,pt,ar | Enter the dish inside diameter (ID).  [calc-engine.js,dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Enter the dish knuckle radius (R).  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | Enter the dish total height (H).  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | Escape  [calculation-history.js,numeric-keypad.js]
+mr,hi,de,es,fr,pt,ar | Estimated Weight per Piece  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | Every dimension must be greater than zero.  [calc-engine.js]
+mr,hi,de,es,fr,pt,ar | Fasteners — Hexagon head bolts — Product grades A and B  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Fasteners — Hexagon head bolts — Product grades A and B (ISO 4014:2022)  [nut-bolt.js]
+mr,hi,de,es,fr,pt,ar | Fasteners — Hexagon head screws — Product grades A and B  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Fasteners — Hexagon head screws — Product grades A and B (ISO 4017:2014)  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Fasteners — Hexagon head screws — Product grades A and B (ISO 4017:2022)  [nut-bolt.js]
+mr,hi,de,es,fr,pt,ar | Fasteners — Hexagon regular nuts (style 1) — Product grades A and B  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Fasteners — Hexagon regular nuts (style 1) — Product grades A and B (ISO 4032:2023)  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | First thread length  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | Fixations — Écrous hexagonaux normaux (style 1) — Grades de produit A et B (ISO 4032:2023)  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Fixations — Vis à tête hexagonale entièrement filetées — Grades A et B (ISO 4017:2022)  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Fixations — Vis à tête hexagonale partiellement filetées — Grades A et B (ISO 4014:2022)  [nut-bolt.js]
+mr,hi,de,es,fr,pt,ar | Flange thickness must be less than half the overall height.  [c-channel.js,i-channel.js]
+mr,hi,de,es,fr,pt,ar | Flange thickness must be less than one-third of the overall height.  [e-section.js]
+mr,hi,de,es,fr,pt,ar | Flange thickness must be less than the overall height.  [t-channel.js]
+mr,hi,de,es,fr,pt,ar | Flanged flat head (crown + knuckle + flange)  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Flanged flat head section with inside diameter, crown height, knuckle radius and straight flange dimensions  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | Flanged flat head: flat crown, knuckle radius R, straight flange SF. H = R for this profile.  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | Flat crown plus knuckle and straight flange; the knuckle fillet area is not added to the developed area.  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | Flat Head – Dished Weight Calculator  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | For the same diameter and thickness its developed area is the smallest of the dish end types: the crown is 0.785 ID&sup2;, against about 1.084 ID&sup2; for a 2:1 semi-ellipsoidal head and 1.571 ID&sup2; for a hemispherical head. It carries less pressure for the same thickness, so it usually needs stiffening or a heavier plate.  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Fully Threaded Stud  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | GSO ISO 4017:2015  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | GSO ISO 4032:2024  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Head diameter  [calc-engine.js]
+mr,hi,de,es,fr,pt,ar | Head diameter must be larger than the shank diameter.  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Head height  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | header.app-header .app-header-inner  [add-shortcut.js,feedback.js]
+mr,hi,de,es,fr,pt,ar | Heavy Hex Nut  [calc-engine.js,nut-bolt.js]
+mr,hi,de,es,fr,pt,ar | Height (B)  [square-bar.js]
+mr,hi,de,es,fr,ja,pt,ar | Height:   [solid-cone.js]
+mr,hi,de,es,fr,pt,ar | Hemispherical head section showing inside diameter, radius, height and straight flange  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | Hemispherical Head Weight Calculator  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Hex Bolt (FT)  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Hex Bolt (HT)  [nut-bolt.js]
+mr,hi,de,es,fr,pt,ar | Hex Bolt Blank  [calc-engine.js,nut-bolt.js]
+mr,hi,de,es,fr,pt,ar | Hex Bolt, Full Thread  [calc-engine.js,nut-bolt.js]
+mr,hi,de,es,fr,pt,ar | Hex Bolt, Half Thread  [calc-engine.js,nut-bolt.js]
+mr,hi,de,es,fr,pt,ar | Hex Jam Nut  [calc-engine.js]
+mr,hi,de,es,fr,pt,ar | Hex Nut  [calc-engine.js]
+mr,hi,de,es,fr,pt,ar | Hexagon head bolts and hexagon head screws  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Hexagon head bolts, screws and nuts of product grades A and B — Part 1: Hexagon head bolts (Size range M1.6 to M64)  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Hexagon head bolts, screws and nuts of product grades A and B — Part 2: Hexagon head screws (Size range M1.6 to M64)  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Hexagon head bolts, screws and nuts of product grades A and B — Part 3: Hexagon nuts, style 1 (Size range M5 to M39)  [nut-bolt.js]
+mr,hi,de,es,fr,pt,ar | Hexagon nuts and hexagon thin nuts  [nut-bolt.js]
+mr,hi,de,es,fr,pt,ar | Hexagonal hole across-flats is too large for the outer diameter.  [calc-engine.js,round-bar-with-hexagonal-hole.js]
+mr,hi,de,es,fr,pt,ar | Hole diameter must be less than the outer across-flats dimension.  [hexagonal-bar-with-round-hole.js]
+mr,hi,de,es,fr,pt,ar | How are the blank X and Y coordinates used?  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | How is the area of a semi-ellipsoidal head calculated?  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | How is the crown area calculated?  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | How is the height of a torispherical head calculated?  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | How is the knuckle area calculated?  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | How is the weight of a flanged flat head calculated?  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | How is the weight of a hemispherical head calculated?  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Identical adoption of ISO 4014:2022 verified from the BIS record.  [nut-bolt.js]
+mr,hi,de,es,fr,pt,ar | Identical adoption of ISO 4017:2022 verified from the BIS record and gazette notification.  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Identical adoption of ISO 4032:2023 verified from the BIS record and gazette notification; scope M5–M39.  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Identical French adoption of ISO 4014:2022; AFNOR catalogue record verified.  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Identical French adoption of ISO 4017:2022; AFNOR catalogue record verified.  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Identical French adoption of ISO 4032:2023; AFNOR catalogue record verified.  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Identical German adoption of ISO 4014:2022; DIN Media record verified.  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Identical German adoption of ISO 4017:2022; DIN Media record verified.  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Identical German adoption of ISO 4032:2023; DIN Media record verified.  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Identical GSO adoption of ISO 4032:2023 verified; scope M5–M39.  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Identical Spanish adoption of ISO 4014:2022; UNE catalogue record verified.  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Identical Spanish adoption of ISO 4017:2022; UNE catalogue record verified.  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Identical Spanish adoption of ISO 4032:2023; UNE publication record verified.  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Identical UK adoption of ISO 4014:2022; BSI foreword and ISO text inspected.  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Identical UK adoption of ISO 4017:2022; BSI foreword and ISO text inspected.  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Identical UK adoption of ISO 4032:2023; BSI foreword and ISO text inspected.  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | INPUT  [numeric-keypad.js,smart-install-popup.js,dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | Inside diameter  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | Inside Diameter (ID)  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | Inside Radius (R)  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Installation couldn't be completed automatically. Please use your browser menu to install.  [smart-install-popup.js]
+mr,hi,de,es,fr,ja,pt,ar | Invalid input values.  [calc-api.js]
+mr,hi,de,es,fr,pt,ar | Invalid material density.  [calc-engine.js]
+mr,hi,de,es,fr,pt,ar | IS 1364 (Part 1):2023  [nut-bolt.js]
+mr,hi,de,es,fr,pt,ar | IS 1364 (Part 2):2023  [nut-bolt.js]
+mr,hi,de,es,fr,pt,ar | IS 1364 (Part 3):2026  [nut-bolt.js]
+mr,hi,de,es,fr,pt,ar | Is a 2:1 ellipsoidal head deeper than a torispherical head?  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Is a forming allowance included?  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Is a forming or trim allowance included in the blank diameter?  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Is the straight flange included in the area?  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | It is the diameter of the flat plate with the same area as the head, 2 &times; &radic;(A &divide; &pi;). A double-curved surface cannot be flattened without distortion, so this is an area-equivalent blank rather than a true development.  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | It produces the shop development of one head: the meridian length from the apex to each station, the plan radius and height of that station, and the area-equivalent blank with the marking coordinates.  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | Its dome area is 1.571 ID&sup2;, against about 1.084 ID&sup2; for a 2:1 semi-ellipsoidal head, so for the same thickness and material the dome is roughly 45% heavier before the straight flange is counted.  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | JIS B 1180:2014  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | JIS B 1181:2014  [nut-bolt.js]
+mr,hi,de,es,fr,pt,ar | Knuckle Arc Angle  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | Knuckle radius  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | Knuckle Radius (R)  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | Large end diameter  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | Large End:   [truncated-cone.js]
+mr,hi,de,es,fr,ja,pt,ar | Leg B:   [l-channel.js]
+mr,hi,de,es,fr,pt,ar | Length (L)  [round-bar.js]
+mr,hi,de,es,fr,ja,pt,ar | M 210   [round-bar-with-hexagonal-hole.js]
+mr,hi,de,es,fr,ja,pt,ar | M 210 62.6 V   [round-bar-with-hexagonal-hole.js]
+mr,hi,de,es,fr,ja,pt,ar | M0 1 L5 4 L0 7  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | M1.6  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Material density is outside the supported range.  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | Measured over the countersunk head to the end  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Measured under the head to the end  [nut-bolt.js]
+mr,hi,de,es,fr,pt,ar | Meridian Length (Apex to Rim)  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | Metal Weight Calculator is already installed in this browser. Open it from the Start menu, your   [add-shortcut.js]
+mr,hi,de,es,fr,pt,ar | MIRROR LINE  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | Missing input values.  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | MW_DISH_MATERIALS  [calc-api.js]
+mr,hi,de,es,fr,ja,pt,ar | MW_MATERIALS  [calc-api.js]
+mr,hi,de,es,fr,ja,pt,ar | N × ØHD  [flange-plate.js]
+mr,hi,de,es,fr,ja,pt,ar | Next  [numeric-keypad.js,round-bar.js]
+mr,hi,de,es,fr,ja,pt,ar | NF EN ISO 4014:2022  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | NF EN ISO 4017:2022  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | NF EN ISO 4032:2023-08  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | no internet  [internet-connection-manager.js]
+mr,hi,de,es,fr,pt,ar | No. The blank diameter is area-equivalent only; forming stretch, edge trim, weld prep and thinning allowance are added by the fabricator.  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | No. The blank is the area-equivalent circle 2 &times; &radic;(A &divide; &pi;). Forming stretch, edge trim, weld prep and any thinning allowance are shop decisions and are added on top of it.  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | No. The calculator develops the flat crown (&pi;R&sup2;) and the cylindrical flange (2&pi;R &middot; SF); the small fillet surface of the knuckle is not added, which keeps the estimate marginally conservative. The knuckle still sets the drawing and the crown diameter.  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | Nominal diameter  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | Not applicable  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Number of bolt holes must be a positive whole number.  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | Nut height  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | Nut height is too small for a nylon insert lock nut.  [nut-bolt.js]
+mr,hi,de,es,fr,pt,ar | NYLON INSERT INDICATED AT TOP (NO SECTION)  [nut-bolt.js]
+mr,hi,de,es,fr,pt,ar | Nylon Insert Lock Nut  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | OD:   [pipe.js,shell.js]
+mr,hi,de,es,fr,pt,ar | Official adoption record verified  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Official document preview verified  [nut-bolt.js]
+mr,hi,de,es,fr,pt,ar | One of the dimensions is too large for this calculator.  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | Open calculation history,   [calculation-history.js]
+mr,hi,de,es,fr,ja,pt,ar | option for file:// pages. Open the website through its web address (or run a local   [add-shortcut.js]
+mr,hi,de,es,fr,ja,pt,ar | Outer Across-Flats:   [hexagonal-bar-with-round-hole.js]
+mr,hi,de,es,fr,ja,pt,ar | Outer B:   [box-channel.js]
+mr,hi,de,es,fr,ja,pt,ar | Outer diameter must be greater than the inner diameter.  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | Overall end-to-end length  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | pages opened over HTTPS or http://localhost, and the browser menu offers no shortcut   [add-shortcut.js]
+mr,hi,de,es,fr,ja,pt,ar | path, line, polyline  [dimension-values.js]
+mr,hi,de,es,fr,ja,pt,ar | Plate thickness  [calc-engine.js]
+mr,hi,de,es,fr,pt,ar | Plate Thickness (T)  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Plate thickness must be less than half the small end diameter.  [calc-engine.js,truncated-cone.js]
+mr,hi,de,es,fr,pt,ar | Please check your connection and try again.  [calc-api.js]
+mr,hi,de,es,fr,ja,pt,ar | POST  [calc-api.js]
+mr,hi,de,es,fr,pt,ar | Profile  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Quantity is too large. Enter 1,000,000 or less.  [nut-bolt.js]
+mr,hi,de,es,fr,pt,ar | Quantity must be a whole number of at least 1.  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | rotate(-90 ' + coord(x) +   [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Round Bar Weight Calculator  [round-bar.js]
+mr,hi,de,es,fr,ja,pt,ar | same origin  [calc-api.js]
+mr,hi,de,es,fr,ja,pt,ar | SCRIPT  [internet-connection-manager.js]
+mr,hi,de,es,fr,ja,pt,ar | Second thread length  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | Section with radial division lines and the area-equivalent developed blank.  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | SELECT  [smart-install-popup.js,calc-api.js]
+mr,hi,de,es,fr,pt,ar | Semi-ellipsoidal head section showing inside diameter, head height, crown radius and straight flange  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | server and open http://localhost) and try again.  [add-shortcut.js]
+mr,hi,de,es,fr,ja,pt,ar | server down  [internet-connection-manager.js]
+mr,hi,de,es,fr,ja,pt,ar | server problem  [internet-connection-manager.js]
+mr,hi,de,es,fr,ja,pt,ar | shortcut from the browser menu using the steps below.  [add-shortcut.js]
+mr,hi,de,es,fr,ja,pt,ar | Shortcuts require a secure connection. This page is served over plain HTTP, so the   [add-shortcut.js]
+mr,hi,de,es,fr,ja,pt,ar | Show Fewer Material Densities  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | sip__btn sip__btn--no  [smart-install-popup.js]
+mr,hi,de,es,fr,ja,pt,ar | sip__btn sip__btn--yes  [smart-install-popup.js]
+mr,hi,de,es,fr,ja,pt,ar | sipDesc sipIos  [smart-install-popup.js]
+mr,hi,de,es,fr,ja,pt,ar | sipDesc sipManual  [smart-install-popup.js]
+mr,hi,de,es,fr,ja,pt,ar | Small end diameter  [calc-engine.js]
+mr,hi,de,es,fr,pt,ar | Small end diameter must be less than the large end diameter.  [calc-engine.js,truncated-cone.js]
+mr,hi,de,es,fr,ja,pt,ar | Socket depth  [calc-engine.js]
+mr,hi,de,es,fr,pt,ar | Socket Head Cap Screw  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | Socket width across flats  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | Square neck height  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | Square neck width  [calc-engine.js]
+mr,hi,de,es,fr,pt,ar | Square Nut  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | Standard flanged and dished heads use about 6% of the inside diameter, and some specifications use 10%; for ID 1000 mm that is 60 mm to 100 mm. The value must stay below ID &divide; 2 and it is the radius labelled R on the drawing.  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | Stations in Half Drawing  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | Straight face  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | Straight Face (SF)  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Straight Face Area  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | TEXTAREA  [smart-install-popup.js]
+mr,hi,de,es,fr,ja,pt,ar | The blank is the area-equivalent plate; a shop forming and trim allowance must be added.  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | The browser couldn't open its install prompt.   [add-shortcut.js]
+mr,hi,de,es,fr,pt,ar | The calculated inner diameter is not valid. Reduce the thickness.  [shell.js]
+mr,hi,de,es,fr,pt,ar | The calculation could not be completed.  [calc-api.js,nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | The calculation request timed out. Please try again.  [calc-api.js]
+mr,hi,de,es,fr,ja,pt,ar | The calculation service could not be reached.   [calc-api.js]
+mr,hi,de,es,fr,ja,pt,ar | The calculation service is not available at this address.  [calc-api.js]
+mr,hi,de,es,fr,ja,pt,ar | The calculation service returned an unexpected response.  [calc-api.js]
+mr,hi,de,es,fr,pt,ar | The calculator works on the inside surface, matching the inside diameter you enter. Using outside dimensions would raise the area by roughly 2T/R, which is small beside forming and mill tolerances for normal plate thicknesses.  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | The crown and the knuckle together have more surface than a flat disc of the same diameter, so the area-equivalent blank 2 &times; &radic;(A &divide; &pi;) is larger than ID. A production blank also needs a forming and trim allowance on top of that.  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | The crown is spherical with radius C.R and the knuckle is a torus of radius K.R. Where the two meet, the height above the tangent line is H = C.R &minus; &radic;((C.R &minus; K.R)&sup2; &minus; (R &minus; K.R)&sup2;) with R = ID &divide; 2. The height is therefore calculated from the diameter and the two radii, not entered.  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | The crown is the spherical zone of radius C.R above the tangent point: A = 2&pi; &times; C.R &times; (H &minus; K.R &times; sin &theta;k). Only the part of the sphere above the knuckle is counted, so the crown area falls as the knuckle grows.  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | The diameter is too large for this calculator.  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | The dish is half an ellipsoid of revolution with semi-axes a = ID &divide; 2 and b = H. With e = &radic;(1 &minus; b&sup2; &divide; a&sup2;) the area is &pi;a&sup2; + (&pi;b&sup2; &divide; 2e) &times; ln((1 + e) &divide; (1 &minus; e)); when the head is taller than it is wide (b &gt; a) the same integral is evaluated with the inverse-sine form.  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | The dome is half a sphere with area 2&pi;R&sup2;, and the straight flange adds 2&pi; &times; R &times; SF. Multiplying the total area by the plate thickness and the density gives the weight; at ID 1000 mm the dome alone is 1.571 m&sup2;.  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | The entered dimensions do not describe a solid part. Check the values.  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | The head diameter must be larger than the shank diameter.  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | The head is a flat circular crown with a straight cylindrical flange. The developed area is &pi; &times; R&sup2; for the crown plus 2&pi; &times; R &times; SF for the flange, where R is the inside radius, ID &divide; 2. Weight is that area &times; plate thickness &times; density: ID 1000 mm with SF 40 mm and T 6 mm in carbon steel gives 42.91 kg.  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | The height is the vertical semi-axis of the ellipsoid. A flatter dish (smaller H) has less surface for the same diameter, so the area, blank diameter and weight all fall; as H approaches ID &divide; 2 the area approaches the hemispherical 2&pi;R&sup2;.  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | The install prompt couldn't be completed.   [add-shortcut.js]
+mr,hi,de,es,fr,ja,pt,ar | The knuckle is a torus swept about the head axis: A = 2&pi; &times; K.R &times; [(R &minus; K.R) &times; &theta;k + K.R &times; sin &theta;k], where &theta;k is the knuckle arc angle in radians. The arc runs from the tangent point to the start of the vertical flange.  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | The length is too large for this calculator.  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | The nut height is too small for a nylon insert lock nut.  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | The nut is smaller than its thread. Increase the width across flats.  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | the request never reached a calculation API  [calc-api.js]
+mr,hi,de,es,fr,ja,pt,ar | The screw length must be longer than the countersunk head height.  [calc-engine.js]
+mr,hi,de,es,fr,pt,ar | The socket depth must be smaller than the head height.  [calc-engine.js,nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | The socket is larger than the countersunk head. Check the head and socket dimensions.  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | The socket is larger than the head. Check the head and socket dimensions.  [calc-engine.js]
+mr,hi,de,es,fr,pt,ar | The socket must be smaller than the head diameter.  [calc-engine.js,nut-bolt.js]
+mr,hi,de,es,fr,pt,ar | The square neck must be larger than the shank diameter.  [calc-engine.js,nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | The thread length is required for a half thread bolt.  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | The thread pitch is too coarse for this diameter. Check the nominal diameter and the pitch.  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | The two thread lengths are longer than the stud. Shorten one of them or increase the overall length.  [calc-engine.js]
+mr,hi,de,es,fr,pt,ar | The two thread lengths together are longer than the stud.  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | The width across flats is too large for this calculator.  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | The width across flats must be larger than the nominal diameter.  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | there and add it again with this button.  [add-shortcut.js]
+mr,hi,de,es,fr,pt,ar | They divide the circumference into 12 to 96 equal angular steps and control the station table and the radial lines drawn on the section and the blank. More divisions give a finer template; the area, blank diameter and weight do not change.  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Thickness (T)  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Thickness must be less than both leg dimensions.  [l-channel.js]
+mr,hi,de,es,fr,pt,ar | Thickness must be less than half of the outer diameter.  [shell.js]
+mr,hi,de,es,fr,ja,pt,ar | This copy of the site is open as a local file. Browsers can only add shortcuts to   [add-shortcut.js]
+mr,hi,de,es,fr,ja,pt,ar | This product is not supported by the calculator.  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | Thread length  [calc-engine.js]
+mr,hi,de,es,fr,pt,ar | Thread length cannot be longer than the overall length.  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Thread pitch  [calc-engine.js]
+mr,hi,de,es,fr,pt,ar | Threaded Rod  [calc-engine.js]
+mr,hi,de,es,fr,pt,ar | Torispherical head section showing crown radius, knuckle radius, head height and straight flange  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | Torispherical Head Weight Calculator  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Total Developed Area  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Total Estimated Weight  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | UNE-EN ISO 4014:2023  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | UNE-EN ISO 4017:2023  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | UNE-EN ISO 4032:2024  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | Unit must be "mm" or "in".  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | Unknown calculator:   [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | Unknown dish end type.  [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | Unknown module:   [calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | use strict  [add-shortcut.js,calculation-history.js,dimension-values.js,feedback.js,internet-connection-manager.js,mobile-input-viewport.js,smart-install-popup.js,unit-switch.js,api-config.js,calc-api.js,calc-engine.js,dashboard.js,box-channel.js,c-channel.js,circular-plate.js,dish-ends.js,e-section.js,flange-plate.js,hexagon-bar.js,hexagonal-bar-with-round-hole.js,i-channel.js,l-channel.js,nut-bolt.js,pipe.js,plate.js,round-bar.js,round-bar-with-hexagonal-hole.js,shell.js,solid-cone.js,sphere-ball.js,square-bar.js,t-channel.js,trapezium-bar.js,trapezoidal-bar.js,triangular-bar.js,truncated-cone.js]
+mr,hi,de,es,fr,ja,pt,ar | Use the corner radius of your former or design drawing, typically a few per cent of the inside diameter. It must be smaller than the inside radius (ID &divide; 2) so that the flat crown ID &minus; 2R stays positive; the field is validated on that rule.  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | User-defined dimensions — no published standard claimed.  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | ValidationError  [calc-api.js,calc-engine.js]
+mr,hi,de,es,fr,ja,pt,ar | verify now  [internet-connection-manager.js]
+mr,hi,de,es,fr,pt,ar | Wall thickness must be less than half of both outer dimensions.  [box-channel.js]
+mr,hi,de,es,fr,pt,ar | Wall thickness must be less than half the outer diameter.  [pipe.js]
+mr,hi,de,es,fr,pt,ar | Web thickness must be less than the flange width.  [c-channel.js,i-channel.js,t-channel.js]
+mr,hi,de,es,fr,pt,ar | Web thickness must be less than the overall width.  [e-section.js]
+mr,hi,de,es,fr,ja,pt,ar | website and try again.  [add-shortcut.js]
+mr,hi,de,es,fr,pt,ar | What blank diameter does a hemispherical head need?  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | What do the development divisions change?  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | What height gives a standard 2:1 ellipsoidal head?  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | What is the elliptical head template used for?  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | What knuckle radius is normal for a torispherical head?  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Where does the developed blank diameter come from?  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Which knuckle radius should I enter?  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Why do the area, blank and weight change with the height?  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Why does it weigh more than an ellipsoidal head of the same diameter?  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Why does the drawing dimension the crown height as H = R?  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Why is a flanged flat head lighter than a dished head of the same size?  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Why is the blank a circle when the head is not developable?  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Why is the blank diameter larger than the inside diameter?  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Why is the crown radius taken as the inside diameter?  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Why is the height of a hemispherical head not an input?  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Width (A)  [square-bar.js]
+mr,hi,de,es,fr,ja,pt,ar | Width A:   [square-bar.js]
+mr,hi,de,es,fr,ja,pt,ar | Width across flats  [calc-engine.js]
+mr,hi,de,es,fr,pt,ar | Width across flats must be larger than the nominal diameter.  [nut-bolt.js]
+mr,hi,de,es,fr,ja,pt,ar | With no straight flange the dome area equals the area of a circle of diameter &radic;2 &times; ID, so the blank is about 1.414 &times; ID: 1414 mm for ID 1000 mm. A straight flange increases the blank further.  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Yes, for the same diameter: H = 0.25 ID for a 2:1 ellipsoidal head, against about 0.19 ID for a torispherical head with C.R = ID and a 10% knuckle. The taller dish develops more area, so it weighs more at the same thickness.  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | Yes. The straight flange is a cylinder of height SF below the tangent line with area 2&pi; &times; R &times; SF, and it is added to the dish area before the blank and the weight are calculated.  [dish-ends.js]
+mr,hi,de,es,fr,pt,ar | Yes. The straight flange is part of the developed area and is drawn below the tangent line, so the blank, the station table and the weight all include it.  [dish-ends.js]
+mr,hi,de,es,fr,ja,pt,ar | Your browser didn't offer its automatic install prompt. Press Try Again, or add the   [add-shortcut.js]

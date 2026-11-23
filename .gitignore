@@ -1,0 +1,12 @@
+# Environment files: configuration and secrets stay out of the repository
+backend/.env
+.env
+.env.local
+
+# Logs and local process files
+*.log
+*.pid
+
+# Operating system / editor noise
+.DS_Store
+Thumbs.db

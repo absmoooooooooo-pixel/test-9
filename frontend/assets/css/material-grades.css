@@ -1,0 +1,900 @@
+/* ==================================================
+   MATERIAL GRADES AND APPLICATIONS SECTION
+   Home page only: interactive grade guide.
+   Visual target: light grey page, white grade cards with
+   soft blue headers, thin blue borders and navy typography.
+   Uses the grade/application data in material-grades.js.
+================================================== */
+
+.grades-section {
+    --mg-navy: #123452;
+    --mg-navy-soft: #235478;
+    --mg-blue: #2e7fb8;
+    --mg-blue-strong: #1f6da6;
+    --mg-line: #d3e3f2;
+    --mg-line-strong: #9dc6e6;
+    --mg-header: #eaf3fb;
+    --mg-teal: #0d8d89;
+    --mg-muted: #6c8499;
+    --mg-shadow: 0 2px 8px rgba(24, 68, 105, .08);
+
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 34px 0 54px;
+    border-top: 1px solid #dce7ef;
+}
+
+.grades-heading {
+    margin-bottom: 16px;
+}
+
+.grades-heading h2 {
+    color: var(--mg-navy);
+    font-size: 25px;
+    font-weight: 750;
+    letter-spacing: -.028em;
+    line-height: 1.2;
+}
+
+.grades-heading p {
+    margin-top: 6px;
+    color: var(--mg-muted);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.45;
+}
+
+.grades-card {
+    position: relative;
+    padding: 18px 20px 16px;
+    border: 1px solid var(--mg-line);
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: var(--mg-shadow);
+}
+
+/* --------------------------------------------------------------------------
+   Material selection: large searchable combobox
+   -------------------------------------------------------------------------- */
+
+.grades-select-wrap {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.grades-select-wrap > label {
+    flex: 0 0 auto;
+    color: var(--mg-navy);
+    font-size: 13px;
+    font-weight: 750;
+    letter-spacing: .005em;
+}
+
+/* The native select stays in the DOM as the data source / form fallback. */
+.grades-select {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.material-combo {
+    position: relative;
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.combo-control {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 48px;
+    padding: 0 14px;
+    border: 1px solid var(--mg-line-strong);
+    border-radius: 9px;
+    background: #f8fbfe;
+    color: var(--mg-navy);
+    font-family: inherit;
+    text-align: left;
+    transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+}
+
+.combo-control:hover {
+    border-color: var(--mg-blue);
+    background: #f4f9fd;
+}
+
+.combo-control:focus-visible,
+.combo-control[aria-expanded="true"] {
+    outline: none;
+    border-color: var(--mg-blue-strong);
+    box-shadow: 0 0 0 3px rgba(46, 127, 184, .13);
+}
+
+.combo-icon {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    background: #e6f5f3;
+    color: var(--mg-teal);
+}
+
+.combo-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.combo-value {
+    flex: 1 1 auto;
+    overflow: hidden;
+    font-size: 14px;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.combo-chevron {
+    flex: 0 0 auto;
+    color: var(--mg-blue-strong);
+    transition: transform .18s ease;
+}
+
+.combo-chevron svg {
+    width: 16px;
+    height: 16px;
+}
+
+.combo-control[aria-expanded="true"] .combo-chevron {
+    transform: rotate(180deg);
+}
+
+.combo-menu {
+    position: absolute;
+    z-index: 30;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    max-height: 292px;
+    overflow: auto;
+    border: 1px solid var(--mg-line-strong);
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 12px 26px rgba(18, 52, 82, .16);
+}
+
+.combo-search-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding: 9px 10px;
+    border-bottom: 1px solid #e4eef6;
+    background: #ffffff;
+}
+
+.combo-search-wrap svg {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    width: 15px;
+    height: 15px;
+    color: #8aa3b7;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.combo-search {
+    width: 100%;
+    height: 36px;
+    padding: 0 12px 0 34px;
+    border: 1px solid var(--mg-line);
+    border-radius: 7px;
+    background: #f8fbfe;
+    color: var(--mg-navy);
+    font-family: inherit;
+    font-size: 13px;
+}
+
+.combo-search::placeholder {
+    color: #92a8b9;
+}
+
+.combo-search:focus-visible {
+    outline: none;
+    border-color: var(--mg-blue);
+    box-shadow: 0 0 0 3px rgba(46, 127, 184, .12);
+}
+
+.combo-options {
+    padding: 5px;
+}
+
+.combo-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    min-height: 36px;
+    padding: 7px 10px;
+    border-radius: 6px;
+    color: var(--mg-navy);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.combo-option:hover,
+.combo-option.is-active {
+    background: #eef6fc;
+}
+
+.combo-option[aria-selected="true"] {
+    color: var(--mg-blue-strong);
+    background: #e7f2fb;
+}
+
+.combo-option-check {
+    color: var(--mg-blue-strong);
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.combo-empty {
+    padding: 14px 12px;
+    color: var(--mg-muted);
+    font-size: 12.5px;
+}
+
+/* --------------------------------------------------------------------------
+   Grade cards: two-column grid
+   -------------------------------------------------------------------------- */
+
+.grades-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    max-height: 528px;
+    overflow-y: auto;
+    padding: 2px 4px 2px 2px;
+    scrollbar-color: #bed6e9 transparent;
+    scrollbar-width: thin;
+}
+
+.grades-list::-webkit-scrollbar {
+    width: 7px;
+}
+
+.grades-list::-webkit-scrollbar-thumb {
+    border: 2px solid transparent;
+    border-radius: 99px;
+    background: #bed6e9;
+    background-clip: padding-box;
+}
+
+.grade-item {
+    min-width: 0;
+}
+
+.grade-card {
+    min-width: 0;
+    min-height: 156px;
+    overflow: hidden;
+    border: 1px solid var(--mg-line);
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(24, 68, 105, .06);
+    outline: none;
+    cursor: pointer;
+    transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+.grade-toggle {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: #ffffff;
+    color: inherit;
+    font-family: inherit;
+    text-align: left;
+}
+
+.grade-card:hover {
+    border-color: #b7d5ec;
+    box-shadow: 0 3px 10px rgba(24, 68, 105, .1);
+}
+
+.grade-card:focus-visible,
+.grade-card.is-selected {
+    border-color: var(--mg-blue);
+    box-shadow: 0 0 0 2px rgba(46, 127, 184, .16);
+}
+
+.grade-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    min-height: 38px;
+    padding: 8px 12px;
+    border-bottom: 1px solid #d9e7f3;
+    background: var(--mg-header);
+}
+
+.grade-name {
+    min-width: 0;
+    overflow: hidden;
+    color: var(--mg-navy);
+    font-size: 13px;
+    font-weight: 750;
+    line-height: 1.3;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.grade-density {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 5px;
+    color: var(--mg-navy-soft);
+    font-size: 11.5px;
+    font-weight: 750;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+.grade-density svg {
+    width: 14px;
+    height: 14px;
+    color: var(--mg-blue-strong);
+}
+
+.grade-card-body {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    min-height: 116px;
+    padding: 12px;
+}
+
+.grade-detail {
+    padding: 9px 12px 11px;
+    border-top: 1px solid #dce9f4;
+    background: #f8fbfe;
+}
+
+.grade-detail-label {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--mg-navy-soft);
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+}
+
+.grade-detail p {
+    color: #58758a;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.45;
+}
+
+.grade-art {
+    display: flex;
+    flex: 0 0 66px;
+    align-items: center;
+    justify-content: center;
+    width: 66px;
+    height: 66px;
+    border: 1px solid #e0ecf5;
+    border-radius: 8px;
+    background: #f6fafe;
+}
+
+.grade-art svg {
+    width: 58px;
+    height: 58px;
+}
+
+.grade-applications {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.grade-applications .app-title {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--mg-navy-soft);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .012em;
+}
+
+.grade-applications .app-text {
+    display: block;
+    color: #4b6478;
+    font-size: 11.8px;
+    font-weight: 500;
+    line-height: 1.45;
+}
+
+.grades-note {
+    margin-top: 14px;
+    padding-top: 11px;
+    border-top: 1px solid #e7eff6;
+    color: var(--mg-muted);
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   Card standard + dual-unit density (keeps the reference card hierarchy)
+   -------------------------------------------------------------------------- */
+
+.grade-title-box {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.grade-standard {
+    display: block;
+    overflow: hidden;
+    color: #6a8aa4;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.25;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.grade-density-text {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1px;
+    line-height: 1.2;
+}
+
+.grade-density-text strong {
+    color: var(--mg-navy-soft);
+    font-size: 11.5px;
+    font-weight: 750;
+}
+
+.grade-density-text small {
+    color: #7894a9;
+    font-size: 9.5px;
+    font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   Detailed grade information below the cards
+   -------------------------------------------------------------------------- */
+
+.grade-info {
+    grid-column: 1 / -1;
+    box-sizing: border-box;
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+    border: 1px solid var(--mg-line);
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: var(--mg-shadow);
+}
+
+.info-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 16px;
+    border-bottom: 1px solid #d9e7f3;
+    background: var(--mg-header);
+}
+
+.info-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.info-eyebrow {
+    color: var(--mg-blue-strong);
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.info-title {
+    margin: 0;
+    color: var(--mg-navy);
+    font-size: 17px;
+    font-weight: 750;
+    line-height: 1.25;
+}
+
+.info-standard {
+    color: #6a8aa4;
+    font-size: 11.5px;
+    font-weight: 600;
+}
+
+.info-header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.info-density {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1px;
+    white-space: nowrap;
+}
+
+.info-density-g {
+    color: var(--mg-navy-soft);
+    font-size: 15px;
+    font-weight: 750;
+}
+
+.info-density-kg {
+    color: #7894a9;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.info-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    border: 1px solid #c9dcec;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #58758a;
+    font-family: inherit;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.info-close:hover {
+    border-color: var(--mg-blue);
+    color: var(--mg-blue-strong);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+}
+
+.info-section {
+    min-width: 0;
+    padding: 13px 16px;
+    border-bottom: 1px solid #e6eff6;
+}
+
+.info-section:nth-child(odd) {
+    border-right: 1px solid #e6eff6;
+}
+
+.info-section-title {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--mg-navy-soft);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+}
+
+.info-text,
+.info-unavailable {
+    margin: 0;
+    color: #4b6478;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.55;
+}
+
+.info-text p,
+.info-unavailable {
+    margin: 0 0 6px;
+}
+
+.info-text p:last-child {
+    margin-bottom: 0;
+}
+
+.info-lead {
+    color: var(--mg-navy) !important;
+    font-weight: 700 !important;
+}
+
+.info-source {
+    color: #7894a9 !important;
+    font-size: 11px !important;
+}
+
+.info-unavailable {
+    color: #8aa0b3;
+    font-style: italic;
+}
+
+.info-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.info-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.info-row-label {
+    color: #6a8aa4;
+    font-size: 11.5px;
+    font-weight: 600;
+}
+
+.info-row-value {
+    color: var(--mg-navy-soft);
+    font-size: 11.5px;
+    font-weight: 700;
+    text-align: right;
+}
+
+.info-features {
+    margin: 0;
+    padding-left: 16px;
+    color: #4b6478;
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+.info-features li {
+    margin-bottom: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive behaviour (layout and card design stay identical)
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 900px) {
+    .grades-section {
+        padding: 30px 0 46px;
+    }
+
+    .grades-card {
+        padding: 16px;
+    }
+
+    .grades-select-wrap {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .grades-select-wrap > label {
+        font-size: 13px;
+    }
+
+    .material-combo,
+    .combo-control {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .grades-list {
+        grid-template-columns: minmax(0, 1fr);
+        max-height: none;
+        overflow: visible;
+        padding-right: 0;
+    }
+
+    .grade-card,
+    .grade-toggle {
+        min-height: 0;
+    }
+
+    .grade-card-body {
+        min-height: 0;
+    }
+
+    .info-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .info-section:nth-child(odd) {
+        border-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .grades-section {
+        padding: 24px 0 40px;
+    }
+
+    .grades-heading h2 {
+        font-size: 22px;
+        line-height: 1.25;
+    }
+
+    .grades-heading p {
+        font-size: 12.5px;
+    }
+
+    .grades-card {
+        padding: 14px 12px;
+        border-radius: 12px;
+    }
+
+    .combo-control {
+        min-height: 46px;
+        padding: 0 12px;
+        gap: 10px;
+    }
+
+    .combo-value {
+        font-size: 14px;
+    }
+
+    .grade-card-head {
+        padding: 9px 10px;
+        gap: 8px;
+    }
+
+    .grade-name {
+        font-size: 13px;
+    }
+
+    .grade-density {
+        font-size: 11.5px;
+        gap: 4px;
+    }
+
+    .grade-card-body {
+        gap: 10px;
+        padding: 11px 10px;
+    }
+
+    .grade-art {
+        flex-basis: 60px;
+        width: 60px;
+        height: 60px;
+    }
+
+    .grade-art svg {
+        width: 52px;
+        height: 52px;
+    }
+
+    .grade-applications .app-title {
+        font-size: 12px;
+    }
+
+    .grade-applications .app-text {
+        font-size: 11.8px;
+        line-height: 1.5;
+    }
+
+    .grades-note {
+        font-size: 11px;
+    }
+
+    .info-header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 13px 12px;
+    }
+
+    .info-header-right {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .info-section {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 360px) {
+    .combo-control {
+        min-height: 44px;
+        padding: 0 10px;
+        gap: 8px;
+    }
+
+    .combo-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .combo-value {
+        font-size: 13.5px;
+    }
+
+    .grade-card-head {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .grade-name {
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+    }
+
+    .grade-card-body {
+        gap: 9px;
+        padding: 10px;
+    }
+
+    .grade-art {
+        flex-basis: 54px;
+        width: 54px;
+        height: 54px;
+    }
+
+    .grade-art svg {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+/* Print ------------------------------------------------------------------- */
+@media print {
+    .grades-section {
+        max-width: none;
+        padding-top: 18px;
+        border-top: 0;
+        break-inside: avoid;
+    }
+
+    .grades-card,
+    .grade-card {
+        box-shadow: none;
+    }
+
+    .grades-list {
+        max-height: none;
+        overflow: visible;
+    }
+
+    .combo-menu {
+        display: none;
+    }
+}
+
+/* ==================================================
+   MATERIAL GRADES AND APPLICATIONS SECTION END
+================================================== */

@@ -1,0 +1,153 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>i18n audit</title>
+<pre id="result">PENDING</pre>
+<iframe id="f" style="width:1280px;height:900px;border:0"></iframe>
+<script>
+(function () {
+  "use strict";
+  var q = new URLSearchParams(location.search);
+  var page = q.get("page") || "index.html";
+  var langs = (q.get("langs") || "hi,mr,ja,zh,ar,de,es,fr,pt").split(",").filter(Boolean);
+  var frame = document.getElementById("f");
+  var result = document.getElementById("result");
+  var out = { page: page, results: [], errors: [] };
+
+  function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
+
+  function ready(win, ms) {
+    return new Promise(function (resolve) {
+      var deadline = Date.now() + (ms || 8000);
+      (function poll() {
+        if (win.document && win.document.readyState === "complete" && win.MW_I18N) { return resolve(true); }
+        if (Date.now() > deadline) { return resolve(false); }
+        setTimeout(poll, 40);
+      })();
+    });
+  }
+
+  var SKIP = ".lang-switch, script, style, textarea, code, pre, kbd, samp, [data-i18n-skip]";
+
+  function rendered(el) {
+    if (!el || !el.getClientRects) { return false; }
+    return el.getClientRects().length > 0;
+  }
+
+  function latinWords(text) {
+    return /[A-Za-z]{3,}/.test(text);
+  }
+
+  function collectText(win, bucket) {
+    var d = win.document;
+    var walker = d.createTreeWalker(d.body, NodeFilter.SHOW_TEXT, null);
+    var node;
+    while ((node = walker.nextNode())) {
+      var el = node.parentElement;
+      if (!el || (el.closest && el.closest(SKIP))) { continue; }
+      var text = String(node.nodeValue || "").replace(/\s+/g, " ").trim();
+      if (!text || text.length < 2) { continue; }
+      if (!rendered(el)) { continue; }
+      if (!latinWords(text)) { continue; }
+      bucket[text] = (bucket[text] || 0) + 1;
+    }
+  }
+
+  function collectAttrs(win, bucket) {
+    var d = win.document;
+    ["placeholder", "aria-label", "title", "alt"].forEach(function (attr) {
+      Array.prototype.forEach.call(d.querySelectorAll("[" + attr + "]"), function (el) {
+        if (el.closest && el.closest(SKIP)) { return; }
+        if (!rendered(el)) { return; }
+        var value = el.getAttribute(attr);
+        if (!value || !latinWords(value) || value.length < 2) { return; }
+        bucket[attr + ": " + value] = (bucket[attr + ": " + value] || 0) + 1;
+      });
+    });
+    Array.prototype.forEach.call(d.querySelectorAll("option"), function (option) {
+      var text = (option.textContent || "").replace(/\s+/g, " ").trim();
+      if (!text || !latinWords(text)) { return; }
+      bucket["option: " + text] = (bucket["option: " + text] || 0) + 1;
+    });
+  }
+
+  function snapshot(win, label) {
+    var latins = {};
+    collectText(win, latins);
+    collectAttrs(win, latins);
+    var missing = [];
+    try {
+      if (win.MW_I18N && win.MW_I18N.missingTranslations) {
+        missing = win.MW_I18N.missingTranslations();
+      }
+    } catch (e) { /* reported by the caller */ }
+    var keypad = Array.prototype.map.call(
+      win.document.querySelectorAll(".nk-key, [data-nk-key], .numeric-keypad button"),
+      function (el) { return (el.textContent || "").trim(); }
+    ).filter(Boolean);
+    var h1 = win.document.querySelector("h1");
+    return {
+      label: label,
+      lang: win.MW_I18N ? win.MW_I18N.language : win.document.documentElement.lang,
+      dir: win.document.documentElement.dir,
+      title: win.document.title,
+      heading: h1 ? (h1.textContent || "").replace(/\s+/g, " ").trim() : "",
+      keypad: keypad,
+      missing: missing,
+      latin: Object.keys(latins).sort()
+    };
+  }
+
+  function absolute(url) {
+    if (/^[a-z]+:/i.test(url) || url.charAt(0) === "/") { return url; }
+    return "/" + url;
+  }
+
+  function load(url) {
+    return new Promise(function (resolve) {
+      frame.addEventListener("load", function () { resolve(); }, { once: true });
+      frame.src = absolute(url);
+    });
+  }
+
+  function report() {
+    result.textContent = JSON.stringify(out);
+    result.setAttribute("data-done", "1");
+    try {
+      fetch("/__report", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ page: out.page, results: out.results, errors: out.errors })
+      });
+    } catch (e) { /* the DOM report remains readable */ }
+  }
+
+  (async function () {
+    try {
+      await load(page);
+      var win = frame.contentWindow;
+      if (!(await ready(win))) {
+        await sleep(2000);
+        if (!(await ready(win, 1000))) { throw new Error("runtime not ready on " + page); }
+      }
+      try { win.localStorage.removeItem("mw-lang"); win.sessionStorage.removeItem("mw-lang"); } catch (e) {}
+      if (win.MW_I18N.language !== "en") {
+        if (win.MW_I18N.clearMissingTranslations) { win.MW_I18N.clearMissingTranslations(); }
+        await win.MW_I18N.switchTo("en");
+        await sleep(120);
+      }
+      out.results.push(snapshot(win, "en"));
+
+      for (var i = 0; i < langs.length; i += 1) {
+        var lang = langs[i];
+        if (win.MW_I18N.clearMissingTranslations) { win.MW_I18N.clearMissingTranslations(); }
+        await win.MW_I18N.switchTo(lang);
+        await sleep(150);
+        out.results.push(snapshot(win, "switch-" + lang));
+      }
+    } catch (error) {
+      out.errors.push(String((error && error.stack) || error));
+    }
+    report();
+  })();
+})();
+</script>

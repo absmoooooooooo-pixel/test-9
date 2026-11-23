@@ -1,0 +1,5049 @@
+[
+ {
+  "text": "For the same diameter and thickness its developed area is the smallest of the dish end types: the crown is 0.785 ID², against about 1.084 ID² for a 2:1 semi-ellipsoidal head and 1.571 ID² for a hemispherical head. It carries less pressure for the same thickness, so it usually needs stiffening or a heavier plate.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "The head is a flat circular crown with a straight cylindrical flange. The developed area is π × R² for the crown plus 2π × R × SF for the flange, where R is the inside radius, ID ÷ 2. Weight is that area × plate thickness × density: ID 1000 mm with SF 40 mm and T 6 mm in carbon steel gives 42.91 kg.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "A flanged flat head is a flat crown bent down into a straight flange through a corner radius R. The crown stays at the level of the top of that bend, so its height above the tangent line where the knuckle turns vertical equals the knuckle radius. The flat crown diameter is then ID − 2R.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "The crown is spherical with radius C.R and the knuckle is a torus of radius K.R. Where the two meet, the height above the tangent line is H = C.R − √((C.R − K.R)² − (R − K.R)²) with R = ID ÷ 2. The height is therefore calculated from the diameter and the two radii, not entered.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Each station is reported at its azimuth. Blank X and Y give the point on the blank circumference at that azimuth, so the rim can be divided into the same angles; the meridian length in the table is then stepped out along that radial line from the centre to place the station.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "The dish is half an ellipsoid of revolution with semi-axes a = ID ÷ 2 and b = H. With e = √(1 − b² ÷ a²) the area is πa² + (πb² ÷ 2e) × ln((1 + e) ÷ (1 − e)); when the head is taller than it is wide (b > a) the same integral is evaluated with the inverse-sine form.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "C.R = ID is the standard 100% crown proportion for torispherical heads, normally used with a knuckle of about 6% to 10% of the diameter. Fixing the crown radius leaves the diameter, the knuckle radius, the straight flange and the thickness as the only inputs.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "No. The calculator develops the flat crown (πR²) and the cylindrical flange (2πR · SF); the small fillet surface of the knuckle is not added, which keeps the estimate marginally conservative. The knuckle still sets the drawing and the crown diameter.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Use the corner radius of your former or design drawing, typically a few per cent of the inside diameter. It must be smaller than the inside radius (ID ÷ 2) so that the flat crown ID − 2R stays positive; the field is validated on that rule.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "They divide the circumference into 12 to 96 equal angular steps and control the station table and the radial lines drawn on the section and the blank. More divisions give a finer template; the area, blank diameter and weight do not change.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "A double-curved surface cannot be flattened without stretching. The circle is the area-equivalent blank, 2 × √(A ÷ π): a flat plate of that diameter has the same surface area as the head, so it is the minimum plate size before allowances.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "The height is the vertical semi-axis of the ellipsoid. A flatter dish (smaller H) has less surface for the same diameter, so the area, blank diameter and weight all fall; as H approaches ID ÷ 2 the area approaches the hemispherical 2πR².",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "The knuckle is a torus swept about the head axis: A = 2π × K.R × [(R − K.R) × &theta;k + K.R × sin &theta;k], where &theta;k is the knuckle arc angle in radians. The arc runs from the tangent point to the start of the vertical flange.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "The crown and the knuckle together have more surface than a flat disc of the same diameter, so the area-equivalent blank 2 × √(A ÷ π) is larger than ID. A production blank also needs a forming and trim allowance on top of that.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "The calculator works on the inside surface, matching the inside diameter you enter. Using outside dimensions would raise the area by roughly 2T/R, which is small beside forming and mill tolerances for normal plate thicknesses.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Standard flanged and dished heads use about 6% of the inside diameter, and some specifications use 10%; for ID 1000 mm that is 60 mm to 100 mm. The value must stay below ID ÷ 2 and it is the radius labelled R on the drawing.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Yes, for the same diameter: H = 0.25 ID for a 2:1 ellipsoidal head, against about 0.19 ID for a torispherical head with C.R = ID and a 10% knuckle. The taller dish develops more area, so it weighs more at the same thickness.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "); /* The value is written by the shared dimension values script, which turns the plain label into \"PCD = 240\" exactly like every other calculator drawing. The label is stable, so a value can never move it. */ labels.push(",
+  "files": [
+   "frontend/calculators/flange-plate/flange-plate.js"
+  ]
+ },
+ {
+  "text": "The crown is the spherical zone of radius C.R above the tangent point: A = 2π × C.R × (H − K.R × sin &theta;k). Only the part of the sphere above the knuckle is counted, so the crown area falls as the knuckle grows.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "The dome is half a sphere with area 2πR², and the straight flange adds 2π × R × SF. Multiplying the total area by the plate thickness and the density gives the weight; at ID 1000 mm the dome alone is 1.571 m².",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Body table checked against the publicly accessible JIS B 1181:2014 text; it includes M1.6 to M64 with M7 as a non-preferred size, and its M7/M8 heights are 5.5/6.5 mm. The JSA paid text was not accessed.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "It produces the shop development of one head: the meridian length from the apex to each station, the plan radius and height of that station, and the area-equivalent blank with the marking coordinates.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "A half sphere is fully defined by its diameter: the crown height is the inside radius, H = R = ID ÷ 2. The calculator shows R as a calculated field beside the diameter, so the two can never disagree.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Its dome area is 1.571 ID², against about 1.084 ID² for a 2:1 semi-ellipsoidal head, so for the same thickness and material the dome is roughly 45% heavier before the straight flange is counted.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "With no straight flange the dome area equals the area of a circle of diameter √2 × ID, so the blank is about 1.414 × ID: 1414 mm for ID 1000 mm. A straight flange increases the blank further.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "A 2:1 head has D ÷ 2H = 2, so H = ID ÷ 4: 250 mm for ID 1000 mm. The results show the D ÷ 2H ratio of the values you entered, so you can confirm the profile before relying on the weight.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "The circumference is divided into the selected number of equal angular divisions (12 to 96); each station is reported with its plan radius, height, meridian length and blank coordinates.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "W = Weight (kg) · C.R = Crown radius = ID (mm) · K.R = Knuckle radius (mm) · R = Inside radius, ID ÷ 2 (mm) · &theta;k, &theta;c = Knuckle and crown arc angles · &rho; = Density (kg/m³)",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "A double-curved surface cannot be flattened without distortion, so the blank is an area-equivalent template. Forming, weld and trim allowances are a shop decision and are not included.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Yes. The straight flange is a cylinder of height SF below the tangent line with area 2π × R × SF, and it is added to the dish area before the blank and the weight are calculated.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "No. The blank is the area-equivalent circle 2 × √(A ÷ π). Forming stretch, edge trim, weld prep and any thinning allowance are shop decisions and are added on top of it.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Bolt holes overlap the central bore. PCD ÷ 2 − HD ÷ 2 must be greater than ID ÷ 2: increase the PCD, or reduce the Inner Diameter (ID) or the Bolt Hole Diameter (HD).",
+  "files": [
+   "frontend/calculators/flange-plate/flange-plate.js"
+  ]
+ },
+ {
+  "text": "The knuckle radius R is the corner radius between the flat crown and the straight flange; the crown diameter is ID − 2R and the crown sits R above the tangent line.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Bolt holes cross the outside edge. PCD ÷ 2 + HD ÷ 2 must be less than OD ÷ 2: reduce the PCD or the Bolt Hole Diameter (HD), or increase the Outer Diameter (OD).",
+  "files": [
+   "frontend/calculators/flange-plate/flange-plate.js"
+  ]
+ },
+ {
+  "text": "Body dimensional tables correspond to ISO 4014:2011/ISO 4017:2011. M7 is omitted because it was added after the 2014 edition. The JSA paid text was not accessed.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Yes. The straight flange is part of the developed area and is drawn below the tangent line, so the blank, the station table and the weight all include it.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Surface area of the semi-ellipsoid (a > b, e = √(1 − b² ÷ a²)): A = πa² + (πb² ÷ 2e) × ln((1 + e) ÷ (1 − e)); for b > a the asin form is used.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Official ISO preview table inspected. Main scope M5–M39; historical sizes M42–M64 are retained from ISO 4032:2012, including M45, M52 and M60.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "No. The blank diameter is area-equivalent only; forming stretch, edge trim, weld prep and thinning allowance are added by the fabricator.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "AFNOR catalogue; https://www.boutique.afnor.org/fr-fr/norme/nf-en-iso-4032/ecrous-hexagonaux-normaux-style-1-grades-a-et-b/fa178166/40865",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Body Tables 15–18 correspond to ISO 4017. M7 is omitted because it was added after the 2014 edition. The JSA paid text was not accessed.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Straight face: A SF = 2π × R × SF. The crown radius is fixed at the inside diameter, which is the standard torispherical proportion.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Scope M3–M39 and dimensions checked against the published ISO 7040:2025 table; paid full text not inspected. M3–M39 rows completed.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "W = Weight (kg) · R = Inside radius = H = ID ÷ 2 (mm) · SF = Straight flange (mm) · T = Thickness (mm) · &rho; = Density (kg/m³)",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "W = Weight (kg) · R = Inside radius, ID ÷ 2 (mm) · SF = Straight flange (mm) · T = Thickness (mm) · &rho; = Density (kg/m³)",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "BIS Standards India, IS 1364 (Part 3):2026; gazette notification https://egazette.gov.in/WriteReadData/2026/270336.pdf",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Adjacent bolt holes overlap. Reduce the Bolt Hole Diameter (HD) or the Number of Bolt Holes (N), or increase the PCD.",
+  "files": [
+   "frontend/calculators/flange-plate/flange-plate.js"
+  ]
+ },
+ {
+  "text": "Hexagon head bolts, screws and nuts of product grades A and B — Part 2: Hexagon head screws (Size range M1.6 to M64)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Hexagon head bolts, screws and nuts of product grades A and B — Part 3: Hexagon nuts, style 1 (Size range M5 to M39)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Hexagon head bolts, screws and nuts of product grades A and B — Part 1: Hexagon head bolts (Size range M1.6 to M64)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "ISO preview; https://cdn.standards.iteh.ai/sist-preview/75016/5b1f83bd2dc44fc199973e9957a75086/ISO-4032-2023.pdf",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Official ISO preview tables 1 and 2 inspected; M5–M39 table completed, including M7, M18, M22, M27, M33 and M39.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Desktop Chrome / Edge: use the install icon in the address bar, or open the browser menu and choose Install app.",
+  "files": [
+   "frontend/shared/smart-install-popup.js"
+  ]
+ },
+ {
+  "text": "Dish area is the semi-ellipsoidal surface for a = ID ÷ 2 and b = H; the straight flange is added separately.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Flanged flat head section with inside diameter, crown height, knuckle radius and straight flange dimensions",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "DIN Media catalogue, DIN EN ISO 4014:2022-10; https://www.dinmedia.de/en/standard/din-en-iso-4014/342492300",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Elementos de fijación — Tuercas hexagonales regulares (estilo 1) — Grados de producto A y B (ISO 4032:2023)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "ISO preview; https://cdn.standards.iteh.ai/samples/72585/1179998ddd594550a909d6e13c416f3e/ISO-4017-2022.pdf",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "ISO preview; https://cdn.standards.iteh.ai/samples/72579/81f2b1e966b440d7a25f6734e508ea48/ISO-4014-2022.pdf",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "ISO preview; https://cdn.standards.iteh.ai/samples/34460/06335046afaf46fb8e84d91a3eda001d/ISO-4762-2004.pdf",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "ISO preview; https://cdn.standards.iteh.ai/samples/75017/21ca4d24cb0e44508a8a7d279a500372/ISO-4033-2023.pdf",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Official ISO preview tables 1 and 2 inspected; M5–M39 table completed, including M7, M22, M27, M33 and M39.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "ISO preview; https://cdn.standards.iteh.ai/samples/75019/bdc8627c7e5e456593a9c1cca4e051ab/ISO-4035-2023.pdf",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "GSO standards store; https://eservices.gso.org.sa/store/standards/GSO:926777/GSO%20ISO%204032:2024?lang=en",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Current GSO edition and ISO 4017:2014 adoption verified; dimensions use the adopted ISO table without M7.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Flat crown plus knuckle and straight flange; the knuckle fillet area is not added to the developed area.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Identical adoption of ISO 4032:2023 verified from the BIS record and gazette notification; scope M5–M39.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Get quick access to every Metal Weight Calculator tool directly from your mobile home screen or desktop.",
+  "files": [
+   "frontend/shared/smart-install-popup.js"
+  ]
+ },
+ {
+  "text": "BSI/ANSI preview, BS EN ISO 4017:2022; https://webstore.ansi.org/preview-pages/BSI/preview_30351936.pdf",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "BSI/ANSI preview, BS EN ISO 4014:2022; https://webstore.ansi.org/preview-pages/BSI/preview_30351924.pdf",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "BSI/ANSI preview, BS EN ISO 4032:2023; https://webstore.ansi.org/preview-pages/BSI/preview_30429046.pdf",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Automatic install isn't available in this browser. Use your browser menu to install or add a shortcut.",
+  "files": [
+   "frontend/shared/smart-install-popup.js"
+  ]
+ },
+ {
+  "text": "Crown radius is taken as the inside diameter; the crown zone and the knuckle torus are both counted.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Semi-ellipsoidal head section showing inside diameter, head height, crown radius and straight flange",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Saudi Standards, Metrology and Quality Organization (SASO) / Gulf Standardization Organization (GSO)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Scope M3–M52 and b1/b2 table checked against DIN 938 published data; paid full text not inspected.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "W = Weight (kg) · A = Developed surface area (mm²) · T = Thickness (mm) · &rho; = Density (kg/m³)",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "JIS B 1180:2014 body text (publicly accessible copy); https://kikakurui.com/b1/B1180-2014-01.html",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "JIS B 1181:2014 body text (publicly accessible copy); https://kikakurui.com/b1/B1181-2014-01.html",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Torispherical head section showing crown radius, knuckle radius, head height and straight flange",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Elementos de fijación — Tornillos de cabeza hexagonal — Grados de producto A y B (ISO 4017:2022)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Elementos de fijación — Tornillos de cabeza hexagonal — Grados de producto A y B (ISO 4014:2022)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Metal Weight Calculator is already installed in this browser. Open it from the Start menu, your",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "Official ISO preview Table 1 inspected; sizes M1.6–M64 and reference thread lengths verified.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Flanged flat head: flat crown, knuckle radius R, straight flange SF. H = R for this profile.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "desktop, or chrome://apps (edge://apps in Edge). If its shortcut was removed, remove the app",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "Identical adoption of ISO 4017:2022 verified from the BIS record and gazette notification.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Fixations — Écrous hexagonaux normaux (style 1) — Grades de produit A et B (ISO 4032:2023)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Installation couldn't be completed automatically. Please use your browser menu to install.",
+  "files": [
+   "frontend/shared/smart-install-popup.js"
+  ]
+ },
+ {
+  "text": "The blank is the area-equivalent plate; a shop forming and trim allowance must be added.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Fixations — Vis à tête hexagonale partiellement filetées — Grades A et B (ISO 4014:2022)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Semi-ellipsoidal profile of semi-axes ID ÷ 2 and H; R is the crown radius of curvature.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "DIN 938 defaults are 1d at the metal end and the standard thread length at the nut end.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Waiting for your browser to offer its install prompt. This usually takes a few seconds…",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "Android Chrome: open the three-dot menu, then choose Install app or Add to Home screen.",
+  "files": [
+   "frontend/shared/smart-install-popup.js"
+  ]
+ },
+ {
+  "text": "Hemispherical head section showing inside diameter, radius, height and straight flange",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Fixations — Vis à tête hexagonale entièrement filetées — Grades A et B (ISO 4017:2022)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "UNE catalogue; https://www.normadoc.com/products/une-en-iso-4032-2024-esn0072680-28654",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "inside-surface dimensions, no forming thinning, mill tolerance, weld bevels, openings",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Japanese Industrial Standards Committee (JISC) / Japanese Standards Association (JSA)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": ".result-panel:not(.hidden), .results-panel:not(.hidden), [id*='result']:not(.hidden)",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js",
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Fasteners — Prevailing torque hexagon nuts — Regular nuts (with non-metallic insert)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "ISO catalogue and published dimension table; https://www.iso.org/standard/86033.html",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "pages opened over HTTPS or http://localhost, and the browser menu offers no shortcut",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "browser will not offer its install or shortcut prompt. Open the HTTPS version of the",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "Our server is not responding right now. Your internet connection is fine - retrying…",
+  "files": [
+   "frontend/shared/internet-connection-manager.js"
+  ]
+ },
+ {
+  "text": "Theoretical weight uses the developed surface area at the inside dimensions and the",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Fasteners — Hexagon regular nuts (style 1) — Product grades A and B (ISO 4032:2023)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Your browser didn't offer its automatic install prompt. Press Try Again, or add the",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "Knuckle angle: θ k = cos⁻¹((R − K.R) ÷ (C.R − K.R)); crown angle θ c = 90° − θ k .",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "nominal plate thickness. Forming thinning, mill tolerance, weld prep, openings and",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "AENOR UNE catalogue; http://tienda.aenor.com/p/norma-une-en-iso-4017-2023-n0071076",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "AENOR UNE catalogue; http://tienda.aenor.com/p/norma-une-en-iso-4014-2023-n0071073",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "DIN Media catalogue; https://www.dinmedia.de/en/standard/din-en-iso-4032/372666481",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "option for file:// pages. Open the website through its web address (or run a local",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "Shortcuts require a secure connection. This page is served over plain HTTP, so the",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "aria-labelledby=\"ascDialogTitle\" aria-describedby=\"ascDialogPoints\" tabindex=\"-1\">",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "Scope M2–M20 and published dimension table checked; paid full text not inspected.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "standard is substituted; enter your dimensions or choose another standard family.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "This copy of the site is open as a local file. Browsers can only add shortcuts to",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "Your browser is ready to add the shortcut. Press “OK – Add Shortcut” to continue.",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "Straight face: A SF = 2π × R × SF, treated as a cylindrical flange of height SF.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "GSO standards store; https://dgsm.gso.org.sa/store/standards/GSO:690107?lang=en",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "All dimensions are in inches. Internal calculation is performed in millimetres.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "<button class=\"asc-dialog__btn asc-dialog__btn--secondary\" id=\"ascDialogCancel\"",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "Other browsers: open the browser menu and choose Install or Add to Home Screen.",
+  "files": [
+   "frontend/shared/smart-install-popup.js"
+  ]
+ },
+ {
+  "text": "Crown radius taken as the inside diameter; R is the knuckle radius as entered.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "A half sphere: the height equals the inside radius and the dome area is 2πR².",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Identical Spanish adoption of ISO 4032:2023; UNE publication record verified.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"",
+  "files": [
+   "frontend/shared/add-shortcut.js",
+   "frontend/shared/feedback.js",
+   "frontend/shared/numeric-keypad.js"
+  ]
+ },
+ {
+  "text": "Theoretical weight uses the developed surface area at the inside dimensions.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Identical UK adoption of ISO 4017:2022; BSI foreword and ISO text inspected.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Identical French adoption of ISO 4017:2022; AFNOR catalogue record verified.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Identical UK adoption of ISO 4014:2022; BSI foreword and ISO text inspected.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Identical French adoption of ISO 4014:2022; AFNOR catalogue record verified.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Identical UK adoption of ISO 4032:2023; BSI foreword and ISO text inspected.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Identical French adoption of ISO 4032:2023; AFNOR catalogue record verified.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Developed blank: Ø = 2 × √(A ÷ π), the area-equivalent flat plate diameter.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Elliptical head template with radial divisions, section and developed blank",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Section with radial division lines and the area-equivalent developed blank.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Density entered manually; the selected material name is kept for reference.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Identical Spanish adoption of ISO 4017:2022; UNE catalogue record verified.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Identical Spanish adoption of ISO 4014:2022; UNE catalogue record verified.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "Double end studs have thread at both ends and a plain shank in the middle.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Your internet connection is lost. Please turn on your internet connection.",
+  "files": [
+   "frontend/shared/internet-connection-manager.js"
+  ]
+ },
+ {
+  "text": "BIS Standards India, IS 1364 (Part 2):2023; https://standards.bis.gov.in/",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "BIS Standards India, IS 1364 (Part 1):2023; https://standards.bis.gov.in/",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Custom dimensions are active; no unrelated standard has been substituted.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "standard in this calculator. Custom dimensions are active so no unrelated",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "<iframe class=\"fb-dialog__frame\" id=\"fbDialogFrame\" title=\"Feedback form\"",
+  "files": [
+   "frontend/shared/feedback.js"
+  ]
+ },
+ {
+  "text": "Knuckle area (torus): A = 2π × K.R × [(R − K.R) × θ k + K.R × sin θ k ].",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "The developed blank is the area-equivalent flat plate: Ø = 2 × √(A ÷ π).",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Fasteners — Hexagon head screws — Product grades A and B (ISO 4017:2022)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Fasteners — Hexagon head screws — Product grades A and B (ISO 4017:2014)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Carriage bolt length is measured under the head to the end of the shank.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "A shortcut for the Metal Weight Calculator website will be added to your",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "Why is a flanged flat head lighter than a dished head of the same size?",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Fasteners — Hexagon head bolts — Product grades A and B (ISO 4014:2022)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "button:not([disabled]), [href], iframe, [tabindex]:not([tabindex=\"-1\"])",
+  "files": [
+   "frontend/shared/feedback.js"
+  ]
+ },
+ {
+  "text": "Density looks too high; enter the density in kg/m³ (for example 7850).",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Values are entered by the user and are not presented as standard data.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "DIN Media catalogue, DIN EN ISO 4017:2022-10; https://www.dinmedia.de/",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Identical German adoption of ISO 4017:2022; DIN Media record verified.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Identical German adoption of ISO 4014:2022; DIN Media record verified.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Identical German adoption of ISO 4032:2023; DIN Media record verified.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Why does it weigh more than an ellipsoidal head of the same diameter?",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "AFNOR catalogue, NF EN ISO 4017:2022; https://www.boutique.afnor.org/",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "AFNOR catalogue, NF EN ISO 4014:2022; https://www.boutique.afnor.org/",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Preserved from the existing calculator; not re-verified in this task.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Overall length including the metal end; DIN 938 nominal l excludes it",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "You can access the website quickly without manually entering the URL.",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "Microsoft Edge (desktop): click the install icon in the address bar,",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "Straight face: A SF = 2π × R × SF, measured below the tangent line.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Flange thickness must be less than one-third of the overall height.",
+  "files": [
+   "frontend/calculators/e-section/e-section.js"
+  ]
+ },
+ {
+  "text": "Fasteners — Hexagon regular nuts (style 1) — Product grades A and B",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\">",
+  "files": [
+   "frontend/shared/calculation-history.js"
+  ]
+ },
+ {
+  "text": "Crown area (spherical zone): A = 2π × C.R × (H − K.R × sin θ k ).",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Outer Diameter (OD) must be greater than the Inner Diameter (ID).",
+  "files": [
+   "frontend/calculators/flange-plate/flange-plate.js"
+  ]
+ },
+ {
+  "text": "Hole diameter must be less than the outer across-flats dimension.",
+  "files": [
+   "frontend/calculators/hexagonal-bar-with-round-hole/hexagonal-bar-with-round-hole.js"
+  ]
+ },
+ {
+  "text": "Identical adoption of ISO 4014:2022 verified from the BIS record.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "<svg class=\"fastener-drawing fastener-drawing--mono\" viewBox=\"0 0",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "The calculated inner diameter is not valid. Reduce the thickness.",
+  "files": [
+   "frontend/calculators/shell/shell.js"
+  ]
+ },
+ {
+  "text": "Developed blank: Ø = 2 × √(A ÷ π), which is √2 × ID when SF = 0.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Fasteners — Hexagon high nuts (style 2) — Product grades A and B",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Fasteners — Hexagon thin nuts (style 0) — Product grades A and B",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "DIN Media; https://www.dinmedia.de/en/standard/din-938/392482848",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Hexagonal hole across-flats is too large for the outer diameter.",
+  "files": [
+   "frontend/calculators/round-bar-with-hexagonal-hole/round-bar-with-hexagonal-hole.js"
+  ]
+ },
+ {
+  "text": "button:not([disabled]), a[href], [tabindex]:not([tabindex=\"-1\"])",
+  "files": [
+   "frontend/shared/add-shortcut.js",
+   "frontend/shared/smart-install-popup.js"
+  ]
+ },
+ {
+  "text": "stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">",
+  "files": [
+   "frontend/shared/calculation-history.js"
+  ]
+ },
+ {
+  "text": "<button class=\"history-clear\" id=\"clearHistoryBtn\" type=\"button\"",
+  "files": [
+   "frontend/shared/calculation-history.js"
+  ]
+ },
+ {
+  "text": "Wall thickness must be less than half of both outer dimensions.",
+  "files": [
+   "frontend/calculators/box-channel/box-channel.js"
+  ]
+ },
+ {
+  "text": "Knuckle radius must be smaller than the inside radius (ID ÷ 2 =",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Identical GSO adoption of ISO 4032:2023 verified; scope M5–M39.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Hexagon socket countersunk head screws with reduced loadability",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"",
+  "files": [
+   "frontend/shared/calculation-history.js"
+  ]
+ },
+ {
+  "text": "Is a forming or trim allowance included in the blank diameter?",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Plate thickness must be less than half the small end diameter.",
+  "files": [
+   "frontend/calculators/truncated-cone/truncated-cone.js"
+  ]
+ },
+ {
+  "text": "An active internet connection is required to use this website.",
+  "files": [
+   "frontend/shared/internet-connection-manager.js"
+  ]
+ },
+ {
+  "text": "Still offline. Turn on your internet connection and try again.",
+  "files": [
+   "frontend/shared/internet-connection-manager.js"
+  ]
+ },
+ {
+  "text": "Dome area of a half sphere: A dome = 2π × R² with R = ID ÷ 2.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": ". Stations are numbered from the +X side of the half drawing;",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "— no verified product standard is available for this product.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "size table. Choosing a size fills in its standard dimensions;",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "The shortcut will open the website&rsquo;s homepage directly.",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "The bore is the average of the major and minor thread areas,",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Width across flats must be larger than the nominal diameter.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Small end diameter must be less than the large end diameter.",
+  "files": [
+   "frontend/calculators/truncated-cone/truncated-cone.js"
+  ]
+ },
+ {
+  "text": "Flange thickness must be less than half the overall height.",
+  "files": [
+   "frontend/calculators/c-channel/c-channel.js",
+   "frontend/calculators/i-channel/i-channel.js"
+  ]
+ },
+ {
+  "text": "Is a 2:1 ellipsoidal head deeper than a torispherical head?",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Why is the blank a circle when the head is not developable?",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "A fully threaded bolt carries thread over its whole length,",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Chrome (desktop): click the install icon in the address bar",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "Why is the blank diameter larger than the inside diameter?",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Thickness must be smaller than the inside radius (ID ÷ 2 =",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "kg/m³ is used. You can type any density for another grade.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Enter the density of the material you are using, in kg/m³.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Edition and relationship verified; full text not inspected",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\"",
+  "files": [
+   "frontend/shared/calculation-history.js"
+  ]
+ },
+ {
+  "text": "Why does the drawing dimension the crown height as H = R?",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Why do the area, blank and weight change with the height?",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Number of Bolt Holes (N) must be a positive whole number.",
+  "files": [
+   "frontend/calculators/flange-plate/flange-plate.js"
+  ]
+ },
+ {
+  "text": "Arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"5\" refY=\"4\"",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "orient=\"auto-start-reverse\" markerUnits=\"userSpaceOnUse\">",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Hatch\" width=\"7\" height=\"7\" patternUnits=\"userSpaceOnUse\"",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "The two thread lengths together are longer than the stud.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Wall thickness must be less than half the outer diameter.",
+  "files": [
+   "frontend/calculators/pipe/pipe.js"
+  ]
+ },
+ {
+  "text": "Other Chromium browsers: open the browser menu and choose",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "Measured from the bearing face under the head to the end",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Fasteners — Hexagon head screws — Product grades A and B",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "User-defined dimensions — no published standard claimed.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "The drawing and the calculation update with your values.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "(a small screen with a down arrow), or open the ⋮ menu →",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "button:not([disabled]), summary, a[href], input, select,",
+  "files": [
+   "frontend/shared/calculation-history.js"
+  ]
+ },
+ {
+  "text": "What knuckle radius is normal for a torispherical head?",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Why is the height of a hemispherical head not an input?",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "\" min=\"0\" step=\"any\" inputmode=\"decimal\" enterkeyhint=\"",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "One of the dimensions is too large for this calculator.",
+  "files": [
+   "frontend/calculators/flange-plate/flange-plate.js"
+  ]
+ },
+ {
+  "text": "Fasteners — Hexagon head bolts — Product grades A and B",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Thread length cannot be longer than the overall length.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "The square neck must be larger than the shank diameter.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Thickness must be less than half of the outer diameter.",
+  "files": [
+   "frontend/calculators/shell/shell.js"
+  ]
+ },
+ {
+  "text": "Please enter a valid positive custom density in g/cm³.",
+  "files": [
+   "frontend/calculators/box-channel/box-channel.js",
+   "frontend/calculators/c-channel/c-channel.js",
+   "frontend/calculators/circular-plate/circular-plate.js"
+  ]
+ },
+ {
+  "text": "How is the area of a semi-ellipsoidal head calculated?",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "ISO catalogue; https://www.iso.org/standard/90795.html",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "The socket depth must be smaller than the head height.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Flange thickness must be less than the overall height.",
+  "files": [
+   "frontend/calculators/t-channel/t-channel.js"
+  ]
+ },
+ {
+  "text": "Does the knuckle radius change the calculated weight?",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "How is the height of a torispherical head calculated?",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Why is the crown radius taken as the inside diameter?",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "How is the weight of a hemispherical head calculated?",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Dish height must not exceed the inside diameter (ID =",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "min=\"0\" step=\"any\" inputmode=\"decimal\" enterkeyhint=\"",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "for the selected length. You can type your own value.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "edit it if your part has a different threaded length.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Head diameter must be larger than the shank diameter.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "shortcut from the browser menu using the steps below.",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "How is the weight of a flanged flat head calculated?",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Dish height: H = C.R − √((C.R − K.R)² − (R − K.R)²).",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Blank X and Y are measured from the blank centre, in",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "International Organization for Standardization (ISO)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Nut height is too small for a nylon insert lock nut.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Open chrome://apps (or edge://apps), remove the app,",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "What blank diameter does a hemispherical head need?",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Existing project data; not re-verified in this task",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "so the thread is counted once, not as a plain hole.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "is required. Please enter a valid positive number.",
+  "files": [
+   "frontend/calculators/box-channel/box-channel.js",
+   "frontend/calculators/c-channel/c-channel.js",
+   "frontend/calculators/circular-plate/circular-plate.js"
+  ]
+ },
+ {
+  "text": "Flat plate area: A plate = π × R² with R = ID ÷ 2.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Developed blank: Ø = 2 × √((A plate + A SF ) ÷ π).",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "What height gives a standard 2:1 ellipsoidal head?",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Where does the developed blank diameter come from?",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Web thickness must be less than the overall width.",
+  "files": [
+   "frontend/calculators/e-section/e-section.js"
+  ]
+ },
+ {
+  "text": "); // Thickness, above the plate. dimensions.push(",
+  "files": [
+   "frontend/calculators/flange-plate/flange-plate.js"
+  ]
+ },
+ {
+  "text": "— enlarged front view and side view, dimensions in",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "The socket must be smaller than the head diameter.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Truncated Cone (Conical Reducer) Weight Calculator",
+  "files": [
+   "frontend/calculators/truncated-cone/truncated-cone.js"
+  ]
+ },
+ {
+  "text": "Web thickness must be less than the flange width.",
+  "files": [
+   "frontend/calculators/c-channel/c-channel.js",
+   "frontend/calculators/i-channel/i-channel.js",
+   "frontend/calculators/t-channel/t-channel.js"
+  ]
+ },
+ {
+  "text": "Custom dimensions: type every dimension yourself.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Android (Chrome or Edge): open the ⋮ menu and tap",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "Use the steps below to add the shortcut manually.",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "Straight face must be zero or a positive number.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Thickness must be less than both leg dimensions.",
+  "files": [
+   "frontend/calculators/l-channel/l-channel.js"
+  ]
+ },
+ {
+  "text": "— enlarged end view and side view, dimensions in",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "server and open http://localhost) and try again.",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "browser or device, depending on browser support.",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "W = (A knuckle + A crown + A SF ) × T × ρ ÷ 10⁹",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Hexagonal Bar with Round Hole Weight Calculator",
+  "files": [
+   "frontend/calculators/hexagonal-bar-with-round-hole/hexagonal-bar-with-round-hole.js"
+  ]
+ },
+ {
+  "text": "American Society of Mechanical Engineers (ASME)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Associação Brasileira de Normas Técnicas (ABNT)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Quantity is too large. Enter 1,000,000 or less.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Round Bar with Hexagonal Hole Weight Calculator",
+  "files": [
+   "frontend/calculators/round-bar-with-hexagonal-hole/round-bar-with-hexagonal-hole.js"
+  ]
+ },
+ {
+  "text": "Add Metal Weight Calculator to Your Home Screen",
+  "files": [
+   "frontend/shared/smart-install-popup.js"
+  ]
+ },
+ {
+  "text": "What is the elliptical head template used for?",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Does the template include the straight flange?",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Quantity must be a whole number of at least 1.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Association Française de Normalisation (AFNOR)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "FRONT VIEW ENLARGED; SIDE VIEW TO LENGTH SCALE",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Already installed but the shortcut is missing?",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "aria-labelledby=\"fbDialogTitle\" tabindex=\"-1\">",
+  "files": [
+   "frontend/shared/feedback.js"
+  ]
+ },
+ {
+  "text": "Measured over the countersunk head to the end",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "The browser couldn't open its install prompt.",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "Density is not configured for this material.",
+  "files": [
+   "frontend/calculators/box-channel/box-channel.js",
+   "frontend/calculators/c-channel/c-channel.js",
+   "frontend/calculators/circular-plate/circular-plate.js"
+  ]
+ },
+ {
+  "text": "Is the straight flange included in the area?",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Dish height is fixed by the geometry: H = R.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Flanged flat head (crown + knuckle + flange)",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Assumptions/limitations: Constant thickness,",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Thread length follows the selected standard;",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "The nylon collar of a lock nut is not metal;",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Cast, save, and share → Install page as app.",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "How are the blank X and Y coordinates used?",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "mm of its height is left out of the weight.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "<button class=\"history-close\" type=\"button\"",
+  "files": [
+   "frontend/shared/calculation-history.js"
+  ]
+ },
+ {
+  "text": "Asociación Española de Normalización (UNE)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Hexagon head bolts and hexagon head screws",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "NYLON INSERT INDICATED AT TOP (NO SECTION)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Run a calculation and it will appear here.",
+  "files": [
+   "frontend/shared/calculation-history.js"
+  ]
+ },
+ {
+  "text": "Quantity must be a positive whole number.",
+  "files": [
+   "frontend/calculators/box-channel/box-channel.js",
+   "frontend/calculators/c-channel/c-channel.js",
+   "frontend/calculators/circular-plate/circular-plate.js"
+  ]
+ },
+ {
+  "text": "Values are too large to calculate safely.",
+  "files": [
+   "frontend/calculators/box-channel/box-channel.js",
+   "frontend/calculators/c-channel/c-channel.js",
+   "frontend/calculators/circular-plate/circular-plate.js"
+  ]
+ },
+ {
+  "text": "Exactly half of a sphere: H = R = ID ÷ 2.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "What do the development divisions change?",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": ", front view and side view, dimensions in",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "— front view and side view, dimensions in",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Enter a custom density greater than zero.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "The install prompt couldn't be completed.",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "textarea, [tabindex]:not([tabindex=\"-1\"])",
+  "files": [
+   "frontend/shared/calculation-history.js"
+  ]
+ },
+ {
+  "text": "Enter a valid material density in kg/m³.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Download the Metal Weight Calculator app",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "there and add it again with this button.",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "No calculations yet for this calculator.",
+  "files": [
+   "frontend/shared/calculation-history.js"
+  ]
+ },
+ {
+  "text": "Saudi Arabia / Gulf Cooperation Council",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": ", end view and side view, dimensions in",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "— end view and side view, dimensions in",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "every filled value can still be edited.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "so no separate thread length is needed.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "The calculation could not be completed.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Add the shortcut from your browser menu",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "iPhone / iPad (Safari): tap Share, then",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "aria-label=\"Close calculation history\">",
+  "files": [
+   "frontend/shared/calculation-history.js"
+  ]
+ },
+ {
+  "text": "(display-mode: window-controls-overlay)",
+  "files": [
+   "frontend/shared/smart-install-popup.js"
+  ]
+ },
+ {
+  "text": "Are inside or outside dimensions used?",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Bolt Hole Pitch Circle Diameter (PCD)",
+  "files": [
+   "frontend/calculators/flange-plate/flange-plate.js"
+  ]
+ },
+ {
+  "text": "); // Bore diameter. dimensions.push(",
+  "files": [
+   "frontend/calculators/flange-plate/flange-plate.js"
+  ]
+ },
+ {
+  "text": "autocomplete=\"off\" placeholder=\"Enter",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Flat Head – Dished Weight Calculator",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Which knuckle radius should I enter?",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Torispherical Head Weight Calculator",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Hemispherical Head Weight Calculator",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Enter the dish inside diameter (ID).",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "trimming allowance are not included.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Distance from one thread to the next",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Deutsches Institut für Normung (DIN)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Metal Weight Calculator is installed",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "Add Metal Weight Calculator Shortcut",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "Calculation service is unavailable.",
+  "files": [
+   "frontend/calculators/box-channel/box-channel.js",
+   "frontend/calculators/c-channel/c-channel.js",
+   "frontend/calculators/circular-plate/circular-plate.js"
+  ]
+ },
+ {
+  "text": "How is the knuckle area calculated?",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Elliptical Head Template Calculator",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "must be a number greater than zero.",
+  "files": [
+   "frontend/calculators/flange-plate/flange-plate.js"
+  ]
+ },
+ {
+  "text": "British Standards Institution (BSI)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Studs — Metal end approximately 1 d",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Existing calculator dimension table",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "header.app-header .app-header-inner",
+  "files": [
+   "frontend/shared/add-shortcut.js",
+   "frontend/shared/feedback.js"
+  ]
+ },
+ {
+  "text": "then add it again from this button.",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "All dimensions are in millimeters.",
+  "files": [
+   "frontend/calculators/box-channel/box-channel.js",
+   "frontend/calculators/c-channel/c-channel.js",
+   "frontend/calculators/circular-plate/circular-plate.js"
+  ]
+ },
+ {
+  "text": "Ellipsoidal Head Weight Calculator",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Straight face: A SF = 2π × R × SF.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "kg/m³) is multiplied in this step.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Enter the dish knuckle radius (R).",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Official document preview verified",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Hexagon nuts and hexagon thin nuts",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "All dimensions are in millimetres.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Measured under the head to the end",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "is required. Please enter a value.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Install app or Add to Home screen.",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "Add to Home screen or Install app.",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "How is the crown area calculated?",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Official adoption record verified",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Trapezoidal Bar Weight Calculator",
+  "files": [
+   "frontend/calculators/trapezoidal-bar/trapezoidal-bar.js"
+  ]
+ },
+ {
+  "text": "Circular Plate Weight Calculator",
+  "files": [
+   "frontend/calculators/circular-plate/circular-plate.js"
+  ]
+ },
+ {
+  "text": "Is a forming allowance included?",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "#dishDensityTable .density-extra",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Enter the dish total height (H).",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "); /* VIEW TITLE */ labels.push(",
+  "files": [
+   "frontend/calculators/flange-plate/flange-plate.js"
+  ]
+ },
+ {
+  "text": "Threaded length at the other end",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "User-defined fastener dimensions",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Bureau of Indian Standards (BIS)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "<text class=\"fastener-label\" x=\"",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Triangular Bar Weight Calculator",
+  "files": [
+   "frontend/calculators/triangular-bar/triangular-bar.js"
+  ]
+ },
+ {
+  "text": "Truncated Cone (Conical Reducer)",
+  "files": [
+   "frontend/calculators/truncated-cone/truncated-cone.js"
+  ]
+ },
+ {
+  "text": "<input type=\"number\" id=\"field-",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js",
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Official ISO preview inspected.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "<text class=\"fastener-note\" x=\"",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Sphere / Ball Weight Calculator",
+  "files": [
+   "frontend/calculators/sphere-ball/sphere-ball.js"
+  ]
+ },
+ {
+  "text": "Trapezium Bar Weight Calculator",
+  "files": [
+   "frontend/calculators/trapezium-bar/trapezium-bar.js"
+  ]
+ },
+ {
+  "text": "Tap the Share button in Safari.",
+  "files": [
+   "frontend/shared/smart-install-popup.js"
+  ]
+ },
+ {
+  "text": "Flange Plate Weight Calculator",
+  "files": [
+   "frontend/calculators/flange-plate/flange-plate.js"
+  ]
+ },
+ {
+  "text": "Hexagon socket head cap screws",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "ISO 10642:2026, fourth edition",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "All dimensions are in inches.",
+  "files": [
+   "frontend/calculators/box-channel/box-channel.js",
+   "frontend/calculators/c-channel/c-channel.js",
+   "frontend/calculators/circular-plate/circular-plate.js"
+  ]
+ },
+ {
+  "text": "Box Channel Weight Calculator",
+  "files": [
+   "frontend/calculators/box-channel/box-channel.js"
+  ]
+ },
+ {
+  "text": "Enter the dish thickness (T).",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Flat Crown Diameter (ID − 2R)",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Meridian Length (Apex to Rim)",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Hexagon Bar Weight Calculator",
+  "files": [
+   "frontend/calculators/hexagon-bar/hexagon-bar.js"
+  ]
+ },
+ {
+  "text": "2023 edition (sixth revision)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "ISO 4014 / 4017 head (metric)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "2026 edition (sixth revision)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "ISO 4762:2004, fourth edition",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "ISO 4033:2023, fourth edition",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "ISO 7040:2025, fourth edition",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Show Fewer Material Densities",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Thread size, for example M12",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "ISO 4017:2022, sixth edition",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "ISO 4014:2022, fifth edition",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "ISO 4032:2023, fifth edition",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "ISO 4035:2023, fifth edition",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Nut & Bolt Weight Calculator",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Solid Cone Weight Calculator",
+  "files": [
+   "frontend/calculators/solid-cone/solid-cone.js"
+  ]
+ },
+ {
+  "text": "Square Bar Weight Calculator",
+  "files": [
+   "frontend/calculators/square-bar/square-bar.js"
+  ]
+ },
+ {
+  "text": "Install this site as an app.",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "C Channel Weight Calculator",
+  "files": [
+   "frontend/calculators/c-channel/c-channel.js"
+  ]
+ },
+ {
+  "text": "E-Section Weight Calculator",
+  "files": [
+   "frontend/calculators/e-section/e-section.js"
+  ]
+ },
+ {
+  "text": "I Channel Weight Calculator",
+  "files": [
+   "frontend/calculators/i-channel/i-channel.js"
+  ]
+ },
+ {
+  "text": "L Channel Weight Calculator",
+  "files": [
+   "frontend/calculators/l-channel/l-channel.js"
+  ]
+ },
+ {
+  "text": "Widest diameter of the head",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Depth of the hexagon socket",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Nut thickness, face to face",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "View All Material Densities",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Round Bar Weight Calculator",
+  "files": [
+   "frontend/calculators/round-bar/round-bar.js"
+  ]
+ },
+ {
+  "text": "Hexagonal Hole Across-Flats",
+  "files": [
+   "frontend/calculators/round-bar-with-hexagonal-hole/round-bar-with-hexagonal-hole.js"
+  ]
+ },
+ {
+  "text": "T Channel Weight Calculator",
+  "files": [
+   "frontend/calculators/t-channel/t-channel.js"
+  ]
+ },
+ {
+  "text": "or open the ⋮ menu → Apps →",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "Estimated Weight per Piece",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Threaded length at the end",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Hex key size of the socket",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Existing nut-bolt.js table",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "must be greater than zero.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "(display-mode: standalone)",
+  "files": [
+   "frontend/shared/add-shortcut.js",
+   "frontend/shared/smart-install-popup.js"
+  ]
+ },
+ {
+  "text": "(display-mode: fullscreen)",
+  "files": [
+   "frontend/shared/add-shortcut.js",
+   "frontend/shared/smart-install-popup.js"
+  ]
+ },
+ {
+  "text": "saved for this calculator.",
+  "files": [
+   "frontend/shared/calculation-history.js"
+  ]
+ },
+ {
+  "text": "the device has no internet",
+  "files": [
+   "frontend/shared/internet-connection-manager.js"
+  ]
+ },
+ {
+  "text": "(display-mode: minimal-ui)",
+  "files": [
+   "frontend/shared/smart-install-popup.js"
+  ]
+ },
+ {
+  "text": "Select Add to Home Screen.",
+  "files": [
+   "frontend/shared/smart-install-popup.js"
+  ]
+ },
+ {
+  "text": "Install from your browser:",
+  "files": [
+   "frontend/shared/smart-install-popup.js"
+  ]
+ },
+ {
+  "text": "Invalid material density.",
+  "files": [
+   "frontend/calculators/box-channel/box-channel.js",
+   "frontend/calculators/c-channel/c-channel.js",
+   "frontend/calculators/circular-plate/circular-plate.js"
+  ]
+ },
+ {
+  "text": "| Metal Weight Calculator",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": ": \"N × ØHD\"; labels.push(",
+  "files": [
+   "frontend/calculators/flange-plate/flange-plate.js"
+  ]
+ },
+ {
+  "text": "Wrench size, flat to flat",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Socket Width Across Flats",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Height of the square neck",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "ASME B18.2.2 heavy (inch)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Overall end-to-end length",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "\" role=\"img\" aria-label=\"",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "The thread length follows",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Second Thread Length (b2)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Open calculation history,",
+  "files": [
+   "frontend/shared/calculation-history.js"
+  ]
+ },
+ {
+  "text": "Saved for this calculator",
+  "files": [
+   "frontend/shared/calculation-history.js"
+  ]
+ },
+ {
+  "text": "Elliptical Head Template",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Material Density (&rho;)",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Stations in Half Drawing",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Number of Bolt Holes (N)",
+  "files": [
+   "frontend/calculators/flange-plate/flange-plate.js"
+  ]
+ },
+ {
+  "text": "Width of the square neck",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Not a published standard",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "ASME B18.2.1 head (inch)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Countersunk Socket Screw",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Custom — enter a density",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "must be zero or greater.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Second Parallel Side (B)",
+  "files": [
+   "frontend/calculators/trapezium-bar/trapezium-bar.js"
+  ]
+ },
+ {
+  "text": "Perpendicular Height (H)",
+  "files": [
+   "frontend/calculators/trapezium-bar/trapezium-bar.js",
+   "frontend/calculators/trapezoidal-bar/trapezoidal-bar.js",
+   "frontend/calculators/triangular-bar/triangular-bar.js"
+  ]
+ },
+ {
+  "text": "Bottom Parallel Side (B)",
+  "files": [
+   "frontend/calculators/trapezoidal-bar/trapezoidal-bar.js"
+  ]
+ },
+ {
+  "text": "Open calculation history",
+  "files": [
+   "frontend/shared/calculation-history.js"
+  ]
+ },
+ {
+  "text": "On iPhone/iPad (Safari):",
+  "files": [
+   "frontend/shared/smart-install-popup.js"
+  ]
+ },
+ {
+  "text": "YES – Add to Home Screen",
+  "files": [
+   "frontend/shared/smart-install-popup.js"
+  ]
+ },
+ {
+  "text": "e.g. 1.5748 (0 if none)",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Material Volume (A × T)",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Radius (R) — calculated",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Bolt Hole Diameter (HD)",
+  "files": [
+   "frontend/calculators/flange-plate/flange-plate.js"
+  ]
+ },
+ {
+  "text": "Nominal Thread Diameter",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "DIN EN ISO 4017:2022-10",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "DIN EN ISO 4014:2022-10",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "DIN EN ISO 4032:2023-12",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Plate Weight Calculator",
+  "files": [
+   "frontend/calculators/plate/plate.js"
+  ]
+ },
+ {
+  "text": "Shell Weight Calculator",
+  "files": [
+   "frontend/calculators/shell/shell.js"
+  ]
+ },
+ {
+  "text": "First Parallel Side (A)",
+  "files": [
+   "frontend/calculators/trapezium-bar/trapezium-bar.js"
+  ]
+ },
+ {
+  "text": "Metal Weight Calculator",
+  "files": [
+   "frontend/shared/add-shortcut.js",
+   "frontend/shared/smart-install-popup.js"
+  ]
+ },
+ {
+  "text": "Opening browser prompt…",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "#resetBtn, [data-reset]",
+  "files": [
+   "frontend/shared/dimension-values.js"
+  ]
+ },
+ {
+  "text": "Total Estimated Weight",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "or trimming allowance.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Outer Across-Flats (A)",
+  "files": [
+   "frontend/calculators/hexagonal-bar-with-round-hole/hexagonal-bar-with-round-hole.js"
+  ]
+ },
+ {
+  "text": "NF EN ISO 4032:2023-08",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Enter a custom density",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Width Across Flats (s)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Pipe Weight Calculator",
+  "files": [
+   "frontend/calculators/pipe/pipe.js"
+  ]
+ },
+ {
+  "text": "Large End Diameter (D)",
+  "files": [
+   "frontend/calculators/truncated-cone/truncated-cone.js"
+  ]
+ },
+ {
+  "text": "Small End Diameter (d)",
+  "files": [
+   "frontend/calculators/truncated-cone/truncated-cone.js"
+  ]
+ },
+ {
+  "text": "website and try again.",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "disabled>Clear History",
+  "files": [
+   "frontend/shared/calculation-history.js"
+  ]
+ },
+ {
+  "text": "We Value Your Feedback",
+  "files": [
+   "frontend/shared/feedback.js"
+  ]
+ },
+ {
+  "text": "No Internet Connection",
+  "files": [
+   "frontend/shared/internet-connection-manager.js"
+  ]
+ },
+ {
+  "text": "Flange Thickness (Tf)",
+  "files": [
+   "frontend/calculators/c-channel/c-channel.js",
+   "frontend/calculators/e-section/e-section.js",
+   "frontend/calculators/i-channel/i-channel.js"
+  ]
+ },
+ {
+  "text": "Development Divisions",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Hex Bolt, Full Thread",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "IS 1364 (Part 2):2023",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Hex Bolt, Half Thread",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "IS 1364 (Part 1):2023",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Socket Head Cap Screw",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "IS 1364 (Part 3):2026",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Nylon Insert Lock Nut",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Existing project data",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "FRONT VIEW (ENLARGED)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Square Neck Width (a)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Top Parallel Side (A)",
+  "files": [
+   "frontend/calculators/trapezoidal-bar/trapezoidal-bar.js"
+  ]
+ },
+ {
+  "text": "Enter custom density",
+  "files": [
+   "frontend/calculators/box-channel/box-channel.js",
+   "frontend/calculators/c-channel/c-channel.js",
+   "frontend/calculators/circular-plate/circular-plate.js"
+  ]
+ },
+ {
+  "text": "Inside Diameter (ID)",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Example unavailable.",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Dish Inside Diameter",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Crown Height (H = R)",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Total Developed Area",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "\" autocomplete=\"off\"",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Dish Ends Calculator",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Straight Flange (SF)",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "| Hole area removed:",
+  "files": [
+   "frontend/calculators/flange-plate/flange-plate.js"
+  ]
+ },
+ {
+  "text": "); centreLines.push(",
+  "files": [
+   "frontend/calculators/flange-plate/flange-plate.js"
+  ]
+ },
+ {
+  "text": "Hex Bar (Round Hole)",
+  "files": [
+   "frontend/calculators/hexagonal-bar-with-round-hole/hexagonal-bar-with-round-hole.js"
+  ]
+ },
+ {
+  "text": "Second Thread Length",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "UNE-EN ISO 4017:2023",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "UNE-EN ISO 4014:2023",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "UNE-EN ISO 4032:2024",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": ")\" marker-end=\"url(#",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "DIMENSIONS IN INCHES",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Nominal Diameter (d)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Round Bar (Hex Hole)",
+  "files": [
+   "frontend/calculators/round-bar-with-hexagonal-hole/round-bar-with-hexagonal-hole.js"
+  ]
+ },
+ {
+  "text": "Hex Across-Flats (A)",
+  "files": [
+   "frontend/calculators/round-bar-with-hexagonal-hole/round-bar-with-hexagonal-hole.js"
+  ]
+ },
+ {
+  "text": "Second Parallel Side",
+  "files": [
+   "frontend/calculators/trapezium-bar/trapezium-bar.js"
+  ]
+ },
+ {
+  "text": "Perpendicular Height",
+  "files": [
+   "frontend/calculators/trapezium-bar/trapezium-bar.js",
+   "frontend/calculators/trapezoidal-bar/trapezoidal-bar.js",
+   "frontend/calculators/triangular-bar/triangular-bar.js"
+  ]
+ },
+ {
+  "text": "Bottom Parallel Side",
+  "files": [
+   "frontend/calculators/trapezoidal-bar/trapezoidal-bar.js"
+  ]
+ },
+ {
+  "text": "Waiting for browser…",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "No calculations yet.",
+  "files": [
+   "frontend/shared/calculation-history.js"
+  ]
+ },
+ {
+  "text": "path, line, polyline",
+  "files": [
+   "frontend/shared/dimension-values.js"
+  ]
+ },
+ {
+  "text": "Checking connection…",
+  "files": [
+   "frontend/shared/internet-connection-manager.js"
+  ]
+ },
+ {
+  "text": "A knuckle + A crown",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Calculation Example",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Dish Knuckle Radius",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "e.g. 40 (0 if none)",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Dish Height (H = R)",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Plate Thickness (T)",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js",
+   "frontend/calculators/truncated-cone/truncated-cone.js"
+  ]
+ },
+ {
+  "text": "Outer Diameter (OD)",
+  "files": [
+   "frontend/calculators/flange-plate/flange-plate.js",
+   "frontend/calculators/pipe/pipe.js",
+   "frontend/calculators/shell/shell.js"
+  ]
+ },
+ {
+  "text": "Inner Diameter (ID)",
+  "files": [
+   "frontend/calculators/flange-plate/flange-plate.js"
+  ]
+ },
+ {
+  "text": "); dimensions.push(",
+  "files": [
+   "frontend/calculators/flange-plate/flange-plate.js"
+  ]
+ },
+ {
+  "text": "Outer Across-Flats:",
+  "files": [
+   "frontend/calculators/hexagonal-bar-with-round-hole/hexagonal-bar-with-round-hole.js"
+  ]
+ },
+ {
+  "text": "ASME B18.2.1 (inch)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "BS EN ISO 4017:2022",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "NF EN ISO 4017:2022",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "BS EN ISO 4014:2022",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "NF EN ISO 4014:2022",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Fully Threaded Stud",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "ASME B18.2.2 (inch)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "BS EN ISO 4032:2023",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Shell Thickness (T)",
+  "files": [
+   "frontend/calculators/shell/shell.js"
+  ]
+ },
+ {
+  "text": "First Parallel Side",
+  "files": [
+   "frontend/calculators/trapezium-bar/trapezium-bar.js"
+  ]
+ },
+ {
+  "text": "Vertical Height (H)",
+  "files": [
+   "frontend/calculators/truncated-cone/truncated-cone.js"
+  ]
+ },
+ {
+  "text": "Add to Home Screen.",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "Calculation History",
+  "files": [
+   "frontend/shared/calculation-history.js"
+  ]
+ },
+ {
+  "text": "(any-pointer: fine)",
+  "files": [
+   "frontend/shared/numeric-keypad.js"
+  ]
+ },
+ {
+  "text": "Tap Add to install.",
+  "files": [
+   "frontend/shared/smart-install-popup.js"
+  ]
+ },
+ {
+  "text": "Wall Thickness (T)",
+  "files": [
+   "frontend/calculators/box-channel/box-channel.js",
+   "frontend/calculators/pipe/pipe.js"
+  ]
+ },
+ {
+  "text": "Overall Height (H)",
+  "files": [
+   "frontend/calculators/c-channel/c-channel.js",
+   "frontend/calculators/e-section/e-section.js",
+   "frontend/calculators/i-channel/i-channel.js"
+  ]
+ },
+ {
+  "text": "Web Thickness (Tw)",
+  "files": [
+   "frontend/calculators/c-channel/c-channel.js",
+   "frontend/calculators/e-section/e-section.js",
+   "frontend/calculators/i-channel/i-channel.js"
+  ]
+ },
+ {
+  "text": "Flat Head – Dished",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Torispherical Head",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Hemispherical Head",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Knuckle Radius (R)",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Straight Face (SF)",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Material density (",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "equal divisions at",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Crown Radius (C.R)",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Straight Face Area",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "<label for=\"field-",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js",
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Outer Across-Flats",
+  "files": [
+   "frontend/calculators/hexagonal-bar-with-round-hole/hexagonal-bar-with-round-hole.js"
+  ]
+ },
+ {
+  "text": "Horizontal Leg (A)",
+  "files": [
+   "frontend/calculators/l-channel/l-channel.js"
+  ]
+ },
+ {
+  "text": "Width Across Flats",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Height of the head",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Square Neck Height",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "ISO 10642 (metric)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "DIN 976-1 (metric)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Head Diameter (dk)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Outer Diameter (D)",
+  "files": [
+   "frontend/calculators/round-bar-with-hexagonal-hole/round-bar-with-hexagonal-hole.js"
+  ]
+ },
+ {
+  "text": "Large End Diameter",
+  "files": [
+   "frontend/calculators/truncated-cone/truncated-cone.js"
+  ]
+ },
+ {
+  "text": "Small End Diameter",
+  "files": [
+   "frontend/calculators/truncated-cone/truncated-cone.js"
+  ]
+ },
+ {
+  "text": "Open feedback form",
+  "files": [
+   "frontend/shared/feedback.js"
+  ]
+ },
+ {
+  "text": "Séparateur décimal",
+  "files": [
+   "frontend/shared/numeric-keypad.js"
+  ]
+ },
+ {
+  "text": "Dish Total Height",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Area-equivalent ·",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Inside Radius (R)",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Knuckle Arc Angle",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Dish Surface Area",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Developed Blank Ø",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "the full head has",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Overall Width (B)",
+  "files": [
+   "frontend/calculators/e-section/e-section.js"
+  ]
+ },
+ {
+  "text": "Hole Diameter (d)",
+  "files": [
+   "frontend/calculators/hexagonal-bar-with-round-hole/hexagonal-bar-with-round-hole.js"
+  ]
+ },
+ {
+  "text": "Square Neck Width",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Custom dimensions",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "ISO 4017 (metric)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "GSO ISO 4017:2015",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "ISO 4014 (metric)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "ISO 4762 (metric)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Countersunk Screw",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "DIN 7991 (metric)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "ISO 4032 (metric)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "GSO ISO 4032:2024",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "ISO 4033 (metric)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "ISO 4035 (metric)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "ISO 7040 (metric)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "must be a number.",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Thread Length (b)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "| Hexagonal Hole:",
+  "files": [
+   "frontend/calculators/round-bar-with-hexagonal-hole/round-bar-with-hexagonal-hole.js"
+  ]
+ },
+ {
+  "text": "Base Diameter (D)",
+  "files": [
+   "frontend/calculators/solid-cone/solid-cone.js"
+  ]
+ },
+ {
+  "text": "Top Parallel Side",
+  "files": [
+   "frontend/calculators/trapezoidal-bar/trapezoidal-bar.js"
+  ]
+ },
+ {
+  "text": "OK - Add Shortcut",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "OK – Add Shortcut",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "Weight Calculator",
+  "files": [
+   "frontend/shared/calculation-history.js"
+  ]
+ },
+ {
+  "text": "any-pointer: fine",
+  "files": [
+   "frontend/shared/numeric-keypad.js"
+  ]
+ },
+ {
+  "text": "(pointer: coarse)",
+  "files": [
+   "frontend/shared/numeric-keypad.js"
+  ]
+ },
+ {
+  "text": "Separador decimal",
+  "files": [
+   "frontend/shared/numeric-keypad.js"
+  ]
+ },
+ {
+  "text": "sipDesc sipManual",
+  "files": [
+   "frontend/shared/smart-install-popup.js"
+  ]
+ },
+ {
+  "text": "Custom Density —",
+  "files": [
+   "frontend/calculators/box-channel/box-channel.js",
+   "frontend/calculators/c-channel/c-channel.js",
+   "frontend/calculators/circular-plate/circular-plate.js"
+  ]
+ },
+ {
+  "text": "Outer Height (H)",
+  "files": [
+   "frontend/calculators/box-channel/box-channel.js"
+  ]
+ },
+ {
+  "text": "Flange Thickness",
+  "files": [
+   "frontend/calculators/c-channel/c-channel.js",
+   "frontend/calculators/e-section/e-section.js",
+   "frontend/calculators/i-channel/i-channel.js"
+  ]
+ },
+ {
+  "text": "Flange Width (B)",
+  "files": [
+   "frontend/calculators/c-channel/c-channel.js",
+   "frontend/calculators/i-channel/i-channel.js",
+   "frontend/calculators/t-channel/t-channel.js"
+  ]
+ },
+ {
+  "text": "Ellipsoidal Head",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "\" stroke-width=\"",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Material Density",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "mm² gross face (",
+  "files": [
+   "frontend/calculators/flange-plate/flange-plate.js"
+  ]
+ },
+ {
+  "text": "Across Flats (A)",
+  "files": [
+   "frontend/calculators/hexagon-bar/hexagon-bar.js"
+  ]
+ },
+ {
+  "text": "| Hole Diameter:",
+  "files": [
+   "frontend/calculators/hexagonal-bar-with-round-hole/hexagonal-bar-with-round-hole.js"
+  ]
+ },
+ {
+  "text": "Vertical Leg (B)",
+  "files": [
+   "frontend/calculators/l-channel/l-channel.js"
+  ]
+ },
+ {
+  "text": "DIN 912 (metric)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "DIN 603 (metric)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "DIN 938 (metric)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "DIN 557 (metric)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "<polygon class=\"",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "DIMENSIONS IN MM",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Thread Pitch (P)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Socket Width (s)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Socket Depth (t)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "| Base Diameter:",
+  "files": [
+   "frontend/calculators/solid-cone/solid-cone.js"
+  ]
+ },
+ {
+  "text": "Unknown material",
+  "files": [
+   "frontend/shared/calculation-history.js"
+  ]
+ },
+ {
+  "text": "Weight per Piece",
+  "files": [
+   "frontend/shared/calculation-history.js"
+  ]
+ },
+ {
+  "text": "our site is down",
+  "files": [
+   "frontend/shared/internet-connection-manager.js"
+  ]
+ },
+ {
+  "text": "Teclado numérico",
+  "files": [
+   "frontend/shared/numeric-keypad.js"
+  ]
+ },
+ {
+  "text": "NO / Maybe Later",
+  "files": [
+   "frontend/shared/smart-install-popup.js"
+  ]
+ },
+ {
+  "text": "NO – Maybe Later",
+  "files": [
+   "frontend/shared/smart-install-popup.js"
+  ]
+ },
+ {
+  "text": "Custom Material",
+  "files": [
+   "frontend/calculators/box-channel/box-channel.js",
+   "frontend/calculators/c-channel/c-channel.js",
+   "frontend/calculators/circular-plate/circular-plate.js"
+  ]
+ },
+ {
+  "text": "Outer Width (B)",
+  "files": [
+   "frontend/calculators/box-channel/box-channel.js"
+  ]
+ },
+ {
+  "text": "Dish Height (H)",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "\" text-anchor=\"",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js",
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "not entered yet",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "DEVELOPED BLANK",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Crown Arc Angle",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "); labels.push(",
+  "files": [
+   "frontend/calculators/flange-plate/flange-plate.js"
+  ]
+ },
+ {
+  "text": "Stainless Steel",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "JIS B 1180:2014",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Double End Stud",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "JIS B 1181:2014",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "DIN 938:2025-08",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "<option value=\"",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "<circle class=\"",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "\" data-symbol=\"",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "· Verification:",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "has no verified",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Head Height (k)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Neck Height (f)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Shell Thickness",
+  "files": [
+   "frontend/calculators/shell/shell.js"
+  ]
+ },
+ {
+  "text": "Trapezoidal Bar",
+  "files": [
+   "frontend/calculators/trapezoidal-bar/trapezoidal-bar.js"
+  ]
+ },
+ {
+  "text": "Vertical Height",
+  "files": [
+   "frontend/calculators/truncated-cone/truncated-cone.js"
+  ]
+ },
+ {
+  "text": "Plate Thickness",
+  "files": [
+   "frontend/calculators/truncated-cone/truncated-cone.js"
+  ]
+ },
+ {
+  "text": "Wall Thickness",
+  "files": [
+   "frontend/calculators/box-channel/box-channel.js",
+   "frontend/calculators/pipe/pipe.js"
+  ]
+ },
+ {
+  "text": "Overall Height",
+  "files": [
+   "frontend/calculators/c-channel/c-channel.js",
+   "frontend/calculators/e-section/e-section.js",
+   "frontend/calculators/i-channel/i-channel.js"
+  ]
+ },
+ {
+  "text": "Circular Plate",
+  "files": [
+   "frontend/calculators/circular-plate/circular-plate.js"
+  ]
+ },
+ {
+  "text": "· Carbon Steel",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Dish Thickness",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "tonnes total ·",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Total Quantity",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "\" data-field=\"",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js",
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "); solid.push(",
+  "files": [
+   "frontend/calculators/flange-plate/flange-plate.js"
+  ]
+ },
+ {
+  "text": "Horizontal Leg",
+  "files": [
+   "frontend/calculators/l-channel/l-channel.js"
+  ]
+ },
+ {
+  "text": "Overall Length",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "United Kingdom",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Not applicable",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Hex Bolt Blank",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Enter quantity",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Screw Length (",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Nut Height (m)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Outer Diameter",
+  "files": [
+   "frontend/calculators/pipe/pipe.js",
+   "frontend/calculators/round-bar-with-hexagonal-hole/round-bar-with-hexagonal-hole.js",
+   "frontend/calculators/shell/shell.js"
+  ]
+ },
+ {
+  "text": "Triangular Bar",
+  "files": [
+   "frontend/calculators/triangular-bar/triangular-bar.js"
+  ]
+ },
+ {
+  "text": "server problem",
+  "files": [
+   "frontend/shared/internet-connection-manager.js"
+  ]
+ },
+ {
+  "text": "Retour arrière",
+  "files": [
+   "frontend/shared/numeric-keypad.js"
+  ]
+ },
+ {
+  "text": "Numeric keypad",
+  "files": [
+   "frontend/shared/numeric-keypad.js"
+  ]
+ },
+ {
+  "text": "Pavé numérique",
+  "files": [
+   "frontend/shared/numeric-keypad.js"
+  ]
+ },
+ {
+  "text": "sipDesc sipIos",
+  "files": [
+   "frontend/shared/smart-install-popup.js"
+  ]
+ },
+ {
+  "text": "metric tonnes",
+  "files": [
+   "frontend/calculators/box-channel/box-channel.js",
+   "frontend/calculators/c-channel/c-channel.js",
+   "frontend/calculators/circular-plate/circular-plate.js"
+  ]
+ },
+ {
+  "text": "Web Thickness",
+  "files": [
+   "frontend/calculators/c-channel/c-channel.js",
+   "frontend/calculators/e-section/e-section.js",
+   "frontend/calculators/i-channel/i-channel.js"
+  ]
+ },
+ {
+  "text": "Thickness (T)",
+  "files": [
+   "frontend/calculators/circular-plate/circular-plate.js",
+   "frontend/calculators/dish-ends/dish-ends.js",
+   "frontend/calculators/flange-plate/flange-plate.js"
+  ]
+ },
+ {
+  "text": "Straight Face",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "\" font-size=\"",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "choose a type",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Overall Width",
+  "files": [
+   "frontend/calculators/e-section/e-section.js"
+  ]
+ },
+ {
+  "text": "Across Flats:",
+  "files": [
+   "frontend/calculators/hexagon-bar/hexagon-bar.js"
+  ]
+ },
+ {
+  "text": "Hole Diameter",
+  "files": [
+   "frontend/calculators/hexagonal-bar-with-round-hole/hexagonal-bar-with-round-hole.js"
+  ]
+ },
+ {
+  "text": "Thread Length",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Head Diameter",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "United States",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Hex Bolt (FT)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Hex Bolt (HT)",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Carriage Bolt",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Heavy Hex Nut",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Stud Length (",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Bolt Length (",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "<line class=\"",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "<path class=\"",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "<pattern id=\"",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "<text class=\"",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "| Dimensions:",
+  "files": [
+   "frontend/calculators/plate/plate.js"
+  ]
+ },
+ {
+  "text": "Label = value",
+  "files": [
+   "frontend/calculators/round-bar-with-hexagonal-hole/round-bar-with-hexagonal-hole.js"
+  ]
+ },
+ {
+  "text": "Base Diameter",
+  "files": [
+   "frontend/calculators/solid-cone/solid-cone.js"
+  ]
+ },
+ {
+  "text": "Trapezium Bar",
+  "files": [
+   "frontend/calculators/trapezium-bar/trapezium-bar.js"
+  ]
+ },
+ {
+  "text": "Loading form…",
+  "files": [
+   "frontend/shared/feedback.js"
+  ]
+ },
+ {
+  "text": "Decimal point",
+  "files": [
+   "frontend/shared/numeric-keypad.js"
+  ]
+ },
+ {
+  "text": "Outer Height",
+  "files": [
+   "frontend/calculators/box-channel/box-channel.js"
+  ]
+ },
+ {
+  "text": "Flange Width",
+  "files": [
+   "frontend/calculators/c-channel/c-channel.js",
+   "frontend/calculators/i-channel/i-channel.js",
+   "frontend/calculators/t-channel/t-channel.js"
+  ]
+ },
+ {
+  "text": "| Thickness:",
+  "files": [
+   "frontend/calculators/circular-plate/circular-plate.js",
+   "frontend/calculators/l-channel/l-channel.js",
+   "frontend/calculators/shell/shell.js"
+  ]
+ },
+ {
+  "text": "Diameter (D)",
+  "files": [
+   "frontend/calculators/circular-plate/circular-plate.js",
+   "frontend/calculators/round-bar/round-bar.js",
+   "frontend/calculators/sphere-ball/sphere-ball.js"
+  ]
+ },
+ {
+  "text": "Carbon Steel",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js",
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "HALF SECTION",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "radial lines",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "D ÷ 2H Ratio",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Angular Step",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Flange Plate",
+  "files": [
+   "frontend/calculators/flange-plate/flange-plate.js"
+  ]
+ },
+ {
+  "text": "Across Flats",
+  "files": [
+   "frontend/calculators/hexagon-bar/hexagon-bar.js"
+  ]
+ },
+ {
+  "text": "Vertical Leg",
+  "files": [
+   "frontend/calculators/l-channel/l-channel.js"
+  ]
+ },
+ {
+  "text": "Thread Pitch",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Socket Depth",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "UNE / EN ISO",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Threaded Rod",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Manual entry",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "\" data-dim=\"",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "<marker id=\"",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "| Small End:",
+  "files": [
+   "frontend/calculators/truncated-cone/truncated-cone.js"
+  ]
+ },
+ {
+  "text": "Add Shortcut",
+  "files": [
+   "frontend/shared/add-shortcut.js",
+   "frontend/shared/smart-install-popup.js"
+  ]
+ },
+ {
+  "text": "Download App",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "Total Weight",
+  "files": [
+   "frontend/shared/calculation-history.js"
+  ]
+ },
+ {
+  "text": "YES – Got It",
+  "files": [
+   "frontend/shared/smart-install-popup.js"
+  ]
+ },
+ {
+  "text": "Outer Width",
+  "files": [
+   "frontend/calculators/box-channel/box-channel.js"
+  ]
+ },
+ {
+  "text": "Box Channel",
+  "files": [
+   "frontend/calculators/box-channel/box-channel.js"
+  ]
+ },
+ {
+  "text": "| Diameter:",
+  "files": [
+   "frontend/calculators/circular-plate/circular-plate.js",
+   "frontend/calculators/round-bar/round-bar.js"
+  ]
+ },
+ {
+  "text": "MIRROR LINE",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Hexagon Bar",
+  "files": [
+   "frontend/calculators/hexagon-bar/hexagon-bar.js"
+  ]
+ },
+ {
+  "text": "Head Height",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "5/16-18 UNC",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "7/16-14 UNC",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "9/16-12 UNC",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "BS / EN ISO",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "NF / EN ISO",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Hex Jam Nut",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "| Height B:",
+  "files": [
+   "frontend/calculators/square-bar/square-bar.js"
+  ]
+ },
+ {
+  "text": "Date & Time",
+  "files": [
+   "frontend/shared/calculation-history.js"
+  ]
+ },
+ {
+  "text": "no internet",
+  "files": [
+   "frontend/shared/internet-connection-manager.js"
+  ]
+ },
+ {
+  "text": "server down",
+  "files": [
+   "frontend/shared/internet-connection-manager.js"
+  ]
+ },
+ {
+  "text": "use strict",
+  "files": [
+   "frontend/calculators/box-channel/box-channel.js",
+   "frontend/calculators/c-channel/c-channel.js",
+   "frontend/calculators/circular-plate/circular-plate.js"
+  ]
+ },
+ {
+  "text": "| Outer H:",
+  "files": [
+   "frontend/calculators/box-channel/box-channel.js"
+  ]
+ },
+ {
+  "text": "Length (L)",
+  "files": [
+   "frontend/calculators/box-channel/box-channel.js",
+   "frontend/calculators/c-channel/c-channel.js",
+   "frontend/calculators/e-section/e-section.js"
+  ]
+ },
+ {
+  "text": "<line x1=\"",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "\" stroke=\"",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Blank Area",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Nut Height",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "1/4-20 UNC",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "3/8-16 UNC",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "1/2-13 UNC",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "5/8-11 UNC",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "3/4-10 UNC",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "User input",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "SASO / GSO",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Square Nut",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "\" points=\"",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "FRONT VIEW",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Solid Cone",
+  "files": [
+   "frontend/calculators/solid-cone/solid-cone.js"
+  ]
+ },
+ {
+  "text": "Height (H)",
+  "files": [
+   "frontend/calculators/solid-cone/solid-cone.js"
+  ]
+ },
+ {
+  "text": "Height (B)",
+  "files": [
+   "frontend/calculators/square-bar/square-bar.js"
+  ]
+ },
+ {
+  "text": "Square Bar",
+  "files": [
+   "frontend/calculators/square-bar/square-bar.js"
+  ]
+ },
+ {
+  "text": "Large End:",
+  "files": [
+   "frontend/calculators/truncated-cone/truncated-cone.js"
+  ]
+ },
+ {
+  "text": "verify now",
+  "files": [
+   "frontend/shared/internet-connection-manager.js"
+  ]
+ },
+ {
+  "text": "| Length:",
+  "files": [
+   "frontend/calculators/box-channel/box-channel.js",
+   "frontend/calculators/c-channel/c-channel.js",
+   "frontend/calculators/e-section/e-section.js"
+  ]
+ },
+ {
+  "text": "C Channel",
+  "files": [
+   "frontend/calculators/c-channel/c-channel.js"
+  ]
+ },
+ {
+  "text": "<path d=\"",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "<text x=\"",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "\" class=\"",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "\" value=\"",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "I Channel",
+  "files": [
+   "frontend/calculators/i-channel/i-channel.js"
+  ]
+ },
+ {
+  "text": "L Channel",
+  "files": [
+   "frontend/calculators/l-channel/l-channel.js"
+  ]
+ },
+ {
+  "text": "Cast Iron",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "7/8-9 UNC",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "SIDE VIEW",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "· Source:",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Width (W)",
+  "files": [
+   "frontend/calculators/plate/plate.js"
+  ]
+ },
+ {
+  "text": "Round Bar",
+  "files": [
+   "frontend/calculators/round-bar/round-bar.js"
+  ]
+ },
+ {
+  "text": "Width (A)",
+  "files": [
+   "frontend/calculators/square-bar/square-bar.js"
+  ]
+ },
+ {
+  "text": "T Channel",
+  "files": [
+   "frontend/calculators/t-channel/t-channel.js"
+  ]
+ },
+ {
+  "text": "| Height:",
+  "files": [
+   "frontend/calculators/triangular-bar/triangular-bar.js",
+   "frontend/calculators/truncated-cone/truncated-cone.js"
+  ]
+ },
+ {
+  "text": "Try Again",
+  "files": [
+   "frontend/shared/add-shortcut.js"
+  ]
+ },
+ {
+  "text": "Outer B:",
+  "files": [
+   "frontend/calculators/box-channel/box-channel.js"
+  ]
+ },
+ {
+  "text": "| Inner:",
+  "files": [
+   "frontend/calculators/box-channel/box-channel.js"
+  ]
+ },
+ {
+  "text": "Weight =",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "\" fill=\"",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "Dish End",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "| Leg A:",
+  "files": [
+   "frontend/calculators/l-channel/l-channel.js"
+  ]
+ },
+ {
+  "text": "ABNT NBR",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Lock Nut",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Custom —",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Width A:",
+  "files": [
+   "frontend/calculators/square-bar/square-bar.js"
+  ]
+ },
+ {
+  "text": "Base (B)",
+  "files": [
+   "frontend/calculators/triangular-bar/triangular-bar.js"
+  ]
+ },
+ {
+  "text": "| Wall:",
+  "files": [
+   "frontend/calculators/box-channel/box-channel.js",
+   "frontend/calculators/pipe/pipe.js"
+  ]
+ },
+ {
+  "text": "BLANK Ø",
+  "files": [
+   "frontend/calculators/dish-ends/dish-ends.js"
+  ]
+ },
+ {
+  "text": "| PCD =",
+  "files": [
+   "frontend/calculators/flange-plate/flange-plate.js"
+  ]
+ },
+ {
+  "text": "1-8 UNC",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Hex Nut",
+  "files": [
+   "frontend/calculators/nut-bolt/nut-bolt.js"
+  ]
+ },
+ {
+  "text": "Leg B:",
+  "files": [
+   "frontend/calculators/l-channel/l-channel.js"
+  ]
+ },
+ {
+  "text": "Got It",
+  "files": [
+   "frontend/shared/smart-install-popup.js"
+  ]
+ }
+]

@@ -1,0 +1,266 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>round 3 harness</title>
+<pre id="result">PENDING</pre>
+<iframe id="f" style="width:100%;height:900px;border:0"></iframe>
+<script>
+(function () {
+  "use strict";
+  var q = new URLSearchParams(location.search);
+  var page = q.get("page") || "index.html";
+  var langs = (q.get("langs") || "en").split(",").filter(Boolean);
+  var values = {};
+  try { values = JSON.parse(q.get("values") || "{}"); } catch (e) {}
+  var frame = document.getElementById("f");
+  var result = document.getElementById("result");
+  var out = { mode: "regression", page: page, snapshots: [], checks: [], errors: [] };
+
+  function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
+  function wait(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
+
+  function load(url) {
+    return new Promise(function (resolve, reject) {
+      frame.addEventListener("load", function () { resolve(); }, { once: true });
+      frame.src = url;
+    });
+  }
+
+  async function ready(win, ms) {
+    var deadline = Date.now() + (ms || 6000);
+    while (Date.now() < deadline) {
+      if (win.document && win.document.readyState === "complete" && win.MW_I18N) {
+        return true;
+      }
+      await sleep(20);
+    }
+    return false;
+  }
+
+  function canonical(win, value) {
+    if (value === undefined || value === null || value === "") { return null; }
+    var match = String(value).match(/[-+]?[0-9\u0660-\u0669\u06f0-\u06f9\u0966-\u096f\uFF10-\uFF19.,\u066B\u066C]+/);
+    if (!match) { return String(value).trim(); }
+    if (win.MWNumber && typeof win.MWNumber.parse === "function") {
+      var parsed = win.MWNumber.parse(match[0]);
+      if (isFinite(parsed)) { return parsed; }
+    }
+    return match[0];
+  }
+
+  var TECHNICAL_ALLOW = ["KG", "LB", "kg", "lb", "mm", "MM", "in", "cm",
+    "pcs", "pc", "OK", "QTY", "A", "B", "D", "H", "L", "R", "T", "W",
+    "d", "r", "rho", "\u03C1", "\u03C0", "\u2192", "\u2190", "\u00D7", "\u21BA"];
+  function isTechnical(value) {
+    var s = String(value || "").trim();
+    if (!s) { return true; }
+    if (/[0-9\u0660-\u0669\u06F0-\u06F9\u0966-\u096F\uFF10-\uFF19]/.test(s)) { return true; }
+    if (/^[A-Za-z0-9\s()\[\]+\u2212\u2013\u00D7\u00F7\u2192\u00D8\u03C0\u00B0\u00B3\u00B2%/=:,.!?'\u2019-]+$/.test(s) && !/[A-Za-z]{4,}/.test(s)) { return true; }
+    if (TECHNICAL_ALLOW.indexOf(s) !== -1) { return true; }
+    if (/^[\d\u0660-\u0669\u06f0-\u06f9\u0966-\u096f\uFF10-\uFF19.,\s+\-×xX()%/°³²]+$/.test(s)) { return true; }
+    if (/^[A-Za-z0-9\s/.,+()\-–×°³²%]+$/.test(s) && /\d/.test(s) && !/[a-z]{4,}/.test(s)) { return true; }
+    return false;
+  }
+
+  function collect(win, label) {
+    var d = win.document;
+    var inputs = Array.prototype.map.call(d.querySelectorAll("input, textarea"), function (el) {
+      return { id: el.id, value: el.value, raw: el.getAttribute("data-nk-raw"),
+               canonical: canonical(win, el.getAttribute("data-nk-raw") || el.value) };
+    });
+    var results = {};
+    Array.prototype.forEach.call(
+      d.querySelectorAll("[id*=weight i], [id*=result i], [id*=total i], [id*=density i], [id*=kg i], [id*=lb i]"),
+      function (el) {
+        if (!el.id || /^H[1-6]$/.test(el.tagName)) { return; }
+        var raw = typeof el.value === "string" ? el.value : el.textContent;
+        if (!/[0-9\u0660-\u0669\u06F0-\u06F9\u0966-\u096F\uFF10-\uFF19]/.test(raw)) { return; }
+        results[el.id] = canonical(win, raw);
+      }
+    );
+    var keypad = Array.prototype.map.call(
+      d.querySelectorAll(".nk-key, .nk-btn, [data-nk-key], .numeric-keypad button"),
+      function (el) { return (el.textContent || "").trim(); }
+    ).filter(Boolean);
+    var history = [];
+    try {
+      history = JSON.parse(win.localStorage.getItem("jadhav-engineering:calculation-history:global:v1") || "[]");
+    } catch (e) {}
+    var missing = [];
+    if (win.MW_I18N && typeof win.MW_I18N.missingTranslations === "function") {
+      missing = win.MW_I18N.missingTranslations();
+    }
+    var probe = {};
+    var probeInput = d.getElementById("customDensity");
+    if (probeInput && win.MWNumber) {
+      probe.customDensityValue = probeInput.value;
+      probe.customDensityRaw = probeInput.getAttribute("data-nk-raw");
+      probe.parsed = win.MWNumber.parse(probeInput.value);
+      probe.parsedRaw = win.MWNumber.parse(probeInput.getAttribute("data-nk-raw") || probeInput.value);
+      probe.lang = win.MW_I18N ? win.MW_I18N.language : "";
+    }
+    var errorEl = d.getElementById("error");
+    if (errorEl) { probe.error = (errorEl.textContent || "").trim(); }
+    var resultsEl = d.getElementById("results");
+    if (resultsEl) { probe.resultsDisplay = resultsEl.style.display; }
+    return {
+      label: label,
+      probe: probe,
+      lang: win.MW_I18N ? win.MW_I18N.language : d.documentElement.lang,
+      dir: d.documentElement.dir,
+      title: d.title,
+      hasMWNumber: !!(win.MWNumber && typeof win.MWNumber.parse === "function"),
+      inputs: inputs,
+      results: results,
+      historyCount: Array.isArray(history) ? history.length : 0,
+      missing: missing,
+      keypad: keypad
+    };
+  }
+
+  function applyValues(win) {
+    Object.keys(values).forEach(function (id) {
+      var el = win.document.getElementById(id);
+      if (!el) { return; }
+      el.value = values[id];
+      el.dispatchEvent(new win.Event("input", { bubbles: true }));
+      el.dispatchEvent(new win.Event("change", { bubbles: true }));
+    });
+  }
+
+  function clickCalculate(win) {
+    var candidates = Array.prototype.slice.call(
+      win.document.querySelectorAll("button, input[type=button], a[role=button]")
+    );
+    var target = candidates.find(function (el) {
+      return /calculate/i.test(el.id || "") || /calculate/i.test(el.textContent || "");
+    });
+    if (target) { target.click(); return target.id || target.textContent.trim(); }
+    return null;
+  }
+
+  function check(name, pass, detail) {
+    out.checks.push({ name: name, pass: !!pass, detail: detail || "" });
+  }
+
+  function equalResults(a, b) {
+    var keys = Object.keys(a.results);
+    var differences = [];
+    keys.forEach(function (id) {
+      var left = a.results[id];
+      var right = b.results[id];
+      var ok = left === right ||
+        (typeof left === "number" && typeof right === "number" &&
+         Math.abs(left - right) <= Math.max(0.000001, Math.abs(left) * 0.000001));
+      if (!ok) { differences.push(id + ":" + left + "!=" + right); }
+    });
+    return differences;
+  }
+
+  function equalInputs(a, b) {
+    var mapA = {};
+    a.inputs.forEach(function (i) { mapA[i.id] = i.canonical; });
+    var differences = [];
+    b.inputs.forEach(function (i) {
+      if (mapA[i.id] !== i.canonical) { differences.push(i.id + ":" + mapA[i.id] + "!=" + i.canonical); }
+    });
+    return differences;
+  }
+
+  (async function () {
+    try {
+      await load(page);
+      var win = frame.contentWindow;
+      if (!(await ready(win))) { throw new Error("runtime not ready on initial load"); }
+      var style = win.document.createElement("style");
+      style.textContent = "* { transition: none !important; animation: none !important; }";
+      win.document.head.appendChild(style);
+      applyValues(win);
+      await sleep(100);
+      out.calculateTarget = clickCalculate(win);
+      await sleep(160);
+      var initial = collect(win, "initial");
+      out.snapshots.push(initial);
+      check("MWNumber available", initial.hasMWNumber, page);
+
+      for (var i = 0; i < langs.length; i += 1) {
+        var lang = langs[i];
+        if (lang === win.MW_I18N.language) {
+          out.snapshots.push(collect(win, lang));
+          continue;
+        }
+        if (win.MW_I18N.clearMissingTranslations) { win.MW_I18N.clearMissingTranslations(); }
+        await win.MW_I18N.switchTo(lang);
+        await sleep(110);
+        out.snapshots.push(collect(win, lang));
+      }
+
+      var switched = out.snapshots.slice(1);
+      var resultDiffs = [];
+      var inputDiffs = [];
+      var missingDiffs = [];
+      var dirDiffs = [];
+      var keypadDiffs = [];
+      var historyDiffs = [];
+      var englishKeypad = ["Next", "Backspace", "Decimal point", "Numeric keypad"];
+      switched.forEach(function (snap) {
+        resultDiffs = resultDiffs.concat(
+          equalResults(initial, snap).map(function (d) { return snap.lang + ":" + d; })
+        );
+        inputDiffs = inputDiffs.concat(
+          equalInputs(initial, snap).map(function (d) { return snap.lang + ":" + d; })
+        );
+        var realMissing = snap.missing.filter(function (m) { return !isTechnical(m); });
+        if (realMissing.length) { missingDiffs.push(snap.lang + ":" + realMissing.slice(0, 5).join("|")); }
+        var expectedDir = snap.lang === "ar" ? "rtl" : "ltr";
+        if (snap.dir !== expectedDir) { dirDiffs.push(snap.lang + ":" + snap.dir); }
+        if (snap.lang !== "en" && initial.keypad.length && snap.keypad.length) {
+          var snapText = snap.keypad.join("|");
+          if (snapText === initial.keypad.join("|") ||
+              englishKeypad.some(function (label) { return snap.keypad.indexOf(label) !== -1; })) {
+            keypadDiffs.push(snap.lang);
+          }
+        }
+        if (snap.historyCount !== initial.historyCount) {
+          historyDiffs.push(snap.lang + ":" + snap.historyCount + "!=" + initial.historyCount);
+        }
+      });
+      check("results unchanged across languages", !resultDiffs.length, resultDiffs.slice(0, 6).join(", "));
+      check("inputs unchanged across languages", !inputDiffs.length, inputDiffs.slice(0, 6).join(", "));
+      check("no missing translations", !missingDiffs.length, missingDiffs.slice(0, 6).join(", "));
+      check("direction correct", !dirDiffs.length, dirDiffs.join(", "));
+      check("keypad localized", !keypadDiffs.length, keypadDiffs.join(", "));
+      check("history stable", !historyDiffs.length, historyDiffs.slice(0, 6).join(", "));
+
+      var lastLang = langs[langs.length - 1];
+      await load("frontend/about/index.html");
+      win = frame.contentWindow;
+      if (!(await ready(win))) { throw new Error("runtime not ready after navigation"); }
+      var navigated = collect(win, "navigated");
+      out.snapshots.push(navigated);
+      check("language persists across navigation", navigated.lang === lastLang,
+            navigated.lang + " != " + lastLang);
+
+      await load(page + (page.indexOf("?") === -1 ? "?" : "&") + "round3=1");
+      win = frame.contentWindow;
+      if (!(await ready(win))) { throw new Error("runtime not ready after reload"); }
+      var reloaded = collect(win, "reloaded");
+      out.snapshots.push(reloaded);
+      check("language persists after reload", reloaded.lang === lastLang,
+            reloaded.lang + " != " + lastLang);
+
+      applyValues(win);
+      await sleep(100);
+      clickCalculate(win);
+      await sleep(160);
+      var recalculated = collect(win, "recalculated");
+      out.snapshots.push(recalculated);
+      var recalcDiffs = equalResults(initial, recalculated);
+      check("recalculation after reload matches", !recalcDiffs.length, recalcDiffs.slice(0, 6).join(", "));
+    } catch (error) {
+      out.errors.push(String(error && error.stack || error));
+    }
+    result.textContent = JSON.stringify(out);
+    result.setAttribute("data-done", "1");
+  })();
+})();
+</script>

@@ -1,0 +1,51 @@
+PAGES: 26 DISTINCT TEXT NODES: 1203
+mr: 1039 / 1203
+hi: 1039 / 1203
+de: 1039 / 1203
+es: 1039 / 1203
+fr: 1039 / 1203
+ja: 260 / 1203
+pt: 1039 / 1203
+ar: 1039 / 1203
+
+SAMPLE hi missing:
+About Us | Metal Weight Calculator
+EN
+English
+Deutsch
+Español
+Français
+Português
+Making Engineering Calculations Simple, Fast and Accessible
+Welcome to Engineering Calculators — a practical online platform designed to make engineering and metal-related calculations easier, faster, and more convenient.
+We understand that engineers, fabricators, technicians, students, and professionals often need quick and reliable calculations in their daily work. That's why we created this platform: to bring useful engineering calculators together in one place.
+Our platform provides a collection of easy-to-use calculators for engineering, metal weight estimation, fabrication, and other technical calculations.
+Whether you need to calculate the weight of a metal plate, pipe, round bar, square bar, or other materials, our tools are designed to help you get results quickly without complicated manual calculations.
+Our mission is to simplify everyday engineering calculations by providing accessible, user-friendly, and practical online tools.
+We aim to save users time, reduce repetitive manual work, and make technical calculations easier for everyone.
+Our calculators are useful for:
+Anyone who works with metal materials and technical calculations
+We continuously aim to improve our calculators, add useful tools, and make the website easier to use across mobile phones, tablets, and computers.
+Your feedback and suggestions help us make the platform better.
+Have an idea for a new calculator? Looking for a specific feature or improvement? Or simply want to share your experience with Metal Weight Calculator?
+We'd love to hear from you!
+Your suggestions help us understand what you need and inspire us to build more useful calculators and improve our website.
+Suggestions for new metal weight calculators.
+Ideas for additional features or improvements.
+Feedback about your experience using our calculators.
+Reviews and suggestions to help us serve you better.
+Every suggestion and review matters to us. Your feedback helps us make Metal Weight Calculator more useful for everyone.
+Have something to share? Please click the Feedback button below and let us know what you think!
+Thank you for using Engineering Calculators!
+Metal Weight Calculator &mdash; Engineering Tools
+&copy; 2026 Jadhav Group of Industries
+@Marathi
+@Hindi
+@English
+@German
+@Spanish
+@French
+@Japanese
+@Portuguese
+@Arabic
+Box Channel Weight Calculator | Metal Weight Calculator

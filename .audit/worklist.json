@@ -1,0 +1,230 @@
+[
+ {
+  "text": "@Marathi",
+  "missing": [
+   "de",
+   "fr",
+   "pt"
+  ],
+  "where": [
+   "frontend/about/index.html",
+   "frontend/calculators/box-channel/index.html",
+   "frontend/calculators/c-channel/index.html",
+   "frontend/calculators/circular-plate/index.html",
+   "frontend/calculators/dish-ends/index.html",
+   "frontend/calculators/e-section/index.html",
+   "frontend/calculators/flange-plate/index.html",
+   "frontend/calculators/hexagon-bar/index.html",
+   "frontend/calculators/hexagonal-bar-with-round-hole/index.html",
+   "frontend/calculators/i-channel/index.html",
+   "frontend/calculators/l-channel/index.html",
+   "frontend/calculators/nut-bolt/index.html",
+   "frontend/calculators/pipe/index.html",
+   "frontend/calculators/plate/index.html",
+   "frontend/calculators/round-bar/index.html",
+   "frontend/calculators/round-bar-with-hexagonal-hole/index.html",
+   "frontend/calculators/shell/index.html",
+   "frontend/calculators/solid-cone/index.html",
+   "frontend/calculators/sphere-ball/index.html",
+   "frontend/calculators/square-bar/index.html",
+   "frontend/calculators/t-channel/index.html",
+   "frontend/calculators/trapezium-bar/index.html",
+   "frontend/calculators/trapezoidal-bar/index.html",
+   "frontend/calculators/triangular-bar/index.html",
+   "frontend/calculators/truncated-cone/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "text": "@Hindi",
+  "missing": [
+   "de",
+   "pt"
+  ],
+  "where": [
+   "frontend/about/index.html",
+   "frontend/calculators/box-channel/index.html",
+   "frontend/calculators/c-channel/index.html",
+   "frontend/calculators/circular-plate/index.html",
+   "frontend/calculators/dish-ends/index.html",
+   "frontend/calculators/e-section/index.html",
+   "frontend/calculators/flange-plate/index.html",
+   "frontend/calculators/hexagon-bar/index.html",
+   "frontend/calculators/hexagonal-bar-with-round-hole/index.html",
+   "frontend/calculators/i-channel/index.html",
+   "frontend/calculators/l-channel/index.html",
+   "frontend/calculators/nut-bolt/index.html",
+   "frontend/calculators/pipe/index.html",
+   "frontend/calculators/plate/index.html",
+   "frontend/calculators/round-bar/index.html",
+   "frontend/calculators/round-bar-with-hexagonal-hole/index.html",
+   "frontend/calculators/shell/index.html",
+   "frontend/calculators/solid-cone/index.html",
+   "frontend/calculators/sphere-ball/index.html",
+   "frontend/calculators/square-bar/index.html",
+   "frontend/calculators/t-channel/index.html",
+   "frontend/calculators/trapezium-bar/index.html",
+   "frontend/calculators/trapezoidal-bar/index.html",
+   "frontend/calculators/triangular-bar/index.html",
+   "frontend/calculators/truncated-cone/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "text": "Deutsch",
+  "missing": [
+   "mr",
+   "de"
+  ],
+  "where": [
+   "frontend/about/index.html",
+   "frontend/calculators/box-channel/index.html",
+   "frontend/calculators/c-channel/index.html",
+   "frontend/calculators/circular-plate/index.html",
+   "frontend/calculators/dish-ends/index.html",
+   "frontend/calculators/e-section/index.html",
+   "frontend/calculators/flange-plate/index.html",
+   "frontend/calculators/hexagon-bar/index.html",
+   "frontend/calculators/hexagonal-bar-with-round-hole/index.html",
+   "frontend/calculators/i-channel/index.html",
+   "frontend/calculators/l-channel/index.html",
+   "frontend/calculators/nut-bolt/index.html",
+   "frontend/calculators/pipe/index.html",
+   "frontend/calculators/plate/index.html",
+   "frontend/calculators/round-bar/index.html",
+   "frontend/calculators/round-bar-with-hexagonal-hole/index.html",
+   "frontend/calculators/shell/index.html",
+   "frontend/calculators/solid-cone/index.html",
+   "frontend/calculators/sphere-ball/index.html",
+   "frontend/calculators/square-bar/index.html",
+   "frontend/calculators/t-channel/index.html",
+   "frontend/calculators/trapezium-bar/index.html",
+   "frontend/calculators/trapezoidal-bar/index.html",
+   "frontend/calculators/triangular-bar/index.html",
+   "frontend/calculators/truncated-cone/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "text": "Español",
+  "missing": [
+   "mr",
+   "es"
+  ],
+  "where": [
+   "frontend/about/index.html",
+   "frontend/calculators/box-channel/index.html",
+   "frontend/calculators/c-channel/index.html",
+   "frontend/calculators/circular-plate/index.html",
+   "frontend/calculators/dish-ends/index.html",
+   "frontend/calculators/e-section/index.html",
+   "frontend/calculators/flange-plate/index.html",
+   "frontend/calculators/hexagon-bar/index.html",
+   "frontend/calculators/hexagonal-bar-with-round-hole/index.html",
+   "frontend/calculators/i-channel/index.html",
+   "frontend/calculators/l-channel/index.html",
+   "frontend/calculators/nut-bolt/index.html",
+   "frontend/calculators/pipe/index.html",
+   "frontend/calculators/plate/index.html",
+   "frontend/calculators/round-bar/index.html",
+   "frontend/calculators/round-bar-with-hexagonal-hole/index.html",
+   "frontend/calculators/shell/index.html",
+   "frontend/calculators/solid-cone/index.html",
+   "frontend/calculators/sphere-ball/index.html",
+   "frontend/calculators/square-bar/index.html",
+   "frontend/calculators/t-channel/index.html",
+   "frontend/calculators/trapezium-bar/index.html",
+   "frontend/calculators/trapezoidal-bar/index.html",
+   "frontend/calculators/triangular-bar/index.html",
+   "frontend/calculators/truncated-cone/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "text": "Français",
+  "missing": [
+   "mr",
+   "fr"
+  ],
+  "where": [
+   "frontend/about/index.html",
+   "frontend/calculators/box-channel/index.html",
+   "frontend/calculators/c-channel/index.html",
+   "frontend/calculators/circular-plate/index.html",
+   "frontend/calculators/dish-ends/index.html",
+   "frontend/calculators/e-section/index.html",
+   "frontend/calculators/flange-plate/index.html",
+   "frontend/calculators/hexagon-bar/index.html",
+   "frontend/calculators/hexagonal-bar-with-round-hole/index.html",
+   "frontend/calculators/i-channel/index.html",
+   "frontend/calculators/l-channel/index.html",
+   "frontend/calculators/nut-bolt/index.html",
+   "frontend/calculators/pipe/index.html",
+   "frontend/calculators/plate/index.html",
+   "frontend/calculators/round-bar/index.html",
+   "frontend/calculators/round-bar-with-hexagonal-hole/index.html",
+   "frontend/calculators/shell/index.html",
+   "frontend/calculators/solid-cone/index.html",
+   "frontend/calculators/sphere-ball/index.html",
+   "frontend/calculators/square-bar/index.html",
+   "frontend/calculators/t-channel/index.html",
+   "frontend/calculators/trapezium-bar/index.html",
+   "frontend/calculators/trapezoidal-bar/index.html",
+   "frontend/calculators/triangular-bar/index.html",
+   "frontend/calculators/truncated-cone/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "text": "© 2026 Jadhav Group of Industries",
+  "missing": [
+   "de"
+  ],
+  "where": [
+   "frontend/about/index.html"
+  ]
+ },
+ {
+  "text": "Angle (°)",
+  "missing": [
+   "fr"
+  ],
+  "where": [
+   "frontend/calculators/dish-ends/index.html"
+  ]
+ },
+ {
+  "text": "Português",
+  "missing": [
+   "pt"
+  ],
+  "where": [
+   "frontend/about/index.html",
+   "frontend/calculators/box-channel/index.html",
+   "frontend/calculators/c-channel/index.html",
+   "frontend/calculators/circular-plate/index.html",
+   "frontend/calculators/dish-ends/index.html",
+   "frontend/calculators/e-section/index.html",
+   "frontend/calculators/flange-plate/index.html",
+   "frontend/calculators/hexagon-bar/index.html",
+   "frontend/calculators/hexagonal-bar-with-round-hole/index.html",
+   "frontend/calculators/i-channel/index.html",
+   "frontend/calculators/l-channel/index.html",
+   "frontend/calculators/nut-bolt/index.html",
+   "frontend/calculators/pipe/index.html",
+   "frontend/calculators/plate/index.html",
+   "frontend/calculators/round-bar/index.html",
+   "frontend/calculators/round-bar-with-hexagonal-hole/index.html",
+   "frontend/calculators/shell/index.html",
+   "frontend/calculators/solid-cone/index.html",
+   "frontend/calculators/sphere-ball/index.html",
+   "frontend/calculators/square-bar/index.html",
+   "frontend/calculators/t-channel/index.html",
+   "frontend/calculators/trapezium-bar/index.html",
+   "frontend/calculators/trapezoidal-bar/index.html",
+   "frontend/calculators/triangular-bar/index.html",
+   "frontend/calculators/truncated-cone/index.html",
+   "index.html"
+  ]
+ }
+]

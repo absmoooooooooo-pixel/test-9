@@ -1,0 +1,15 @@
+{
+  "default": "en",
+  "languages": [
+    { "code": "mr", "name": "Marathi", "nativeName": "मराठी", "short": "MAR", "ogLocale": "mr_IN", "dir": "ltr", "flag": "in" },
+    { "code": "hi", "name": "Hindi", "nativeName": "हिंदी", "short": "HIN", "ogLocale": "hi_IN", "dir": "ltr", "flag": "in" },
+    { "code": "en", "name": "English", "nativeName": "English", "short": "ENG", "ogLocale": "en_US", "dir": "ltr", "flag": "us" },
+    { "code": "de", "name": "German", "nativeName": "Deutsch", "short": "DE", "ogLocale": "de_DE", "dir": "ltr", "flag": "de" },
+    { "code": "es", "name": "Spanish", "nativeName": "Español", "short": "ES", "ogLocale": "es_ES", "dir": "ltr", "flag": "es" },
+    { "code": "fr", "name": "French", "nativeName": "Français", "short": "FR", "ogLocale": "fr_FR", "dir": "ltr", "flag": "fr" },
+    { "code": "ja", "name": "Japanese", "nativeName": "日本語", "short": "JA", "ogLocale": "ja_JP", "dir": "ltr", "flag": "jp" },
+    { "code": "zh", "name": "Chinese", "nativeName": "简体中文", "short": "ZH", "ogLocale": "zh_CN", "dir": "ltr", "flag": "cn" },
+    { "code": "pt", "name": "Portuguese", "nativeName": "Português", "short": "PT", "ogLocale": "pt_BR", "dir": "ltr", "flag": "pt" },
+    { "code": "ar", "name": "Arabic", "nativeName": "العربية", "short": "AR", "ogLocale": "ar_SA", "dir": "rtl", "flag": "sa" }
+  ]
+}

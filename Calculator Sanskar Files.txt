@@ -1,0 +1,3235 @@
+================================================================================
+MATERIAL WEIGHT CALCULATOR  -  COMPLETE WEBSITE FOLDER AND CODE DOCUMENTATION
+File: Calculator Sanskar Files.txt
+Project root: A:\SAN\P2\WEIGHT CALCU\WEIGHT CALCU
+Documented on: 21 November 2026
+Document type: read-only structural and code analysis (documentation only)
+================================================================================
+
+HOW TO READ THIS DOCUMENT
+-------------------------
+This file explains the whole project: every folder, every important file, every
+calculator, how they connect, what is safe to edit, and what must be handled
+carefully. It is written in plain language so that a person who did not build
+the site can still understand it.
+
+Sections:
+   1. Purpose, scope and method
+   2. Project overview at a glance
+   3. Complete folder tree
+   4. Folder-by-folder analysis
+   5. File-by-file code analysis
+   6. Calculator-by-calculator documentation (all 24 calculators)
+   7. Website architecture and data flow
+   8. Configuration and dependencies
+   9. Public assets and resources
+  10. Important technical information (safe to modify / caution / shared /
+      site-wide impact / UI-UX / calculation accuracy / responsiveness /
+      performance)
+  11. File origin and creator information
+  12. Files that could not be inspected, and why
+  13. Maintenance quick reference
+  14. Verification of this document
+
+Nothing in the project was modified, renamed, moved or deleted while this
+document was prepared. Only this one new TXT file was created.
+
+
+================================================================================
+1. PURPOSE, SCOPE AND METHOD
+================================================================================
+
+1.1 Purpose
+-----------
+The project is a live engineering website, "Metal Weight Calculator", that
+calculates the weight of metal parts (plates, sections, pipes, bars, cones,
+spheres, flanges, dished heads, bolts and nuts). This document records how the
+project is built, folder by folder and file by file, so that:
+
+   - a new developer can find the correct file to edit;
+   - the owner can see which files are shared and dangerous to change;
+   - the calculation chain (input -> API -> result) is written down;
+   - the generated files are clearly separated from hand-written files.
+
+1.2 Scope
+---------
+Everything inside the project root was inspected:
+
+   - the static website (root index.html, frontend/ and the seven language
+     folders de, es, fr, hi, id, it, pt);
+   - the Node.js calculation API (backend/);
+   - the maintenance scripts (tools/);
+   - the audit evidence folder (AUDIT_SAVED_CODE/);
+   - configuration files, manifests, robots/sitemap/ads files, logs and images.
+
+1.3 Method
+----------
+Every folder was listed, and the actual source text was opened and read. The
+documentation was written from the code itself, not from file names. The main
+evidence used:
+
+   - the full folder inventory (443 files, about 17 MB);
+   - HTML page structure (titles, sections, input ids, result ids, script and
+     stylesheet links);
+   - calculator JavaScript (validation, unit switching, API calls, rendering,
+     drawing code, history configuration);
+   - backend modules (routes, controllers, validation, weight chain, density
+     tables, one module per shape family);
+   - generated data files and the scripts that generate them;
+   - project notes (README.md, DEPLOY.md, backend/README.md);
+   - the audit reports and saved copies in AUDIT_SAVED_CODE/.
+
+1.4 What this document is not
+-----------------------------
+This is not a redesign proposal and not a change request. No formula, layout,
+colour, text or behaviour is recommended for change here; the sections about
+risk only explain what happens if a file is edited.
+
+1.5 Note on authorship
+----------------------
+The project folder is not a Git repository (there is no .git directory), so
+there is no commit history to prove who created each file. Where the code or
+project files contain no authorship evidence, this document states exactly:
+
+   Creator information not available
+
+Section 11 records all provenance that could be established.
+
+
+================================================================================
+2. PROJECT OVERVIEW AT A GLANCE
+================================================================================
+
+2.1 What the product is
+-----------------------
+A public website with 24 metal-weight calculators, a home page that lists them,
+an About page, eight languages (English plus Hindi, Spanish, Portuguese, French,
+German, Italian and Indonesian) and an installable web-app manifest.
+
+Public domain used in the SEO files: https://metalweightcalculator.online
+
+2.2 Two independent parts
+-------------------------
+PART A - The website (static files)
+   - Root index.html (home page)
+   - frontend/ (About page, 24 calculators, shared scripts and styles, icons,
+     translations)
+   - Seven generated language folders: de/, es/, fr/, hi/, id/, it/, pt/
+   - Root web files: manifest.webmanifest, service-worker.js, robots.txt,
+     sitemap.xml, ads.txt, .nojekyll
+   These files can be hosted on any static host (the project notes name GitHub
+   Pages). No server-side code is needed to display them.
+
+PART B - The calculation API (Node.js, no dependencies)
+   - backend/ contains all engineering formulas, density tables, validation,
+     CORS, rate limiting and the HTTP routes.
+   - It is deployed separately (any Node 18+ host) and is addressed by the
+     browser through frontend/assets/js/api-config.js.
+   - The API serves /api/* only; it never serves the website pages.
+
+2.3 The key architectural rule
+------------------------------
+All engineering mathematics live in backend/calculations/ and
+backend/core/weight.js. The browser pages collect and validate the typed
+numbers, send them to POST /api/calculate/<calculator-slug>, and then only
+format and display the returned numbers (plus draw the diagrams).
+
+This rule is stated in README.md, backend/README.md, DEPLOY.md and in comments
+inside the calculator scripts. It is the single most important thing to
+understand before editing the site.
+
+2.4 Technology summary
+----------------------
+   - HTML5, CSS3, plain JavaScript (ES5/ES2017-style, no framework).
+   - No React, Vue, Angular, jQuery, Bootstrap or Tailwind.
+   - No build step for the website: the HTML/CSS/JS files are served as written.
+   - Node.js CommonJS backend with zero npm dependencies.
+   - Python 3 maintenance scripts (dashboard data, internationalisation, SEO).
+   - Tests: Node.js scripts (parity test, thread regression, DOM stub).
+   - No TypeScript, no Webpack, no Vite, no package lock files, no root
+     package.json.
+
+2.5 File count summary (443 files)
+----------------------------------
+   Root files ............................. 20
+   .freebuff/ ............................. 2
+   AUDIT_SAVED_CODE/ ...................... 48
+   backend/ ............................... 51
+   frontend/ .............................. 132
+       frontend/calculators/ .............. 72   (24 folders x 3 files)
+       frontend/shared/ ................... 23
+       frontend/i18n/ ..................... 20
+       frontend/icons/ .................... 9
+       frontend/assets/ ................... 5
+       frontend/about/ .................... 1
+       frontend root (favicons) ........... 2
+   tools/ ................................. 8
+   de/, es/, fr/, hi/, id/, it/, pt/ ...... 182  (7 x 26 generated pages)
+
+
+================================================================================
+3. COMPLETE FOLDER TREE
+================================================================================
+
+3.1 Top-level tree
+------------------
+PROJECT ROOT/
+|
+|-- index.html                  Home page (24 calculator cards, density table)
+|-- README.md                   Project overview and text-editing guide
+|-- DEPLOY.md                   Hosting instructions (site + API)
+|-- manifest.webmanifest        PWA manifest
+|-- service-worker.js           Pass-through service worker (installation only)
+|-- robots.txt                  Crawl rules + sitemap reference
+|-- sitemap.xml                 Generated sitemap (all languages)
+|-- ads.txt                     AdSense placeholder (no seller ids yet)
+|-- .nojekyll                   GitHub Pages: serve files as-is
+|-- .gitignore                  Ignores .env, logs, pid files, OS noise
+|-- .gitattributes              Text normalisation rules
+|-- backend-server.log          Local run log (not part of the website)
+|-- backend-server.err.log      Local error log (empty)
+|-- backend-server.pid          Local process id file
+|-- taskkill.log                Local stop log
+|-- cleanup-desktop-final.png   Local working screenshot (not referenced)
+|-- cleanup-mobile.png          Local working screenshot (not referenced)
+|-- cleanup-tablet.png          Local working screenshot (not referenced)
+|-- nut-bolt-icon-final.png     Local design artifact (not referenced)
+|-- nut-bolt-icon-mobile.png    Local design artifact (not referenced)
+|
+|-- .freebuff/                  Tool metadata for the editor used here
+|   |-- .gitignore
+|   `-- project-id
+|
+|-- AUDIT_SAVED_CODE/           Saved audit copies, reports and screenshots
+|   |-- README.txt
+|   |-- FINAL_AUDIT_REPORT.md
+|   |-- UI_AUDIT_REPORT.md
+|   |-- SIDE_BY_SIDE.html
+|   |-- drawing-countersunk.html
+|   |-- drawing-hex-bolt.html
+|   |-- drawing-hex-nut.html
+|   |-- drawing-stud.html
+|   |-- hex-bolt-full-thread-drawing.html
+|   |-- hex-bolt-full-thread-drawing.svg
+|   |-- hex-bolt-full-thread-drawing.png
+|   |-- nutbolt-dom-smoke.js
+|   |-- render_hex_bolt_image.py
+|   |-- changed-files/           (11 saved copies of changed source files)
+|   `-- evidence/
+|       |-- screenshots/         (12 before/after PNG captures)
+|       `-- computed/            (12 computed-style JSON captures)
+|
+|-- backend/                    Node.js calculation API (no dependencies)
+|   |-- .env.example
+|   |-- README.md
+|   |-- package.json
+|   |-- server.js               Process entry (listen + shutdown)
+|   |-- app.js                  HTTP request handler (/api/* only)
+|   |-- config.js               Environment and .env reader
+|   |-- calculations/
+|   |   |-- index.js            Slug registry for all 24 calculators
+|   |   |-- prismatic.js        16 constant-section shapes
+|   |   |-- circularPlate.js
+|   |   |-- roundBar.js
+|   |   |-- solidCone.js
+|   |   |-- sphereBall.js
+|   |   |-- truncatedCone.js
+|   |   |-- flangePlate.js
+|   |   |-- dishEnds.js         5 dish head types
+|   |   `-- nutBolt.js          14 fastener products
+|   |-- controllers/
+|   |   |-- calculationController.js
+|   |   `-- materialsController.js
+|   |-- core/
+|   |   |-- weight.js           Volume -> kg chain (shared by every module)
+|   |   `-- validation.js       Server-side input validation
+|   |-- materials/
+|   |   `-- materialDensity.js  g/cm3 table, kg/m3 table, reference table
+|   |-- middleware/
+|   |   |-- http.js             JSON/text senders, body reader, client IP
+|   |   |-- cors.js             Origin allow list
+|   |   `-- rateLimit.js        Per-IP request window
+|   |-- routes/
+|   |   `-- index.js            API routes and status codes
+|   `-- test/
+|       |-- parity.js           Compares 24 pages against saved originals
+|       |-- threadFactors.js    Fastener thread regression
+|       |-- domStub.js          Minimal DOM stub for the parity harness
+|       `-- fixtures/original/calculators/<slug>/<slug>.js   (24 files)
+|
+|-- frontend/                   The rest of the static website
+|   |-- favicon.ico
+|   |-- favicon.png
+|   |-- about/
+|   |   `-- index.html
+|   |-- assets/
+|   |   |-- css/
+|   |   |   `-- dashboard.css            Home page styles
+|   |   |-- data/
+|   |   |   `-- dashboard-data.js        Generated card/category data
+|   |   `-- js/
+|   |       |-- api-config.js            The one API base URL setting
+|   |       |-- calc-api.js              Calculation API client
+|   |       `-- dashboard.js             Builds cards and category filter
+|   |-- calculators/
+|   |   |-- box-channel/          index.html + box-channel.css + box-channel.js
+|   |   |-- c-channel/            index.html + c-channel.css + c-channel.js
+|   |   |-- circular-plate/       index.html + circular-plate.css + .js
+|   |   |-- dish-ends/            index.html + dish-ends.css + dish-ends.js
+|   |   |-- e-section/            index.html + e-section.css + e-section.js
+|   |   |-- flange-plate/         index.html + flange-plate.css + .js
+|   |   |-- hexagon-bar/          index.html + hexagon-bar.css + .js
+|   |   |-- hexagonal-bar-with-round-hole/   index.html + css + js
+|   |   |-- i-channel/            index.html + i-channel.css + i-channel.js
+|   |   |-- l-channel/            index.html + l-channel.css + l-channel.js
+|   |   |-- nut-bolt/             index.html + nut-bolt.css + nut-bolt.js
+|   |   |-- pipe/                 index.html + pipe.css + pipe.js
+|   |   |-- plate/                index.html + plate.css + plate.js
+|   |   |-- round-bar/            index.html + round-bar.css + round-bar.js
+|   |   |-- round-bar-with-hexagonal-hole/   index.html + css + js
+|   |   |-- shell/                index.html + shell.css + shell.js
+|   |   |-- solid-cone/           index.html + solid-cone.css + .js
+|   |   |-- sphere-ball/          index.html + sphere-ball.css + .js
+|   |   |-- square-bar/           index.html + square-bar.css + .js
+|   |   |-- t-channel/            index.html + t-channel.css + t-channel.js
+|   |   |-- trapezium-bar/        index.html + trapezium-bar.css + .js
+|   |   |-- trapezoidal-bar/      index.html + trapezoidal-bar.css + .js
+|   |   |-- triangular-bar/       index.html + triangular-bar.css + .js
+|   |   `-- truncated-cone/       index.html + truncated-cone.css + .js
+|   |-- i18n/
+|   |   |-- languages.json       Language list and metadata
+|   |   |-- en.json, hi.json, es.json, pt.json, fr.json, de.json, it.json,
+|   |   |   id.json              Translation dictionaries
+|   |   |-- i18n.js              Runtime translator
+|   |   |-- language-switcher.js
+|   |   |-- language-switcher.css
+|   |   `-- runtime/
+|   |       |-- en.js, hi.js, es.js, pt.js, fr.js, de.js, it.js, id.js
+|   |-- icons/
+|   |   |-- logo.png             Header wordmark image
+|   |   |-- icon-192.png, icon-512.png
+|   |   |-- maskable-192.png, maskable-512.png
+|   |   |-- apple-touch-icon.png
+|   |   |-- nut-bolt-512.png, nut-bolt-1024.png
+|   |   `-- nut-bolt.svg
+|   `-- shared/
+|       |-- calculation-history.js / .css
+|       |-- calculator-info-sections.css
+|       |-- calculator-sticky-header.css
+|       |-- dimension-values.js
+|       |-- dish-end-family.css
+|       |-- feedback.js / .css
+|       |-- add-shortcut.js / .css
+|       |-- smart-install-popup.js / .css
+|       |-- numeric-keypad.js / .css
+|       |-- mobile-input-viewport.js / .css
+|       |-- unit-switch.js / .css
+|       |-- internet-connection-manager.js
+|       |-- connection-check.txt
+|       |-- i18n.js, i18n-data.js, i18n.css      (legacy, unused)
+|
+|-- tools/                      Maintenance scripts (not published)
+|   |-- i18n_paths.py           Shared path/URL rules for languages
+|   |-- build_i18n.py           Builds the seven language trees
+|   |-- generate_dashboard_data.py   Builds dashboard-data.js
+|   |-- generate_seo.py         Injects SEO blocks, builds sitemap/robots
+|   |-- build_i18n_data.py      Legacy dictionary builder (unused)
+|   |-- build_i18n_data.cjs     Legacy dictionary builder (unused)
+|   |-- _i18n_report.txt        Output report from the last i18n build
+|   `-- __pycache__/i18n_paths.cpython-314.pyc   Python cache (generated)
+|
+|-- de/  es/  fr/  hi/  id/  it/  pt/     Generated language trees
+|   |-- index.html
+|   |-- about/index.html
+|   `-- calculators/<slug>/index.html     (24 pages each)
+|
+`-- (no package.json, no lock file, no node_modules at the root)
+
+
+3.2 Shape of one language folder (example: de/)
+-----------------------------------------------
+de/
+|-- index.html                              German home page
+|-- about/
+|   `-- index.html                          German About page
+`-- calculators/
+    |-- box-channel/index.html
+    |-- c-channel/index.html
+    |-- circular-plate/index.html
+    |-- dish-ends/index.html
+    |-- e-section/index.html
+    |-- flange-plate/index.html
+    |-- hexagon-bar/index.html
+    |-- hexagonal-bar-with-round-hole/index.html
+    |-- i-channel/index.html
+    |-- l-channel/index.html
+    |-- nut-bolt/index.html
+    |-- pipe/index.html
+    |-- plate/index.html
+    |-- round-bar/index.html
+    |-- round-bar-with-hexagonal-hole/index.html
+    |-- shell/index.html
+    |-- solid-cone/index.html
+    |-- sphere-ball/index.html
+    |-- square-bar/index.html
+    |-- t-channel/index.html
+    |-- trapezium-bar/index.html
+    |-- trapezoidal-bar/index.html
+    |-- triangular-bar/index.html
+    `-- truncated-cone/index.html
+
+The other six language folders (es, fr, hi, id, it, pt) have exactly the same
+26 files each. These pages contain only HTML; they load the shared English
+CSS/JS through ../../../frontend/... paths and add the translation runtime.
+
+3.3 Reference naming pattern for a calculator folder
+----------------------------------------------------
+frontend/calculators/<slug>/
+|-- index.html          Page markup: header, drawing(s), inputs, results,
+|                       formula card, density table, FAQ, related links
+|-- <slug>.css          All styling for that page (colours, cards, diagram,
+|                       responsive rules, print rules)
+`-- <slug>.js           Validation, unit switching, API call, result display,
+                        drawing updates, history config, event listeners
+
+
+================================================================================
+4. FOLDER-BY-FOLDER ANALYSIS
+================================================================================
+
+4.1 PROJECT ROOT
+----------------
+Purpose
+   Holds the published entry point (index.html), the site-wide web files
+   (manifest, service worker, robots, sitemap, ads.txt), the documentation, the
+   two main source folders (frontend/, backend/) and the maintenance scripts.
+
+Why it exists
+   Static hosts need one obvious home page. The root index.html is served as
+   "/" automatically, and every other page is reached by a relative link. All
+   links are relative so the same files work at a domain root and in a
+   repository sub-path.
+
+What it contains
+   - index.html (home page)
+   - README.md and DEPLOY.md (developer documentation)
+   - manifest.webmanifest, service-worker.js, robots.txt, sitemap.xml,
+     ads.txt, .nojekyll, .gitignore, .gitattributes
+   - local run artifacts: backend-server.log / .err.log / .pid, taskkill.log,
+     five working screenshots (cleanup-*.png, nut-bolt-icon-*.png)
+   - the folders described below
+
+Connections
+   index.html loads frontend/assets/css/dashboard.css, frontend/shared/*.css,
+   frontend/i18n/language-switcher.css, frontend/assets/data/dashboard-data.js,
+   frontend/assets/js/dashboard.js, the shared scripts, and links every
+   calculator card to frontend/calculators/<slug>/index.html.
+
+Contribution to the site
+   Essential. Without the root index.html the site has no home page; without
+   the root manifest/service-worker it is not installable; without robots.txt
+   and sitemap.xml search engines lose the crawl map.
+
+Essential? Yes (the root index.html, manifest, robots and sitemap).
+The log and screenshot files are not essential and are not referenced by any
+page. They are local work artifacts.
+
+Creator information not available (root web files and pages carry no author
+metadata; the About page names the organisation, see section 11).
+
+
+4.2 .freebuff/
+--------------
+Purpose
+   Metadata for the AI coding editor used on this computer (project marker).
+
+Why it exists
+   The editor writes a project id so it can reopen the same workspace.
+
+Contents
+   - .gitignore       keeps editor-local files out of version control
+   - project-id       a UUID identifying this project in the editor
+
+Connections
+   None. No website file reads this folder.
+
+Contribution
+   None to the website. Deleting it does not change the site; it only makes the
+   editor treat the folder as a new project.
+
+Essential? No.
+Creator: the editor tool (generated file, not hand-written website code).
+
+
+4.3 AUDIT_SAVED_CODE/
+---------------------
+Purpose
+   A saved record of one functional audit and one UI-consistency audit: final
+   copies of every changed file, before/after reports, screenshots, computed
+   style captures and extra drawing experiments.
+
+Why it exists
+   So the audit can be reviewed later without relying on memory, and so the
+   exact state of the audited files is preserved.
+
+Contents
+   - README.txt: what was audited and the final pass list
+   - FINAL_AUDIT_REPORT.md, UI_AUDIT_REPORT.md: written findings
+   - SIDE_BY_SIDE.html: before/after code and screenshot comparison
+   - changed-files/: 11 full copies of files changed during the audit
+   - evidence/screenshots/: 12 PNG captures (desktop + mobile)
+   - evidence/computed/: 12 JSON files of computed CSS values
+   - drawing-*.html and hex-bolt-full-thread-drawing.{html,svg,png}:
+     standalone experiments for the fastener drawings
+   - nutbolt-dom-smoke.js, render_hex_bolt_image.py: helper scripts
+
+Connections
+   Nothing on the live site links to this folder. It is not part of any page
+   load, and backend/test/fixtures/ is the reference material used by tests, not
+   this folder.
+
+Contribution
+   Documentation and evidence only.
+
+Essential? No. Safe to keep, safe to move out of the published folder, but do
+not edit the saved copies if they are used as audit evidence.
+
+Creator information not available (the reports describe the audit work but do
+not name the person who performed it).
+
+
+4.4 backend/
+------------
+Purpose
+   The calculation service: it receives the typed dimensions, validates them,
+   applies the engineering formula, and returns finished numbers as JSON.
+
+Why it exists
+   To keep every formula, density value and validation rule in one private
+   place, out of the public static files. The site can be viewed without it, but
+   no calculator can produce a result without it.
+
+What it handles
+   - HTTP server and shutdown (server.js)
+   - Request routing for /api/* (app.js, routes/index.js)
+   - JSON parsing, body size limits, CORS, rate limiting (middleware/)
+   - Material density tables (materials/)
+   - Validation and the shared weight chain (core/)
+   - One module per shape family (calculations/)
+   - Controller glue between routes and modules (controllers/)
+   - Configuration from environment variables (config.js, .env.example)
+   - Tests and saved reference pages (test/)
+
+Connections
+   Called by frontend/assets/js/calc-api.js through POST /api/calculate/<slug>
+   and GET /api/materials (plus /api/bootstrap.js, /api/health,
+   /api/calculators). The slug is the same as the calculator folder name,
+   enforced by calculations/index.js.
+
+Contribution
+   Essential for every calculation. It is deployed separately from the pages.
+
+Files: see section 5.4.
+
+
+4.4.1 backend/calculations/
+   Purpose: hold the engineering mathematics, one module per family.
+   Contents: prismatic.js (16 constant-section shapes), circularPlate.js,
+   roundBar.js, solidCone.js, sphereBall.js, truncatedCone.js, flangePlate.js,
+   dishEnds.js, nutBolt.js, and index.js (slug registry).
+   Connections: controllers/calculationController.js looks up the slug here;
+   every module imports core/weight.js and core/validation.js, and reads the
+   density passed in the request (the browser obtains it from materials/).
+   Essential: yes. This folder is the calculation engine.
+
+4.4.2 backend/controllers/
+   Purpose: thin glue. calculationController validates the slug, calls the
+   module, and wraps the result in the standard response envelope;
+   materialsController serialises the density tables for /api/materials and
+   /api/bootstrap.js.
+   Essential: yes.
+
+4.4.3 backend/core/
+   Purpose: the only weight chain and the only validation rules.
+   weight.js: weightFromVolume (mm3 + g/cm3 -> kg, tonnes) and
+   weightFromAreaKgM3 (dish heads).
+   validation.js: unit factor (mm = 1, in = 25.4), numeric field reading,
+   quantity rules, density range, finite-result guard, ValidationError class.
+   Essential: yes. Every calculator depends on it.
+
+4.4.4 backend/materials/
+   Purpose: single source of truth for densities.
+   Contains SECTION_MATERIALS (g/cm3, 7 materials), DISH_MATERIALS (kg/m3,
+   6 entries including custom) and DENSITY_REFERENCE (15 reference rows for the
+   tables shown on the pages).
+   Essential: yes for correct densities; the frontend also has a small
+   fallback copy so a page still opens if the API is unreachable.
+
+4.4.5 backend/middleware/
+   Purpose: HTTP plumbing.
+   http.js: sendJson, sendText, readBody (size limit, JSON only), clientIp.
+   cors.js: compares the request Origin against ALLOWED_ORIGINS.
+   rateLimit.js: fixed-window counter per client IP for /api requests.
+   Essential: yes for a safe public API.
+
+4.4.6 backend/routes/
+   Purpose: define the public API surface and the status codes
+   (200, 204, 400, 401, 403, 404, 405, 413, 422, 429, 500).
+   Essential: yes.
+
+4.4.7 backend/test/
+   Purpose: prove the migrated calculators still produce the same numbers as
+   the pre-restructure pages.
+   parity.js runs every page scenario against fixtures/original and against the
+   API and compares rendered strings, history payloads and result objects
+   (expected 71 pairs, PASS). threadFactors.js checks the fastener thread
+   formulas. domStub.js provides the small DOM the old page scripts expect.
+   Essential: no for runtime, yes for safe maintenance.
+
+4.4.8 backend/test/fixtures/original/
+   Purpose: frozen copies of the 24 original browser calculators, used only as
+   the reference side of the parity test.
+   Connections: read by test/parity.js through test/domStub.js.
+   Essential: no for the website. Do not edit: the test compares against them.
+
+
+4.5 frontend/
+-------------
+Purpose
+   Everything on the website except the root home page.
+
+Why it exists
+   To separate the home page (which must sit at the root for hosting) from the
+   rest of the site, and to group calculators, shared components, translations
+   and images.
+
+Contents
+   - about/index.html
+   - calculators/ (24 self-contained calculator folders)
+   - assets/ (home page CSS, card data, API client, dashboard script)
+   - shared/ (history, feedback, install, keypad, unit switch, connectivity,
+     shared CSS)
+   - i18n/ (dictionaries, language switcher, runtime translator)
+   - icons/ (logo, favicons, PWA icons, nut/bolt artwork)
+   - favicon.ico, favicon.png
+
+Connections
+   Loaded by index.html and by every calculator and About page through relative
+   paths. The language folders also point back into frontend/.
+
+Contribution
+   It is the website. Essential.
+
+4.5.1 frontend/about/
+   Purpose: the About Us page (company introduction, what the site offers,
+   mission, audience, commitment, contact section).
+   It loads dashboard.css, the shared header/install/feedback styles, the
+   language switcher and the shared connectivity/feedback/install scripts.
+   Essential? No for calculations, yes for the published site's navigation
+   (the home header links to it).
+
+4.5.2 frontend/assets/
+   Purpose: home-page-specific assets and the API client used by all
+   calculators.
+   - css/dashboard.css: home layout, hero, category pills, card grid, density
+     table, responsive rules.
+   - data/dashboard-data.js: generated list of 9 categories and 24 tools.
+   - js/api-config.js: the single API base URL (empty = same origin).
+   - js/calc-api.js: fetch wrapper, candidate base URLs, timeouts, abort,
+     material loading, fallback density tables.
+   - js/dashboard.js: builds the cards, filter pills and mobile filter toggle
+     from window.ENGINEERING_DASHBOARD.
+   Essential: yes (calc-api.js is required by every calculator).
+
+4.5.3 frontend/calculators/
+   Purpose: one folder per calculator, each containing its page, its stylesheet
+   and its behaviour script.
+   Why: each calculator has its own drawing, its own field set and its own
+   labels, so the page and its CSS stay together and can be edited without
+   touching another calculator.
+   Connections: each page loads ../../assets/js/calc-api.js and the shared
+   scripts/styles, and posts to the backend slug with the same folder name.
+   Essential: yes.
+
+4.5.4 frontend/i18n/
+   Purpose: translations and the language switcher.
+   - languages.json: the eight languages and their metadata (code, native name,
+     short label, og:locale, direction).
+   - <code>.json: the source dictionaries (English plus seven translations).
+   - runtime/<code>.js: generated runtime dictionaries loaded by the language
+     pages.
+   - i18n.js: applies the dictionary to elements that carry translation hooks
+     and stores the chosen language in localStorage ("mw-lang").
+   - language-switcher.js/.css: the globe menu used in the header.
+   Connections: loaded by every page's header and by the generated language
+   trees; used by tools/build_i18n.py.
+   Essential: yes for the multilingual pages; the English pages only use the
+   switcher, not the translator.
+
+4.5.5 frontend/icons/
+   Purpose: brand and install images.
+   - logo.png: header wordmark (used on every page).
+   - icon-192/512, maskable-192/512, apple-touch-icon, favicon: PWA and browser
+     icons referenced by the manifest and page heads.
+   - nut-bolt.svg, nut-bolt-512.png, nut-bolt-1024.png: nut-and-bolt artwork
+     (used as the source for the home page's inline SVG symbol and the local
+     design artifacts; the PNG copies are not referenced by a page).
+   Essential: yes for branding and installation.
+
+4.5.6 frontend/shared/
+   Purpose: components and styles used by more than one page.
+   - calculation-history.js/.css: History button, saved calculations panel,
+     sessionStorage record, restore/print/clear actions.
+   - unit-switch.js/.css: the shared MM / Inches segmented control and the
+     conversion helper (25.4 mm per inch, exact millimetre memory).
+   - dimension-values.js: writes "L = 100" style values next to drawing
+     symbols.
+   - numeric-keypad.js/.css: in-page keypad for coarse-pointer (phone/tablet)
+     devices.
+   - mobile-input-viewport.js/.css: keeps the focused field clear of the sticky
+     header on phones; does not resize drawings.
+   - internet-connection-manager.js + connection-check.txt: verified
+     online / server-down / offline states and the offline dialog.
+   - feedback.js/.css: Feedback button and Google Form dialog.
+   - add-shortcut.js/.css: "Download App" / Add to Home Screen button and
+     beforeinstallprompt handling.
+   - smart-install-popup.js/.css: platform-specific install instructions.
+   - calculator-sticky-header.css: the one title ribbon used by the home page
+     and every calculator.
+   - calculator-info-sections.css: formula, density, FAQ and related-calculator
+     card styling.
+   - dish-end-family.css: extra shared styling for the dish-end calculator.
+   - i18n.js, i18n-data.js, i18n.css: an older translation attempt that no page
+     loads (see section 5.3).
+   Essential: yes, many of these are loaded by every page.
+
+4.5.7 Locale folders de/, es/, fr/, hi/, id/, it/, pt/
+   Purpose: crawlable translated copies of the home page, the About page and
+   all 24 calculators.
+   Why: search engines get a real URL per language with its own canonical and
+   hreflang tags, instead of one page translated only in the browser.
+   Contents: 26 HTML files per language (182 total). They reference the English
+   CSS/JS with ../../../frontend/... and load frontend/i18n/runtime/<code>.js
+   plus i18n.js.
+   Connections: produced by tools/build_i18n.py; listed in sitemap.xml by
+   tools/generate_seo.py; linked from the language switcher.
+   Essential: no for the English site, yes for the multilingual site.
+
+4.6 tools/
+----------
+Purpose: developer scripts that generate or update site files.
+Contents
+   - i18n_paths.py: the single definition of where each page lives in each
+     language, the site base URL, the source page list and the hreflang map.
+   - build_i18n.py: reads the dictionaries and writes the 182 language pages,
+     including the language switcher block and translated text.
+   - generate_dashboard_data.py: writes frontend/assets/data/dashboard-data.js
+     from curated category/tool lists (9 categories, 24 tools, tags, icons).
+   - generate_seo.py: injects/refreshes the SEO block (canonical, hreflang,
+     JSON-LD, Open Graph) in pages, and writes sitemap.xml and robots.txt.
+   - build_i18n_data.py and build_i18n_data.cjs: an older dictionary builder
+     pair that no current page depends on.
+   - _i18n_report.txt: the last build report.
+   - __pycache__/: generated Python bytecode.
+Connections: reads frontend/calculators, frontend/i18n, index.html and the
+About page; writes the locale folders, dashboard-data.js, sitemap.xml and
+robots.txt.
+Essential: no at runtime, yes for regenerating languages, cards or SEO.
+Creator information not available for the individual scripts; they are
+maintenance tooling for this project.
+
+4.7 Generated and third-party areas (summary)
+---------------------------------------------
+   Generated by tools/build_i18n.py ....... the 182 locale HTML pages
+   Generated by tools/generate_dashboard_data.py ... dashboard-data.js
+   Generated by tools/generate_seo.py ..... sitemap.xml, robots.txt, SEO blocks
+   Generated by Python .................... tools/__pycache__/*.pyc
+   Generated by the editor ............... .freebuff/project-id
+   Generated by Node/npm ................. none (no node_modules, no lock file)
+   Generated by the browser .............. none stored in the project
+   Third-party libraries ................. none shipped; no CDN scripts
+   Third-party service ................... Google Forms (feedback iframe)
+   Audit copies .......................... AUDIT_SAVED_CODE/changed-files/
+
+Creator information not available for the generated files; the generator that
+produces each one is named above.
+
+================================================================================
+5. FILE-BY-FILE CODE ANALYSIS
+================================================================================
+
+How to read the file notes
+--------------------------
+Each entry gives: path, what the file is, why it exists, what it controls, the
+main contents, what imports or uses it, and what happens if it is edited, moved
+or deleted. "External" means a library, package or online service.
+
+
+5.1 ROOT FILES
+--------------
+
+5.1.1 index.html
+   Path: index.html
+   What: the home page. Hand-written HTML with inline SVG artwork and inline CSS
+   variables. It is the only page at the root, so a static host serves it as "/".
+   Why: it is the entry point that lists all 24 calculators.
+   Controls: site branding ribbon, hero text, category filter bar
+   (#filterPills), calculator card area (#toolSections), the materials density
+   reference table, the language switcher markup, and every script/style tag.
+   Contains:
+     - head metadata: description, theme colour, canonical URL, hreflang links
+       for all 8 languages, Open Graph tags, JSON-LD, manifest and icons;
+     - one inline SVG sprite with <symbol> artwork for each card icon, including
+       #art-nut-bolt used by the fastener card;
+     - header (logo, title, tagline, language menu, About Us link);
+     - hero section with the headline and call-to-action;
+     - category bar and empty #toolSections, filled by dashboard.js;
+     - density reference section with a table of 15 materials;
+     - script tags for language-switcher.js, internet-connection-manager.js,
+       dashboard-data.js, dashboard.js, smart-install-popup.js, feedback.js,
+       add-shortcut.js.
+   Uses: frontend/assets/*, frontend/shared/*, frontend/i18n/language-switcher.*
+   External: none.
+   If edited: text and layout of the home page change. If a card or section id
+   is renamed, dashboard.js stops filling that part. If a script tag is removed,
+   the matching feature (History, install button, feedback, offline notice)
+   disappears from the home page.
+   If deleted: the site has no home page and every "All Tools" link fails.
+
+5.1.2 README.md
+   What: project overview (split into website and API), folder map, a table of
+   where each visible text lives, hosting summary, API endpoint table, sample
+   request/response, security notes and test instructions.
+   Why: onboarding and the authoritative description of the architecture.
+   Used by: developers only; not loaded by the site.
+   If edited: no runtime effect. If deleted: no runtime effect, but maintenance
+   knowledge is lost.
+
+5.1.3 DEPLOY.md
+   What: step-by-step hosting: GitHub Pages for the static site, a Node host for
+   the API, environment variables, how to point the site at the API, what is
+   never published, and post-deploy checks.
+   Used by: developers/operators only.
+
+5.1.4 manifest.webmanifest
+   What: PWA manifest. name/short_name, description, lang/dir, start_url
+   "./index.html", scope "./", standalone display, colours (#f4f7f8 background,
+   #087f7b theme), categories, and five icons (192/512 normal and maskable,
+   plus the 64 px favicon).
+   Used by: every page through <link rel="manifest">; the browser install flow.
+   If edited wrongly (for example an icon path), the install prompt and the
+   installed app icon break, but normal browsing still works.
+
+5.1.5 service-worker.js
+   What: a deliberately minimal service worker. It calls skipWaiting() on
+   install, clients.claim() on activate, and passes every GET request straight
+   to the network with fetch().
+   Why: browsers require a service worker for the install flow; caching is
+   avoided so a calculation page is never stale.
+   Used by: registration code in add-shortcut.js.
+   If edited to cache pages: visitors could see old formulas/values after an
+   update. If deleted: installation may stop working.
+
+5.1.6 robots.txt
+   What: allows all crawlers, blocks /backend/, /tools/, /.freebuff/,
+   /.cloud-attachments/ and *.log, explicitly allows Mediapartners-Google and
+   AdsBot-Google, and points to the sitemap URL.
+   Why: keep the private API and tooling out of search results while letting
+   every page and asset be crawled.
+   Generated/updated by: tools/generate_seo.py (it writes this file).
+
+5.1.7 sitemap.xml
+   What: generated sitemap (about 258 KB) listing the English pages and all
+   seven language trees with hreflang alternates.
+   Generated by: tools/generate_seo.py using tools/i18n_paths.py.
+   If edited by hand: entries can drift from the real pages; regenerate instead.
+
+5.1.8 ads.txt
+   What: AdSense authorisation file. It intentionally contains no seller line;
+   all guidance is commented out until a real publisher id exists.
+   Why: prevents an invalid seller entry from pausing ad serving.
+   Used by: ad crawlers only.
+
+5.1.9 .nojekyll
+   What: empty marker file. Tells GitHub Pages not to run Jekyll, so every file
+   (including folders starting with an underscore) is served exactly as stored.
+   If deleted: GitHub Pages may drop or transform some files.
+
+5.1.10 .gitignore
+   What: ignores backend/.env, .env, .env.local, *.log, *.pid, .DS_Store and
+   Thumbs.db.
+   Why: secrets and local noise must never be committed.
+
+5.1.11 .gitattributes
+   What: one rule, "* text=auto", normalising text line endings.
+   Note: many working files currently use CRLF; this rule declares them text.
+
+5.1.12 backend-server.log, backend-server.err.log, backend-server.pid
+   What: output and process id from a local backend run (the log holds one line:
+   the local API address; the .err.log is empty; the .pid holds the process id).
+   Why: local debugging only.
+   If deleted: no effect on the site or the API code.
+
+5.1.13 taskkill.log
+   What: 58-byte record of a local process stop command.
+   Local artifact only.
+
+5.1.14 cleanup-desktop-final.png, cleanup-mobile.png, cleanup-tablet.png,
+       nut-bolt-icon-final.png, nut-bolt-icon-mobile.png
+   What: screenshots/design captures kept in the root during earlier work.
+   Referenced by: no page, no stylesheet. They are not part of the site.
+   Why they exist: working evidence.
+   If deleted: no runtime effect.
+
+5.1.15 Absent root files (important)
+   There is no root package.json, no package-lock.json, no yarn.lock, no
+   pnpm-lock.yaml, no node_modules, no tsconfig.json, no vite.config.*, no
+   webpack.config.*, no tailwind.config.* and no .babelrc. The project is plain
+   static files plus one dependency-free Node folder. See section 8.
+
+
+5.2 FRONTEND ROOT AND ABOUT PAGE
+--------------------------------
+
+5.2.1 frontend/favicon.ico and frontend/favicon.png
+   What: browser tab icons. Referenced by page heads (<link rel="icon">) and by
+   the manifest (favicon.png, 64x64).
+   If moved: tabs and installed app lose their icon.
+
+5.2.2 frontend/about/index.html
+   What: About Us page. Loads dashboard.css, calculator-sticky-header.css,
+   add-shortcut.css, feedback.css and language-switcher.css, then the shared
+   internet-connection-manager.js, feedback.js and add-shortcut.js.
+   Structure: header ribbon with logo/title; page heading "About Us"; sections
+   "What We Offer", "Our Mission", "Who Can Use Our Platform?", "Our
+   Commitment", "We'd Love to Hear From You!"; a contact area; footer with
+   "(c) 2026 Jadhav Group of Industries".
+   Used by: the home header "About Us" link and language-tree equivalents.
+   If deleted: that link 404s; calculations are unaffected.
+
+
+5.3 FRONTEND/ASSETS
+-------------------
+
+5.3.1 frontend/assets/js/api-config.js
+   Purpose: the single place that sets the API address:
+       window.MW_API_BASE = "";
+   Empty means "same origin". For a separately hosted API it holds that host.
+   Why: the site is static, so the browser needs an absolute API address only
+   when pages and API are on different hosts.
+   Used by: every calculator page (loaded before calc-api.js).
+   External: none (it is a configuration value).
+   If edited: all calculators talk to the new host (or stop working if the URL
+   is wrong). No formula, layout or density data is affected.
+   If deleted: calc-api.js still works, but only with same-origin/local fallback
+   logic, so a split deployment breaks.
+
+5.3.2 frontend/assets/js/calc-api.js
+   Purpose: the browser-side API client and the only network layer.
+   Contents:
+     - TIMEOUT_MS 15000 per request;
+     - NOT_API_STATUSES [404, 405, 501] to detect a static host answering
+       /api/* with HTML/404 instead of JSON;
+     - FALLBACK_SECTION_MATERIALS and FALLBACK_DISH_MATERIALS (small copies of
+       the density tables, used only if the API never answers);
+     - baseUrlCandidates(): MW_API_BASE, an optional meta[name="mw-api-base"],
+       the same-origin empty string, and on file:// or localhost a local
+       backend address (http://127.0.0.1:8080);
+     - request(path, options, track): fetch with timeout, JSON parsing, retry on
+       a candidate base that does not behave like the API;
+     - calculate(slug, payload): returns the shared result object,
+       deduplicates concurrent calls and rejects stale ones;
+     - abort/invalidation: AbortControllers are cancelled on input/change and on
+       pagehide/beforeunload, so a late response can never overwrite newer input;
+     - loadMaterials()/refreshMaterialFields(): GET /api/materials, merge into
+       window.MW_MATERIALS and refresh <select id="material"> options;
+     - window.MWCalc = { calculate, request, baseUrl, loadMaterials,
+       getLastCalculationPromise }.
+   Used by: all 24 calculator scripts (MWCalc.calculate) and the material
+   dropdowns.
+   External: the project's own backend API over HTTP(S).
+   If edited: risk to every calculator. If deleted: no calculator can produce a
+   result, although the pages still render and validate.
+
+5.3.3 frontend/assets/js/dashboard.js
+   Purpose: builds the home page tool explorer.
+   Contents: reads window.ENGINEERING_DASHBOARD, renders category filter pills
+   (#filterPills), groups tools into sections (#toolSections), builds each card
+   with its inline SVG icon, tags and link, handles filtering and the mobile
+   filter collapse, and removes the aria-busy state.
+   Used by: index.html only.
+   If edited: home page cards/filters change. If deleted: the home page shows an
+   empty tools area (the data file alone does nothing).
+
+5.3.4 frontend/assets/data/dashboard-data.js
+   Purpose: the generated catalog of categories and tools.
+   Contents: window.ENGINEERING_DASHBOARD = { categories: [9], tools: [24] };
+   each category has id, name, description, icon, tone; each tool has id, name,
+   category, path, and a long tag list for search/filter.
+   Categories: Structural sections, Hollow sections, Solid bars & rods, Pipes &
+   profiled bars, Fasteners, Plates & sheets, Spheres & balls, Cones & reducers,
+   Vessel heads.
+   Generated by: tools/generate_dashboard_data.py (header says so).
+   Used by: dashboard.js.
+   If hand-edited: re-running the generator overwrites the change. If deleted:
+   the home page has no cards.
+
+5.3.5 frontend/assets/css/dashboard.css
+   Purpose: all home-page styling: shell width, ribbon, hero, category pills,
+   tool grid/cards, icons, density table, footer, responsive breakpoints.
+   Used by: index.html and frontend/about/index.html.
+   If edited: visual changes on the home page and About page only (calculator
+   pages use their own CSS plus shared CSS).
+
+
+5.4 FRONTEND/SHARED  (23 files)
+-------------------------------
+
+5.4.1 calculation-history.js
+   Purpose: shared "History" feature for every calculator.
+   Contents: reads window.CALCULATOR_HISTORY_CONFIG (calculator name, shape
+   name, dimension labels, getCalculation), injects the History button into the
+   header action row, builds the slide-in panel, stores records in
+   sessionStorage under keys starting "jadhav-engineering:calculation-history:",
+   renders saved entries, restores values, prints an entry, clears history, and
+   closes on Escape/backdrop. It initialises on DOMContentLoaded.
+   Used by: all 24 calculator pages (script tag) and their history configs.
+   External: browser sessionStorage, window.print.
+   If edited: every calculator's history behaviour changes. If deleted: the
+   History button disappears everywhere (results still work).
+
+5.4.2 calculation-history.css
+   Purpose: styling for the History button, panel, entry cards, print layout
+   and responsive behaviour. Theme values come from each page's CSS variables.
+   If edited: history UI appearance changes on every calculator.
+
+5.4.3 unit-switch.js
+   Purpose: shared MM/Inches switch logic.
+   Contents: reads window.CALCULATOR_HISTORY_CONFIG.dimensions (the same field
+   list), remembers the exact millimetre value per field, converts displayed
+   values (x25.4 to inches, /25.4 to mm), formats to a sensible number of
+   decimals, updates the unit note, and exposes window.MWUnitSwitch with
+   convert/state helpers. Each calculator keeps its own changeUnit() for its
+   drawing and labels, then calls this helper.
+   Used by: every calculator page.
+   If edited: unit switching on all calculators is affected.
+
+5.4.4 unit-switch.css
+   Purpose: the pill-shaped segmented control and its sliding indicator,
+   including the narrow-phone layout.
+
+5.4.5 dimension-values.js
+   Purpose: writes the live value next to a dimension symbol in the SVG
+   drawings (for example "L = 100"). It keeps the symbol text, appends the
+   value, re-syncs after reset clicks and pageshow, and exposes
+   window.initDimensionValues.
+   Used by: 22 calculator pages (all except dish-ends and nut-bolt, which draw
+   their own labels).
+   If edited: every drawing's dimension captions change.
+
+5.4.6 numeric-keypad.js
+   Purpose: an in-page numeric keypad for phones/tablets.
+   Contents: device/coarse-pointer detection, panel markup creation, key
+   handling, focus management, validation of allowed characters, Next/Done
+   behaviour, and a public window.NumericKeypad.start hook. It starts itself.
+   Used by: every calculator page.
+   If edited: typing behaviour on touch devices changes; desktop is unaffected
+   because the keypad only opens for coarse pointers.
+
+5.4.7 numeric-keypad.css
+   Purpose: fixed bottom panel, keys, active states. Every rule is scoped to
+   .nk-panel so the rest of the page is untouched.
+
+5.4.8 mobile-input-viewport.js
+   Purpose: mobile viewport stability: keeps the sticky header height available
+   as scroll padding so a focused input is not hidden behind the header;
+   handles orientation/resize; never changes drawing or card sizes.
+   Used by: every calculator page.
+
+5.4.9 mobile-input-viewport.css
+   Purpose: the CSS half of that behaviour (scroll padding, safe-area insets).
+   The file header explicitly forbids rules that resize drawings/cards.
+
+5.4.10 internet-connection-manager.js
+   Purpose: one connectivity manager for the whole site and the Android WebView
+   wrapper.
+   Contents: probes the site's own connection-check.txt plus the shared folder;
+   only if those fail, probes public endpoints (including one by raw IP); keeps
+   three states (online, server-down, offline); shows a non-blocking notice for
+   server-down and a modal for offline; re-verifies after network events;
+   accepts a custom event "metalweightapp:connectivity" and an optional
+   window.MetalWeightApp.getConnectionState(); never trusts navigator.onLine
+   alone; refuses to install twice.
+   Used by: every page (with ?v=9 for cache busting).
+   External: public probe endpoints and the site's own connection-check.txt.
+   If edited: offline handling site-wide changes. If deleted: no offline notice.
+
+5.4.11 connection-check.txt
+   Purpose: a tiny same-origin file used as the first connectivity probe
+   ("Metal Weight Calculator - connection probe").
+   If deleted: the manager falls back to probing the shared folder and public
+   endpoints, so detection becomes less precise.
+
+5.4.12 feedback.js
+   Purpose: adds the Feedback button to the header and opens a dialog that
+   embeds a Google Form in an iframe.
+   External: Google Forms (form id starts 1FAIpQLSdhenKdL-kaeHNXhcbr2CvT4YhN2efU101GTEReNxI14Vy-2Q).
+   Used by: every page.
+   If edited: the feedback dialog changes; if the form id is wrong the iframe
+   shows an error page.
+
+5.4.13 feedback.css
+   Purpose: feedback/about button styling and the modal layout.
+
+5.4.14 add-shortcut.js
+   Purpose: owns the install experience. Adds the "Download App" button, listens
+   for beforeinstallprompt, calls prompt() on click, shows installed/already
+   installed states, registers service-worker.js, and coordinates with the smart
+   install popup for browsers without the prompt.
+   Used by: every page.
+   If edited: install button logic changes everywhere.
+
+5.4.15 add-shortcut.css
+   Purpose: install button and confirmation dialog styling.
+
+5.4.16 smart-install-popup.js
+   Purpose: platform-aware install instructions (iOS Safari, Android Chrome,
+   desktop) with a small popup and a "don't show again" storage flag
+   ("jadhav-smart-install:" prefix).
+   Strict instruction: it must not create a second install UI while
+   add-shortcut.js is active; the two share the flow.
+
+5.4.17 smart-install-popup.css
+   Purpose: popup styling, hidden states, responsive layout.
+
+5.4.18 calculator-sticky-header.css
+   Purpose: the single title ribbon design used by the home page and every
+   calculator page (branding, wordmark, tagline, action row). Comments state that
+   pages differ only in text, never in ribbon size or spacing.
+   Used by: every page.
+   If edited: the header changes site-wide.
+
+5.4.19 calculator-info-sections.css
+   Purpose: shared styling for the cards below a calculator: formula equation
+   and legend, worked example, density reference, FAQ and related calculators.
+   If edited: those sections change on all 24 pages.
+
+5.4.20 dish-end-family.css
+   Purpose: extra shared styles for the dish-end family (type cards/select,
+   development table, division buttons).
+   Used by: dish-ends page only (through a shared path).
+
+5.4.21 i18n.js (legacy)
+   Purpose: an older client-side translator. It stores a language in
+   "jadhav-engineering:language:v1" and translates elements carrying
+   translation hooks.
+   Reality check: no page loads this file and no element uses its hooks, so it
+   currently does nothing on the live site. It is kept only as history.
+
+5.4.22 i18n-data.js (legacy)
+   Purpose: an older translation dictionary for the same unused translator.
+   Not loaded by any page.
+
+5.4.23 i18n.css (legacy)
+   Purpose: styles for the older translator/language UI. Not loaded by any page.
+
+
+5.5 FRONTEND/I18N  (20 files)
+-----------------------------
+
+5.5.1 languages.json
+   Purpose: language registry used by the build tools and the switcher.
+   Contents: default "en" and eight entries with code, English name, native
+   name, short label, Open Graph locale and direction (all ltr).
+
+5.5.2 en.json, hi.json, es.json, pt.json, fr.json, de.json, it.json, id.json
+   Purpose: the source dictionaries (key -> translated string) for the build.
+   Used by: tools/build_i18n.py to produce the language pages and runtime files.
+   Not fetched by the browser at runtime in the English site.
+
+5.5.3 i18n.js
+   Purpose: the runtime translator loaded by generated language pages. It reads
+   the active language, applies dictionary entries to marked elements, and
+   stores the user's choice in localStorage key "mw-lang".
+   Used by: the 182 language pages (English pages do not load it).
+
+5.5.4 runtime/en.js ... runtime/id.js
+   Purpose: generated runtime dictionaries (eight files) that expose the
+   translations to i18n.js without a JSON fetch.
+   Generated by: tools/build_i18n.py.
+
+5.5.5 language-switcher.js and language-switcher.css
+   Purpose: the globe menu in the header. The JS builds/updates the menu, marks
+   the current language, navigates to the matching URL, and remembers the
+   choice (key "mw-lang"). The CSS styles the details/summary menu.
+   Used by: every page, including English ones.
+
+
+5.6 FRONTEND/ICONS  (9 files)
+-----------------------------
+   logo.png              Header wordmark; every page header.
+   icon-192.png          Manifest icon (any), Android install.
+   icon-512.png          Manifest icon (any), splash/install.
+   maskable-192.png      Manifest maskable icon, Android adaptive shape.
+   maskable-512.png      Manifest maskable icon, high resolution.
+   apple-touch-icon.png  iOS home-screen icon (<link rel="apple-touch-icon">).
+   nut-bolt.svg          Vector nut-and-bolt artwork (source/reference; the home
+                         page uses an inline SVG symbol, not this file).
+   nut-bolt-512.png      Raster copy of the artwork, not referenced by a page.
+   nut-bolt-1024.png     High-resolution raster copy, not referenced by a page.
+   All are binary images (except the SVG). Their pixel content was not read as
+   text; usage was verified from the page/manifest references.
+
+
+5.7 FRONTEND/CALCULATORS  (24 folders, 72 files)
+------------------------------------------------
+
+5.7.1 The shared pattern (applies to all 24 folders)
+   Every folder has exactly three files:
+     index.html  - page markup (header, SVG drawings, input cards, actions,
+                   result card, formula card, density table, FAQ, related links)
+     <slug>.css  - page styling, responsive rules, print rules, diagram layout
+     <slug>.js   - validation, unit switch, API call, result rendering,
+                   drawing updates, reset, history config, event listeners
+
+   Common page structure, in order:
+     1. head: title, description, canonical, hreflang, Open Graph, JSON-LD,
+        favicon, manifest, stylesheets;
+     2. inline SVG sprite (icons used by the shared buttons);
+     3. header ribbon: logo, calculator title, tagline, language menu,
+        "All Tools" link;
+     4. page introduction (h1, short explanation);
+     5. dimensions card: h2, MM/Inches switch, one or two SVG drawings,
+        input grid (dimension fields), unit note;
+     6. material card: material select, density readout, custom density box
+        (shown only for Custom), quantity;
+     7. error box (#error, role=alert);
+     8. actions: #calculateBtn ("Calculate Weight") and #resetBtn ("Reset");
+     9. results card (#results, aria-live=polite): total weight, tonnes,
+        single weight, quantity, volume, density, dimension summary;
+    10. formula card: formula equation, legend, worked example;
+    11. material density reference table with expand/collapse;
+    12. FAQ card (6-12 questions per page);
+    13. related calculators card (3-4 links with category labels);
+    14. scripts: i18n switcher, connectivity manager, api-config, calc-api,
+        unit-switch, calculator script, history, install popup, feedback,
+        install button, dimension-values (except dish-ends/nut-bolt),
+        mobile viewport, numeric keypad.
+
+   Common JavaScript structure (function names vary slightly per page):
+     - MATERIALS = window.MW_MATERIALS || {} (from the API or fallback);
+     - $ = id => document.getElementById(id);
+     - FIELDS: ordered list of dimension input ids for Enter/Next navigation;
+     - formatNumber(), getDensity(), updateDensityDisplay(), materialChanged();
+     - changeUnit(newUnit): converts the visible field values, updates labels,
+       notes and drawings, remembers the exact millimetres;
+     - validateInputs(): returns an error string (empty string when valid);
+       every dimension must be a positive finite number, quantity a positive
+       whole number, custom density a positive number;
+     - async calculateWeight(): validates, hides old results, collects values,
+       converts to multipliers for the API payload, calls
+       MWCalc.calculate(slug, { values, unit, density, quantity, material }),
+       checks the returned numbers are finite, stores lastCalculation, writes the
+       result fields, shows the card, enables auto-recalculate;
+     - resetCalculator(): clears fields, quantity = 1, material = carbon-steel,
+       unit = mm, hides results;
+     - event listeners: MM/Inches, material change, Calculate, Reset, custom
+       density input, quantity input (auto-recalculate once a result exists),
+       Enter key navigation;
+     - window.CALCULATOR_HISTORY_CONFIG: calculator name, shape name, dimension
+       labels for the history panel, and getCalculation().
+
+   Density access: window.MW_MATERIALS is filled by calc-api.js from
+   /api/materials (with the fallback copy inside calc-api.js). The selected
+   material key is sent to the API; the API owns the authoritative density
+   tables in backend/materials/materialDensity.js. Custom density is typed by
+   the user and sent as the density value.
+
+   Unit conversion: the page sends the typed numbers plus unit "mm" or "in".
+   The API multiplies by 1 or 25.4 in core/validation.js. The page also converts
+   its own displayed values when the switch is used, and its drawings are redrawn
+   in the new unit. Results are always shown in kg, tonnes, m3, m2 and g/cm3 as
+   appropriate.
+
+   Calculate button: click -> validate -> POST
+   /api/calculate/<slug> -> check finite -> render. If the service is
+   unreachable, the error box shows the client's message ("The calculation
+   service could not be reached..."); the page never calculates locally.
+
+   Shared dependencies: calculation-history.css/js, smart-install-popup.css/js,
+   add-shortcut.css/js, feedback.css/js, calculator-sticky-header.css,
+   calculator-info-sections.css, mobile-input-viewport.css/js,
+   numeric-keypad.css/js, unit-switch.css/js, i18n/language-switcher.css/js,
+   internet-connection-manager.js, assets/js/api-config.js,
+   assets/js/calc-api.js, and dimension-values.js on 22 pages.
+
+   External services: the project's calculation API; Google Forms through
+   feedback.js; public connectivity probes through the connection manager.
+
+5.7.2 File sizes and page variants
+   slug                     js lines  css lines  html lines
+   box-channel                 593        875         723
+   c-channel                   600        875         737
+   circular-plate              522        875         684
+   dish-ends                  2047        256         575
+   e-section                   587        875         737
+   flange-plate               1293       1107         822
+   hexagon-bar                 569        875         687
+   hexagonal-bar-with-round-hole 579      875         694
+   i-channel                   600        875         737
+   l-channel                   588        875         720
+   nut-bolt                   3121       1084         734
+   pipe                        581        875         703
+   plate                       524        875         701
+   round-bar-with-hexagonal-hole 721      875         696
+   round-bar                   501        875         686
+   shell                       587        875         708
+   solid-cone                  549        855         692
+   sphere-ball                 533        916         657
+   square-bar                  614        875         705
+   t-channel                   600        875         737
+   trapezium-bar               553        875         713
+   trapezoidal-bar             553        875         713
+   triangular-bar              549        875         700
+   truncated-cone              609        875         740
+
+   Notes drawn from the code:
+   - The 22 ordinary calculators share a copied CSS base (about 875 lines) with
+     page-specific diagram rules; they are not byte-identical files (the theme
+     and diagram rules differ), so each must be edited in its own folder.
+   - dish-ends.css is much smaller (256 lines) because most of its layout comes
+     from the shared dish-end-family.css and the page is built from dynamic
+     blocks; its JavaScript is far larger because it draws five head types.
+   - nut-bolt.css/js are the largest because the page renders 14 products, three
+     categories, ISO/DIN/ASME size tables and product drawings.
+   - flange-plate has extra drawing/annotation code and six live value chips
+     (field-value spans).
+   - square-bar and sphere-ball CSS have small extra rules (916 lines for the
+     sphere's globe shading).
+
+5.7.3 Per-slug page titles, API slug and result labels
+   (The full calculator documentation is in section 6. This table is only a
+   quick index.)
+
+   Folder / API slug        Page title (h1)                     Result stat labels
+   plate                    Plate Weight Calculator            Single Plate Weight; Quantity;
+                                                               Volume Per Plate; Material Density
+   circular-plate           Circular Plate Weight Calculator     Single Plate Weight; Quantity;
+                                                               Volume Per Plate; Material Density
+   box-channel              Box Channel Weight Calculator       Single Box Weight; Quantity;
+                                                               Volume Per Item; Material Density
+   c-channel                C Channel Weight Calculator         Single Channel Weight; Quantity;
+                                                               Volume Per Item; Material Density
+   e-section                E-Section Weight Calculator         Single Section Weight; Quantity;
+                                                               Volume Per Section; Material Density
+   i-channel                I Channel Weight Calculator         Single Channel Weight; Quantity;
+                                                               Volume Per Item; Material Density
+   t-channel                T Channel Weight Calculator         Single Channel Weight; Quantity;
+                                                               Volume Per Item; Material Density
+   l-channel                L Channel Weight Calculator         Single Angle Weight; Quantity;
+                                                               Volume Per Item; Material Density
+   pipe                     Pipe Weight Calculator              Single Pipe Weight; Quantity;
+                                                               Volume Per Item; Material Density
+   shell                    Shell Weight Calculator            Single Shell Weight; Quantity;
+                                                               Volume Per Shell; Material Density
+   hexagon-bar              Hexagon Bar Weight Calculator       Single Bar Weight; Quantity;
+                                                               Volume Per Item; Material Density
+   square-bar               Square Bar Weight Calculator        Unit Weight; Quantity;
+                                                               Volume Per Item; Material Density
+   trapezium-bar            Trapezium Bar Weight Calculator     Single Bar Weight; Quantity;
+                                                               Volume Per Bar; Material Density
+   trapezoidal-bar          Trapezoidal Bar Weight Calculator   Single Bar Weight; Quantity;
+                                                               Volume Per Bar; Material Density
+   triangular-bar           Triangular Bar Weight Calculator    Single Bar Weight; Quantity;
+                                                               Volume Per Bar; Material Density
+   round-bar                Round Bar Weight Calculator         Single Bar Weight; Quantity;
+                                                               Volume Per Bar; Material Density
+   round-bar-with-hexagonal-hole  Round Bar with Hexagonal Hole  Single Bar Weight; Quantity;
+                                                               Weight Calculator   Volume Per Bar; Material Density
+   hexagonal-bar-with-round-hole  Hexagonal Bar with Round Hole  Single Bar Weight; Quantity;
+                                                               Weight Calculator   Volume Per Bar; Material Density
+   circular-plate (done above)
+   solid-cone               Solid Cone Weight Calculator        Cone Volume; Single Cone Weight;
+                                                               Total Weight (Ton); Quantity; Density
+   sphere-ball              Sphere / Ball Weight Calculator     Single Ball Weight; Quantity;
+                                                               Volume Per Ball; Material Density
+   truncated-cone           Truncated Cone Weight Calculator    Slant Height (L); Lateral Surface Area
+                                                               (A); Plate Volume (V); Total Weight
+                                                               (Ton); Single Reducer Weight;
+                                                               Quantity; Material Density
+   flange-plate             Flange Plate Weight Calculator      Single Flange Weight; Quantity;
+                                                               Volume Per Flange; Material Density
+   dish-ends                Dish Ends Weight Calculator         Geometrical Results; Development
+                                                               Results; Material Results; coordinate
+                                                               table (see section 6.23)
+   nut-bolt                 Nut & Bolt Weight Calculator        Unit Weight (kg); Unit Weight (lbs);
+                                                               Quantity; Volume Per Piece; Thread
+                                                               Stress Area; Material Density
+
+
+5.8 BACKEND FILES  (51 files)
+-----------------------------
+
+5.8.1 backend/server.js
+   What: process entry. Creates the HTTP server from app.js, listens on
+   config.PORT/config.HOST, logs the local address, and handles SIGINT/SIGTERM
+   for a clean shutdown.
+   Uses: app.js, config.js.
+   If edited: startup/shutdown behaviour changes.
+   If deleted: nothing starts.
+
+5.8.2 backend/app.js
+   What: the only request handler. Parses the URL, answers /api/* through
+   routes/index.js, and returns 404 JSON for everything else. It never serves
+   website files and does not implement a static file server.
+   Uses: routes/index.js, middleware/http.js.
+   If edited: the whole API surface changes.
+
+5.8.3 backend/config.js
+   What: environment configuration plus a tiny .env reader (KEY=VALUE, #
+   comments, quotes stripped, existing process.env wins). Exposes PORT (8080),
+   HOST (127.0.0.1), PUBLIC_API_BASE (""), ALLOWED_ORIGINS ([]), API_KEY (""),
+   RATE_LIMIT_MAX (120), RATE_LIMIT_WINDOW_MS (60000), MAX_BODY_BYTES (16384),
+   NODE_ENV (development).
+   If edited: defaults and security settings change for every request.
+
+5.8.4 backend/package.json
+   What: backend manifest: name, version, private, description, main server.js,
+   type commonjs, engines node >=18, scripts start/dev/test, dependencies {}.
+   Why: lets hosts run npm start and documents that there are no packages.
+   If edited: start/test commands and Node requirement change. There is no lock
+   file because there are no dependencies.
+
+5.8.5 backend/.env.example
+   What: template for backend/.env. Documents PORT, HOST, NODE_ENV,
+   PUBLIC_API_BASE, ALLOWED_ORIGINS, API_KEY, RATE_LIMIT_MAX,
+   RATE_LIMIT_WINDOW_MS, MAX_BODY_BYTES, with notes on GitHub Pages origins and
+   why API_KEY stays empty for a public website.
+   If deleted: setup guidance is lost; the code still uses its defaults.
+
+5.8.6 backend/README.md
+   What: backend-specific documentation: run commands, folder layout, the list
+   of calculation modules, the payload shape, and the rules (formulas only
+   here; weight chain only in core/weight.js; densities only in materials/;
+   fixtures are reference material).
+
+5.8.7 backend/routes/index.js
+   What: the API router and status-code policy:
+     GET  /api/health            -> { ok, service, calculators: 24 }
+     GET  /api/calculators       -> sorted slug list
+     GET  /api/materials         -> density tables as JSON
+     GET  /api/bootstrap.js      -> density script, Cache-Control: no-store
+     POST /api/calculate/:slug   -> calculation
+     OPTIONS                     -> 204
+   It applies CORS first (403 if the origin is refused), enforces POST (405),
+   checks the optional API key (401), applies the rate limit (429), reads the
+   body, calls the controller, and converts ValidationError into a 400/422 JSON
+   error with the field name. Unknown routes return 404 JSON.
+   Used by: app.js. Uses: config, middleware, controllers, calculations (count).
+   If edited: routes, codes or CORS order change for every calculator.
+
+5.8.8 backend/controllers/calculationController.js
+   What: validates that the requested slug exists (calculations/index.js),
+   calls compute(payload), and wraps the result as
+   { ok: true, calculator, units: { dimensions, density }, result }.
+   It also provides list() for /api/calculators.
+   If edited: the response envelope changes and every calculator page breaks.
+
+5.8.9 backend/controllers/materialsController.js
+   What: turns the density tables into JSON (materialsJson()) and into a
+   JavaScript assignment for /api/bootstrap.js (bootstrapScript()), including
+   the public API base.
+   If edited: the material dropdowns and reference tables receive different
+   keys/values.
+
+5.8.10 backend/core/weight.js
+   What: the shared weight chain, kept bit-identical to the pre-split browser
+   maths by preserving multiplication order:
+     volumeM3      = volumeMM3 / 1e9
+     singleWeight  = (volumeMM3 * density) / 1e6      (kg, density in g/cm3)
+     totalWeight   = singleWeight * quantity
+     totalTonnes   = totalWeight / 1000
+     weightFromAreaKgM3(areaMM2, thicknessMM, densityKgM3)
+                   = areaMM2 * thicknessMM * densityKgM3 / 1e9
+   Also exports allFinite() and the two constants.
+   Used by: every calculation module.
+   If edited: every weight on the site changes. This is the highest-risk file
+   for calculation accuracy.
+
+5.8.11 backend/core/validation.js
+   What: server-side authority for input:
+     - UNIT_FACTORS { mm: 1, in: 25.4 }, unitFactor();
+     - toNumber() rejects null/blank/NaN with a field-specific message;
+     - readDimensions(payload, { fields }) checks > 0 by default, optional min,
+       max, allowZero, and returns values, millimetres and factor;
+     - readQuantity(): safe integer, 1..1,000,000 (default 1);
+     - readDensity(): finite, > 0, default range 0.01..25000;
+     - assertFinite(): throws a 422 ValidationError for overflow/NaN;
+     - ValidationError carries message, field and status.
+   Used by: all modules and routes.
+   If edited: validation messages and accepted ranges change everywhere.
+
+5.8.12 backend/materials/materialDensity.js
+   What: the single source of density data.
+     SECTION_MATERIALS (g/cm3): carbon-steel 7.85, stainless-steel 8.00,
+       aluminium 2.70, brass 8.45, bronze 8.73, cast-iron 7.20, copper 8.96.
+     DISH_MATERIALS (kg/m3): carbon-steel 7850, ss-304 7930, ss-316 7980,
+       ss-316l 8000, aluminium 2700, custom null.
+     DENSITY_REFERENCE (15 rows, g/cm3) for the page tables, including mild
+       steel, duplex, Inconel, Monel and titanium.
+     lookup(table, key).
+   Used by: materialsController, calculationController (material name), and
+   ultimately every page's dropdown.
+   If edited: all displayed densities and all weights change. Do not convert one
+   table into the other; they are deliberately different unit systems.
+
+5.8.13 backend/middleware/http.js
+   What: sendJson (JSON + content type + length), sendText (text/javascript),
+   readBody (method/body-size/JSON-only rules), clientIp (x-forwarded-for or
+   socket address).
+   If edited: response headers, body limits or rate-limit identity change.
+
+5.8.14 backend/middleware/cors.js
+   What: applyCors(req,res). Allows same-origin/no-Origin requests, checks the
+   Origin against ALLOWED_ORIGINS, sets Access-Control-Allow-* and returns false
+   for a refused origin (route then sends 403).
+   If edited: which websites may call the API changes (a wrong list can block
+   the live site).
+
+5.8.15 backend/middleware/rateLimit.js
+   What: fixed-window per-IP counter using RATE_LIMIT_MAX and
+   RATE_LIMIT_WINDOW_MS; returns { allowed, retryAfter }.
+   If edited: abuse protection changes.
+
+5.8.16 backend/calculations/index.js
+   What: the slug registry. Maps each calculator folder name to a compute
+   function; prismatic slugs are added in a loop. Exposes get(slug) and list().
+   Why: guarantees the API slug always matches the website folder name.
+   If edited: a calculator can 404 even though its page exists.
+
+5.8.17 backend/calculations/prismatic.js
+   What: 16 constant-section shapes sharing one chain:
+     prismatic shapes: plate, box-channel, c-channel, e-section, i-channel,
+       t-channel, l-channel, pipe, shell, hexagon-bar,
+       hexagonal-bar-with-round-hole, round-bar-with-hexagonal-hole,
+       square-bar, trapezium-bar, trapezoidal-bar, triangular-bar.
+     Each shape declares fields, an area(d) function and optional validate(d).
+     compute(slug,payload): reads dimensions, converts to mm, areaMM2 =
+       area(mm), volumeMM3 = areaMM2 * length, then weightFromVolume().
+     Returns areaMM2, volumeMM3, volumeM3, singleWeight, totalWeight,
+       totalTonnes, plus shape context.
+   If edited: 16 calculators change at once. This is a high-risk shared file.
+
+5.8.18 backend/calculations/circularPlate.js
+   What: diameter + thickness -> area pi/4 D^2, volume area*T, weight chain.
+
+5.8.19 backend/calculations/roundBar.js
+   What: diameter + length -> area pi/4 D^2, volume area*L.
+
+5.8.20 backend/calculations/solidCone.js
+   What: base diameter + height -> radius D/2,
+   volume (1/3)*pi*r^2*H.
+
+5.8.21 backend/calculations/sphereBall.js
+   What: diameter -> radius D/2, volume (4/3)*pi*r^3.
+
+5.8.22 backend/calculations/truncatedCone.js
+   What: large D, small d, vertical H, plate thickness T:
+     R=D/2, r=d/2, slant = sqrt(H^2 + (R-r)^2),
+     lateral surface = pi*(R+r)*slant, plate volume = surface*T.
+   Returns slantHeight (in the user's unit), surfaceAreaMM2/M2 and the volume
+   chain. It is a fabricated reducer made from plate, not a solid frustum.
+
+5.8.23 backend/calculations/flangePlate.js
+   What: OD, ID, T, N holes, HD, PCD:
+     gross area = pi/4*(OD^2 - ID^2); hole area = N*pi/4*HD^2;
+     net area = gross - holes; volume = net*T; weight chain.
+   Validates OD>ID, holes inside the face (PCD/2 - HD/2 > ID/2 and
+   PCD/2 + HD/2 < OD/2), adjacent holes do not overlap
+   (chord = PCD*sin(pi/N) >= HD), dimensions <= 100000, N a whole number >= 1.
+   Returns holes, grossAreaMM2, holeAreaMM2, areaMM2, removedPercent and the
+   weight chain.
+
+5.8.24 backend/calculations/dishEnds.js
+   What: five head types (flat, torispherical, ellipsoidal, hemispherical,
+   template) with their own geometry, developed area, blank diameter and (for
+   template) station coordinates. See section 6.23 for all formulas.
+   Density is kg/m3 and the weight uses weightFromAreaKgM3.
+   Largest validity rules: T < R, knuckle < R, H <= ID, even divisions 4..360.
+
+5.8.25 backend/calculations/nutBolt.js
+   What: 14 fastener products in 3 categories (bolts, studs, nuts), ISO metric
+   and Unified inch thread stress areas, and product-specific volume models
+   (hex head with 30-degree chamfer, socket, countersunk, carriage dome, hex/
+   heavy/jam/square/nylon-insert nuts, threaded rod, studs).
+   Stress area: As = pi/4*(d - k*P)^2, k = 0.9382 (ISO) or 0.9743 (Unified).
+   Returns singleWeight, totalWeight, totalPounds, stressAreaMM2, density,
+   dimensions and product context. See section 6.24.
+
+5.8.26 backend/test/parity.js
+   What: the migration safety net. Starts a temporary API, loads each saved
+   original page script in domStub, runs scenario inputs, calls the API with the
+   same inputs, and compares every rendered string, the history payload and the
+   result object. Covers all 24 calculators and the five dish types.
+   Expected print: "calculator/scenario pairs compared: 71" then "PASS".
+   If edited: the guarantee that formulas did not drift is weakened.
+
+5.8.27 backend/test/threadFactors.js
+   What: regression checks for the fastener thread formulas (stress area
+   factors, metric/Unified behaviour, zero thread length and nut cases).
+
+5.8.28 backend/test/domStub.js
+   What: a minimal DOM/window implementation (getElementById, classList, events,
+   createElement, etc.) so the saved original browser scripts can run in Node
+   during the parity test. Not used by the live site.
+
+5.8.29 backend/test/fixtures/original/calculators/<slug>/<slug>.js (24 files)
+   What: frozen pre-restructure browser scripts for each calculator, used only
+   as the reference side of parity.js.
+   If edited: the parity comparison no longer represents the old behaviour.
+   If deleted: npm test cannot run.
+
+
+5.9 TOOLS FILES
+---------------
+
+5.9.1 tools/i18n_paths.py
+   What: the shared routing rules for the multilingual build. Defines
+   PROJECT_ROOT, FRONTEND, I18N_DIR, SITE_BASE
+   ("https://metalweightcalculator.online"), DEFAULT_LANGUAGE "en", the
+   SKIP_FOLDERS set, and helpers: load_languages, language_codes,
+   load_dictionary, extra_language_dirs, source_pages, all_pages,
+   strip_frontend, language_relative, page_url, alternates.
+   Rule: English keeps /, /frontend/about/index.html and
+   /frontend/calculators/<slug>/index.html; other languages get /<code>/,
+   /<code>/about/ and /<code>/calculators/<slug>/.
+   If edited: generated URLs, canonicals, hreflang and sitemap entries change.
+
+5.9.2 tools/build_i18n.py
+   What: builds the 182 language pages from the English pages and dictionaries,
+   replaces the language-switcher block, translates marked text, adds the
+   runtime script, writes tools/_i18n_report.txt.
+   If edited/re-run: the language folders are regenerated; hand edits inside
+   those folders would be overwritten.
+
+5.9.3 tools/generate_dashboard_data.py
+   What: builds frontend/assets/data/dashboard-data.js from curated lists
+   (categories, tools, tags, icons, paths).
+   If re-run after adding a calculator, the home page gains/loses cards.
+
+5.9.4 tools/generate_seo.py
+   What: refreshes canonical/hreflang/JSON-LD/Open Graph blocks, writes
+   sitemap.xml and robots.txt, using i18n_paths.py for URLs.
+   If re-run: SEO blocks and sitemap are regenerated.
+
+5.9.5 tools/build_i18n_data.py and tools/build_i18n_data.cjs
+   What: an earlier dictionary-extraction pipeline (Python + Node variant).
+   Status: not used by any current page or script; kept as history.
+   If deleted: no runtime effect.
+
+5.9.6 tools/_i18n_report.txt
+   What: plain-text report of the last language build (pages written, missing
+   keys, counts). Generated output, not source.
+
+5.9.7 tools/__pycache__/i18n_paths.cpython-314.pyc
+   What: Python bytecode cache produced when build scripts imported
+   i18n_paths.py. Binary, generated, safe to delete.
+
+
+5.10 AUDIT_SAVED_CODE FILES
+---------------------------
+   README.txt             Explains the saved audit, lists the 11 changed files,
+                          the evidence folders, and the final verification list
+                          (backend tests, 22 section calculators, dish types,
+                          nut products, history, races, links, CORS, UI).
+   FINAL_AUDIT_REPORT.md  Functional audit findings and resolutions.
+   UI_AUDIT_REPORT.md     UI/design consistency audit scope and results.
+   SIDE_BY_SIDE.html      Before/after comparison page for code and screenshots.
+   changed-files/         11 full copies: backend nutBolt.js, cors.js,
+                          threadFactors.js, package.json; frontend calc-api.js;
+                          dish-ends index/css/js; nut-bolt index/css/js.
+   evidence/screenshots/  12 PNGs: plate, shell, circular plate, flange, dish
+                          flat, nut-bolt at desktop and mobile sizes.
+   evidence/computed/     12 JSONs of computed styles for the same pages.
+   drawing-*.html         Standalone fastener drawing experiments.
+   hex-bolt-full-thread-drawing.{html,svg,png}  Final bolt drawing artifact.
+   nutbolt-dom-smoke.js   A smoke test script for the fastener page.
+   render_hex_bolt_image.py  A Python renderer for the bolt image.
+   If modified: audit evidence no longer matches what was reviewed.
+   If deleted: the live site is unaffected.
+
+
+5.11 LOCALE PAGES (182 files)
+-----------------------------
+   Paths: de/, es/, fr/, hi/, id/, it/, pt/ each with index.html,
+   about/index.html and 24 calculators/<slug>/index.html.
+   What: generated translations of the English pages. They keep the English
+   asset paths (../../../frontend/...), add the localised text, a language
+   switcher pointing at the matching page in every language, canonical and
+   hreflang tags for their own URL, and load frontend/i18n/runtime/<code>.js
+   plus i18n.js.
+   Used by: visitors and crawlers using those languages; linked from the
+   language menu on every page and listed in sitemap.xml.
+   If hand-edited: the next run of tools/build_i18n.py overwrites the page.
+   If deleted: those URLs 404 and the hreflang map becomes inconsistent.
+
+================================================================================
+6. CALCULATOR-BY-CALCULATOR DOCUMENTATION
+================================================================================
+
+6.0 HOW EVERY CALCULATOR WORKS (the common engine)
+---------------------------------------------------
+All 24 pages share one architecture. To avoid repeating the same paragraph 24
+times, this block describes the common behaviour; each calculator section below
+lists only what is different (fields, formula, drawings, results, CSS).
+
+  Page load
+    1. The page renders the full HTML (including drawings and all text) before
+       any script runs, so it is usable without JavaScript for reading.
+    2. api-config.js sets the API base, then calc-api.js loads and starts
+       GET /api/materials; the material dropdown is filled from
+       window.MW_MATERIALS (server table or built-in fallback).
+    3. unit-switch.js, dimension-values.js (22 pages), numeric-keypad.js,
+       mobile-input-viewport.js, calculation-history.js, feedback.js,
+       add-shortcut.js, smart-install-popup.js and
+       internet-connection-manager.js attach their behaviour.
+    4. The calculator script sets its initial state: unit mm, carbon steel,
+       quantity 1, density readout, unit note, drawing at default proportions.
+
+  Typing
+    - Dimensions are <input type="number"> with inputmode decimal, Enter moves
+      to the next field (the last field triggers Calculate), and the on-screen
+      numeric keypad opens on phones/tablets.
+    - After a first successful calculation, changing quantity or custom density
+      re-runs the calculation automatically (autoRecalculate).
+
+  Unit switch (MM / Inches)
+    - Values already typed are converted (x25.4 or /25.4) and re-displayed;
+      the exact millimetre value is remembered to avoid drift when switching
+      back and forth.
+    - The page sends the numbers with unit "mm" or "in"; the backend converts
+      with 25.4. Drawings and dimension captions are redrawn with the new unit.
+
+  Calculate
+    1. validateInputs() checks every dimension (> 0, finite), quantity
+       (whole, >= 1) and custom density (> 0); an error string stops the flow
+       and shows in #error while hiding #results.
+    2. The page collects the values and calls
+       MWCalc.calculate("<slug>", { values, unit, density, quantity, material }).
+    3. calc-api.js POSTs to <api base>/api/calculate/<slug> with a 15 s timeout,
+       cancels stale requests, and retries local fallback bases on a non-API
+       response.
+    4. The backend validates again, runs the formula, and returns
+       { ok, calculator, units, result }.
+    5. The page checks the returned numbers are finite, stores lastCalculation,
+       writes the result fields, shows the results card and enables auto
+       recalculation.
+
+  Result display
+    - Total weight (kg, 2 decimals on most pages), tonnes, single-piece weight,
+      quantity, volume (m3) and the density used, plus a one-line summary of
+      material and dimensions. Special pages add slant height, surface area,
+      thread stress area, pounds, blank diameter or a station table.
+    - If the API cannot be reached, the error box explains it; no result is
+      invented locally.
+
+  History
+    - Every page defines window.CALCULATOR_HISTORY_CONFIG with its name, shape
+      name, dimension labels and a getCalculation() returning lastCalculation.
+      calculation-history.js uses it for the History button, saved entries,
+      restore and print.
+
+  Shared files used by every calculator
+    CSS: calculator-sticky-header.css, calculator-info-sections.css,
+         calculation-history.css, smart-install-popup.css, add-shortcut.css,
+         feedback.css, mobile-input-viewport.css, numeric-keypad.css,
+         unit-switch.css, i18n/language-switcher.css, plus its own <slug>.css
+    JS:  language-switcher.js, internet-connection-manager.js, api-config.js,
+         calc-api.js, unit-switch.js, <slug>.js, calculation-history.js,
+         smart-install-popup.js, feedback.js, add-shortcut.js,
+         mobile-input-viewport.js, numeric-keypad.js,
+         dimension-values.js (all except dish-ends and nut-bolt)
+
+  Density access
+    - Every ordinary calculator: g/cm3 from window.MW_MATERIALS
+      (SECTION_MATERIALS in backend/materials/materialDensity.js).
+    - dish-ends: kg/m3 from DISH_MATERIALS, with an editable density field.
+    - The selected material key is sent with the request so the backend can put
+      the material name in the result.
+
+  Result formatting
+    - kg: 2 decimals (nut-bolt: 3), tonnes: 4-6 decimals, volume: 8 decimals
+      m3, area: m2 with 6 decimals where shown, pounds: 3 decimals, stress area:
+      1 decimal mm2.
+
+
+6.1 PLATE WEIGHT CALCULATOR
+---------------------------
+   Folder / slug: frontend/calculators/plate/  (API slug "plate")
+   Files: index.html, plate.css (875 lines), plate.js (524 lines)
+   Title: "Plate Weight Calculator"
+
+   UI structure
+     - Header ribbon with logo, page title "Plate Weight Calculator", tagline
+       "Metal Weight Calculator", language menu and "All Tools" link.
+     - Intro block explaining rectangular plate weight.
+     - Dimensions card: heading + MM/Inches switch; two drawings side by side
+       (FRONT VIEW showing L x T, SIDE VIEW showing W x T, both with dimension
+       arrows and draggable-looking but static labels); input grid with Length,
+       Width, Thickness; unit note.
+     - Material card: Select Material, density line, Custom Density box
+       (hidden until Custom is chosen), Quantity (Pieces).
+     - Error box, actions (Calculate Weight, Reset).
+     - Results card: TOTAL WEIGHT + tonnes, Single Plate Weight, Quantity,
+       Volume Per Plate, Material Density, and a summary line.
+     - Formula card: "Weight (kg) = (L x W x T x rho) / 10^6" with legend and a
+       fully worked carbon-steel example.
+     - Density reference table (15 materials, expandable), FAQ (10 items),
+       related calculators.
+
+   Inputs
+     length (Length L), width (Width W), thickness (Thickness T) in mm/in;
+     material; customDensity (g/cm3); quantity (pieces).
+
+   Formula and mathematical logic
+     Backend: backend/calculations/prismatic.js, shape "plate".
+       areaMM2   = width x thickness
+       volumeMM3 = areaMM2 x length
+       kg        = volumeMM3 x density / 1,000,000   (density g/cm3)
+       tonnes    = kg x quantity / 1000
+     Validation: all three dimensions positive; thickness must also be smaller
+     than the plate? No - the plate shape has no extra geometric rule; only
+     positive numbers are required. Quantity is a positive integer; custom
+     density must be > 0.
+     Response fields: areaMM2, volumeMM3, volumeM3, singleWeight, totalWeight,
+     totalTonnes.
+
+   Drawing logic
+     plate.js scales the two SVG drawings from the typed L/W/T (clamped to keep
+     the drawing legible) and updates the dimension captions through
+     dimension-values.js.
+
+   Results
+     #totalWeight "kg", #tonnes "metric tonnes", #singleWeight, #resultQuantity
+     (pc/pcs), #volume (m3, 8 decimals), #resultDensity (g/cm3),
+     #dimensions summary.
+
+   CSS
+     plate.css: theme variables (primary #087f7b), ribbon, cards, diagram
+     layout/scroll, input grid, unit switch integration, results, formula and
+     example blocks, density table, FAQ, related cards, responsive and print
+     rules.
+
+
+6.2 CIRCULAR PLATE WEIGHT CALCULATOR
+------------------------------------
+   Folder / slug: frontend/calculators/circular-plate/ ("circular-plate")
+   Files: index.html, circular-plate.css (875), circular-plate.js (522)
+
+   UI: same card layout; FRONT VIEW circle (diameter D) and SIDE VIEW rectangle
+   (D x T); inputs Diameter (D), Thickness (T). Result labels are identical to
+   the plate page (Single Plate Weight, Volume Per Plate).
+
+   Formula (backend/calculations/circularPlate.js):
+     areaMM2   = (pi/4) x D^2
+     volumeMM3 = areaMM2 x T
+     weight    = weightFromVolume(volumeMM3, density, quantity)
+   Validation: D > 0, T > 0, quantity whole >= 1.
+
+   Drawing: circular-plate.js redraws the circle and side rectangle, keeping the
+   diameter label and thickness arrow in proportion.
+
+   History config: shape "Circular Plate", dimensions Diameter and Thickness.
+
+
+6.3 BOX CHANNEL WEIGHT CALCULATOR
+---------------------------------
+   Folder / slug: frontend/calculators/box-channel/ ("box-channel")
+   Files: index.html, box-channel.css (875), box-channel.js (593)
+
+   UI: FRONT VIEW outer rectangle with inner opening (B x H, wall T) and SIDE
+   VIEW of the length. Inputs Outer Width (B), Outer Height (H), Wall Thickness
+   (T), Length (L). Result labels: Single Box Weight, Volume Per Item.
+
+   Formula (prismatic.js, "box-channel"):
+     areaMM2   = B x H - (B - 2T) x (H - 2T)
+     volumeMM3 = areaMM2 x L
+   Validation: 2T must be smaller than both B and H, otherwise the message
+   "Wall thickness must be less than half of both outer dimensions."
+
+   Drawing: the JS scales the hollow rectangle so the wall thickness remains
+   visible, then updates B/H/T captions.
+
+
+6.4 C CHANNEL WEIGHT CALCULATOR
+-------------------------------
+   Folder / slug: frontend/calculators/c-channel/ ("c-channel")
+   Files: index.html, c-channel.css (875), c-channel.js (600)
+
+   UI: FRONT VIEW C profile (overall height H, flange width B, web Tw, flange
+   Tf) and SIDE VIEW length. Inputs Flange Width (B), Overall Height (H),
+   Flange Thickness (Tf), Web Thickness (Tw), Length (L). Results: Single
+   Channel Weight, Volume Per Item.
+
+   Formula (prismatic.js, "c-channel"):
+     areaMM2 = H x Tw + 2 x (B - Tw) x Tf
+   Validation: Tw < B; 2 x Tf < H.
+
+
+6.5 E-SECTION WEIGHT CALCULATOR
+-------------------------------
+   Folder / slug: frontend/calculators/e-section/ ("e-section")
+   Files: index.html, e-section.css (875), e-section.js (587)
+
+   UI: E-shaped profile drawing plus side view. Inputs Overall Width (B),
+   Overall Height (H), Flange Thickness (Tf), Web Thickness (Tw), Length (L).
+   Results: Single Section Weight, Volume Per Section.
+
+   Formula (prismatic.js, "e-section"):
+     areaMM2 = H x Tw + 3 x (B - Tw) x Tf
+   Validation: Tw < B; 3 x Tf < H (the E has three flanges).
+
+
+6.6 I CHANNEL (I-BEAM) WEIGHT CALCULATOR
+----------------------------------------
+   Folder / slug: frontend/calculators/i-channel/ ("i-channel")
+   Files: index.html, i-channel.css (875), i-channel.js (600)
+
+   UI: I profile with top/bottom flanges and web, plus side view. Inputs Flange
+   Width (B), Overall Height (H), Flange Thickness (Tf), Web Thickness (Tw),
+   Length (L). Results: Single Channel Weight, Volume Per Item.
+
+   Formula (prismatic.js, "i-channel"):
+     areaMM2 = 2 x B x Tf + (H - 2 x Tf) x Tw
+   Validation: Tw < B; 2 x Tf < H.
+
+
+6.7 T CHANNEL WEIGHT CALCULATOR
+-------------------------------
+   Folder / slug: frontend/calculators/t-channel/ ("t-channel")
+   Files: index.html, t-channel.css (875), t-channel.js (600)
+
+   UI: T profile (flange on top, web below) and side view. Inputs Flange Width
+   (B), Overall Height (H), Flange Thickness (Tf), Web Thickness (Tw),
+   Length (L). Results: Single Channel Weight, Volume Per Item.
+
+   Formula (prismatic.js, "t-channel"):
+     areaMM2 = B x Tf + (H - Tf) x Tw
+   Validation: Tw < B; Tf < H.
+
+
+6.8 L CHANNEL (ANGLE) WEIGHT CALCULATOR
+---------------------------------------
+   Folder / slug: frontend/calculators/l-channel/ ("l-channel")
+   Files: index.html, l-channel.css (875), l-channel.js (588)
+
+   UI: L-shaped angle drawing with two legs and thickness, plus side view.
+   Inputs Vertical Leg (B), Horizontal Leg (A), Thickness (T), Length (L). The
+   ids are legB and legA. Results: Single Angle Weight, Volume Per Item.
+
+   Formula (prismatic.js, "l-channel"):
+     areaMM2 = A x T + (B - T) x T
+   Validation: T < A and T < B.
+
+
+6.9 PIPE WEIGHT CALCULATOR
+--------------------------
+   Folder / slug: frontend/calculators/pipe/ ("pipe")
+   Files: index.html, pipe.css (875), pipe.js (581)
+
+   UI: FRONT VIEW annulus (OD, wall T) and SIDE VIEW tube length. Inputs Outer
+   Diameter (OD), Wall Thickness (T), Length (L). Results: Single Pipe Weight,
+   Volume Per Item. The page also prints the formula with ID = OD - 2T.
+
+   Formula (prismatic.js, "pipe"):
+     ID        = OD - 2T
+     areaMM2   = (pi/4) x (OD^2 - ID^2)
+     volumeMM3 = areaMM2 x L
+   Validation: 2T < OD, else "Wall thickness must be less than half the outer
+   diameter."
+
+
+6.10 SHELL (CYLINDRICAL SHELL) WEIGHT CALCULATOR
+-----------------------------------------------
+   Folder / slug: frontend/calculators/shell/ ("shell")
+   Files: index.html, shell.css (875), shell.js (587)
+
+   UI: shell cross-section (OD, thickness) and length. Inputs Outer Diameter
+   (OD), Shell Thickness (T), Length (L). Results: Single Shell Weight,
+   Volume Per Shell.
+
+   Formula (prismatic.js, "shell"):
+     areaMM2 = pi x (OD x T - T^2)
+   This is the same as (pi/4)(OD^2 - ID^2) with ID = OD - 2T.
+   Validation: 2T < OD and the calculated ID must be > 0.
+
+
+6.11 HEXAGON BAR WEIGHT CALCULATOR
+----------------------------------
+   Folder / slug: frontend/calculators/hexagon-bar/ ("hexagon-bar")
+   Files: index.html, hexagon-bar.css (875), hexagon-bar.js (569)
+
+   UI: hexagonal cross-section (across flats A) and bar length. Inputs Across
+   Flats (A), Length (L). Results: Single Bar Weight, Volume Per Item.
+
+   Formula (prismatic.js, "hexagon-bar"):
+     areaMM2 = (sqrt(3) / 2) x A^2
+   No extra geometric limit beyond positive values.
+
+
+6.12 HEXAGONAL BAR WITH ROUND HOLE
+----------------------------------
+   Folder / slug: frontend/calculators/hexagonal-bar-with-round-hole/
+   Files: index.html, hexagonal-bar-with-round-hole.css (875), .js (579)
+   API slug: "hexagonal-bar-with-round-hole"
+
+   UI: hexagon with a centred circular bore, plus length view. Inputs Outer
+   Across-Flats (A), Hole Diameter (d), Length (L). Results: Single Bar Weight,
+   Volume Per Bar.
+
+   Formula (prismatic.js):
+     areaMM2 = (sqrt(3)/2) x A^2 - (pi/4) x d^2
+   Validation: d < A.
+
+
+6.13 ROUND BAR WITH HEXAGONAL HOLE
+----------------------------------
+   Folder / slug: frontend/calculators/round-bar-with-hexagonal-hole/
+   Files: index.html, round-bar-with-hexagonal-hole.css (875), .js (721)
+   API slug: "round-bar-with-hexagonal-hole"
+
+   UI: circular bar with a centred hexagon bore and a length view. Inputs Outer
+   Diameter (D), Hex Across-Flats (A), Length (L). Results: Single Bar Weight,
+   Volume Per Bar. The JavaScript is larger (721 lines) because this page draws
+   and labels the inner hexagon and keeps both shapes in proportion.
+
+   Formula (prismatic.js):
+     areaMM2 = (pi/4) x D^2 - (sqrt(3)/2) x A^2
+   Validation: the hexagon must fit inside the circle; the limit is
+   A <= (sqrt(3)/2) x D, otherwise "Hexagonal hole across-flats is too large for
+   the outer diameter."
+
+6.14 SQUARE BAR WEIGHT CALCULATOR
+---------------------------------
+   Folder / slug: frontend/calculators/square-bar/ ("square-bar")
+   Files: index.html, square-bar.css (875), square-bar.js (614)
+
+   UI: square/rectangular section drawing plus length view. Inputs Width (A),
+   Height (B), Length (L). Results: Unit Weight, Volume Per Item.
+
+   Formula (prismatic.js, "square-bar"):
+     areaMM2 = A x B
+   The page accepts A and B separately, so it also handles a rectangular bar.
+   No extra validation beyond positive values.
+
+
+6.15 TRAPEZIUM BAR WEIGHT CALCULATOR
+------------------------------------
+   Folder / slug: frontend/calculators/trapezium-bar/ ("trapezium-bar")
+   Files: index.html, trapezium-bar.css (875), trapezium-bar.js (553)
+
+   UI: trapezium cross-section plus length view. Inputs First Parallel Side (A),
+   Second Parallel Side (B), Perpendicular Height (H), Length (L). Results:
+   Single Bar Weight, Volume Per Bar.
+
+   Formula (prismatic.js, "trapezium-bar"):
+     areaMM2 = ((A + B) / 2) x H
+
+
+6.16 TRAPEZOIDAL BAR WEIGHT CALCULATOR
+--------------------------------------
+   Folder / slug: frontend/calculators/trapezoidal-bar/ ("trapezoidal-bar")
+   Files: index.html, trapezoidal-bar.css (875), trapezoidal-bar.js (553)
+
+   UI and maths are the same shape family as the trapezium page; the labels are
+   Top Parallel Side (A) and Bottom Parallel Side (B) to match a trapezoid
+   drawing. Results: Single Bar Weight, Volume Per Bar.
+
+   Formula (prismatic.js, "trapezoidal-bar"):
+     areaMM2 = ((A + B) / 2) x H
+   Both pages exist because visitors search for both spellings; the two entries
+   are intentionally separate pages with separate FAQs and related links.
+
+
+6.17 TRIANGULAR BAR WEIGHT CALCULATOR
+-------------------------------------
+   Folder / slug: frontend/calculators/triangular-bar/ ("triangular-bar")
+   Files: index.html, triangular-bar.css (875), triangular-bar.js (549)
+
+   UI: triangular cross-section plus length view. Inputs Base (B),
+   Perpendicular Height (H), Length (L). Results: Single Bar Weight, Volume Per
+   Bar.
+
+   Formula (prismatic.js, "triangular-bar"):
+     areaMM2 = (B x H) / 2
+
+
+6.18 ROUND BAR (SOLID ROUND BAR) WEIGHT CALCULATOR
+--------------------------------------------------
+   Folder / slug: frontend/calculators/round-bar/ ("round-bar")
+   Files: index.html, round-bar.css (875), round-bar.js (501)
+
+   UI: FRONT VIEW circle (diameter D) and a side view of the bar length.
+   Inputs Diameter (D), Length (L). Results: Single Bar Weight, Volume Per Bar.
+
+   Formula (backend/calculations/roundBar.js):
+     areaMM2   = (pi/4) x D^2
+     volumeMM3 = areaMM2 x L
+     weight    = weightFromVolume(volumeMM3, density, quantity)
+   The page script is the smallest of the ordinary calculators because it has
+   only two dimension fields and one simple drawing pair.
+
+
+6.19 SOLID CONE WEIGHT CALCULATOR
+---------------------------------
+   Folder / slug: frontend/calculators/solid-cone/ ("solid-cone")
+   Files: index.html, solid-cone.css (855), solid-cone.js (549)
+
+   UI: one FRONT VIEW cone drawing (base diameter D, height H) and no second
+   view. Inputs Height (H), Base Diameter (D). Results: Cone Volume, Single Cone
+   Weight, Total Weight (Ton), Quantity, Material Density.
+
+   Formula (backend/calculations/solidCone.js):
+     radius    = D / 2
+     volumeMM3 = (1/3) x pi x radius^2 x H
+     weight    = weightFromVolume(volumeMM3, density, quantity)
+   Result display: #volume shows the cone volume in m3, #totalWeight kg,
+   #singleWeight kg, #tonnes tons.
+
+   CSS note: solid-cone.css is 855 lines because the single cone drawing needs
+   its own geometry/label rules instead of the two-view layout.
+
+
+6.20 SPHERE / BALL WEIGHT CALCULATOR
+------------------------------------
+   Folder / slug: frontend/calculators/sphere-ball/ ("sphere-ball")
+   Files: index.html, sphere-ball.css (916), sphere-ball.js (533)
+
+   UI: one FRONT VIEW ball drawing. Input Diameter (D). Results: Single Ball
+   Weight, Quantity, Volume Per Ball, Material Density (plus total weight and
+   tonnes).
+
+   Formula (backend/calculations/sphereBall.js):
+     radius    = D / 2
+     volumeMM3 = (4/3) x pi x radius^3
+     weight    = weightFromVolume(volumeMM3, density, quantity)
+
+   CSS note: sphere-ball.css has extra rules (916 lines) for the shaded globe
+   drawing and its dimension labels.
+
+
+6.21 TRUNCATED CONE (CONICAL REDUCER) WEIGHT CALCULATOR
+-------------------------------------------------------
+   Folder / slug: frontend/calculators/truncated-cone/ ("truncated-cone")
+   Files: index.html, truncated-cone.css (875), truncated-cone.js (609)
+
+   UI: FRONT VIEW of the reducer (large end D, small end d, vertical height H,
+   plate thickness T) and a TOP VIEW of the concentric circles. Inputs Large End
+   Diameter (D), Small End Diameter (d), Vertical Height (H), Plate Thickness
+   (T). Results: Slant Height (L), Lateral Surface Area (A), Plate Volume (V),
+   Total Weight (Ton), Single Reducer Weight, Quantity, Material Density.
+
+   Formula (backend/calculations/truncatedCone.js):
+     R = D/2, r = d/2
+     slant = sqrt(H^2 + (R - r)^2)
+     surfaceArea = pi x (R + r) x slant          (lateral surface, mm2)
+     plateVolume = surfaceArea x T                (fabricated plate reducer)
+     weight = weightFromVolume(plateVolume, density, quantity)
+   The page is a plate-built reducer, not a solid frustum, so it multiplies the
+   lateral surface by the plate thickness instead of using the frustum volume.
+   Returned extras: slantHeight (converted back to the user's unit),
+   surfaceAreaMM2, surfaceAreaM2, volumeMM3.
+   Validation: all fields positive; the small end must be smaller than the
+   large end (d < D) and twice the plate thickness must be less than the small
+   end (2T < d); H must be > 0.
+   Display: 6-decimal tons, 8-decimal m3, 6-decimal m2; the drawing labels the
+   slant and both diameters.
+
+
+6.22 FLANGE PLATE WEIGHT CALCULATOR
+-----------------------------------
+   Folder / slug: frontend/calculators/flange-plate/ ("flange-plate")
+   Files: index.html, flange-plate.css (1107), flange-plate.js (1293)
+
+   UI
+     - Two SVG drawings: a TOP VIEW (outer circle, bore, pitch circle, bolt
+       holes) and a SECTION VIEW with hatch pattern and thickness.
+     - Inputs Outer Diameter (OD), Inner Diameter (ID), Thickness (T), Number of
+       Bolt Holes (N), Bolt Hole Diameter (HD), Bolt Hole Pitch Circle Diameter
+       (PCD).
+     - Six live value chips (.field-value) show the current value beside each
+       input; flange-plate.js calls initDimensionValues and keeps them in sync.
+     - Results: Single Flange Weight, Quantity, Volume Per Flange, Material
+       Density, plus a line describing holes and a line describing dimensions.
+     - Formula card shows both the area form and the hole subtraction.
+
+   Formula (backend/calculations/flangePlate.js)
+     grossArea = (pi/4) x (OD^2 - ID^2)
+     holeArea  = N x (pi/4) x HD^2
+     netArea   = grossArea - holeArea
+     volumeMM3 = netArea x T
+     weight    = weightFromVolume(volumeMM3, density, quantity)
+     removedPercent = holeArea / grossArea x 100
+
+   Geometry validation (all evaluated in millimetres)
+     - OD must be greater than ID.
+     - Bolt holes must stay outside the bore:
+       PCD/2 - HD/2 > ID/2.
+     - Bolt holes must stay inside the outer edge:
+       PCD/2 + HD/2 < OD/2.
+     - Adjacent holes must not overlap: chord = PCD x sin(pi/N) >= HD.
+     - N must be a positive whole number; dimensions above 100000 mm are
+       rejected with "One of the dimensions is too large for this calculator."
+
+   Drawing logic
+     flange-plate.js draws the top view (scaled OD, ID, PCD, N holes evenly
+     spaced, hole circles), the section view with hatching, and all dimension
+     arrows/text. The hole pattern and the section both update live.
+
+   History: shape "Flange Plate"; dimensions OD, ID, T, N, HD, PCD.
+
+
+6.23 DISH ENDS (VESSEL HEADS) WEIGHT CALCULATOR
+-----------------------------------------------
+   Folder / slug: frontend/calculators/dish-ends/ ("dish-ends")
+   Files: index.html, dish-ends.css (256), dish-ends.js (2047)
+   Extra shared style: frontend/shared/dish-end-family.css
+
+   UI structure (all blocks are revealed by the type selection)
+     1. "Dish End Type" card with a select (#designType) containing:
+          flat            -> "Flat Head - Dished"
+          torispherical   -> "Torispherical Head"
+          ellipsoidal     -> "Ellipsoidal Head"
+          hemispherical   -> "Hemispherical Head"
+          template        -> "Elliptical Head Template"
+     2. Dimensions card (#dimensionsCard, hidden until a type is chosen):
+          - MM/Inches switch;
+          - one live SVG engineering drawing (#dishFigure > #dishDrawing)
+            with dimension arrows and text drawn by JavaScript;
+          - dynamic field grid (#fieldGrid) built per type;
+          - for template only: "Number of Development Lines" buttons
+            12 / 24 / 36 / 48 / 72 / 96 (#divisionBlock, default 24);
+          - unit note.
+     3. Material card (#materialCard): Material select (carbon steel, SS 304,
+        SS 316, SS 316L, aluminium, Other/Custom), Material Density (kg/m3)
+        field (default 7850, editable), Total Quantity (Pieces). A note explains
+        that 7,850 kg/m3 is used unless another density is typed.
+     4. Error box, actions bar (#actionsBar), results card (#results).
+     5. Results:
+          - TOTAL WEIGHT in kg + tonnes;
+          - "Geometrical Results" (#geoRows): inside diameter, inside radius,
+            knuckle/crown radius, height, arc angles, D/2H ratio (type-specific),
+            dish surface area, straight face area, total developed area;
+          - "Development Results" (#devRows): meridian length, developed blank
+            diameter, blank area, and for template the divisions, angular step
+            and station count;
+          - coordinate table (template only): Division, Angle, Plan Radius,
+            Height, Meridian Length, Blank X, Blank Y (#coordBody);
+          - "Material Results" (#matRows): material, density kg/m3, plate
+            thickness, material volume m3, estimated weight per piece, total
+            quantity, total estimated weight, total developed area.
+     6. Formula card (equation is replaced per type by the script), a step list
+        per type, density reference table, FAQ (6 per type), related links.
+
+   Inputs per type (backend TYPE_FIELDS)
+     flat            id, kr, sf, t
+     torispherical   id, kr, sf, t
+     ellipsoidal     id, h, sf, t
+     hemispherical   id, sf, t
+     template        id, h, sf, t (+ divisions)
+     Labels: Dish Inside Diameter (ID), Dish Knuckle Radius (R), Straight Face
+     (SF), Dish Total Height (H), Dish Thickness (T).
+
+   Calculation chain (backend/calculations/dishEnds.js)
+     R  = ID / 2
+     faceArea = 2 x pi x R x SF
+     areaTotal = dishArea + faceArea
+     blankDia = 2 x sqrt(areaTotal / pi)
+     blankArea = (pi x blankDia^2) / 4
+     weight = areaTotal x T x density / 1,000,000,000   (density kg/m3)
+     totalWeight = weight x quantity
+
+   dishArea per type
+     flat:
+       dishArea = pi x R^2
+       The knuckle radius is used for the drawing (crown diameter ID - 2R,
+       crown height H = R); the fillet surface is deliberately not added.
+     torispherical:
+       C.R = ID (crown radius fixed to the diameter)
+       spread = C.R - K.R
+       thetaC = asin(clamp((R - K.R) / spread, 0, 1))
+       thetaK = pi/2 - thetaC
+       H = C.R - sqrt(spread^2 - (R - K.R)^2)
+       aKnuckle = 2 x pi x K.R x ((R - K.R) x thetaK + K.R x sin(thetaK))
+       aCrown   = 2 x pi x C.R x (H - K.R x sin(thetaK))
+       dishArea = aKnuckle + aCrown
+       meridian = K.R x thetaK + C.R x thetaC
+     ellipsoidal:
+       semi-axes a = R, b = H
+       dishArea = closed-form semi-ellipsoid surface:
+         if a == b: 2 x pi x a^2
+         if a > b: pi a^2 + (pi b^2 / (2e)) x ln((1+e)/(1-e)), e = sqrt(1 - b^2/a^2)
+         if b > a: pi a^2 + (pi a b / e') x asin(e'), e' = sqrt(1 - a^2/b^2)
+       meridian = meridianArc(R, H, pi/2)
+     hemispherical:
+       H = R; C.R = R
+       dishArea = 2 x pi x R^2
+       meridian = pi x R / 2
+     template:
+       same semi-ellipsoidal area as ellipsoidal, plus buildStations() writes
+       the development coordinates for the chosen even division count.
+
+   Validation
+     ID > 0, T > 0, T < R, SF >= 0.
+     flat/torispherical: K.R > 0 and K.R < R.
+     ellipsoidal/template: H > 0 and H <= ID.
+     template divisions: even whole number, 4..360.
+     density: finite, > 0, between 1 and 25000 kg/m3 (readDensity options).
+
+   Unit conversion
+     The page sends unit mm or in and the backend multiplies every length by
+     25.4. Density is never converted because it is always kg/m3 here. Display
+     converts the returned millimetres back to the selected unit for the
+     drawing/labels, while area is shown in mm2/m2 and weight in kg.
+
+   Drawing logic
+     dish-ends.js contains a drawing engine (arrow, dimension line, arc, hatch,
+     text helpers) and one renderer per head type. It scales the selected
+     profile to the figure viewBox, draws the wall thickness, the straight
+     flange, the crown/knuckle radii, the ID and H arrows, and (for template)
+     the development lines. Labels are drawn as SVG text by this file; that is
+     why the page does not load dimension-values.js.
+
+   Results / history
+     weight text uses 2 decimals for kg and 4 for tonnes; areas use m2 with 6
+     decimals; the coordinate table uses the entered unit. History shape is the
+     selected type name with ID, knuckle/height, SF and T labels.
+
+   CSS
+     dish-ends.css handles the type select, dynamic grid, division buttons and
+     result groups; dish-end-family.css provides the shared family styling
+     (drawing scroll area, coordinate table, stat rows).
+
+
+6.24 NUT & BOLT WEIGHT CALCULATOR
+---------------------------------
+   Folder / slug: frontend/calculators/nut-bolt/ ("nut-bolt")
+   Files: index.html, nut-bolt.css (1084), nut-bolt.js (3121)
+
+   UI structure
+     - Header, intro, then a category tab list (role=tablist):
+         Bolts (#categoryBolts), Studs (#categoryStuds), Nuts (#categoryNuts).
+     - A standards/product row: Standard (#standardSelect), Product
+       (#productSelect), Size (#sizeSelect, which also offers "Custom
+       dimensions"), plus a note (#standardNote) explaining the selected
+       standard and that custom dimensions are typed manually.
+     - Diagram area (#fastenerDiagramViews) filled by the script with the
+       product's front/side (or top) drawing and its dimension symbols.
+     - Dynamic dimension fields (#dimensionFields, role=tabpanel) built from the
+       selected product; a dimension note (#dimensionNote) lists what is
+       measured.
+     - Material card: Select Material (7 metals + Custom Density), density
+       readout, custom density input, Quantity (Pieces).
+     - Error box, Calculate Weight, Reset.
+     - Results: TOTAL WEIGHT in kg (#totalWeight, 3 decimals) plus pounds
+       (#totalPounds), Unit Weight kg (#unitWeightKg) and lbs (#unitWeightLbs),
+       Quantity (#resultQuantity), Volume Per Piece (#resultVolume, cm3),
+       Thread Stress Area (#resultStressArea, mm2), Material Density
+       (#resultDensity), and a dimensions summary (#resultDimensions).
+     - Formula card "W = V x rho / 1,000,000", density table, FAQ (8), related
+       calculators.
+
+   14 products (backend/calculations/nutBolt.js and the page's PRODUCTS)
+     Bolts:
+       hex-ft        Hex Bolt, Full Thread       ISO 4017 / ASME B18.2.1
+       hex-ht        Hex Bolt, Half Thread       ISO 4014 / ASME B18.2.1
+       hex-blank     Hex Bolt Blank              ISO 4014/4017 head / ASME
+       socket-head   Socket Head Cap Screw       ISO 4762 / DIN 912
+       countersunk   Countersunk Socket Screw    ISO 10642 / DIN 7991
+       carriage      Carriage Bolt               DIN 603
+     Studs:
+       stud-ft       Fully Threaded Stud         DIN 976-1
+       stud-de       Double End Stud             DIN 938
+       threaded-rod  Threaded Rod                DIN 976-1
+     Nuts:
+       hex-nut       Hex Nut                     ISO 4032 / ASME B18.2.2
+       heavy-nut     Heavy Hex Nut               ISO 4033 / ASME B18.2.2 heavy
+       jam-nut       Hex Jam Nut                 ISO 4035
+       square-nut    Square Nut                  DIN 557
+       lock-nut      Nylon Insert Lock Nut       ISO 7040
+     Each standard provides a size table; the page also offers a "Custom
+     dimensions" entry so the user can type every value.
+
+   Fields (labels from FIELD_DEFS)
+     Nominal Thread Diameter (d), Thread Pitch (P), Overall Length (L) (shown as
+     Stud Length or Screw Length depending on the product), Thread Length (b),
+     Second Thread Length (b2) for double-end studs, Width Across Flats (s),
+     Head Height (k), Head Diameter (dk), Socket Width Across Flats (s), Socket
+     Depth (t), Square Neck Width (a), Square Neck Height (f), Nut Height (m).
+     Not every product uses every field; the script builds only the fields the
+     product needs.
+
+   Calculation logic (backend/calculations/nutBolt.js)
+     1. Thread stress area:
+          ISO metric:    As = (pi/4) x (d - 0.9382 x P)^2
+          Unified inch:  As = (pi/4) x (d - 0.9743 x P)^2
+        (the page also shows this area as a result).
+     2. Product volume, in mm3, from the product's own geometry model:
+          - hex head: prism across-flats x head height, minus a 30-degree top
+            chamfer cone tangent to the flats;
+          - socket head: cylinder + head, minus the hex socket pocket;
+          - countersunk: conical head + shank, minus the socket;
+          - carriage bolt: domed head + square neck + shank;
+          - hex nut: chamfered hex prism minus the threaded bore;
+          - heavy/jam/square/lock nuts: the same family with their own
+            height/flat/bore dimensions;
+          - studs/threaded rod: cylinder over the length, with thread length
+            handled for the double-end type.
+     3. Weight chain: weightFromVolume(volumeMM3, density, quantity), then
+        totalPounds = totalWeight x 2.2046226218 (the page shows both units).
+     4. Validation: positive dimensions, pitch > 0 for threaded products,
+        thread lengths not longer than the overall length, quantity whole >= 1,
+        density valid; geometry that cannot exist (for example a socket wider
+        than the head) is rejected with a field message.
+
+   Drawing logic
+     nut-bolt.js draws each product with generated SVG (front view plus side/top
+     view as appropriate), dimension arrows and symbols, using the standard
+     size table values or the typed custom values. The drawing scales to the
+     panel and redraws when the product, standard, size or unit changes.
+     Because the labels come from this script, the page does not load
+     dimension-values.js.
+
+   Unit conversion
+     Metric standards show mm; ASME standards show inch sizes and set the page
+     unit to inches. The switch can still be used on custom dimensions. The API
+     receives unit mm/in and converts by 25.4 like every other calculator;
+     stress area is always returned in mm2 and shown that way, while volume is
+     shown in cm3 and weight in kg and lbs.
+
+   History
+     window.CALCULATOR_HISTORY_CONFIG describes the selected product and its
+     dimensions; mm and inch entries with the same physical size are stored as
+     distinct records because the payload includes the unit.
+
+   CSS
+     nut-bolt.css contains the tab styling, standard/product/size row, dynamic
+     field grid, diagram panels for each product family, result grid with two
+     weight units, and responsive rules.
+
+================================================================================
+7. WEBSITE ARCHITECTURE AND FILE CONNECTIONS
+================================================================================
+
+7.1 ENTRY POINTS
+----------------
+  Browser entry (home page)
+    index.html (project root)
+      - loads frontend/assets/css/dashboard.css, the shared header/install/
+        feedback CSS, frontend/i18n/language-switcher.css;
+      - loads frontend/assets/data/dashboard-data.js, dashboard.js,
+        calculation-history.js, internet-connection-manager.js and the shared
+        popup scripts;
+      - draws the calculator grid from the DASHBOARD_CATEGORIES data;
+      - links to every calculator page, the About page and the 7 locale home
+        pages.
+
+  Browser entry (calculator page)
+    frontend/calculators/<slug>/index.html
+      - complete standalone page: head/CSS, ribbon header, cards, drawings,
+        formula/FAQ/density content, footer;
+      - loads its own <slug>.js last, after the shared scripts.
+
+  Server entry
+    backend/server.js  -> creates the HTTP server (http module)
+    backend/app.js     -> request dispatcher: /api/* to routes, otherwise 404
+    backend/routes/index.js -> the 5 API endpoints
+    backend/config.js  -> PORT, HOST, CORS, API key, rate limit, body limit
+
+  There is no build step and no bundler: every file is served as written.
+
+
+7.2 ROUTING AND NAVIGATION
+--------------------------
+  - Routing is plain static file paths (no SPA router, no history API).
+      /                                  -> index.html
+      /frontend/calculators/plate/       -> plate page
+      /frontend/about/index.html         -> About page
+      /hi/ , /de/ , /es/ , /fr/ , /id/ , /it/ , /pt/  -> locale home pages
+      /hi/frontend/calculators/plate/    -> localized plate page
+  - The home grid links use relative paths from frontend/assets/data/
+    dashboard-data.js ("path" field per tool); dashboard.js renders the cards
+    and filters them by the search box and category buttons.
+  - The header on every page has "All Tools" (back to index.html), the language
+    menu (language-switcher.js) and the brand logo.
+  - Locale pages keep the same folder names under a two-letter language folder
+    and reach the shared CSS/JS with ../../../frontend/... paths.
+  - API routing is handled by backend/routes/index.js:
+      GET  /api/health
+      GET  /api/calculators
+      GET  /api/materials
+      GET  /api/bootstrap.js
+      POST /api/calculate/:slug
+
+
+7.3 SHARED COMPONENTS
+---------------------
+  UI shell (copied into every page, not a template include)
+    - ribbon header markup, brand block, language button/menu, All Tools pill;
+    - page intro, dimensions card, material card, error box, action buttons,
+      results card, formula card, density table, FAQ, related links, footer.
+    Each calculator page contains its own copy of this markup; there is no
+    server-side include or JavaScript component that injects it.
+
+  Shared JavaScript components (frontend/shared/)
+    calculation-history.js  History drawer, save/restore, print
+    unit-switch.js          MM/Inches conversion and unit note
+    dimension-values.js     live value chips next to dimension inputs
+    numeric-keypad.js       on-screen keypad for coarse pointers
+    mobile-input-viewport.js keyboard-safe layout adjustments
+    internet-connection-manager.js  offline/online banner
+    feedback.js             feedback form launcher
+    add-shortcut.js         PWA install shortcut button
+    smart-install-popup.js  install prompt popup
+    i18n.js / i18n-data.js / i18n.css  legacy translation helper (unused by
+                            the pages, which use per-folder localized HTML)
+
+  Shared page infrastructure
+    frontend/i18n/language-switcher.js/.css  language menu and URL mapping
+    frontend/assets/js/api-config.js         API base resolution
+    frontend/assets/js/calc-api.js           MWCalc HTTP client + density cache
+    frontend/assets/js/dashboard.js          home grid behaviour
+    frontend/assets/data/dashboard-data.js   generated tool catalogue
+
+
+7.4 COMMON CALCULATION UTILITIES
+--------------------------------
+  Frontend
+    - No maths is done in the browser. calc-api.js only sends numbers and
+      formats what comes back.
+  Backend
+    backend/core/weight.js
+      weightFromVolume(volumeMM3, density, quantity)
+        volumeM3     = volumeMM3 / 1,000,000,000
+        singleWeight = volumeMM3 x density / 1,000,000     (kg)
+        totalWeight  = singleWeight x quantity
+        totalTonnes  = totalWeight / 1000
+      volumeFromArea(areaMM2, lengthMM)
+      weightFromAreaThickness(areaMM2, thicknessMM, densityKgM3, quantity)
+        used by dish ends (kg/m3 density)
+    backend/core/validation.js
+      UNIT_FACTORS { mm: 1, in: 25.4 }, toMillimetres(), requirePositive(),
+      requireInteger(), requireDensity(), normaliseUnit(), ValidationError.
+    backend/calculations/index.js
+      registry that maps the 24 slugs to their modules and lists them for
+      /api/calculators and /api/health.
+  Independent formula modules (one per calculator) call these helpers; no
+  module knows about HTTP, HTML or CSS.
+
+
+7.5 MATERIAL DENSITY DATABASE
+-----------------------------
+  File: backend/materials/materialDensity.js
+    MATERIALS          full table, grouped by category (carbon steel, alloy
+                       steel, stainless steel, aluminium, copper alloys, cast
+                       iron, nickel alloys, titanium, plastics and more).
+    SECTION_MATERIALS  the 7 common metals offered by 23 calculators:
+                       carbon-steel 7.85, stainless-steel 8.00,
+                       aluminium 2.70, brass 8.50, bronze 8.80,
+                       cast-iron 7.20, copper 8.96  (g/cm3)
+    DISH_MATERIALS     the 6 options for dish ends: carbon steel 7850,
+                       SS 304 7930, SS 316 8000, SS 316L 8000, aluminium 2700,
+                       custom  (kg/m3)
+  Delivery
+    GET /api/materials           -> { ok, materials: {...} }
+    GET /api/bootstrap.js        -> window.MW_MATERIALS = {...}
+    calc-api.js caches the table in memory and falls back to an identical
+    built-in copy when the API is unreachable, so the dropdowns always fill.
+  Edits here change density values for many calculators at once; treat the
+  file as shared, high-caution configuration.
+
+
+7.6 GLOBAL AND PER-CALCULATOR STYLES
+------------------------------------
+  Global / home
+    frontend/assets/css/dashboard.css   home page layout, grid, search, cards
+  Shared
+    frontend/shared/*.css               header, info sections, history, keypad,
+                                        unit switch, install/feedback UI,
+                                        mobile viewport, legacy i18n
+    frontend/i18n/language-switcher.css language menu
+    frontend/shared/dish-end-family.css dish-end drawing/table styling
+  Per calculator
+    frontend/calculators/<slug>/<slug>.css
+      Each page has its own full stylesheet (theme variables, ribbon, cards,
+      diagrams, inputs, results, formula, table, FAQ, print, responsive).
+      They are page-specific copies with small differences, not one shared
+      file; changing one does not restyle the other 23 pages.
+  No CSS framework, no preprocessor, no generated CSS.
+
+
+7.7 STATE MANAGEMENT AND DATA FLOW
+-----------------------------------
+  There is no application framework and no global store.
+  Per-page state lives in the calculator script's closure:
+    - currentUnit ("mm" or "in"), material key, custom density, quantity;
+    - lastCalculation (the last server result), lastRequestId;
+    - autoRecalculate flag, per-field exact millimetre memory for unit swaps.
+  Globals shared between files
+    window.MW_MATERIALS                 density table from the API/fallback
+    window.MWCalc                       API client (calculate/request/baseUrl)
+    window.CALCULATOR_HISTORY_CONFIG    page description for the history drawer
+    window.MW_I18N                      legacy translation data (unused pages)
+  Persistence
+    - History entries: sessionStorage under
+      "jadhav-engineering:calculation-history:<page>"; cleared when the tab
+      closes.
+    - Language choice: localStorage key mw-lang (read by the switcher).
+    - Install/popup dismissals: localStorage flags written by
+      smart-install-popup.js and add-shortcut.js.
+  No cookies, no accounts, no server session, no database.
+
+
+7.8 DEPENDENCY GRAPH (WHO NEEDS WHOM)
+-------------------------------------
+  index.html
+    -> dashboard.css, shared header/install/feedback CSS,
+       language-switcher.css/js
+    -> dashboard-data.js -> dashboard.js -> calculation-history.js
+    -> internet-connection-manager.js, smart-install-popup.js, feedback.js,
+       add-shortcut.js
+
+  calculator index.html
+    -> <slug>.css + the 10 shared CSS files
+    -> language-switcher.js, internet-connection-manager.js,
+       api-config.js -> calc-api.js
+       unit-switch.js, dimension-values.js (22 pages), <slug>.js
+       calculation-history.js, smart-install-popup.js, feedback.js,
+       add-shortcut.js, mobile-input-viewport.js, numeric-keypad.js
+
+  <slug>.js
+    -> MWCalc (calc-api.js) for POST /api/calculate/<slug>
+    -> MW_MATERIALS (calc-api.js) for the dropdown
+    -> the page's own DOM ids and SVGs
+    -> window.CALCULATOR_HISTORY_CONFIG (read by calculation-history.js)
+
+  calc-api.js
+    -> api-config.js (window.MWCALC_API_BASE)
+    -> backend GET /api/materials, POST /api/calculate/:slug
+
+  backend/routes/index.js
+    -> controllers/calculationController.js -> calculations/index.js ->
+       calculations/<module>.js -> core/weight.js, core/validation.js,
+       materials/materialDensity.js
+    -> controllers/materialsController.js -> materials/materialDensity.js
+    -> middleware/{http,cors,rateLimit}.js, config.js
+
+  tools/*.py are offline generators; no runtime file depends on them.
+
+
+7.9 INPUT -> RESULT PATH (STEP BY STEP)
+--------------------------------------
+   1. The user types a dimension in frontend/calculators/<slug>/index.html.
+      <slug>.js updates the drawing and dimension labels and stores the field
+      in its values object.
+   2. The user presses Calculate Weight (or Enter on the last field).
+   3. <slug>.js validateInputs() checks the same rules the backend will apply
+      and shows #error if something is wrong.
+   4. <slug>.js builds the payload
+        { values: {...}, unit: "mm"|"in", density, quantity, material }
+      and calls MWCalc.calculate(slug, payload).
+   5. calc-api.js aborts any previous request, POSTs JSON to
+      <base>/api/calculate/<slug> with a 15 s timeout, and retries the
+      fallback bases if the first answer is not the API.
+   6. backend/routes/index.js checks CORS, method, optional API key and the
+      per-IP rate limit, reads the JSON body, and calls
+      calculationController.calculate(slug, body).
+   7. The controller finds the module in calculations/index.js, normalises the
+      unit to millimetres, validates every field, resolves the density (chosen
+      material or custom value), runs the module's formula through
+      core/weight.js, and builds
+        { ok: true, calculator, units, result: {...} }
+   8. The browser receives the JSON; <slug>.js checks the numbers, formats them
+      (kg, tonnes, m3, m2, lbs, mm2 as relevant) and writes the result card.
+   9. The result object is kept as lastCalculation; the History button can save
+      it through calculation-history.js, and auto-recalculation is enabled for
+      quantity/density changes.
+
+================================================================================
+8. CONFIGURATION AND DEPENDENCIES
+================================================================================
+
+8.1 WHAT DOES NOT EXIST (verified, not assumed)
+-----------------------------------------------
+  - No package.json, package-lock.json, yarn.lock, pnpm-lock.yaml or
+    node_modules in the project root.
+  - No Vite, Webpack, Rollup, Parcel, esbuild or other bundler config.
+  - No TypeScript (no tsconfig.json, no .ts/.tsx files).
+  - No Tailwind, PostCSS, Sass or Less config; all CSS is hand-written.
+  - No CI config, Dockerfile, or serverless config file.
+  The site is plain HTML + CSS + classic JavaScript ES5-style scripts, served
+  as static files, plus one optional Node.js API.
+
+
+8.2 backend/package.json  (configuration, manually written)
+-----------------------------------------------------------
+  Contents and meaning:
+    name        "metal-weight-calculator-backend"
+    version     "1.0.0"
+    private     true (never published to npm)
+    description short summary of the service
+    main        "server.js" (entry the host/process manager starts)
+    type        "commonjs" (require/module.exports everywhere)
+    engines     node ">=18" (needs global fetch-free http, modern syntax)
+    scripts
+      start     node server.js
+      dev       node --watch server.js
+      test      node test/parity.js && node test/threadFactors.js
+    dependencies {}
+  Why required: it marks the backend folder as a Node package, fixes the
+  Node version, and documents how to start and test the API. Because
+  dependencies is empty, npm install creates no third-party packages and no
+  lock file is required.
+  Note: there is no root package.json, so no root-level npm script exists.
+
+
+8.3 ENVIRONMENT CONFIGURATION: backend/config.js + backend/.env.example
+-----------------------------------------------------------------------
+  config.js reads backend/.env with its own small parser (KEY=VALUE, #
+  comments, quotes stripped, real environment wins) and exports:
+    PORT                  default 8080
+    HOST                  default 127.0.0.1
+    PUBLIC_API_BASE       default "" (same origin); used by /api/bootstrap.js
+    ALLOWED_ORIGINS       comma list; empty = same-origin only, no CORS headers
+    API_KEY               optional; when set, /api/calculate needs x-api-key
+    RATE_LIMIT_MAX        default 120 requests per window per IP
+    RATE_LIMIT_WINDOW_MS  default 60000 ms
+    MAX_BODY_BYTES        default 16384 bytes of JSON
+  .env.example documents all of them and is safe to commit; the real .env is
+  ignored by .gitignore and must never be committed because it may hold
+  API_KEY and host-specific origins.
+  Browser-side API base is separate: frontend/assets/js/api-config.js sets
+  window.MWCALC_API_BASE. Example config (used for local preview) points at
+  http://127.0.0.1:8080; production must be the deployed API origin or empty
+  for same-origin hosting.
+
+
+8.4 PWA AND SEARCH CONFIGURATION
+--------------------------------
+  manifest.webmanifest  Web app manifest: name, short_name, description,
+                        start_url ./index.html, scope ./, standalone display,
+                        theme #087f7b, background #f4f7f8, and 5 icon entries
+                        (icon-192, icon-512, maskable-192, maskable-512,
+                        favicon.png). Linked from every page's <head>.
+  service-worker.js     Registered by internet-connection-manager.js; it is a
+                        deliberate pass-through worker (no offline cache), so
+                        it must never start returning stale calculator code
+                        without a version change.
+  robots.txt            Allows crawling and points to sitemap.xml.
+  sitemap.xml           258 KB generated list of every canonical URL
+                        (https://metalweightcalculator.online/...). Produced/
+                        refreshed by tools/generate_seo.py, not by hand.
+  ads.txt               AdSense seller declaration placeholder; it contains no
+                        seller account id yet, so it does nothing until filled.
+  .gitignore            Excludes environment files (backend/.env, .env,
+                        .env.local), logs and pid files, and OS/editor noise
+                        (.DS_Store, Thumbs.db). It does not exclude node_modules
+                        because the project installs none.
+  .gitattributes        Line-ending and binary-file handling hints.
+
+
+8.5 BUILD AND DEPLOYMENT DOCUMENTATION
+--------------------------------------
+  README.md     explains the two parts (static site + Node API), how to run
+                locally (backend on 8080, static server on 8123), the test
+                command, and the expected result ("calculator/scenario pairs
+                compared: 71" then PASS).
+  DEPLOY.md     hosting notes: any static host for the HTML/CSS/JS plus a
+                Node >=18 host for the API, CORS origins, PUBLIC_API_BASE, and
+                the api-config.js change needed when the API is on another
+                domain.
+  backend/README.md  API layout, endpoints, validation and test details.
+  AUDIT_SAVED_CODE/  snapshots and audit notes, not used at runtime.
+  tools/*.py    developer generators; they read frontend files and write
+                dashboard-data.js, SEO blocks and the locale folder copies.
+                They are configuration-like project tooling, not runtime code.
+  No lock files exist because no runtime dependency is installed.
+
+
+================================================================================
+9. PUBLIC ASSETS AND RESOURCES
+================================================================================
+
+9.1 FAVICONS AND APP ICONS
+--------------------------
+  frontend/favicon.ico               legacy tab icon file. No HTML page links
+                                     it (the pages use favicon.png); it is kept
+                                     as a fallback asset and is otherwise unused.
+  frontend/favicon.png               64x64 tab icon; <link rel="icon"> on the
+                                     home page and calculator pages.
+  frontend/icons/apple-touch-icon.png  iOS home-screen icon; <link
+                                     rel="apple-touch-icon"> on every page and
+                                     the About page.
+  frontend/icons/icon-192.png         PWA icon (any), manifest + install prompt.
+  frontend/icons/icon-512.png         PWA icon (any), manifest + splash.
+  frontend/icons/maskable-192.png     Android adaptive icon (maskable).
+  frontend/icons/maskable-512.png     Android adaptive icon (maskable).
+  frontend/icons/logo.png             brand logo (175x120) shown in the ribbon
+                                     header of every page; the About page uses
+                                     ../icons/logo.png.
+  frontend/icons/nut-bolt-1024.png    high-resolution source art for the
+                                     nut-and-bolt brand mark.
+  frontend/icons/nut-bolt-512.png     smaller source art of the same mark.
+  frontend/icons/nut-bolt.svg         vector source art of the same mark.
+  Usage note: the three nut-bolt files are design sources; no HTML, CSS or JS
+  references them directly. The calculator-card icons in the home grid are
+  inline <symbol id="art-..."> sprites inside index.html, selected by the
+  "icon" field in dashboard-data.js; there is no per-card image request.
+  All icons are binary/generated artwork except nut-bolt.svg (text vector).
+  Creator of the artwork cannot be determined from project evidence ->
+  "Creator information not available".
+
+9.2 CALCULATOR DRAWINGS
+-----------------------
+  There are no drawing image files. Every calculator diagram is inline SVG
+  written in the page HTML and/or created at runtime by the page's script:
+    - plate, circular-plate, box/c/e/i/t/l channel, pipe, shell, hexagon,
+      holed bars, square/trapezium/trapezoidal/triangular bar, round bar,
+      solid cone, sphere: SVG shapes in index.html repositioned by <slug>.js;
+    - flange-plate: full top view, hole pattern and hatched section drawn by
+      flange-plate.js;
+    - dish-ends: every profile and dimension drawn by dish-ends.js into
+      #dishDrawing;
+    - nut-bolt: every product drawing generated by nut-bolt.js.
+  Consequence: a drawing cannot be replaced by swapping an image file; the
+  geometry lives in the page script and CSS.
+
+9.3 OTHER STATIC RESOURCES
+--------------------------
+  No font files (.woff/.woff2/.ttf/.otf) exist. All CSS uses the system
+  Arial/Helvetica stack, so text rendering depends on the visitor's OS.
+  No photographic images, videos or audio are used by the pages.
+  Five PNG screenshots in the project root (cleanup-desktop-final.png,
+  cleanup-mobile.png, cleanup-tablet.png, nut-bolt-icon-final.png,
+  nut-bolt-icon-mobile.png) are leftover visual-check captures. They are not
+  referenced by any page and are not part of the website.
+  The only external resources are optional: Google AdSense (script slot left
+  as a comment), the feedback Google Form URL used by feedback.js, and the
+  fonts-free system styling. No CDN library is loaded.
+
+
+================================================================================
+10. IMPORTANT TECHNICAL INFORMATION
+================================================================================
+
+10.1 SAFE TO MODIFY (low risk, content only)
+-------------------------------------------
+  - FAQ questions/answers in any calculator index.html (text only; keep the
+    numbers consistent with the formula).
+  - The worked example paragraph and the density reference table rows
+    (display data - the calculator does not read these numbers).
+  - Related-calculator link lists, footer text and the About page narrative.
+  - Page <title>, meta description, Open Graph/Twitter text and FAQ structured
+    data inside the SEO:START/END blocks (then re-run tools/generate_seo.py or
+    edit each locale copy consistently).
+  - README.md, DEPLOY.md and this documentation file.
+  Do not touch ids, classes, script order or data attributes while editing
+  text; the scripts depend on them.
+
+10.2 REQUIRES EXTRA CAUTION (behaviour or numbers change)
+---------------------------------------------------------
+  - backend/calculations/*.js: every formula, validation limit and returned
+    field. A change silently changes weights.
+  - backend/core/weight.js and core/validation.js: unit factors, density
+    bounds, rounding and the kg/tonne conversion used by all 24 modules.
+  - backend/materials/materialDensity.js: density values for all calculators.
+  - backend/controllers/calculationController.js and routes/index.js:
+    request shape, error messages, slug mapping, CORS/API key/rate limit.
+  - frontend/assets/js/calc-api.js and api-config.js: how requests are made,
+    fallback bases, timeouts and the built-in density fallback copy.
+  - Each calculator's <slug>.js: field ids, validation messages, result ids,
+    drawing scaling and the history config.
+  - frontend/shared/calculation-history.js and unit-switch.js: saved records
+    and unit conversion for all pages.
+  - tools/*.py: they overwrite dashboard-data.js, SEO blocks and locale pages.
+  - sitemap.xml, manifest.webmanifest, service-worker.js, .htaccess-style
+    host rules: search indexing and installability.
+  Recommended practice: change one formula, then run
+  `cd backend && npm test` (parity + thread-factor tests) and compare a known
+  example from the page's FAQ.
+
+10.3 SHARED ACROSS MULTIPLE CALCULATORS
+--------------------------------------
+  Loaded by all 24 pages:
+    shared/calculator-sticky-header.css, calculator-info-sections.css,
+    calculation-history.css, smart-install-popup.css, add-shortcut.css,
+    feedback.css, mobile-input-viewport.css, numeric-keypad.css,
+    unit-switch.css, i18n/language-switcher.css and .js,
+    shared/internet-connection-manager.js, assets/js/api-config.js,
+    assets/js/calc-api.js, shared/unit-switch.js, shared/calculation-history.js,
+    shared/smart-install-popup.js, shared/feedback.js, shared/add-shortcut.js,
+    shared/mobile-input-viewport.js, shared/numeric-keypad.js.
+  Loaded by 22 pages: shared/dimension-values.js.
+  Backend shared by all: core/weight.js, core/validation.js,
+    materials/materialDensity.js, calculations/index.js.
+  Any edit to these files is a site-wide edit, even if the file looks small.
+
+10.4 CHANGES THAT AFFECT THE ENTIRE WEBSITE
+-------------------------------------------
+  - Renaming or moving frontend/shared/, frontend/i18n/,
+    frontend/assets/js/ or frontend/icons/ breaks hundreds of relative links.
+  - Changing shared CSS class names used in the common header/cards.
+  - Changing window.MWCalc, window.MW_MATERIALS or
+    window.CALCULATOR_HISTORY_CONFIG names.
+  - Changing the API base, endpoint paths (/api/calculate/:slug), payload
+    field names (values, unit, density, quantity, material) or response shape
+    (result.singleWeight, totalWeight, totalTonnes, volumeM3).
+  - Changing the 24 slugs: they are used in dashboard-data.js, page paths,
+    backend/calculations/index.js and sitemap.xml.
+  - Changing locale folder names (de/es/fr/hi/id/it/pt) without updating the
+    language switcher, hreflang tags and sitemap.
+  - Editing tools/generate_seo.py or generate_dashboard_data.py and re-running
+    them rewrites many files at once.
+
+10.5 FILES THAT CONTROL UI/UX DESIGN
+------------------------------------
+  - Home page look: frontend/assets/css/dashboard.css + index.html markup.
+  - Ribbon/header and shared chrome: shared/calculator-sticky-header.css.
+  - Informational blocks (formula, FAQ, tables, related links):
+    shared/calculator-info-sections.css.
+  - Per-page look: frontend/calculators/<slug>/<slug>.css (each independent).
+  - Dialogs and mobile helpers: calculation-history.css, numeric-keypad.css,
+    smart-install-popup.css, add-shortcut.css, feedback.css,
+    mobile-input-viewport.css, unit-switch.css, dish-end-family.css,
+    i18n/language-switcher.css.
+  - Interaction behaviour: <slug>.js (drawing updates, error text, button
+    states), shared/unit-switch.js, shared/numeric-keypad.js,
+    shared/calculation-history.js.
+
+10.6 FILES THAT CONTROL CALCULATION ACCURACY
+--------------------------------------------
+  Primary (order of impact):
+    1. backend/calculations/<module>.js - the geometry formula per calculator.
+    2. backend/core/weight.js - volume -> mass and kg -> tonne conversion.
+    3. backend/core/validation.js - 25.4 unit factor, limits, overflow guard.
+    4. backend/materials/materialDensity.js - density in g/cm3 or kg/m3.
+    5. backend/controllers/calculationController.js - density selection,
+       unit normalisation, result assembly.
+    6. frontend/calculators/<slug>/<slug>.js - which values are sent and in
+       which unit; display rounding only (2-8 decimals).
+  Rounding is presentation only: the API returns full-precision numbers; the
+  pages round for display. Do not "fix" a weight by editing display decimals.
+
+10.7 FILES RESPONSIBLE FOR MOBILE/DESKTOP RESPONSIVENESS
+-------------------------------------------------------
+  - Each <slug>.css has @media rules for the two-column diagram/input layout,
+    result grid and table scrolling.
+  - frontend/assets/css/dashboard.css: grid columns, search bar, category
+    chips and card sizes.
+  - shared/calculator-sticky-header.css: ribbon collapse and menu behaviour.
+  - shared/mobile-input-viewport.js: adjusts layout when the on-screen
+    keyboard opens (visualViewport).
+  - shared/numeric-keypad.js + numeric-keypad.css: keypad shown only for
+    coarse pointers (touch), so desktop typing is unaffected.
+  - shared/unit-switch.css: touch-sized MM/Inches control.
+  - shared/calculation-history.css and smart-install-popup.css: full-width
+    panels/dialogs on small screens.
+  - dish-end-family.css and nut-bolt.css: horizontal scroll for wide drawings
+    and tables instead of shrinking them to illegible sizes.
+
+10.8 FILES RESPONSIBLE FOR PERFORMANCE
+--------------------------------------
+  - service-worker.js: pass-through by design; a caching version must be
+    versioned or it will serve stale scripts.
+  - calc-api.js: aborts stale requests, caches the density table once, 15 s
+    timeout, avoids duplicate calculation while one is running.
+  - Script loading order and `defer` on language-switcher.js; the rest are
+    classic scripts at the end of <body>, so HTML paints first.
+  - dashboard-data.js: the whole tool catalogue is loaded on the home page
+    (small, one request); dashboard.js renders cards once.
+  - Inline SVG drawings: no image downloads, but dish-ends.js (2047 lines) and
+    nut-bolt.js (3121 lines) are the heaviest page scripts and redraw on input.
+  - sitemap.xml is 258 KB and is fetched only by crawlers.
+  - No web-font request, no CDN, no framework runtime, no bundling.
+  - Page CSS is duplicated per calculator rather than shared, which costs
+    repeated bytes across pages but allows independent styling; shared caching
+    depends on the host's cache headers.
+
+================================================================================
+11. FILE ORIGIN AND CREATOR INFORMATION
+================================================================================
+
+11.1 WHAT EVIDENCE EXISTS
+-------------------------
+  - No .git folder and no Git history are present, so commit authorship cannot
+    be checked.
+  - File comments describe sections ("HOME PAGE START", "FUNCTION: ... START")
+    but never name a person.
+  - The About page states the site is operated by "Jadhav Group of Industries"
+    and carries "(c) 2026 Jadhav Group of Industries". That identifies the
+    copyright holder of the website content, not the author of each file.
+  - Browser storage keys use the prefixes "jadhav-engineering:" (history),
+    "jadhav-smart-install:" (install popup) and "mw-lang" (language).
+  - AUDIT_SAVED_CODE/ holds saved copies and audit notes written for this
+    project; its README.txt describes the audit purpose.
+  - tools/build_i18n.py, generate_dashboard_data.py, generate_seo.py and
+    i18n_paths.py are project-specific generators, so they were written for
+    this site.
+  Therefore: individual file authorship is not provable. For every source
+  file below the answer is exactly "Creator information not available".
+
+11.2 MANUALLY CREATED FILES (by project evidence)
+-------------------------------------------------
+  - All 24 English calculator pages: frontend/calculators/<slug>/index.html,
+    <slug>.css, <slug>.js.
+  - Home page index.html, frontend/assets/css/dashboard.css,
+    frontend/assets/js/dashboard.js.
+  - About page frontend/about/index.html.
+  - All frontend/shared/ and frontend/i18n/ source files.
+  - frontend/assets/js/api-config.js and calc-api.js.
+  - Entire backend: server.js, app.js, config.js, routes/, controllers/,
+    middleware/, core/, materials/, calculations/, test/.
+  - tools/*.py, README.md, DEPLOY.md, backend/README.md.
+  Creator information not available for each of these files.
+
+11.3 GENERATED FILES (produced by a script, not typed by hand)
+---------------------------------------------------------------
+  - frontend/assets/data/dashboard-data.js
+      generated by tools/generate_dashboard_data.py from the calculator
+      folders (9 categories, 24 tools, paths, tags, icons).
+  - SEO:START ... SEO:END blocks inside every index.html
+      generated by tools/generate_seo.py (canonical, hreflang, Open Graph,
+      Twitter, JSON-LD).
+  - sitemap.xml
+      generated by tools/generate_seo.py for SITE_BASE
+      https://metalweightcalculator.online.
+  - The seven locale trees (de/, es/, fr/, hi/, id/, it/, pt/)
+      generated/refreshed by tools/build_i18n.py using tools/i18n_paths.py;
+      each contains a translated copy of the home page, About page and all 24
+      calculator pages (26 HTML files per language).
+  - frontend/calculators/* duplicate CSS/JS copies
+      each page's CSS/JS was produced as a page-specific copy from a common
+      pattern; md5 checks show they are not byte-identical, so they are
+      maintained copies rather than symlinks or shared includes.
+  - backend/test/ and AUDIT_SAVED_CODE/ contain saved test/audit material
+    produced during development; they are not served to visitors.
+  Creator information not available (generator files themselves are covered
+  in 11.2).
+
+11.4 THIRD-PARTY DEPENDENCIES
+----------------------------
+  - None bundled. No jQuery, React, Bootstrap, icon font, analytics library or
+    npm package ships with the site.
+  - External services referenced at runtime:
+      Google AdSense  only as an instruction comment in each <head>; no ad
+                      script is active yet, and ads.txt has no seller id.
+      Google Forms    feedback.js opens a Google Form in a new tab using the
+                      form id embedded in that file. No SDK is loaded.
+  - The system font stack is provided by the visitor's operating system, not
+    by a font file in the project.
+  - Creator/authorship of these external services belongs to their providers;
+    no local authorship claim is made.
+
+11.5 CONFIGURATION FILES (project settings, not application code)
+-----------------------------------------------------------------
+  backend/package.json, backend/.env.example, manifest.webmanifest,
+  robots.txt, ads.txt, .gitignore, .gitattributes, .nojekyll (GitHub Pages
+  marker), service-worker.js (runtime config-like worker), sitemap.xml
+  (generated configuration for crawlers).
+  Creator information not available for the hand-written ones.
+
+11.6 BINARY / ARTWORK FILES
+---------------------------
+  frontend/favicon.ico, frontend/favicon.png, frontend/icons/*.png (8 files),
+  frontend/icons/nut-bolt.svg (text but artwork), the 5 root PNG screenshots,
+  and PNGs inside AUDIT_SAVED_CODE/.
+  Creator information not available.
+
+11.7 RUNTIME ARTIFACTS (not part of the website)
+-----------------------------------------------
+  backend-server.log, backend-server.err.log, backend-server.pid,
+  taskkill.log, tools/__pycache__/i18n_paths.cpython-314.pyc.
+  These are local run/debug leftovers. They are not linked from any page and
+  can be deleted without affecting the site (see 12.2).
+
+
+================================================================================
+12. FILES NOT INSPECTED AND WHY
+================================================================================
+
+12.1 BINARY IMAGES (cannot be read as source text)
+--------------------------------------------------
+  The following were identified and their usage traced through HTML, CSS,
+  manifest and JS references, but their pixel content was not analysed:
+    frontend/favicon.ico
+    frontend/favicon.png
+    frontend/icons/apple-touch-icon.png
+    frontend/icons/icon-192.png
+    frontend/icons/icon-512.png
+    frontend/icons/logo.png
+    frontend/icons/maskable-192.png
+    frontend/icons/maskable-512.png
+    frontend/icons/nut-bolt-1024.png
+    frontend/icons/nut-bolt-512.png
+    cleanup-desktop-final.png
+    cleanup-mobile.png
+    cleanup-tablet.png
+    nut-bolt-icon-final.png
+    nut-bolt-icon-mobile.png
+  Reason: PNG/ICO are compressed binary formats; the documentation records
+  where each is referenced instead of pretending to analyse its code.
+  nut-bolt.svg is XML text but was treated as artwork, not program code.
+  PNG files inside AUDIT_SAVED_CODE/ are historical screenshots and were not
+  individually reviewed for the same reason.
+
+12.2 GENERATED / CACHE / RUNTIME FILES NOT READ LINE BY LINE
+------------------------------------------------------------
+  tools/__pycache__/i18n_paths.cpython-314.pyc
+    Reason: compiled Python bytecode generated automatically when
+    tools/build_i18n.py imports i18n_paths.py. It contains no hand-written
+    source and is regenerated by Python; it is not used by the website.
+  backend-server.log, backend-server.err.log, backend-server.pid, taskkill.log
+    Reason: transient output from earlier local preview runs (server addresses,
+    request logs, process id). They are not website source and their contents
+    are not part of the delivered site.
+  sitemap.xml (258 KB)
+    Reason: inspected by structure and generator, not read line by line; it is
+    a generated URL list, not logic.
+  AUDIT_SAVED_CODE/ snapshot files
+    Reason: saved copies/backups used for audit comparison, not runtime code.
+    They were inventoried and their README read; the duplicates were not
+    re-analysed one by one.
+  Locale calculator pages (168 files)
+    Reason: structurally verified (paths, relative asset links, language
+    switcher targets, shared script set) and sampled, but not translated line
+    by line. They are generated copies of the English pages with translated
+    text; their code logic is the same.
+  Every other text source file (HTML, CSS, JS, JSON, Python, MD, TXT) was
+  opened or searched and is documented in Sections 4-6.
+
+
+================================================================================
+13. MAINTENANCE QUICK REFERENCE
+================================================================================
+
+13.1 "WHERE DO I CHANGE ...?"
+-----------------------------
+  A density value ........................ backend/materials/materialDensity.js
+  A formula .............................. backend/calculations/<module>.js
+  Unit conversion factor ................. backend/core/validation.js
+  kg/tonne conversion or rounding ........ backend/core/weight.js
+  API URL used by the browser ............ frontend/assets/js/api-config.js
+  API port/CORS/rate limit ............... backend/config.js or backend/.env
+  One calculator's colours/layout ........ frontend/calculators/<slug>/<slug>.css
+  Header ribbon on all pages ............. frontend/shared/calculator-sticky-header.css
+  Home page grid/search .................. frontend/assets/css/dashboard.css,
+                                           frontend/assets/js/dashboard.js,
+                                           frontend/assets/data/dashboard-data.js
+  Calculator list/categories ............. tools/generate_dashboard_data.py (then
+                                           re-run it; do not hand-edit only one)
+  Page titles/descriptions/canonicals .... SEO block in each index.html, then
+                                           tools/generate_seo.py
+  Language menu / new language ........... frontend/i18n/language-switcher.js,
+                                           tools/i18n_paths.py, tools/build_i18n.py
+  History record labels .................. window.CALCULATOR_HISTORY_CONFIG at the
+                                           end of each <slug>.js
+  Feedback destination ................... frontend/shared/feedback.js
+  Install popup text ..................... frontend/shared/smart-install-popup.js
+
+13.2 LOCAL RUN COMMANDS (from README.md)
+---------------------------------------
+  API:      cd backend && npm start          (http://127.0.0.1:8080)
+  API dev:  cd backend && npm run dev        (node --watch)
+  Tests:    cd backend && npm test
+            expected: "calculator/scenario pairs compared: 71" then PASS
+  Static:   serve the project root on port 8123 (any static server), for
+            example python -m http.server 8123, then open
+            http://127.0.0.1:8123/index.html
+  The pages call http://127.0.0.1:8080 only when api-config.js is set to that
+  base; otherwise they use the same origin.
+
+13.3 CHECKLIST FOR ADDING A CALCULATOR
+--------------------------------------
+  1. Add backend/calculations/<name>.js exporting slug, validate, calculate.
+  2. Register it in backend/calculations/index.js (slug -> module).
+  3. Create frontend/calculators/<slug>/ with index.html, <slug>.css,
+     <slug>.js following an existing page (plate is the reference).
+  4. Include all shared CSS/JS in the same order, and define
+     CALCULATOR_HISTORY_CONFIG at the end of <slug>.js.
+  5. Add the tool entry through tools/generate_dashboard_data.py so the home
+     grid and search include it.
+  6. Run tools/generate_seo.py to add canonical/hreflang/JSON-LD and sitemap
+     entries, then tools/build_i18n.py to copy the page into the 7 locales.
+  7. Run backend tests and test one metric and one inch calculation.
+
+13.4 DEPLOYMENT CHECKLIST
+--------------------------
+  - Static files (root index.html, frontend/, locale folders, manifest,
+    service worker, robots, sitemap) to any static host.
+  - backend/ to a Node >=18 host with PORT/HOST/PUBLIC_API_BASE/
+    ALLOWED_ORIGINS set; never expose .env.
+  - Point frontend/assets/js/api-config.js at the public API URL, or leave it
+    empty when the API is served from the same origin.
+  - Add the site origin to ALLOWED_ORIGINS when the API is on another domain.
+  - Confirm /api/health returns the service name and 24 calculators.
+  - After changing any cacheable script, bump its ?v= query in the pages (the
+    project uses manual version query strings such as ?v=19).
+
+13.5 KNOWN FRAGILE POINTS
+--------------------------
+  - The 24 CSS/JS files are copies, so a fix applied to one page does not
+    reach the others; check whether the same bug exists on sibling pages.
+  - The API must be reachable for any result; there is no client-side
+    calculation fallback.
+  - The density fallback table inside calc-api.js duplicates the backend
+    table; if densities change in one place, update the other.
+  - History entries are per tab (sessionStorage); closing the tab clears them.
+  - Large drawings (flange, dish, nut-bolt) rely on horizontal scroll on small
+    screens; CSS overflow rules must be kept.
+
+
+================================================================================
+14. VERIFICATION STATEMENT
+================================================================================
+
+  This document was prepared as a read-only analysis of the project at
+  A:\SAN\P2\WEIGHT CALCU\WEIGHT CALCU.
+
+  What was done
+    - Every folder was listed, including nested calculator, locale, backend,
+      tools and audit folders.
+    - Source code was opened and read: all 24 English calculator pages and
+      their scripts/styles, the home page, the About page, all shared and i18n
+      JavaScript/CSS, the API client, the backend entry points, routes,
+      controllers, middleware, core helpers, material tables, all 24
+      calculation modules, backend tests overview, the PWA files, and the
+      Python generators.
+    - Formulas, input labels, validation rules, result field names, drawing
+      behaviour and asset references in this file come from that source, not
+      from file names.
+    - Localized pages and generated files were verified structurally and by
+      sampling; binary images and compiled/runtime artifacts were not read as
+      code, and Section 12 names each of them with the reason.
+
+  What was not changed
+    - No existing project file was modified, renamed, moved or deleted.
+    - No website functionality, UI, design, formula or calculation was changed.
+    - No dependency, folder or additional documentation file was created.
+    - The only new file is "Calculator Sanskar Files.txt" in the project root.
+
+  How to check
+    - The file exists in the project root next to index.html, README.md and
+      DEPLOY.md.
+    - It contains Sections 1 to 14, a complete folder tree, and the 24
+      calculator chapters (6.1 to 6.24).
+    - No placeholder or unfinished marker remains in the file.
+
+  Author note
+    - The author of individual project files cannot be determined from the
+      available evidence (no Git history), so no name has been invented;
+      Sections 1 and 11 state this policy and use "Creator information not
+      available" accordingly.
+
+================================================================================
+END OF DOCUMENT
+================================================================================

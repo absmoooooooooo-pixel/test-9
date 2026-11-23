@@ -1,0 +1,15 @@
+{
+ "type": "flat",
+ "values": {
+  "id": 1000,
+  "kr": 100,
+  "h": 0,
+  "sf": 40,
+  "t": 6
+ },
+ "unit": "mm",
+ "density": 7850,
+ "quantity": 1,
+ "divisions": 24,
+ "materialName": "Carbon Steel"
+}

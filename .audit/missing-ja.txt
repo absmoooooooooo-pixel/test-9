@@ -1,0 +1,260 @@
+EN
+Metal Weight Calculator &mdash; Engineering Tools
+&copy; 2026 Jadhav Group of Industries
+0.00 kg
+0.000 kg
+1 pc
+0.00000000 m³
+7.85 g/cm³
+W = [B × H &minus; (B &minus; 2T) × (H &minus; 2T)] × L × &rho; ÷ 10&#8310;
+W = Weight (kg) · B = Outer width (mm) · H = Outer height (mm) · T = Wall thickness (mm) · L = Length (mm) · &rho; = Density (g/cm³)
+in
+= B &minus; 2T, H
+= H &minus; 2T (mm).
+Calculate cross-sectional metal area: Area = B×H &minus; B
+×H
+(mm²).
+Calculate weight: W = Area × L × &rho; ÷ 1,000,000 (kg).
+B and H are outside dimensions, T is uniform wall thickness, L is length, and &rho; is density. Valid when 2T &lt; B and 2T &lt; H.
+Material Density (&rho;)
+W = [60×40 &minus; (60 &minus; 6)×(40 &minus; 6)] × 1000 ×
+Area = 2400 &minus; 1836 = 564 mm²; weight &approx; 4.427 kg/m.
+4.427 kg
+A box channel or rectangular hollow section is a rectangle with a rectangular void inside. This calculator uses the cross-section area B × H &minus; (B &minus; 2T) × (H &minus; 2T), multiplies it by the length and by the material density, so the answer is the mass of the steel walls only.
+Its metal area is 60 × 40 &minus; 54 × 34 = 564 mm², so it weighs about 4.43 kg per metre at 7.85 g/cm³. A 6 m length is roughly 26.6 kg.
+The area is 100 × 50 &minus; 94 × 44 = 864 mm², giving about 6.78 kg/m in mild steel. Enter the length in the calculator to get the weight of the whole piece.
+Why does the formula subtract (B &minus; 2T) × (H &minus; 2T)?
+&larr; All Engineering Tools
+W = [H × T
+w
++ 2 × (B &minus; T
+) × T
+f
+] × L × &rho; ÷ 10&#8310;
+= Web thickness (mm) · L = Length (mm) · &rho; = Density (g/cm³)
+, T
++ 2×(B &minus; T
+)×T
+Calculate weight: W = V × &rho; ÷ 1,000,000 (kg).
+web thickness, L length, &rho; density. Assumes web runs full height and flanges project from web.
+W = [100×5 + 2×(50 &minus; 5)×8] × 1000 ×
+Area = 500 + 720 = 1220 mm²; weight &approx; 9.577 kg/m.
+9.577 kg
+Why is the flange length written as (B &minus; T
+The flange width B is measured across the complete channel, so the part already included in the web has to be removed. Using (B &minus; T
+&#8634; Reset
+W = (&pi; ÷ 4) × D² × T × &rho; ÷ 10&#8310;
+W = Weight (kg) · D = Diameter (mm) · T = Thickness (mm) · &rho; = Density (g/cm³)
+Calculate the circular face area: A = (&pi; ÷ 4) × D² (mm²).
+Calculate the weight: W = V × &rho; ÷ 1,000,000 (kg).
+D is the plate diameter, T is the plate thickness and &rho; is the material density.
+W = (&pi; ÷ 4) × 500² × 10 ×
+A = (&pi; ÷ 4) × 250,000 &asymp; 196,349.54 mm²; V &asymp; 1,963,495.41 mm³, so W &asymp; 15.41 kg.
+15.41 kg
+A round plate is a cylinder of thickness T. This calculator uses (&pi; ÷ 4) × D² × T for the volume, multiplies by the density and divides by 10&#8310; when dimensions are in millimetres, so you get kilograms directly.
+Convert the disc to its area with &pi; × D² ÷ 4, then use 7.85 kg per m² for every millimetre of mild-steel thickness. A 10 mm plate is 78.5 kg/m² and a 500 mm disc covers 0.196 m².
+Not directly. Calculate the full disc, calculate a disc of the hole diameter, and subtract the second weight. A ring weighs (&pi; ÷ 4) × (D² &minus; d²) × T × &rho; ÷ 10&#8310;.
+A circle fills only &pi; ÷ 4, about 78.5%, of the square that encloses it. A 500 mm disc therefore weighs roughly three quarters of a 500 × 500 mm plate of the same thickness.
+Angle (&deg;)
+W = A × T × &rho; ÷ 10&#8313;
+W = Weight (kg) · A = Developed surface area (mm²) · T = Thickness (mm) · &rho; = Density (kg/m³)
+The head is a flat circular crown with a straight cylindrical flange. The developed area is &pi; × R² for the crown plus 2&pi; × R × SF for the flange, where R is the inside radius, ID ÷ 2. Weight is that area × plate thickness × density: ID 1000 mm with SF 40 mm and T 6 mm in carbon steel gives 42.91 kg.
+A flanged flat head is a flat crown bent down into a straight flange through a corner radius R. The crown stays at the level of the top of that bend, so its height above the tangent line where the knuckle turns vertical equals the knuckle radius. The flat crown diameter is then ID &minus; 2R.
+No. The calculator develops the flat crown (&pi;R²) and the cylindrical flange (2&pi;R · SF); the small fillet surface of the knuckle is not added, which keeps the estimate marginally conservative. The knuckle still sets the drawing and the crown diameter.
+Use the corner radius of your former or design drawing, typically a few per cent of the inside diameter. It must be smaller than the inside radius (ID ÷ 2) so that the flat crown ID &minus; 2R stays positive; the field is validated on that rule.
+No. The blank is the area-equivalent circle 2 × &radic;(A ÷ &pi;). Forming stretch, edge trim, weld prep and any thinning allowance are shop decisions and are added on top of it.
+@e.g. 7850
+@e.g. 1
++ 3 × (B &minus; T
++ 3×(B &minus; T
+web thickness, L length, and &rho; density.
+W = [100×6 + 3×(50 &minus; 6)×8] × 1000 ×
+Area = 600 + 1056 = 1656 mm²; weight &approx; 13.000 kg/m.
+13.000 kg
+Why does the formula use 3 × (B &minus; T
+. Taking (B &minus; T
+Flange contribution is 3 × (B &minus; T
+W = (&pi; ÷ 4) × (OD² &minus; ID² &minus; N × HD²) × T × &rho; ÷ 10&#8310;
+W = Weight (kg) · OD = Outer Diameter (mm) · ID = Inner Diameter (mm) · T = Thickness (mm) · N = Number of Bolt Holes · HD = Bolt Hole Diameter (mm) · PCD = Bolt Hole Pitch Circle Diameter (mm) · &rho; = Density (g/cm³)
+A = (&pi; ÷ 4) × (OD² &minus; ID² &minus; N × HD²)
+V = A × T
+W = V × &rho; ÷ 1,000,000
+i
+&rho; is the density of the selected material in g/cm³. Carbon steel is 7.85, stainless steel 8.00 and aluminium 2.70; the density of the actual grade may be slightly different. The density never changes when the measurement unit changes, because density is a property of the material and not of the drawing.
+Calculate the net face area after the bore and the bolt holes are removed: A = (&pi; ÷ 4) × (OD² &minus; ID² &minus; N × HD²) in mm².
+Calculate the single piece weight: W = V × &rho; ÷ 1,000,000 (kg).
+OD is the Outer Diameter, ID the Inner Diameter, T the Thickness, N the Number of Bolt Holes, HD the Bolt Hole Diameter, PCD the Bolt Hole Pitch Circle Diameter and &rho; the material density.
+W = (&pi; ÷ 4) × (300² &minus; 150² &minus; 8 × 18²) × 20 ×
+A = (&pi; ÷ 4) × (90,000 &minus; 22,500 &minus; 2,592) = (&pi; ÷ 4) × 64,908 &asymp; 50,978.62 mm²; V = 50,978.62 × 20 &asymp; 1,019,572.35 mm³; W = 1,019,572.35 × 7.85 ÷ 1,000,000 &asymp; 8.00 kg per piece.
+8.00 kg
+Start with the full disc, subtract the central bore and subtract every bolt hole, then multiply the net face area by the thickness and the density: W = (&pi; ÷ 4) × (OD² &minus; ID² &minus; N × HD²) × T × &rho; ÷ 10&#8310; for millimetres and g/cm³.
+Yes. Each hole removes a cylinder of &pi;/4 × HD² × T, so N holes remove N times that volume. On a typical flange the holes account for only three to eight per cent of the mass, but for large hole patterns the difference is worth calculating.
+The tool rejects a pattern where a hole breaks into the bore or past the outer edge: the PCD must be at least ID + HD and at most OD &minus; HD. Adjacent holes also need a gap, which for equal spacing means PCD × sin(&pi; ÷ N) must be at least HD.
+@e.g. 4, 8, 12
+W = (&radic;3 ÷ 2) × A² × L × &rho; ÷ 10&#8310;
+W = Weight (kg) · A = Across-flats dimension (mm) · L = Length (mm) · &rho; = Density (g/cm³) · &radic;3 &approx; 1.73205
+Calculate cross-sectional area of a regular hexagon from across-flats: Area = (&radic;3/2) × A² (mm²).
+A is the distance across flats of the regular hexagon, L is bar length, and &rho; is material density.
+W = (&radic;3 ÷ 2) × 40² × 1000 ×
+A² = 1600; area &approx; 0.866025 × 1600 = 1385.641 mm²; weight &approx; 10.877 kg/m.
+10.877 kg
+A regular hexagon with across-flats size A has an area of (&radic;3 ÷ 2) × A². Multiply that by the length and the density to get the mass, which is the formula used in this calculator.
+About 2.72 kg/m in mild steel, because the area is (&radic;3 ÷ 2) × 400 = 346.4 mm². This is the value behind the common shortcut A² × 0.0068 for steel.
+W = [(&radic;3 ÷ 2) × A² &minus; (&pi; ÷ 4) × d²] × L × &rho; ÷ 10&#8310;
+W = Weight (kg) · A = Across-flats of hexagon (mm) · d = Hole diameter (mm) · L = Length (mm) · &rho; = Density (g/cm³)
+= (&radic;3/2) × A² (mm²).
+= (&pi;/4) × d² (mm²).
+&minus; A
+, then weight W = net area × L × &rho; ÷ 1,000,000 (kg).
+A is the outer regular hexagon across-flats dimension, d is the concentric round hole diameter, L is length, and &rho; is density. Hole must fit inside the hexagon.
+W = [(&radic;3 ÷ 2)×40² &minus; (&pi; ÷ 4)×20²] × 1000 ×
+Hex area &approx; 1385.641 mm², hole area &approx; 314.159 mm², net &approx; 1071.481 mm², weight &approx; 8.411 kg/m.
+8.411 kg
+Take the solid hexagon area (&radic;3 ÷ 2) × A², subtract the bore (&pi; ÷ 4) × d², then multiply by length and density. The result is the steel between the flats and the hole.
+W = [2 × B × T
++ (H &minus; 2T
+web thickness, L length, and &rho; density. Both flange junctions are counted once.
+W = [2×50×8 + (100 &minus; 2×8)×5] × 1000 ×
+Area = 800 + 420 = 1220 mm²; weight &approx; 9.577 kg/m.
+gives the cross-section area, which is multiplied by length and density. The web term uses (H &minus; 2T
+Only the web term (H &minus; 2T
+W = [A × T + (B &minus; T) × T] × L × &rho; ÷ 10&#8310;
+W = Weight (kg) · B = Vertical leg (mm) · A = Horizontal leg (mm) · T = Thickness (mm) · L = Length (mm) · &rho; = Density (g/cm³)
+Calculate cross-sectional area without double-counting the corner: Area = A×T + (B &minus; T)×T (mm²).
+B (vertical leg) and A (horizontal leg) are outside leg lengths, T is uniform thickness, L is length, and &rho; is density. Corner overlap is counted once (valid when T &lt; A and T &lt; B).
+W = [50×5 + (50 &minus; 5)×5] × 1000 ×
+Area = 475 mm²; weight &approx; 3.729 kg per metre.
+3.729 kg
+An angle is two plates that share a corner. The area used here is A × T + (B &minus; T) × T, which counts the corner once, and the result is multiplied by the length and the density.
+The area is T(A + B) &minus; T², so it grows almost linearly with thickness. Going from 5 mm to 6 mm on a 50 × 50 angle adds about 18% to the weight.
+0.00 cm³
+0.0 mm²
+W = Weight (kg) · V = Volume (mm³) · &rho; = Density (g/cm³) · lbs = kg × 2.2046226218
+The plain shank, socket screw head and double-ended stud middle use the cylinder volume V = &pi; × d² × L ÷ 4.
+t
+= [A(d) + A(d &minus; 1.226869 × P)] ÷ 2. The tensile stress area A
+s
+= &pi; ÷ 4 × (d &minus; k × P)² (k = 0.9382 ISO, 0.9743 ASME) is reported as a mechanical reference only and is not used for volume.
+= (&radic;3 ÷ 2) × s². Multiply by head height or nut height, subtract the derived 30&deg; chamfer on hex heads and nuts, then remove the averaged threaded bore from a nut.
+Socket head cap screws subtract the hex socket from a cylinder; countersunk screws use a 90&deg; cone frustum; carriage bolts add a spherical dome and square neck.
+d = Nominal diameter · P = Thread pitch · L = Length · s = Width across flats · k = Head height · e = Width across corners · m = Nut height · b = Thread length · &rho; = Material density (g/cm³). All dimensions use the selected unit; internal calculation is performed in mm.
+Standard dimensions are nominal maximum material values. Hex head and hex nut 30&deg; chamfers are derived from the across-flats dimension. Washer faces, under-head radii, socket edge chamfers and thread run-out are not modelled; the nut bore uses the average of the major and minor thread areas; a nylon insert lock nut is metal for its full height less a 1.5 mm nylon collar. Weights are theoretical and exclude coating, manufacturing tolerance and plating.
+V = (&radic;3 ÷ 2 × s² × k &minus; V
+) + ([&pi;d² ÷ 4 + &pi;(d &minus; 1.226869P)² ÷ 4] ÷ 2 × L)
+W =
+× V ÷ 1,000,000
+A thread has crests and roots, so a solid cylinder overstates its metal area. The calculator uses a geometric approximation: the mean of the major-diameter circle and the basic root-diameter circle of the 60&deg; thread. The tensile stress area is a strength-design value and is not used for mass.
+W = (&pi; ÷ 4) × (OD² &minus; ID²) × L × &rho; ÷ 10&#8310;, ID = OD &minus; 2T
+W = Weight (kg) · OD = Outside diameter (mm) · T = Wall thickness (mm) · ID = Inside diameter (mm) · L = Length (mm) · &rho; = Density (g/cm³)
+Calculate inside diameter: ID = OD &minus; 2T. Ensure wall thickness is less than half of OD.
+Calculate hollow cross-sectional area: A = (&pi;/4) × (OD² &minus; ID²) (mm²).
+Calculate weight: W = A × L × &rho; ÷ 1,000,000 (kg).
+OD is outer diameter, T is wall thickness, ID is inner diameter, L is length, and &rho; is material density. Valid geometry requires T &lt; OD/2.
+ID = 60 &minus; 2×5 = 50 mm; W = (&pi; ÷ 4) × (60² &minus; 50²) × 1000 ×
+A = (&pi;/4)×(3600 &minus; 2500) &approx; 863.938 mm²; W &approx; 6.782 kg per metre.
+6.782 kg
+Use the annulus between the outside and inside diameters: (&pi; ÷ 4) × (OD² &minus; ID²) × length × density, with ID = OD &minus; 2T. In millimetres this is the same as (OD &minus; t) × t × 0.02466 kg/m for steel.
+Why is the inside diameter calculated as OD &minus; 2T?
+The wall thickness is present on both sides of the bore, so it is subtracted twice from the outside diameter. Using OD &minus; t by mistake would overstate the metal area.
+KG
+LB
+1 pcs
+Weight (kg) = (L × W × T × &rho;) / 10&#8310;
+L = Length (mm) · W = Width (mm) · T = Thickness (mm) · &rho; = Density (g/cm³)
+78.50 kg
+Multiply length, width and thickness to get the volume, then multiply by the density. In millimetres the formula is L × W × T × &rho; ÷ 10&#8310;, which with 7.85 g/cm³ for mild steel gives kilograms directly.
+W = (&pi; ÷ 4) × D² × L × &rho; ÷ 10&#8310;
+W = Weight (kg) · D = Diameter (mm) · L = Length (mm) · &rho; = Density (g/cm³) · &pi; &approx; 3.14159
+Calculate the cross-sectional area of the solid circle: A = (&pi; ÷ 4) × D² (mm²).
+Multiply volume by density and divide by 1,000,000 to get weight: W = V × &rho; ÷ 10&#8310; (kg).
+D is the outer diameter, L is the bar length, and &rho; is material density. Result is theoretical weight for a solid round bar.
+W = (&pi; ÷ 4) × 50² × 1000 ×
+Area = (&pi;/4) × 2500 &approx; 1963.495 mm²; volume = 1,963,495 mm³; weight &approx; 15.41 kg.
+The cross-section is a circle, so the area is (&pi; ÷ 4) × D². Multiply by the length and the density to get the mass; in millimetres the whole expression is (&pi; ÷ 4) × D² × L × &rho; ÷ 10&#8310;.
+It is the exact circle formula with the density folded in: (&pi; ÷ 4) × 7,850 ÷ 1,000,000 is close to 1 ÷ 162. It is accurate enough for steel quoting and slightly wrong for other metals.
+A square of side D has 4 ÷ &pi;, about 1.27 times the area of a circle of diameter D. A 25 mm square bar therefore weighs 4.91 kg/m against 3.85 kg/m for a 25 mm round bar.
+W = [(&pi; ÷ 4) × D² &minus; (&radic;3 ÷ 2) × A²] × L × &rho; ÷ 10&#8310;
+W = Weight (kg) · D = Outer diameter (mm) · A = Hexagonal hole across-flats (mm) · L = Length (mm) · &rho; = Density (g/cm³)
+= (&pi;/4) × D² (mm²).
+, then W = net area × L × &rho; ÷ 1,000,000 (kg).
+D is the outer round bar diameter, A is the across-flats size of the concentric regular hexagonal hole, L is length, and &rho; is density. Hex hole must fit inside the circle.
+Assumes a solid round bar with a concentric regular hexagonal through-hole. For a regular hexagon to fit, A must be within the circle limits (A &le; (&radic;3/2)×D). Actual weight may vary with tolerances.
+W = [(&pi; ÷ 4)×50² &minus; (&radic;3 ÷ 2)×20²] × 1000 ×
+Circle area &approx; 1963.495 mm², hex hole area &approx; 346.410 mm², net &approx; 1617.085 mm², weight &approx; 12.694 kg/m.
+12.694 kg
+Subtract the hexagon from the circle: (&pi; ÷ 4) × D² &minus; (&radic;3 ÷ 2) × A² gives the metal area, which is multiplied by the length and density.
+The broached hole is hexagonal, so the material actually removed is the hexagon area (&radic;3 ÷ 2) × A², not the circle that would enclose it. Using the circle would overstate the material removed.
+W = &pi; × (OD × T &minus; T²) × L × &rho; ÷ 10&#8310;
+W = Weight (kg) · OD = Outside diameter (mm) · T = Shell thickness (mm) · L = Length (mm) · &rho; = Density (g/cm³)
+Equivalent form: W = (&pi; ÷ 4) × (OD² &minus; ID²) × L × &rho; ÷ 10&#8310;, where ID = OD &minus; 2T.
+Calculate inside diameter: ID = OD &minus; 2T. Thickness must be less than half of OD so ID stays positive.
+Calculate the shell wall cross-sectional area: A = &pi; × (OD × T &minus; T²) (mm²), which equals (&pi;/4) × (OD² &minus; ID²).
+Calculate weight: W = V × &rho; ÷ 1,000,000 (kg), then multiply by quantity for total weight.
+OD is outer diameter, T is shell thickness, ID is inner diameter, L is length, and &rho; is material density. Valid geometry requires T &lt; OD/2.
+ID = 100 &minus; 2×4 = 92 mm; W = &pi; × (100×4 &minus; 4²) × 1200 ×
+A = &pi;×(400 &minus; 16) &approx; 1206.372 mm²; V = 1,447,646 mm³; W &approx; 11.364 kg.
+11.364 kg
+The shell is a thin-walled cylinder with open ends, so its mass is the circumference at the mean diameter times the thickness times the length times the density. This calculator uses &pi; × (OD × T &minus; T²) × L × &rho;, which is the same as &pi; × D
+× T × L.
+The metal area is &pi; × (100 × 4 &minus; 16) = 1,206 mm², so the shell weighs about 11.36 kg in mild steel.
+Why does the formula use OD × T &minus; T²?
+It is the exact annulus area written with the mean diameter: &pi; × (OD &minus; T) × T. The expanded form &pi; × (OD × T &minus; T²) avoids a rounding step and gives the same answer.
+Very nearly. The developed plate area equals &pi; × mean diameter × length, so multiplying that area by thickness and density gives the shell mass; only forming stretch and weld preparation cause small differences.
+0.000000 Ton
+V = (1 ÷ 3) × &pi; × r² × H, r = D ÷ 2, W = V × &rho; ÷ 10&#8310;
+W = Weight (kg) · H = Height (mm) · D = Base diameter (mm) · r = Radius (mm) · V = Volume (mm³) · &rho; = Density (g/cm³)
+Calculate cone volume: V = (1/3) × &pi; × r² × h (mm³).
+Calculate weight: W = V × &rho; ÷ 1,000,000 (kg), where &rho; is in g/cm³ (e.g. carbon steel 7.85 g/cm³).
+r = 50 mm, H = 150 mm; V = (1/3)×&pi;×50²×150 = 392,699 mm³; W = 392,699 ×
+Volume &approx; 392,699 mm³ (0.0003927 m³). Using 7.85 g/cm³ gives weight &approx; 3.083 kg.
+3.083 kg
+The volume of a cone is one third of the base area times the height, V = (&pi; ÷ 3) × r² × h. Multiply that volume by the density, or enter the base diameter and height here.
+Weight is directly proportional to height at a fixed base diameter, because the volume term is (&pi; ÷ 3) × r² × h.
+W = (4 ÷ 3) × &pi; × (D ÷ 2)³ × &rho; ÷ 10&#8310;
+W = Weight (kg) · D = Diameter (mm) · r = D/2 = Radius (mm) · &rho; = Density (g/cm³) · &pi; &approx; 3.14159
+Calculate sphere volume: V = (4/3) × &pi; × r³ (mm³).
+Calculate weight: W = V × &rho; ÷ 1,000,000 (kg), where &rho; is in g/cm³.
+D is sphere/ball diameter, r is radius, and &rho; is material density. Volume of a solid sphere is (4/3)&pi;r³.
+W = (4 ÷ 3) × &pi; × (100 ÷ 2)³ ×
+r = 50 mm; volume &approx; 523,598.78 mm³; weight &approx; 4.110 kg.
+4.110 kg
+A sphere has volume (4 ÷ 3) × &pi; × r³, where r is half the diameter. Multiply that by the density, and for dimensions in millimetres divide by 1,000,000 to get kilograms.
+W = A × B × L × &rho; ÷ 10&#8310;
+W = Weight (kg) · A = Width (mm) · B = Height (mm) · L = Length (mm) · &rho; = Density (g/cm³)
+A is the width and B is the height of the solid cross-section, L is length, and &rho; is material density.
+W = 100 × 50 × 1000 ×
+39.25 kg
+Multiply the two sides to get the cross-section area, then multiply by length and density. The full formula is A × B × L × &rho; ÷ 10&#8310; for millimetres and g/cm³.
+A square of side D fills 4 ÷ &pi; times the area of a circle of diameter D. A 25 mm square bar weighs 4.91 kg/m while a 25 mm round bar weighs 3.85 kg/m.
+W = [B × T
++ (H &minus; T
+W = [80×8 + (100 &minus; 8)×6] × 1000 ×
+Area = 1192 mm²; weight &approx; 9.357 kg/m.
+9.357 kg
+Why is the web height written as (H &minus; T
+W = ((A + B) ÷ 2) × H × L × &rho; ÷ 10&#8310;
+W = Weight (kg) · A, B = Parallel sides (mm) · H = Perpendicular height (mm) · L = Length (mm) · &rho; = Density (g/cm³)
+A and B are the lengths of the two parallel sides of the trapezium cross-section, H is the perpendicular distance between them, L is bar length, and &rho; is density.
+W = ((60 + 40) ÷ 2) × 30 × 1000 ×
+11.775 kg
+For an isosceles trapezium, H = &radic;(side² &minus; ((A &minus; B) ÷ 2)²). For an unequal trapezoid, take the perpendicular height directly from the drawing.
+A and B are parallel sides, H is perpendicular height between them, L is length, and &rho; is density.
+W = (B × H ÷ 2) × L × &rho; ÷ 10&#8310;
+W = Weight (kg) · B = Base (mm) · H = Perpendicular height (mm) · L = Length (mm) · &rho; = Density (g/cm³)
+B is the triangle base, H is the perpendicular height, L is bar length, and &rho; is material density.
+W = (50 × 40 ÷ 2) × 1000 ×
+7.85 kg
+L = &radic;(H² + (R &minus; r)²) · A = &pi; × (R + r) × L · V = A × T · Weight = V × Density
+0.00 mm
+0.000000 m²
+s = &radic;(H² + (R &minus; r)²), A = &pi;(R + r)s, W = A × T × &rho; ÷ 10&#8310;
+W = Weight (kg) · D = Large end diameter (mm) · d = Small end diameter (mm) · H = Vertical height (mm) · T = Plate thickness (mm) · R=D/2, r=d/2 · s = Slant height · A = Lateral area (mm²) · &rho; = Density (g/cm³)
+Calculate radii R = D/2 and r = d/2, and slant height s = &radic;(H² + (R &minus; r)²).
+Calculate lateral surface area of the frustum: A = &pi; × (R + r) × s.
+Calculate plate volume V = A × t (mm³) and weight W = V × &rho; ÷ 1,000,000 (kg), where &rho; is in g/cm³.
+R=100, r=50, H=150 mm &rArr; s=&radic;(150²+50²)=158.114 mm; A=&pi;(150)(158.114)=74,509 mm²; V=74,509×5=372,545 mm³; W = 372,545 ×
+Lateral area &approx; 74,509 mm², plate volume &approx; 372,545 mm³. Using 7.85 g/cm³ gives weight &approx; 2.924 kg.
+2.924 kg
+Find the slant height s = &radic;(H² + (R &minus; r)²), then the lateral area A = &pi; × (R + r) × s, and finally W = A × T × &rho;. This gives the mass of the plate in the cone, not a solid cone.
+The developed area A is the plate area you need; a rough blank uses the mean circumference &pi;(R + r) times the slant height, with extra allowance for joints and trimming.
+Engineering Materials &ndash; Density Reference

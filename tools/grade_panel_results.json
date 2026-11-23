@@ -1,0 +1,2276 @@
+[
+  {
+    "mobile": false,
+    "innerWidth": 1904,
+    "checks": [
+      {
+        "name": "first card panel visible",
+        "pass": true,
+        "detail": "hidden=false"
+      },
+      {
+        "name": "first card one panel",
+        "pass": true,
+        "detail": "panels=1"
+      },
+      {
+        "name": "first card one selected card",
+        "pass": true,
+        "detail": "count=1 index=0"
+      },
+      {
+        "name": "first card position",
+        "pass": true,
+        "detail": "prev=1 expected=1"
+      },
+      {
+        "name": "first card full width",
+        "pass": true,
+        "detail": "info=902 expected=902"
+      },
+      {
+        "name": "first card spans grid",
+        "pass": true,
+        "detail": "gridColumn=1"
+      },
+      {
+        "name": "first card no overlap",
+        "pass": true,
+        "detail": "nextTop=2366.015625 infoTop=1739.171875"
+      },
+      {
+        "name": "first card no horizontal scroll",
+        "pass": true,
+        "detail": "doc=1904 win=1904"
+      },
+      {
+        "name": "first card not absolutely positioned",
+        "pass": true,
+        "detail": "position=static"
+      },
+      {
+        "name": "second column panel visible",
+        "pass": true,
+        "detail": "hidden=false"
+      },
+      {
+        "name": "second column one panel",
+        "pass": true,
+        "detail": "panels=1"
+      },
+      {
+        "name": "second column one selected card",
+        "pass": true,
+        "detail": "count=1 index=1"
+      },
+      {
+        "name": "second column position",
+        "pass": true,
+        "detail": "prev=1 expected=1"
+      },
+      {
+        "name": "second column full width",
+        "pass": true,
+        "detail": "info=902 expected=902"
+      },
+      {
+        "name": "second column spans grid",
+        "pass": true,
+        "detail": "gridColumn=1"
+      },
+      {
+        "name": "second column no overlap",
+        "pass": true,
+        "detail": "nextTop=2366.015625 infoTop=1739.171875"
+      },
+      {
+        "name": "second column no horizontal scroll",
+        "pass": true,
+        "detail": "doc=1904 win=1904"
+      },
+      {
+        "name": "second column not absolutely positioned",
+        "pass": true,
+        "detail": "position=static"
+      },
+      {
+        "name": "third row panel visible",
+        "pass": true,
+        "detail": "hidden=false"
+      },
+      {
+        "name": "third row one panel",
+        "pass": true,
+        "detail": "panels=1"
+      },
+      {
+        "name": "third row one selected card",
+        "pass": true,
+        "detail": "count=1 index=4"
+      },
+      {
+        "name": "third row position",
+        "pass": true,
+        "detail": "prev=5 expected=5"
+      },
+      {
+        "name": "third row full width",
+        "pass": true,
+        "detail": "info=902 expected=902"
+      },
+      {
+        "name": "third row spans grid",
+        "pass": true,
+        "detail": "gridColumn=1"
+      },
+      {
+        "name": "third row no overlap",
+        "pass": true,
+        "detail": "nextTop=2722.796875 infoTop=2095.953125"
+      },
+      {
+        "name": "third row no horizontal scroll",
+        "pass": true,
+        "detail": "doc=1904 win=1904"
+      },
+      {
+        "name": "third row not absolutely positioned",
+        "pass": true,
+        "detail": "position=static"
+      },
+      {
+        "name": "later row panel visible",
+        "pass": true,
+        "detail": "hidden=false"
+      },
+      {
+        "name": "later row one panel",
+        "pass": true,
+        "detail": "panels=1"
+      },
+      {
+        "name": "later row one selected card",
+        "pass": true,
+        "detail": "count=1 index=7"
+      },
+      {
+        "name": "later row position",
+        "pass": true,
+        "detail": "prev=7 expected=7"
+      },
+      {
+        "name": "later row full width",
+        "pass": true,
+        "detail": "info=902 expected=902"
+      },
+      {
+        "name": "later row spans grid",
+        "pass": true,
+        "detail": "gridColumn=1"
+      },
+      {
+        "name": "later row no overlap",
+        "pass": true,
+        "detail": "nextTop=2879.9375 infoTop=2274.34375"
+      },
+      {
+        "name": "later row no horizontal scroll",
+        "pass": true,
+        "detail": "doc=1904 win=1904"
+      },
+      {
+        "name": "later row not absolutely positioned",
+        "pass": true,
+        "detail": "position=static"
+      },
+      {
+        "name": "toggle closes panel",
+        "pass": true,
+        "detail": "hidden=true selected=0"
+      },
+      {
+        "name": "scroll setup panel visible",
+        "pass": true,
+        "detail": "hidden=false"
+      },
+      {
+        "name": "scroll setup one panel",
+        "pass": true,
+        "detail": "panels=1"
+      },
+      {
+        "name": "scroll setup one selected card",
+        "pass": true,
+        "detail": "count=1 index=2"
+      },
+      {
+        "name": "scroll setup position",
+        "pass": true,
+        "detail": "prev=3 expected=3"
+      },
+      {
+        "name": "scroll setup full width",
+        "pass": true,
+        "detail": "info=902 expected=902"
+      },
+      {
+        "name": "scroll setup spans grid",
+        "pass": true,
+        "detail": "gridColumn=1"
+      },
+      {
+        "name": "scroll setup no overlap",
+        "pass": true,
+        "detail": "nextTop=2544.40625 infoTop=1917.5625"
+      },
+      {
+        "name": "scroll setup no horizontal scroll",
+        "pass": true,
+        "detail": "doc=1904 win=1904"
+      },
+      {
+        "name": "scroll setup not absolutely positioned",
+        "pass": true,
+        "detail": "position=static"
+      },
+      {
+        "name": "panel stays in flow after scroll",
+        "pass": true,
+        "detail": "prev=3 position=static"
+      }
+    ],
+    "states": [
+      {
+        "label": "first card",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 0,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 1,
+        "nextIndex": 2,
+        "infoWidth": 902,
+        "expectedWidth": 902,
+        "infoTop": 1739.171875,
+        "nextTop": 2366.015625,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 1904,
+        "winWidth": 1904,
+        "listScrollTop": 0
+      },
+      {
+        "label": "second column",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 1,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 1,
+        "nextIndex": 2,
+        "infoWidth": 902,
+        "expectedWidth": 902,
+        "infoTop": 1739.171875,
+        "nextTop": 2366.015625,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 1904,
+        "winWidth": 1904,
+        "listScrollTop": 0
+      },
+      {
+        "label": "third row",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 4,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 5,
+        "nextIndex": 6,
+        "infoWidth": 902,
+        "expectedWidth": 902,
+        "infoTop": 2095.953125,
+        "nextTop": 2722.796875,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 1904,
+        "winWidth": 1904,
+        "listScrollTop": 0
+      },
+      {
+        "label": "later row",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 7,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 7,
+        "nextIndex": 8,
+        "infoWidth": 902,
+        "expectedWidth": 902,
+        "infoTop": 2274.34375,
+        "nextTop": 2879.9375,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 1904,
+        "winWidth": 1904,
+        "listScrollTop": 0
+      },
+      {
+        "label": "closed",
+        "cardCount": 16,
+        "selectedCount": 0,
+        "selectedIndex": -1,
+        "panels": 1,
+        "infoHidden": true,
+        "prevIndex": 7,
+        "nextIndex": 8,
+        "infoWidth": 0,
+        "expectedWidth": 902,
+        "infoTop": 0,
+        "nextTop": 2274.34375,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 1904,
+        "winWidth": 1904,
+        "listScrollTop": 0
+      },
+      {
+        "label": "scroll setup",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 2,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 3,
+        "nextIndex": 4,
+        "infoWidth": 902,
+        "expectedWidth": 902,
+        "infoTop": 1917.5625,
+        "nextTop": 2544.40625,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 1904,
+        "winWidth": 1904,
+        "listScrollTop": 0
+      },
+      {
+        "label": "after scroll",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 2,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 3,
+        "nextIndex": 4,
+        "infoWidth": 902,
+        "expectedWidth": 902,
+        "infoTop": 1837.5625,
+        "nextTop": 2464.40625,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 1904,
+        "winWidth": 1904,
+        "listScrollTop": 80
+      }
+    ],
+    "errors": [],
+    "cardCount": 16,
+    "viewport": "1920x1080"
+  },
+  {
+    "mobile": false,
+    "innerWidth": 1350,
+    "checks": [
+      {
+        "name": "first card panel visible",
+        "pass": true,
+        "detail": "hidden=false"
+      },
+      {
+        "name": "first card one panel",
+        "pass": true,
+        "detail": "panels=1"
+      },
+      {
+        "name": "first card one selected card",
+        "pass": true,
+        "detail": "count=1 index=0"
+      },
+      {
+        "name": "first card position",
+        "pass": true,
+        "detail": "prev=1 expected=1"
+      },
+      {
+        "name": "first card full width",
+        "pass": true,
+        "detail": "info=902 expected=902"
+      },
+      {
+        "name": "first card spans grid",
+        "pass": true,
+        "detail": "gridColumn=1"
+      },
+      {
+        "name": "first card no overlap",
+        "pass": true,
+        "detail": "nextTop=2362.609375 infoTop=1735.765625"
+      },
+      {
+        "name": "first card no horizontal scroll",
+        "pass": true,
+        "detail": "doc=1350 win=1350"
+      },
+      {
+        "name": "first card not absolutely positioned",
+        "pass": true,
+        "detail": "position=static"
+      },
+      {
+        "name": "second column panel visible",
+        "pass": true,
+        "detail": "hidden=false"
+      },
+      {
+        "name": "second column one panel",
+        "pass": true,
+        "detail": "panels=1"
+      },
+      {
+        "name": "second column one selected card",
+        "pass": true,
+        "detail": "count=1 index=1"
+      },
+      {
+        "name": "second column position",
+        "pass": true,
+        "detail": "prev=1 expected=1"
+      },
+      {
+        "name": "second column full width",
+        "pass": true,
+        "detail": "info=902 expected=902"
+      },
+      {
+        "name": "second column spans grid",
+        "pass": true,
+        "detail": "gridColumn=1"
+      },
+      {
+        "name": "second column no overlap",
+        "pass": true,
+        "detail": "nextTop=2362.609375 infoTop=1735.765625"
+      },
+      {
+        "name": "second column no horizontal scroll",
+        "pass": true,
+        "detail": "doc=1350 win=1350"
+      },
+      {
+        "name": "second column not absolutely positioned",
+        "pass": true,
+        "detail": "position=static"
+      },
+      {
+        "name": "third row panel visible",
+        "pass": true,
+        "detail": "hidden=false"
+      },
+      {
+        "name": "third row one panel",
+        "pass": true,
+        "detail": "panels=1"
+      },
+      {
+        "name": "third row one selected card",
+        "pass": true,
+        "detail": "count=1 index=4"
+      },
+      {
+        "name": "third row position",
+        "pass": true,
+        "detail": "prev=5 expected=5"
+      },
+      {
+        "name": "third row full width",
+        "pass": true,
+        "detail": "info=902 expected=902"
+      },
+      {
+        "name": "third row spans grid",
+        "pass": true,
+        "detail": "gridColumn=1"
+      },
+      {
+        "name": "third row no overlap",
+        "pass": true,
+        "detail": "nextTop=2719.390625 infoTop=2092.546875"
+      },
+      {
+        "name": "third row no horizontal scroll",
+        "pass": true,
+        "detail": "doc=1350 win=1350"
+      },
+      {
+        "name": "third row not absolutely positioned",
+        "pass": true,
+        "detail": "position=static"
+      },
+      {
+        "name": "later row panel visible",
+        "pass": true,
+        "detail": "hidden=false"
+      },
+      {
+        "name": "later row one panel",
+        "pass": true,
+        "detail": "panels=1"
+      },
+      {
+        "name": "later row one selected card",
+        "pass": true,
+        "detail": "count=1 index=7"
+      },
+      {
+        "name": "later row position",
+        "pass": true,
+        "detail": "prev=7 expected=7"
+      },
+      {
+        "name": "later row full width",
+        "pass": true,
+        "detail": "info=902 expected=902"
+      },
+      {
+        "name": "later row spans grid",
+        "pass": true,
+        "detail": "gridColumn=1"
+      },
+      {
+        "name": "later row no overlap",
+        "pass": true,
+        "detail": "nextTop=2876.53125 infoTop=2270.9375"
+      },
+      {
+        "name": "later row no horizontal scroll",
+        "pass": true,
+        "detail": "doc=1350 win=1350"
+      },
+      {
+        "name": "later row not absolutely positioned",
+        "pass": true,
+        "detail": "position=static"
+      },
+      {
+        "name": "toggle closes panel",
+        "pass": true,
+        "detail": "hidden=true selected=0"
+      },
+      {
+        "name": "scroll setup panel visible",
+        "pass": true,
+        "detail": "hidden=false"
+      },
+      {
+        "name": "scroll setup one panel",
+        "pass": true,
+        "detail": "panels=1"
+      },
+      {
+        "name": "scroll setup one selected card",
+        "pass": true,
+        "detail": "count=1 index=2"
+      },
+      {
+        "name": "scroll setup position",
+        "pass": true,
+        "detail": "prev=3 expected=3"
+      },
+      {
+        "name": "scroll setup full width",
+        "pass": true,
+        "detail": "info=902 expected=902"
+      },
+      {
+        "name": "scroll setup spans grid",
+        "pass": true,
+        "detail": "gridColumn=1"
+      },
+      {
+        "name": "scroll setup no overlap",
+        "pass": true,
+        "detail": "nextTop=2541 infoTop=1914.15625"
+      },
+      {
+        "name": "scroll setup no horizontal scroll",
+        "pass": true,
+        "detail": "doc=1350 win=1350"
+      },
+      {
+        "name": "scroll setup not absolutely positioned",
+        "pass": true,
+        "detail": "position=static"
+      },
+      {
+        "name": "panel stays in flow after scroll",
+        "pass": true,
+        "detail": "prev=3 position=static"
+      }
+    ],
+    "states": [
+      {
+        "label": "first card",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 0,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 1,
+        "nextIndex": 2,
+        "infoWidth": 902,
+        "expectedWidth": 902,
+        "infoTop": 1735.765625,
+        "nextTop": 2362.609375,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 1350,
+        "winWidth": 1350,
+        "listScrollTop": 0
+      },
+      {
+        "label": "second column",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 1,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 1,
+        "nextIndex": 2,
+        "infoWidth": 902,
+        "expectedWidth": 902,
+        "infoTop": 1735.765625,
+        "nextTop": 2362.609375,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 1350,
+        "winWidth": 1350,
+        "listScrollTop": 0
+      },
+      {
+        "label": "third row",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 4,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 5,
+        "nextIndex": 6,
+        "infoWidth": 902,
+        "expectedWidth": 902,
+        "infoTop": 2092.546875,
+        "nextTop": 2719.390625,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 1350,
+        "winWidth": 1350,
+        "listScrollTop": 0
+      },
+      {
+        "label": "later row",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 7,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 7,
+        "nextIndex": 8,
+        "infoWidth": 902,
+        "expectedWidth": 902,
+        "infoTop": 2270.9375,
+        "nextTop": 2876.53125,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 1350,
+        "winWidth": 1350,
+        "listScrollTop": 0
+      },
+      {
+        "label": "closed",
+        "cardCount": 16,
+        "selectedCount": 0,
+        "selectedIndex": -1,
+        "panels": 1,
+        "infoHidden": true,
+        "prevIndex": 7,
+        "nextIndex": 8,
+        "infoWidth": 0,
+        "expectedWidth": 902,
+        "infoTop": 0,
+        "nextTop": 2270.9375,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 1350,
+        "winWidth": 1350,
+        "listScrollTop": 0
+      },
+      {
+        "label": "scroll setup",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 2,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 3,
+        "nextIndex": 4,
+        "infoWidth": 902,
+        "expectedWidth": 902,
+        "infoTop": 1914.15625,
+        "nextTop": 2541,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 1350,
+        "winWidth": 1350,
+        "listScrollTop": 0
+      },
+      {
+        "label": "after scroll",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 2,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 3,
+        "nextIndex": 4,
+        "infoWidth": 902,
+        "expectedWidth": 902,
+        "infoTop": 1834.15625,
+        "nextTop": 2461,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 1350,
+        "winWidth": 1350,
+        "listScrollTop": 80
+      }
+    ],
+    "errors": [],
+    "cardCount": 16,
+    "viewport": "1366x768"
+  },
+  {
+    "mobile": true,
+    "innerWidth": 752,
+    "checks": [
+      {
+        "name": "first card panel visible",
+        "pass": true,
+        "detail": "hidden=false"
+      },
+      {
+        "name": "first card one panel",
+        "pass": true,
+        "detail": "panels=1"
+      },
+      {
+        "name": "first card one selected card",
+        "pass": true,
+        "detail": "count=1 index=0"
+      },
+      {
+        "name": "first card position",
+        "pass": true,
+        "detail": "prev=0 expected=0"
+      },
+      {
+        "name": "first card full width",
+        "pass": true,
+        "detail": "info=676 expected=676"
+      },
+      {
+        "name": "first card spans grid",
+        "pass": true,
+        "detail": "gridColumn=1"
+      },
+      {
+        "name": "first card no overlap",
+        "pass": true,
+        "detail": "nextTop=3009.828125 infoTop=2130.34375"
+      },
+      {
+        "name": "first card no horizontal scroll",
+        "pass": true,
+        "detail": "doc=752 win=752"
+      },
+      {
+        "name": "first card not absolutely positioned",
+        "pass": true,
+        "detail": "position=static"
+      },
+      {
+        "name": "second column panel visible",
+        "pass": true,
+        "detail": "hidden=false"
+      },
+      {
+        "name": "second column one panel",
+        "pass": true,
+        "detail": "panels=1"
+      },
+      {
+        "name": "second column one selected card",
+        "pass": true,
+        "detail": "count=1 index=1"
+      },
+      {
+        "name": "second column position",
+        "pass": true,
+        "detail": "prev=1 expected=1"
+      },
+      {
+        "name": "second column full width",
+        "pass": true,
+        "detail": "info=676 expected=676"
+      },
+      {
+        "name": "second column spans grid",
+        "pass": true,
+        "detail": "gridColumn=1"
+      },
+      {
+        "name": "second column no overlap",
+        "pass": true,
+        "detail": "nextTop=3143.625 infoTop=2282.734375"
+      },
+      {
+        "name": "second column no horizontal scroll",
+        "pass": true,
+        "detail": "doc=752 win=752"
+      },
+      {
+        "name": "second column not absolutely positioned",
+        "pass": true,
+        "detail": "position=static"
+      },
+      {
+        "name": "third row panel visible",
+        "pass": true,
+        "detail": "hidden=false"
+      },
+      {
+        "name": "third row one panel",
+        "pass": true,
+        "detail": "panels=1"
+      },
+      {
+        "name": "third row one selected card",
+        "pass": true,
+        "detail": "count=1 index=4"
+      },
+      {
+        "name": "third row position",
+        "pass": true,
+        "detail": "prev=4 expected=4"
+      },
+      {
+        "name": "third row full width",
+        "pass": true,
+        "detail": "info=676 expected=676"
+      },
+      {
+        "name": "third row spans grid",
+        "pass": true,
+        "detail": "gridColumn=1"
+      },
+      {
+        "name": "third row no overlap",
+        "pass": true,
+        "detail": "nextTop=3579.546875 infoTop=2739.90625"
+      },
+      {
+        "name": "third row no horizontal scroll",
+        "pass": true,
+        "detail": "doc=752 win=752"
+      },
+      {
+        "name": "third row not absolutely positioned",
+        "pass": true,
+        "detail": "position=static"
+      },
+      {
+        "name": "later row panel visible",
+        "pass": true,
+        "detail": "hidden=false"
+      },
+      {
+        "name": "later row one panel",
+        "pass": true,
+        "detail": "panels=1"
+      },
+      {
+        "name": "later row one selected card",
+        "pass": true,
+        "detail": "count=1 index=7"
+      },
+      {
+        "name": "later row position",
+        "pass": true,
+        "detail": "prev=7 expected=7"
+      },
+      {
+        "name": "later row full width",
+        "pass": true,
+        "detail": "info=676 expected=676"
+      },
+      {
+        "name": "later row spans grid",
+        "pass": true,
+        "detail": "gridColumn=1"
+      },
+      {
+        "name": "later row no overlap",
+        "pass": true,
+        "detail": "nextTop=4015.46875 infoTop=3197.078125"
+      },
+      {
+        "name": "later row no horizontal scroll",
+        "pass": true,
+        "detail": "doc=752 win=752"
+      },
+      {
+        "name": "later row not absolutely positioned",
+        "pass": true,
+        "detail": "position=static"
+      },
+      {
+        "name": "toggle closes panel",
+        "pass": true,
+        "detail": "hidden=true selected=0"
+      },
+      {
+        "name": "scroll setup panel visible",
+        "pass": true,
+        "detail": "hidden=false"
+      },
+      {
+        "name": "scroll setup one panel",
+        "pass": true,
+        "detail": "panels=1"
+      },
+      {
+        "name": "scroll setup one selected card",
+        "pass": true,
+        "detail": "count=1 index=2"
+      },
+      {
+        "name": "scroll setup position",
+        "pass": true,
+        "detail": "prev=2 expected=2"
+      },
+      {
+        "name": "scroll setup full width",
+        "pass": true,
+        "detail": "info=676 expected=676"
+      },
+      {
+        "name": "scroll setup spans grid",
+        "pass": true,
+        "detail": "gridColumn=1"
+      },
+      {
+        "name": "scroll setup no overlap",
+        "pass": true,
+        "detail": "nextTop=3274.765625 infoTop=2435.125"
+      },
+      {
+        "name": "scroll setup no horizontal scroll",
+        "pass": true,
+        "detail": "doc=752 win=752"
+      },
+      {
+        "name": "scroll setup not absolutely positioned",
+        "pass": true,
+        "detail": "position=static"
+      },
+      {
+        "name": "panel stays in flow after scroll",
+        "pass": true,
+        "detail": "prev=2 position=static"
+      }
+    ],
+    "states": [
+      {
+        "label": "first card",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 0,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 0,
+        "nextIndex": 1,
+        "infoWidth": 676,
+        "expectedWidth": 676,
+        "infoTop": 2130.34375,
+        "nextTop": 3009.828125,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 752,
+        "winWidth": 752,
+        "listScrollTop": 0
+      },
+      {
+        "label": "second column",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 1,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 1,
+        "nextIndex": 2,
+        "infoWidth": 676,
+        "expectedWidth": 676,
+        "infoTop": 2282.734375,
+        "nextTop": 3143.625,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 752,
+        "winWidth": 752,
+        "listScrollTop": 0
+      },
+      {
+        "label": "third row",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 4,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 4,
+        "nextIndex": 5,
+        "infoWidth": 676,
+        "expectedWidth": 676,
+        "infoTop": 2739.90625,
+        "nextTop": 3579.546875,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 752,
+        "winWidth": 752,
+        "listScrollTop": 0
+      },
+      {
+        "label": "later row",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 7,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 7,
+        "nextIndex": 8,
+        "infoWidth": 676,
+        "expectedWidth": 676,
+        "infoTop": 3197.078125,
+        "nextTop": 4015.46875,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 752,
+        "winWidth": 752,
+        "listScrollTop": 0
+      },
+      {
+        "label": "closed",
+        "cardCount": 16,
+        "selectedCount": 0,
+        "selectedIndex": -1,
+        "panels": 1,
+        "infoHidden": true,
+        "prevIndex": 7,
+        "nextIndex": 8,
+        "infoWidth": 0,
+        "expectedWidth": 676,
+        "infoTop": 0,
+        "nextTop": 3197.078125,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 752,
+        "winWidth": 752,
+        "listScrollTop": 0
+      },
+      {
+        "label": "scroll setup",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 2,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 2,
+        "nextIndex": 3,
+        "infoWidth": 676,
+        "expectedWidth": 676,
+        "infoTop": 2435.125,
+        "nextTop": 3274.765625,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 752,
+        "winWidth": 752,
+        "listScrollTop": 0
+      },
+      {
+        "label": "after scroll",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 2,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 2,
+        "nextIndex": 3,
+        "infoWidth": 676,
+        "expectedWidth": 676,
+        "infoTop": 2235.125,
+        "nextTop": 3074.765625,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 752,
+        "winWidth": 752,
+        "listScrollTop": 0
+      }
+    ],
+    "errors": [],
+    "cardCount": 16,
+    "viewport": "768x1024"
+  },
+  {
+    "mobile": true,
+    "innerWidth": 500,
+    "checks": [
+      {
+        "name": "first card panel visible",
+        "pass": true,
+        "detail": "hidden=false"
+      },
+      {
+        "name": "first card one panel",
+        "pass": true,
+        "detail": "panels=1"
+      },
+      {
+        "name": "first card one selected card",
+        "pass": true,
+        "detail": "count=1 index=0"
+      },
+      {
+        "name": "first card position",
+        "pass": true,
+        "detail": "prev=0 expected=0"
+      },
+      {
+        "name": "first card full width",
+        "pass": true,
+        "detail": "info=432 expected=432"
+      },
+      {
+        "name": "first card spans grid",
+        "pass": true,
+        "detail": "gridColumn=1"
+      },
+      {
+        "name": "first card no overlap",
+        "pass": true,
+        "detail": "nextTop=3397.609375 infoTop=2445.296875"
+      },
+      {
+        "name": "first card no horizontal scroll",
+        "pass": true,
+        "detail": "doc=500 win=500"
+      },
+      {
+        "name": "first card not absolutely positioned",
+        "pass": true,
+        "detail": "position=static"
+      },
+      {
+        "name": "second column panel visible",
+        "pass": true,
+        "detail": "hidden=false"
+      },
+      {
+        "name": "second column one panel",
+        "pass": true,
+        "detail": "panels=1"
+      },
+      {
+        "name": "second column one selected card",
+        "pass": true,
+        "detail": "count=1 index=1"
+      },
+      {
+        "name": "second column position",
+        "pass": true,
+        "detail": "prev=1 expected=1"
+      },
+      {
+        "name": "second column full width",
+        "pass": true,
+        "detail": "info=432 expected=432"
+      },
+      {
+        "name": "second column spans grid",
+        "pass": true,
+        "detail": "gridColumn=1"
+      },
+      {
+        "name": "second column no overlap",
+        "pass": true,
+        "detail": "nextTop=3531.40625 infoTop=2597.6875"
+      },
+      {
+        "name": "second column no horizontal scroll",
+        "pass": true,
+        "detail": "doc=500 win=500"
+      },
+      {
+        "name": "second column not absolutely positioned",
+        "pass": true,
+        "detail": "position=static"
+      },
+      {
+        "name": "third row panel visible",
+        "pass": true,
+        "detail": "hidden=false"
+      },
+      {
+        "name": "third row one panel",
+        "pass": true,
+        "detail": "panels=1"
+      },
+      {
+        "name": "third row one selected card",
+        "pass": true,
+        "detail": "count=1 index=4"
+      },
+      {
+        "name": "third row position",
+        "pass": true,
+        "detail": "prev=4 expected=4"
+      },
+      {
+        "name": "third row full width",
+        "pass": true,
+        "detail": "info=432 expected=432"
+      },
+      {
+        "name": "third row spans grid",
+        "pass": true,
+        "detail": "gridColumn=1"
+      },
+      {
+        "name": "third row no overlap",
+        "pass": true,
+        "detail": "nextTop=3948.734375 infoTop=3054.859375"
+      },
+      {
+        "name": "third row no horizontal scroll",
+        "pass": true,
+        "detail": "doc=500 win=500"
+      },
+      {
+        "name": "third row not absolutely positioned",
+        "pass": true,
+        "detail": "position=static"
+      },
+      {
+        "name": "later row panel visible",
+        "pass": true,
+        "detail": "hidden=false"
+      },
+      {
+        "name": "later row one panel",
+        "pass": true,
+        "detail": "panels=1"
+      },
+      {
+        "name": "later row one selected card",
+        "pass": true,
+        "detail": "count=1 index=7"
+      },
+      {
+        "name": "later row position",
+        "pass": true,
+        "detail": "prev=7 expected=7"
+      },
+      {
+        "name": "later row full width",
+        "pass": true,
+        "detail": "info=432 expected=432"
+      },
+      {
+        "name": "later row spans grid",
+        "pass": true,
+        "detail": "gridColumn=1"
+      },
+      {
+        "name": "later row no overlap",
+        "pass": true,
+        "detail": "nextTop=4403.25 infoTop=3512.03125"
+      },
+      {
+        "name": "later row no horizontal scroll",
+        "pass": true,
+        "detail": "doc=500 win=500"
+      },
+      {
+        "name": "later row not absolutely positioned",
+        "pass": true,
+        "detail": "position=static"
+      },
+      {
+        "name": "toggle closes panel",
+        "pass": true,
+        "detail": "hidden=true selected=0"
+      },
+      {
+        "name": "scroll setup panel visible",
+        "pass": true,
+        "detail": "hidden=false"
+      },
+      {
+        "name": "scroll setup one panel",
+        "pass": true,
+        "detail": "panels=1"
+      },
+      {
+        "name": "scroll setup one selected card",
+        "pass": true,
+        "detail": "count=1 index=2"
+      },
+      {
+        "name": "scroll setup position",
+        "pass": true,
+        "detail": "prev=2 expected=2"
+      },
+      {
+        "name": "scroll setup full width",
+        "pass": true,
+        "detail": "info=432 expected=432"
+      },
+      {
+        "name": "scroll setup spans grid",
+        "pass": true,
+        "detail": "gridColumn=1"
+      },
+      {
+        "name": "scroll setup no overlap",
+        "pass": true,
+        "detail": "nextTop=3662.546875 infoTop=2750.078125"
+      },
+      {
+        "name": "scroll setup no horizontal scroll",
+        "pass": true,
+        "detail": "doc=500 win=500"
+      },
+      {
+        "name": "scroll setup not absolutely positioned",
+        "pass": true,
+        "detail": "position=static"
+      },
+      {
+        "name": "panel stays in flow after scroll",
+        "pass": true,
+        "detail": "prev=2 position=static"
+      }
+    ],
+    "states": [
+      {
+        "label": "first card",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 0,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 0,
+        "nextIndex": 1,
+        "infoWidth": 432,
+        "expectedWidth": 432,
+        "infoTop": 2445.296875,
+        "nextTop": 3397.609375,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 500,
+        "winWidth": 500,
+        "listScrollTop": 0
+      },
+      {
+        "label": "second column",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 1,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 1,
+        "nextIndex": 2,
+        "infoWidth": 432,
+        "expectedWidth": 432,
+        "infoTop": 2597.6875,
+        "nextTop": 3531.40625,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 500,
+        "winWidth": 500,
+        "listScrollTop": 0
+      },
+      {
+        "label": "third row",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 4,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 4,
+        "nextIndex": 5,
+        "infoWidth": 432,
+        "expectedWidth": 432,
+        "infoTop": 3054.859375,
+        "nextTop": 3948.734375,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 500,
+        "winWidth": 500,
+        "listScrollTop": 0
+      },
+      {
+        "label": "later row",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 7,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 7,
+        "nextIndex": 8,
+        "infoWidth": 432,
+        "expectedWidth": 432,
+        "infoTop": 3512.03125,
+        "nextTop": 4403.25,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 500,
+        "winWidth": 500,
+        "listScrollTop": 0
+      },
+      {
+        "label": "closed",
+        "cardCount": 16,
+        "selectedCount": 0,
+        "selectedIndex": -1,
+        "panels": 1,
+        "infoHidden": true,
+        "prevIndex": 7,
+        "nextIndex": 8,
+        "infoWidth": 0,
+        "expectedWidth": 432,
+        "infoTop": 0,
+        "nextTop": 3512.03125,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 500,
+        "winWidth": 500,
+        "listScrollTop": 0
+      },
+      {
+        "label": "scroll setup",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 2,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 2,
+        "nextIndex": 3,
+        "infoWidth": 432,
+        "expectedWidth": 432,
+        "infoTop": 2750.078125,
+        "nextTop": 3662.546875,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 500,
+        "winWidth": 500,
+        "listScrollTop": 0
+      },
+      {
+        "label": "after scroll",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 2,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 2,
+        "nextIndex": 3,
+        "infoWidth": 432,
+        "expectedWidth": 432,
+        "infoTop": 2550.078125,
+        "nextTop": 3462.546875,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 500,
+        "winWidth": 500,
+        "listScrollTop": 0
+      }
+    ],
+    "errors": [],
+    "cardCount": 16,
+    "viewport": "430x932"
+  },
+  {
+    "mobile": true,
+    "innerWidth": 500,
+    "checks": [
+      {
+        "name": "first card panel visible",
+        "pass": true,
+        "detail": "hidden=false"
+      },
+      {
+        "name": "first card one panel",
+        "pass": true,
+        "detail": "panels=1"
+      },
+      {
+        "name": "first card one selected card",
+        "pass": true,
+        "detail": "count=1 index=0"
+      },
+      {
+        "name": "first card position",
+        "pass": true,
+        "detail": "prev=0 expected=0"
+      },
+      {
+        "name": "first card full width",
+        "pass": true,
+        "detail": "info=432 expected=432"
+      },
+      {
+        "name": "first card spans grid",
+        "pass": true,
+        "detail": "gridColumn=1"
+      },
+      {
+        "name": "first card no overlap",
+        "pass": true,
+        "detail": "nextTop=3397.609375 infoTop=2445.296875"
+      },
+      {
+        "name": "first card no horizontal scroll",
+        "pass": true,
+        "detail": "doc=500 win=500"
+      },
+      {
+        "name": "first card not absolutely positioned",
+        "pass": true,
+        "detail": "position=static"
+      },
+      {
+        "name": "second column panel visible",
+        "pass": true,
+        "detail": "hidden=false"
+      },
+      {
+        "name": "second column one panel",
+        "pass": true,
+        "detail": "panels=1"
+      },
+      {
+        "name": "second column one selected card",
+        "pass": true,
+        "detail": "count=1 index=1"
+      },
+      {
+        "name": "second column position",
+        "pass": true,
+        "detail": "prev=1 expected=1"
+      },
+      {
+        "name": "second column full width",
+        "pass": true,
+        "detail": "info=432 expected=432"
+      },
+      {
+        "name": "second column spans grid",
+        "pass": true,
+        "detail": "gridColumn=1"
+      },
+      {
+        "name": "second column no overlap",
+        "pass": true,
+        "detail": "nextTop=3531.40625 infoTop=2597.6875"
+      },
+      {
+        "name": "second column no horizontal scroll",
+        "pass": true,
+        "detail": "doc=500 win=500"
+      },
+      {
+        "name": "second column not absolutely positioned",
+        "pass": true,
+        "detail": "position=static"
+      },
+      {
+        "name": "third row panel visible",
+        "pass": true,
+        "detail": "hidden=false"
+      },
+      {
+        "name": "third row one panel",
+        "pass": true,
+        "detail": "panels=1"
+      },
+      {
+        "name": "third row one selected card",
+        "pass": true,
+        "detail": "count=1 index=4"
+      },
+      {
+        "name": "third row position",
+        "pass": true,
+        "detail": "prev=4 expected=4"
+      },
+      {
+        "name": "third row full width",
+        "pass": true,
+        "detail": "info=432 expected=432"
+      },
+      {
+        "name": "third row spans grid",
+        "pass": true,
+        "detail": "gridColumn=1"
+      },
+      {
+        "name": "third row no overlap",
+        "pass": true,
+        "detail": "nextTop=3948.734375 infoTop=3054.859375"
+      },
+      {
+        "name": "third row no horizontal scroll",
+        "pass": true,
+        "detail": "doc=500 win=500"
+      },
+      {
+        "name": "third row not absolutely positioned",
+        "pass": true,
+        "detail": "position=static"
+      },
+      {
+        "name": "later row panel visible",
+        "pass": true,
+        "detail": "hidden=false"
+      },
+      {
+        "name": "later row one panel",
+        "pass": true,
+        "detail": "panels=1"
+      },
+      {
+        "name": "later row one selected card",
+        "pass": true,
+        "detail": "count=1 index=7"
+      },
+      {
+        "name": "later row position",
+        "pass": true,
+        "detail": "prev=7 expected=7"
+      },
+      {
+        "name": "later row full width",
+        "pass": true,
+        "detail": "info=432 expected=432"
+      },
+      {
+        "name": "later row spans grid",
+        "pass": true,
+        "detail": "gridColumn=1"
+      },
+      {
+        "name": "later row no overlap",
+        "pass": true,
+        "detail": "nextTop=4403.25 infoTop=3512.03125"
+      },
+      {
+        "name": "later row no horizontal scroll",
+        "pass": true,
+        "detail": "doc=500 win=500"
+      },
+      {
+        "name": "later row not absolutely positioned",
+        "pass": true,
+        "detail": "position=static"
+      },
+      {
+        "name": "toggle closes panel",
+        "pass": true,
+        "detail": "hidden=true selected=0"
+      },
+      {
+        "name": "scroll setup panel visible",
+        "pass": true,
+        "detail": "hidden=false"
+      },
+      {
+        "name": "scroll setup one panel",
+        "pass": true,
+        "detail": "panels=1"
+      },
+      {
+        "name": "scroll setup one selected card",
+        "pass": true,
+        "detail": "count=1 index=2"
+      },
+      {
+        "name": "scroll setup position",
+        "pass": true,
+        "detail": "prev=2 expected=2"
+      },
+      {
+        "name": "scroll setup full width",
+        "pass": true,
+        "detail": "info=432 expected=432"
+      },
+      {
+        "name": "scroll setup spans grid",
+        "pass": true,
+        "detail": "gridColumn=1"
+      },
+      {
+        "name": "scroll setup no overlap",
+        "pass": true,
+        "detail": "nextTop=3662.546875 infoTop=2750.078125"
+      },
+      {
+        "name": "scroll setup no horizontal scroll",
+        "pass": true,
+        "detail": "doc=500 win=500"
+      },
+      {
+        "name": "scroll setup not absolutely positioned",
+        "pass": true,
+        "detail": "position=static"
+      },
+      {
+        "name": "panel stays in flow after scroll",
+        "pass": true,
+        "detail": "prev=2 position=static"
+      }
+    ],
+    "states": [
+      {
+        "label": "first card",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 0,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 0,
+        "nextIndex": 1,
+        "infoWidth": 432,
+        "expectedWidth": 432,
+        "infoTop": 2445.296875,
+        "nextTop": 3397.609375,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 500,
+        "winWidth": 500,
+        "listScrollTop": 0
+      },
+      {
+        "label": "second column",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 1,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 1,
+        "nextIndex": 2,
+        "infoWidth": 432,
+        "expectedWidth": 432,
+        "infoTop": 2597.6875,
+        "nextTop": 3531.40625,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 500,
+        "winWidth": 500,
+        "listScrollTop": 0
+      },
+      {
+        "label": "third row",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 4,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 4,
+        "nextIndex": 5,
+        "infoWidth": 432,
+        "expectedWidth": 432,
+        "infoTop": 3054.859375,
+        "nextTop": 3948.734375,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 500,
+        "winWidth": 500,
+        "listScrollTop": 0
+      },
+      {
+        "label": "later row",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 7,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 7,
+        "nextIndex": 8,
+        "infoWidth": 432,
+        "expectedWidth": 432,
+        "infoTop": 3512.03125,
+        "nextTop": 4403.25,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 500,
+        "winWidth": 500,
+        "listScrollTop": 0
+      },
+      {
+        "label": "closed",
+        "cardCount": 16,
+        "selectedCount": 0,
+        "selectedIndex": -1,
+        "panels": 1,
+        "infoHidden": true,
+        "prevIndex": 7,
+        "nextIndex": 8,
+        "infoWidth": 0,
+        "expectedWidth": 432,
+        "infoTop": 0,
+        "nextTop": 3512.03125,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 500,
+        "winWidth": 500,
+        "listScrollTop": 0
+      },
+      {
+        "label": "scroll setup",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 2,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 2,
+        "nextIndex": 3,
+        "infoWidth": 432,
+        "expectedWidth": 432,
+        "infoTop": 2750.078125,
+        "nextTop": 3662.546875,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 500,
+        "winWidth": 500,
+        "listScrollTop": 0
+      },
+      {
+        "label": "after scroll",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 2,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 2,
+        "nextIndex": 3,
+        "infoWidth": 432,
+        "expectedWidth": 432,
+        "infoTop": 2550.078125,
+        "nextTop": 3462.546875,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 500,
+        "winWidth": 500,
+        "listScrollTop": 0
+      }
+    ],
+    "errors": [],
+    "cardCount": 16,
+    "viewport": "390x844"
+  },
+  {
+    "mobile": true,
+    "innerWidth": 500,
+    "checks": [
+      {
+        "name": "first card panel visible",
+        "pass": true,
+        "detail": "hidden=false"
+      },
+      {
+        "name": "first card one panel",
+        "pass": true,
+        "detail": "panels=1"
+      },
+      {
+        "name": "first card one selected card",
+        "pass": true,
+        "detail": "count=1 index=0"
+      },
+      {
+        "name": "first card position",
+        "pass": true,
+        "detail": "prev=0 expected=0"
+      },
+      {
+        "name": "first card full width",
+        "pass": true,
+        "detail": "info=432 expected=432"
+      },
+      {
+        "name": "first card spans grid",
+        "pass": true,
+        "detail": "gridColumn=1"
+      },
+      {
+        "name": "first card no overlap",
+        "pass": true,
+        "detail": "nextTop=3397.609375 infoTop=2445.296875"
+      },
+      {
+        "name": "first card no horizontal scroll",
+        "pass": true,
+        "detail": "doc=500 win=500"
+      },
+      {
+        "name": "first card not absolutely positioned",
+        "pass": true,
+        "detail": "position=static"
+      },
+      {
+        "name": "second column panel visible",
+        "pass": true,
+        "detail": "hidden=false"
+      },
+      {
+        "name": "second column one panel",
+        "pass": true,
+        "detail": "panels=1"
+      },
+      {
+        "name": "second column one selected card",
+        "pass": true,
+        "detail": "count=1 index=1"
+      },
+      {
+        "name": "second column position",
+        "pass": true,
+        "detail": "prev=1 expected=1"
+      },
+      {
+        "name": "second column full width",
+        "pass": true,
+        "detail": "info=432 expected=432"
+      },
+      {
+        "name": "second column spans grid",
+        "pass": true,
+        "detail": "gridColumn=1"
+      },
+      {
+        "name": "second column no overlap",
+        "pass": true,
+        "detail": "nextTop=3531.40625 infoTop=2597.6875"
+      },
+      {
+        "name": "second column no horizontal scroll",
+        "pass": true,
+        "detail": "doc=500 win=500"
+      },
+      {
+        "name": "second column not absolutely positioned",
+        "pass": true,
+        "detail": "position=static"
+      },
+      {
+        "name": "third row panel visible",
+        "pass": true,
+        "detail": "hidden=false"
+      },
+      {
+        "name": "third row one panel",
+        "pass": true,
+        "detail": "panels=1"
+      },
+      {
+        "name": "third row one selected card",
+        "pass": true,
+        "detail": "count=1 index=4"
+      },
+      {
+        "name": "third row position",
+        "pass": true,
+        "detail": "prev=4 expected=4"
+      },
+      {
+        "name": "third row full width",
+        "pass": true,
+        "detail": "info=432 expected=432"
+      },
+      {
+        "name": "third row spans grid",
+        "pass": true,
+        "detail": "gridColumn=1"
+      },
+      {
+        "name": "third row no overlap",
+        "pass": true,
+        "detail": "nextTop=3948.734375 infoTop=3054.859375"
+      },
+      {
+        "name": "third row no horizontal scroll",
+        "pass": true,
+        "detail": "doc=500 win=500"
+      },
+      {
+        "name": "third row not absolutely positioned",
+        "pass": true,
+        "detail": "position=static"
+      },
+      {
+        "name": "later row panel visible",
+        "pass": true,
+        "detail": "hidden=false"
+      },
+      {
+        "name": "later row one panel",
+        "pass": true,
+        "detail": "panels=1"
+      },
+      {
+        "name": "later row one selected card",
+        "pass": true,
+        "detail": "count=1 index=7"
+      },
+      {
+        "name": "later row position",
+        "pass": true,
+        "detail": "prev=7 expected=7"
+      },
+      {
+        "name": "later row full width",
+        "pass": true,
+        "detail": "info=432 expected=432"
+      },
+      {
+        "name": "later row spans grid",
+        "pass": true,
+        "detail": "gridColumn=1"
+      },
+      {
+        "name": "later row no overlap",
+        "pass": true,
+        "detail": "nextTop=4403.25 infoTop=3512.03125"
+      },
+      {
+        "name": "later row no horizontal scroll",
+        "pass": true,
+        "detail": "doc=500 win=500"
+      },
+      {
+        "name": "later row not absolutely positioned",
+        "pass": true,
+        "detail": "position=static"
+      },
+      {
+        "name": "toggle closes panel",
+        "pass": true,
+        "detail": "hidden=true selected=0"
+      },
+      {
+        "name": "scroll setup panel visible",
+        "pass": true,
+        "detail": "hidden=false"
+      },
+      {
+        "name": "scroll setup one panel",
+        "pass": true,
+        "detail": "panels=1"
+      },
+      {
+        "name": "scroll setup one selected card",
+        "pass": true,
+        "detail": "count=1 index=2"
+      },
+      {
+        "name": "scroll setup position",
+        "pass": true,
+        "detail": "prev=2 expected=2"
+      },
+      {
+        "name": "scroll setup full width",
+        "pass": true,
+        "detail": "info=432 expected=432"
+      },
+      {
+        "name": "scroll setup spans grid",
+        "pass": true,
+        "detail": "gridColumn=1"
+      },
+      {
+        "name": "scroll setup no overlap",
+        "pass": true,
+        "detail": "nextTop=3662.546875 infoTop=2750.078125"
+      },
+      {
+        "name": "scroll setup no horizontal scroll",
+        "pass": true,
+        "detail": "doc=500 win=500"
+      },
+      {
+        "name": "scroll setup not absolutely positioned",
+        "pass": true,
+        "detail": "position=static"
+      },
+      {
+        "name": "panel stays in flow after scroll",
+        "pass": true,
+        "detail": "prev=2 position=static"
+      }
+    ],
+    "states": [
+      {
+        "label": "first card",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 0,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 0,
+        "nextIndex": 1,
+        "infoWidth": 432,
+        "expectedWidth": 432,
+        "infoTop": 2445.296875,
+        "nextTop": 3397.609375,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 500,
+        "winWidth": 500,
+        "listScrollTop": 0
+      },
+      {
+        "label": "second column",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 1,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 1,
+        "nextIndex": 2,
+        "infoWidth": 432,
+        "expectedWidth": 432,
+        "infoTop": 2597.6875,
+        "nextTop": 3531.40625,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 500,
+        "winWidth": 500,
+        "listScrollTop": 0
+      },
+      {
+        "label": "third row",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 4,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 4,
+        "nextIndex": 5,
+        "infoWidth": 432,
+        "expectedWidth": 432,
+        "infoTop": 3054.859375,
+        "nextTop": 3948.734375,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 500,
+        "winWidth": 500,
+        "listScrollTop": 0
+      },
+      {
+        "label": "later row",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 7,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 7,
+        "nextIndex": 8,
+        "infoWidth": 432,
+        "expectedWidth": 432,
+        "infoTop": 3512.03125,
+        "nextTop": 4403.25,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 500,
+        "winWidth": 500,
+        "listScrollTop": 0
+      },
+      {
+        "label": "closed",
+        "cardCount": 16,
+        "selectedCount": 0,
+        "selectedIndex": -1,
+        "panels": 1,
+        "infoHidden": true,
+        "prevIndex": 7,
+        "nextIndex": 8,
+        "infoWidth": 0,
+        "expectedWidth": 432,
+        "infoTop": 0,
+        "nextTop": 3512.03125,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 500,
+        "winWidth": 500,
+        "listScrollTop": 0
+      },
+      {
+        "label": "scroll setup",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 2,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 2,
+        "nextIndex": 3,
+        "infoWidth": 432,
+        "expectedWidth": 432,
+        "infoTop": 2750.078125,
+        "nextTop": 3662.546875,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 500,
+        "winWidth": 500,
+        "listScrollTop": 0
+      },
+      {
+        "label": "after scroll",
+        "cardCount": 16,
+        "selectedCount": 1,
+        "selectedIndex": 2,
+        "panels": 1,
+        "infoHidden": false,
+        "prevIndex": 2,
+        "nextIndex": 3,
+        "infoWidth": 432,
+        "expectedWidth": 432,
+        "infoTop": 2550.078125,
+        "nextTop": 3462.546875,
+        "gridColumn": "1",
+        "position": "static",
+        "docWidth": 500,
+        "winWidth": 500,
+        "listScrollTop": 0
+      }
+    ],
+    "errors": [],
+    "cardCount": 16,
+    "viewport": "360x780"
+  }
+]

@@ -1,0 +1,26 @@
+/* ==================================================
+   NUMERIC INPUT CLEANUP START
+   Removes the native up/down spinner buttons from every
+   number field. The field keeps its type, size, border,
+   padding and text alignment; only the two little arrow
+   buttons disappear.
+================================================== */
+
+/* Chrome, Edge, Safari and Opera paint the buttons through the
+   shadow DOM, so the pseudo-elements are what have to be removed. */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+/* Firefox uses a text-field appearance instead of pseudo-elements. */
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+/* ==================================================
+   NUMERIC INPUT CLEANUP END
+================================================== */

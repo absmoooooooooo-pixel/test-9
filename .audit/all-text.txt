@@ -1,0 +1,1203 @@
+About Us | Metal Weight Calculator
+Metal Weight Calculator
+Engineering Tools
+EN
+English
+Deutsch
+Español
+Français
+Português
+Home
+About Us
+Making Engineering Calculations Simple, Fast and Accessible
+Welcome to Engineering Calculators — a practical online platform designed to make engineering and metal-related calculations easier, faster, and more convenient.
+We understand that engineers, fabricators, technicians, students, and professionals often need quick and reliable calculations in their daily work. That's why we created this platform: to bring useful engineering calculators together in one place.
+What We Offer
+Our platform provides a collection of easy-to-use calculators for engineering, metal weight estimation, fabrication, and other technical calculations.
+Whether you need to calculate the weight of a metal plate, pipe, round bar, square bar, or other materials, our tools are designed to help you get results quickly without complicated manual calculations.
+Our Mission
+Our mission is to simplify everyday engineering calculations by providing accessible, user-friendly, and practical online tools.
+We aim to save users time, reduce repetitive manual work, and make technical calculations easier for everyone.
+Who Can Use Our Platform?
+Our calculators are useful for:
+Engineers and engineering professionals
+Fabricators and workshop technicians
+Manufacturing and industrial workers
+Students and learners
+Anyone who works with metal materials and technical calculations
+Our Commitment
+We continuously aim to improve our calculators, add useful tools, and make the website easier to use across mobile phones, tablets, and computers.
+Your feedback and suggestions help us make the platform better.
+We'd Love to Hear From You!
+Have an idea for a new calculator? Looking for a specific feature or improvement? Or simply want to share your experience with Metal Weight Calculator?
+We'd love to hear from you!
+Your suggestions help us understand what you need and inspire us to build more useful calculators and improve our website.
+You can share:
+Suggestions for new metal weight calculators.
+Ideas for additional features or improvements.
+Feedback about your experience using our calculators.
+Reviews and suggestions to help us serve you better.
+Every suggestion and review matters to us. Your feedback helps us make Metal Weight Calculator more useful for everyone.
+Have something to share? Please click the Feedback button below and let us know what you think!
+Thank you for using Engineering Calculators!
+Feedback
+Metal Weight Calculator &mdash; Engineering Tools
+&copy; 2026 Jadhav Group of Industries
+@Change language
+@Marathi
+@Hindi
+@English
+@German
+@Spanish
+@French
+@Japanese
+@Portuguese
+@Arabic
+@Go to homepage
+@Home
+@Open feedback form
+@Feedback
+Box Channel Weight Calculator | Metal Weight Calculator
+Box Channel Weight Calculator
+All Tools
+Box Section Dimensions
+Select measurement unit
+MM
+Inches
+Outer Width (B)
+Outer Height (H)
+Wall Thickness (T)
+Length (L)
+All dimensions are in millimeters.
+Material Selection
+Select Material
+Carbon Steel
+Stainless Steel
+Aluminium
+Brass
+Bronze
+Cast Iron
+Copper
+Custom Density
+Material Density
+Carbon Steel — 7.85 g/cm³
+Custom Density (g/cm³)
+Quantity (Pieces)
+Material densities are the specified values. Actual material density may vary by grade and composition.
+Calculate Weight →
+↺ Reset
+Calculation Result
+TOTAL WEIGHT
+0.00 kg
+Single Box Weight
+0.000 kg
+Quantity
+1 pc
+Volume Per Item
+0.00000000 m³
+7.85 g/cm³
+Weight Calculation Formula
+W = [B × H &minus; (B &minus; 2T) × (H &minus; 2T)] × L × &rho; ÷ 10&#8310;
+W = Weight (kg) · B = Outer width (mm) · H = Outer height (mm) · T = Wall thickness (mm) · L = Length (mm) · &rho; = Density (g/cm³)
+How to Calculate (Step-by-Step)
+Carbon Steel Box Section
+Convert B, H, T, and L to millimetres (mm) if entered in inches.
+Calculate inner dimensions: B
+in
+= B &minus; 2T, H
+= H &minus; 2T (mm).
+Calculate cross-sectional metal area: Area = B×H &minus; B
+×H
+(mm²).
+Calculate weight: W = Area × L × &rho; ÷ 1,000,000 (kg).
+Multiply by quantity for total weight.
+Variables:
+B and H are outside dimensions, T is uniform wall thickness, L is length, and &rho; is density. Valid when 2T &lt; B and 2T &lt; H.
+Assumptions/limitations:
+Assumes a rectangular hollow box section with uniform wall thickness and sharp corners. Actual RHS/SHS sections may have corner radii and tolerances affecting weight.
+Calculation Example
+mm
+Material Density (&rho;)
+g/cm³
+Calculation
+W = [60×40 &minus; (60 &minus; 6)×(40 &minus; 6)] × 1000 ×
+Area = 2400 &minus; 1836 = 564 mm²; weight &approx; 4.427 kg/m.
+Weight =
+4.427 kg
+Material Density Reference
+Material Name
+Density (g/cm³)
+Zinc
+Lead
+Tin
+Titanium
+Nickel
+Magnesium
+Inconel 625
+Monel 400
+View All Material Densities
+Frequently Asked Questions
+How is the weight of a box channel (RHS) calculated?
+A box channel or rectangular hollow section is a rectangle with a rectangular void inside. This calculator uses the cross-section area B × H &minus; (B &minus; 2T) × (H &minus; 2T), multiplies it by the length and by the material density, so the answer is the mass of the steel walls only.
+What does a 60 × 40 × 3 mm box section weigh per metre in steel?
+Its metal area is 60 × 40 &minus; 54 × 34 = 564 mm², so it weighs about 4.43 kg per metre at 7.85 g/cm³. A 6 m length is roughly 26.6 kg.
+How much does a 100 × 50 × 3 mm rectangular hollow section weigh per metre?
+The area is 100 × 50 &minus; 94 × 44 = 864 mm², giving about 6.78 kg/m in mild steel. Enter the length in the calculator to get the weight of the whole piece.
+Why does the formula subtract (B &minus; 2T) × (H &minus; 2T)?
+That term is the hollow inside the section. Subtracting it from the outside rectangle leaves only the four walls, which is exactly the steel that has weight.
+Why is my delivered RHS lighter than this calculated figure?
+The formula treats the corners as sharp squares. Production hollow sections have rounded corners, which remove a small amount of steel, and the wall thickness is nominal rather than exact. Expect the mill weight to be a few percent lower.
+Can the wall thickness be more than half of the width?
+No. The inner void must still exist, so the wall has to stay below half of the smaller outside dimension. If T reaches B/2 the section would be solid and the hollow-section formula no longer applies.
+Does doubling the wall thickness double the box section weight?
+No. Doubling T replaces the 2T(B + H) wall term and the 4T² corner overlap, so 3 mm to 6 mm on a 60 × 40 section takes 4.43 kg/m to about 8.29 kg/m, a factor of roughly 1.9 rather than 2.
+How do I get the total weight of a bundle of box sections?
+Enter the length of one piece, pick the material, then set Quantity to the number of pieces. The calculator multiplies the single-piece weight by that quantity and also shows the result in metric tonnes.
+Does a square hollow section use the same formula?
+Yes. Set B and H to the same value. A 50 × 50 × 3 mm SHS has an area of 564 mm² and weighs about 4.43 kg/m.
+Do paint, galvanising or mill tolerance change the answer?
+They are not included. The result is the theoretical mass of the steel section from nominal dimensions; coating mass and rolling tolerance are separate.
+Related Calculators
+Explore more engineering calculators
+Current category: Structural Sections
+Truncated Cone
+Hollow / Tube Sections
+Pipe
+C Channel
+Structural Sections
+E-Section
+I Channel
+L Channel
+&larr; All Engineering Tools
+@Open all engineering tools
+@All engineering tools
+@box channel front and side engineering views
+@Enter outer width
+@Enter outer height
+@Enter wall thickness
+@Enter length
+@Enter density in g/cm³
+C Channel Weight Calculator | Metal Weight Calculator
+C Channel Weight Calculator
+Channel Dimensions
+Flange Width (B)
+Overall Height (H)
+Flange Thickness (Tf)
+Web Thickness (Tw)
+Single Channel Weight
+W = [H × T
+w
++ 2 × (B &minus; T
+) × T
+f
+] × L × &rho; ÷ 10&#8310;
+W = Weight (kg) · B = Flange width (mm) · H = Overall height (mm) · T
+= Flange thickness (mm) · T
+= Web thickness (mm) · L = Length (mm) · &rho; = Density (g/cm³)
+Carbon Steel C Channel
+Convert B, H, T
+, T
+, and L to millimetres (mm) if entered in inches.
+Calculate cross-sectional area: Area = H×T
++ 2×(B &minus; T
+)×T
+Calculate volume: V = Area × L (mm³).
+Calculate weight: W = V × &rho; ÷ 1,000,000 (kg).
+B is flange width, H overall channel height, T
+flange thickness, T
+web thickness, L length, &rho; density. Assumes web runs full height and flanges project from web.
+Theoretical C-channel geometry with sharp corners and uniform thicknesses; web taken through full height. Actual rolled channels may differ due to radii, tapers, and standard tolerances.
+Flange Thickness (T
+Web Thickness (T
+W = [100×5 + 2×(50 &minus; 5)×8] × 1000 ×
+Area = 500 + 720 = 1220 mm²; weight &approx; 9.577 kg/m.
+9.577 kg
+How do you calculate the weight of a C channel?
+Treat the channel as one web plate plus two flange plates. This calculator uses H × T
+for the area, then multiplies by length and density, so the web/flange overlap is counted only once.
+What is the weight of a 100 × 50 mm C channel with a 5 mm web and 8 mm flange per metre?
+The area is 100 × 5 + 2 × 45 × 8 = 1,220 mm², which is about 9.58 kg/m in mild steel. A 6 m length weighs roughly 57.5 kg.
+Why is the flange length written as (B &minus; T
+The flange width B is measured across the complete channel, so the part already included in the web has to be removed. Using (B &minus; T
+) for each flange avoids counting the web twice.
+Will this match the ISMC or IS 2062 catalogue weight?
+Not exactly. Published channel tables include the root radius where the flange meets the web and, for many rolled channels, a small flange taper; both add a little steel. This calculator uses a sharp-corner, constant-thickness model, so catalogue values are usually slightly higher.
+Are tapered flanges included in the calculation?
+No. The flange is treated as a constant-thickness plate of T
+across its full width. If your channel has a measurable taper, use the average flange thickness for a closer estimate.
+What is the difference between a C channel and a U channel?
+They describe the same open section; the letter only reflects how the profile is drawn or which standard the mill follows. Enter B, H, flange thickness and web thickness and the weight calculation is identical.
+How much does a 3 m length of 100 × 50 C channel weigh?
+At 9.58 kg/m a 3 m piece is about 28.7 kg. Enter 3000 mm as the length, or keep the length at 1 m and multiply the per-metre figure yourself.
+Can I calculate a stainless steel or aluminium channel here?
+Yes. Choose the material from the list or enter a custom density. Only the density changes, so a stainless channel of the same dimensions is about 1.9% heavier than mild steel and an aluminium one about 66% lighter.
+Why does a taller channel weigh more at the same thickness?
+The web area is H × T
+, so every extra millimetre of height adds steel along the full length. Flange width and flange thickness add weight more slowly because the flanges are only two narrow strips.
+Box Channel
+T Channel
+Hexagon Bar
+Solid Bars
+@c channel front and side engineering views
+@Enter flange width
+@Enter overall height
+@Enter flange thickness
+@Enter web thickness
+Circular Plate Weight Calculator | Metal Weight Calculator
+Circular Plate Weight Calculator
+Circular Plate Dimensions
+Diameter (D)
+Thickness (T)
+&#8634; Reset
+Single Plate Weight
+Volume Per Plate
+W = (&pi; ÷ 4) × D² × T × &rho; ÷ 10&#8310;
+W = Weight (kg) · D = Diameter (mm) · T = Thickness (mm) · &rho; = Density (g/cm³)
+Carbon Steel Circular Plate
+Convert the diameter and thickness to millimetres (mm) if they were entered in inches (1 in = 25.4 mm).
+Calculate the circular face area: A = (&pi; ÷ 4) × D² (mm²).
+Calculate the volume: V = A × T (mm³).
+Calculate the weight: W = V × &rho; ÷ 1,000,000 (kg).
+Multiply by the quantity of pieces to get the total weight.
+D is the plate diameter, T is the plate thickness and &rho; is the material density.
+Assumes a flat, solid disc of uniform thickness with no holes, cut-outs, chamfers or edge bevels. Actual weight may vary with rolling tolerances and material grade.
+W = (&pi; ÷ 4) × 500² × 10 ×
+A = (&pi; ÷ 4) × 250,000 &asymp; 196,349.54 mm²; V &asymp; 1,963,495.41 mm³, so W &asymp; 15.41 kg.
+15.41 kg
+How do you calculate the weight of a circular plate?
+A round plate is a cylinder of thickness T. This calculator uses (&pi; ÷ 4) × D² × T for the volume, multiplies by the density and divides by 10&#8310; when dimensions are in millimetres, so you get kilograms directly.
+What is the weight of a 500 mm diameter, 10 mm thick MS plate?
+The area is 196,350 mm² and the volume 1,963,495 mm³, so the disc weighs about 15.41 kg in mild steel at 7.85 g/cm³.
+How much does a 300 mm diameter disc weigh at 8 mm thick?
+About 4.44 kg in mild steel. Halving the diameter to 300 mm and reducing the thickness to 8 mm removes most of the volume compared with a 500 × 10 mm disc.
+What is the weight of a round plate per square metre?
+Convert the disc to its area with &pi; × D² ÷ 4, then use 7.85 kg per m² for every millimetre of mild-steel thickness. A 10 mm plate is 78.5 kg/m² and a 500 mm disc covers 0.196 m².
+Can I use this calculator for a ring or flange with a hole in the centre?
+Not directly. Calculate the full disc, calculate a disc of the hole diameter, and subtract the second weight. A ring weighs (&pi; ÷ 4) × (D² &minus; d²) × T × &rho; ÷ 10&#8310;.
+Why is a round plate lighter than a square plate of the same width?
+A circle fills only &pi; ÷ 4, about 78.5%, of the square that encloses it. A 500 mm disc therefore weighs roughly three quarters of a 500 × 500 mm plate of the same thickness.
+Should I enter the outside diameter or the radius?
+Always the diameter, in millimetres or inches depending on the unit button. The calculator halves it internally, so entering a radius would make the result four times too small.
+Can I get the weight of a circular plate in inches?
+Yes. Switch to Inches, enter the diameter and thickness in inches, and the result is still shown in kilograms. To convert by hand, multiply each inch value by 25.4 mm before using the formula.
+Why does the cut disc weigh slightly less than the calculated value?
+The result is theoretical: plate thickness is nominal, the sheared or laser-cut edge may be slightly bevelled, and the mill's density for the actual grade can differ a little from the preset value.
+Current category: Plate / Sheet
+Plate
+Plate / Sheet
+Solid Round Bar
+Shell
+Sphere / Ball
+Spheres & Balls
+@circular plate front and side engineering views
+@Enter diameter
+@Enter thickness
+Dish Ends Calculator | Flat, Torispherical, Ellipsoidal & Hemispherical Heads
+Dish Ends Calculator
+Dish End Type
+Dish End Design Type
+Flat Head – Dished
+Torispherical Head
+Ellipsoidal Head
+Hemispherical Head
+Elliptical Head Template
+Choose a type to open its drawing, dimensions and weight calculation.
+Dish End Dimensions
+Number of Development Lines
+Material
+Stainless Steel 304
+Stainless Steel 316
+Stainless Steel 316L
+Other / Custom Material
+Material Density (kg/m³)
+Total Quantity (Pieces)
+Carbon Steel density 7,850 kg/m³ is used. You can type any density for another grade.
+Geometrical Results
+Development Results
+Division
+Angle (&deg;)
+Plan Radius
+Height
+Meridian Length
+Blank X
+Blank Y
+Material Results
+W = A × T × &rho; ÷ 10&#8313;
+W = Weight (kg) · A = Developed surface area (mm²) · T = Thickness (mm) · &rho; = Density (kg/m³)
+Step Formulas
+Densities are listed in g/cm³; 1 g/cm³ = 1,000 kg/m³. This calculator asks for kg/m³ (carbon steel 7,850 kg/m³), so the values are the same material in different units. Listed densities are theoretical values for guidance only.
+How is the weight of a flanged flat head calculated?
+The head is a flat circular crown with a straight cylindrical flange. The developed area is &pi; × R² for the crown plus 2&pi; × R × SF for the flange, where R is the inside radius, ID ÷ 2. Weight is that area × plate thickness × density: ID 1000 mm with SF 40 mm and T 6 mm in carbon steel gives 42.91 kg.
+Why does the drawing dimension the crown height as H = R?
+A flanged flat head is a flat crown bent down into a straight flange through a corner radius R. The crown stays at the level of the top of that bend, so its height above the tangent line where the knuckle turns vertical equals the knuckle radius. The flat crown diameter is then ID &minus; 2R.
+Does the knuckle radius change the calculated weight?
+No. The calculator develops the flat crown (&pi;R²) and the cylindrical flange (2&pi;R · SF); the small fillet surface of the knuckle is not added, which keeps the estimate marginally conservative. The knuckle still sets the drawing and the crown diameter.
+Why is a flanged flat head lighter than a dished head of the same size?
+For the same diameter and thickness its developed area is the smallest of the dish end types: the crown is 0.785 ID², against about 1.084 ID² for a 2:1 semi-ellipsoidal head and 1.571 ID² for a hemispherical head. It carries less pressure for the same thickness, so it usually needs stiffening or a heavier plate.
+Which knuckle radius should I enter?
+Use the corner radius of your former or design drawing, typically a few per cent of the inside diameter. It must be smaller than the inside radius (ID ÷ 2) so that the flat crown ID &minus; 2R stays positive; the field is validated on that rule.
+Is a forming or trim allowance included in the blank diameter?
+No. The blank is the area-equivalent circle 2 × &radic;(A ÷ &pi;). Forming stretch, edge trim, weld prep and any thinning allowance are shop decisions and are added on top of it.
+Current category: Vessel Heads
+Circular Plate
+Dish Ends Calculator | Metal Weight Calculator
+@e.g. 7850
+@e.g. 1
+E-Section Weight Calculator | Metal Weight Calculator
+E-Section Weight Calculator
+E-Section Dimensions
+Overall Width (B)
+Single Section Weight
+Volume Per Section
++ 3 × (B &minus; T
+W = Weight (kg) · B = Overall width (mm) · H = Overall height (mm) · T
+Carbon Steel E Section
+Calculate cross-sectional area of the E section: Area = H×T
++ 3×(B &minus; T
+B is overall width, H overall height, T
+flange thickness (top, middle, bottom), T
+web thickness, L length, and &rho; density.
+Assumes a solid E-shaped section with a full-height web and three equal-thickness flanges projecting to overall width B. Theoretical sharp-corner geometry; actual profiles may vary.
+W = [100×6 + 3×(50 &minus; 6)×8] × 1000 ×
+Area = 600 + 1056 = 1656 mm²; weight &approx; 13.000 kg/m.
+13.000 kg
+What is an E-section and how is its weight calculated?
+An E-section is a single web with three parallel flanges on one side, often used for frames, tracks and guides. The area used here is H × T
+, multiplied by length and density.
+What does a 100 × 50 mm E-section weigh with a 6 mm web and 8 mm flange?
+Its area is 100 × 6 + 3 × 44 × 8 = 1,656 mm², so it weighs about 13.0 kg per metre in mild steel. A 6 m length is roughly 78 kg.
+Why does the formula use 3 × (B &minus; T
+The section has three flanges of width B, and each one overlaps the web by T
+. Taking (B &minus; T
+) for each flange counts the shared strip once, in the web term.
+How does an E-section compare with two C channels back to back?
+Two C channels joined back to back form four flanges, while an E-section has three. For the same height, width and thicknesses the E-section is therefore lighter, and its centroid is offset toward the flange side.
+Can the three flanges have different thicknesses?
+The calculator assumes one flange thickness T
+for all three. If your profile is milled with unequal flanges, calculate each flange as B × T and add them to the web area yourself.
+Is the root radius between the web and flanges included?
+No. It is a sharp-corner model, so a rolled or extruded E-section with visible fillets is a little heavier than the calculated value.
+How much does an 8 mm flange instead of 6 mm change the weight?
+Flange contribution is 3 × (B &minus; T
+, so it scales almost linearly with flange thickness. On a 100 × 50 section with a 6 mm web, going from 6 mm to 8 mm flanges adds about 25% of the flange weight.
+Does the quantity field total the mass of several E-sections?
+Yes. Set Quantity to the number of pieces; the calculator shows the weight of one piece, the total weight and the total in metric tonnes.
+Can I use this for an aluminium E-profile?
+Yes. Pick Aluminium or enter a custom density in g/cm³; the geometry stays the same and only the density term changes.
+@e-section front and side engineering views
+@Enter overall width
+Flange Plate Weight Calculator | Metal Weight Calculator
+Flange Plate Weight Calculator
+Flange Plate Dimensions
+Outer Diameter (OD)
+Inner Diameter (ID)
+Bolt Hole Configuration
+Bolt holes are spaced equally around the pitch circle (PCD).
+Number of Bolt Holes (N)
+Bolt Hole Diameter (HD)
+Bolt Hole Pitch Circle Diameter (PCD)
+Single Flange Weight
+Volume Per Flange
+W = (&pi; ÷ 4) × (OD² &minus; ID² &minus; N × HD²) × T × &rho; ÷ 10&#8310;
+W = Weight (kg) · OD = Outer Diameter (mm) · ID = Inner Diameter (mm) · T = Thickness (mm) · N = Number of Bolt Holes · HD = Bolt Hole Diameter (mm) · PCD = Bolt Hole Pitch Circle Diameter (mm) · &rho; = Density (g/cm³)
+Net Area, Volume and Total Weight Steps
+Net area
+A = (&pi; ÷ 4) × (OD² &minus; ID² &minus; N × HD²)
+V = A × T
+W = V × &rho; ÷ 1,000,000
+Total Weight = W × Quantity
+i
+A = net face area (mm²) · V = volume (mm³) · W = single piece weight (kg)
+Material density:
+&rho; is the density of the selected material in g/cm³. Carbon steel is 7.85, stainless steel 8.00 and aluminium 2.70; the density of the actual grade may be slightly different. The density never changes when the measurement unit changes, because density is a property of the material and not of the drawing.
+Unit conversion:
+dimensions entered in inches are converted to millimetres before the formula runs (1 in = 25.4 mm). One g/cm³ is 1,000 kg/m³ and one mm³ is 0.001 cm³, which is why the volume in mm³ is multiplied by the density in g/cm³ and divided by 1,000,000 to give kilograms.
+How to Calculate Flange Plate Weight? (Step-by-Step)
+Carbon Steel Flange Plate
+Enter the outer diameter (OD) of the flange.
+Enter the inner diameter (ID), which is the central bore; use 0 for a blind flange.
+Enter the plate thickness (T).
+Enter the number of bolt holes (N).
+Enter the bolt hole diameter (HD).
+Enter the pitch circle diameter (PCD), the circle the holes are drilled on.
+Select the material, or type a custom density in g/cm³.
+Enter how many identical plates you need (quantity).
+Calculate the net face area after the bore and the bolt holes are removed: A = (&pi; ÷ 4) × (OD² &minus; ID² &minus; N × HD²) in mm².
+Calculate the single piece weight: W = V × &rho; ÷ 1,000,000 (kg).
+Multiply by the quantity to get the total weight.
+OD is the Outer Diameter, ID the Inner Diameter, T the Thickness, N the Number of Bolt Holes, HD the Bolt Hole Diameter, PCD the Bolt Hole Pitch Circle Diameter and &rho; the material density.
+The flange is treated as a flat annular plate of uniform thickness with plain drilled bolt holes. Raised faces, hubs, weld bevels, chamfers, counterbores and spot-facing are not included. The PCD positions the holes in the drawing and is checked against the geometry; it does not change the weight, because the number and size of the holes already fix the removed volume.
+holes
+Pitch Circle Diameter (PCD)
+piece
+W = (&pi; ÷ 4) × (300² &minus; 150² &minus; 8 × 18²) × 20 ×
+A = (&pi; ÷ 4) × (90,000 &minus; 22,500 &minus; 2,592) = (&pi; ÷ 4) × 64,908 &asymp; 50,978.62 mm²; V = 50,978.62 × 20 &asymp; 1,019,572.35 mm³; W = 1,019,572.35 × 7.85 ÷ 1,000,000 &asymp; 8.00 kg per piece.
+8.00 kg
+Densities are shown in grams per cubic centimetre (g/cm³). Actual density may vary with the material grade and its composition, so the calculated weight is a theoretical value.
+How do you calculate the weight of a flange plate?
+Start with the full disc, subtract the central bore and subtract every bolt hole, then multiply the net face area by the thickness and the density: W = (&pi; ÷ 4) × (OD² &minus; ID² &minus; N × HD²) × T × &rho; ÷ 10&#8310; for millimetres and g/cm³.
+What is the weight of a 300 mm OD flange with a 150 mm bore, 20 mm thick and eight 18 mm bolt holes?
+The net area is about 50,978.62 mm² and the volume 1,019,572 mm³, so the flange weighs about 8.00 kg in mild steel. The ring without bolt holes would be 8.32 kg, so the eight holes remove roughly 0.32 kg.
+Do the bolt holes really reduce the calculated weight?
+Yes. Each hole removes a cylinder of &pi;/4 × HD² × T, so N holes remove N times that volume. On a typical flange the holes account for only three to eight per cent of the mass, but for large hole patterns the difference is worth calculating.
+What is PCD on a flange and does it change the weight?
+PCD is the pitch circle diameter, the diameter of the circle on which all bolt hole centres sit. Moving the holes inwards or outwards on that circle does not change how much metal they remove, so the weight depends on the hole count and diameter, not on the PCD. The calculator still checks the PCD so the holes cannot fall into the bore or outside the rim.
+How many bolt holes can I enter?
+Any whole number from 1 upwards; the drawing places that exact number of holes equally spaced around the PCD. The usual patterns are 4, 8, 12 and 16, but 2, 3, 6 and 24 are equally valid when the flange design calls for them.
+How close can the bolt holes be to the bore and to the outside edge?
+The tool rejects a pattern where a hole breaks into the bore or past the outer edge: the PCD must be at least ID + HD and at most OD &minus; HD. Adjacent holes also need a gap, which for equal spacing means PCD × sin(&pi; ÷ N) must be at least HD.
+What does a DN100 PN16 flange plate weigh?
+A typical DN100 PN16 flange has a 220 mm outside diameter, a 115 mm bore, about 20 mm thickness and eight 18 mm bolt holes on a 180 mm PCD. That plate weighs roughly 4.02 kg in carbon steel; the hub and raised face of a weld-neck flange are extra.
+Can I calculate a blind flange or a flange without a bore?
+Yes. Enter 0 for the inner diameter and the calculation treats the plate as a solid disc with bolt holes. A blind flange with a raised face will weigh slightly more than the plain plate result.
+How do I enter flange dimensions in inches?
+Press Inches and type the OD, ID, thickness, hole diameter and PCD in inches; the result is still shown in kilograms. To check by hand, multiply each inch value by 25.4 mm before using the formula.
+What is the difference between OD and ID?
+OD is the outer diameter, the full size of the flange disc. ID is the inner diameter, the bore in the middle that lets the pipe or shaft pass through. The metal left between them is the ring that carries the weight, so a larger ID at the same OD means a lighter flange.
+Can I calculate the weight of a stainless steel flange plate?
+Yes. Select Stainless Steel and the calculator uses a density of 8.00 g/cm³ instead of 7.85 g/cm³ for carbon steel, which makes the same flange about two per cent heavier. Use the Custom Density option for a specific grade such as 304 or 316, whose density may differ slightly from the nominal value.
+How accurate is the theoretical flange plate weight?
+The result covers a flat plate with plain drilled holes. A real flange may have a raised face, a hub, a weld bevel, spot-faced bolt seats or a thicker rim, and plate thickness is nominal, so a fabricated or forged flange often weighs a few per cent more.
+Vessel Heads
+@flange plate plan and section engineering views
+@Enter outer diameter
+@Enter bore diameter
+@e.g. 4, 8, 12
+@Enter hole diameter
+@Enter pitch circle Ø
+Hexagon Bar Weight Calculator | Metal Weight Calculator
+Hexagon Bar Weight Calculator
+Hexagon Bar Dimensions
+Across Flats (A)
+Single Bar Weight
+W = (&radic;3 ÷ 2) × A² × L × &rho; ÷ 10&#8310;
+W = Weight (kg) · A = Across-flats dimension (mm) · L = Length (mm) · &rho; = Density (g/cm³) · &radic;3 &approx; 1.73205
+Carbon Steel Hexagon Bar
+Convert A and L to millimetres (mm) if entered in inches.
+Calculate cross-sectional area of a regular hexagon from across-flats: Area = (&radic;3/2) × A² (mm²).
+A is the distance across flats of the regular hexagon, L is bar length, and &rho; is material density.
+Assumes a solid regular hexagonal bar with uniform across-flats dimension. Actual weight may vary with tolerances and material grade.
+pc
+W = (&radic;3 ÷ 2) × 40² × 1000 ×
+A² = 1600; area &approx; 0.866025 × 1600 = 1385.641 mm²; weight &approx; 10.877 kg/m.
+10.877 kg
+How do you calculate the weight of a hexagonal bar?
+A regular hexagon with across-flats size A has an area of (&radic;3 ÷ 2) × A². Multiply that by the length and the density to get the mass, which is the formula used in this calculator.
+What does across-flats (A/F) mean on a hex bar?
+Across-flats is the distance between two opposite flat faces, which is how hex bar is ordered and how a spanner grips a nut. It is not the distance between opposite corners, which is larger by a factor of 1.155.
+What is the weight of a 40 mm across-flats hex steel bar per metre?
+The area is 1,385.6 mm², so the bar weighs about 10.88 kg per metre at 7.85 g/cm³. A 6 m length comes to roughly 65.3 kg.
+What does a 20 mm hex bar weigh per metre?
+About 2.72 kg/m in mild steel, because the area is (&radic;3 ÷ 2) × 400 = 346.4 mm². This is the value behind the common shortcut A² × 0.0068 for steel.
+How much lighter is a hex bar than a square bar of the same size?
+A hexagon fills 86.6% of the square that encloses it, so a 40 mm hex bar weighs about 10.88 kg/m against 12.56 kg/m for a 40 mm square bar.
+I only know the across-corners size. How do I enter it?
+Convert it first: across-flats = 0.866 × across-corners. A bar measuring 46.2 mm across corners is a 40 mm across-flats hexagon.
+Can I use this for hex nut or bolt-head blanks?
+Yes, the result is the solid hex weight. If the blank will be drilled or bored, subtract the hole separately, or use the hexagonal bar with round hole calculator.
+Which units should A and L be in?
+Millimetres with the MM button, or inches with the Inches button. In inches the length is also in inches, and the result is still kilograms.
+Why is the measured weight slightly below the calculated value?
+Hot-rolled hexagon bars are produced to a minus tolerance on the across-flats size and have rounded corners, so they usually weigh marginally less than the nominal sharp-corner figure.
+Current category: Solid Bars
+Round Bar
+Square Bar
+Trapezium Bar
+Trapezoidal Bar
+Triangular Bar
+@hexagon bar front and side engineering views
+@Enter across flats
+Hexagonal Bar with Round Hole Weight Calculator | Metal Weight Calculator
+Hexagonal Bar with Round Hole Weight Calculator
+Hexagon Dimensions
+Outer Across-Flats (A)
+Hole Diameter (d)
+Volume Per Bar
+W = [(&radic;3 ÷ 2) × A² &minus; (&pi; ÷ 4) × d²] × L × &rho; ÷ 10&#8310;
+W = Weight (kg) · A = Across-flats of hexagon (mm) · d = Hole diameter (mm) · L = Length (mm) · &rho; = Density (g/cm³)
+Carbon Steel Hex Bar with Round Hole
+Convert A, d, and L to millimetres (mm) if entered in inches.
+Calculate outer hexagon area: A
+hex
+= (&radic;3/2) × A² (mm²).
+Calculate round hole area: A
+hole
+= (&pi;/4) × d² (mm²).
+Compute net area = A
+&minus; A
+, then weight W = net area × L × &rho; ÷ 1,000,000 (kg).
+A is the outer regular hexagon across-flats dimension, d is the concentric round hole diameter, L is length, and &rho; is density. Hole must fit inside the hexagon.
+Assumes a regular hexagonal bar with a concentric circular through-hole and uniform dimensions. Actual weight may vary due to tolerances and material grade.
+W = [(&radic;3 ÷ 2)×40² &minus; (&pi; ÷ 4)×20²] × 1000 ×
+Hex area &approx; 1385.641 mm², hole area &approx; 314.159 mm², net &approx; 1071.481 mm², weight &approx; 8.411 kg/m.
+8.411 kg
+How do you calculate the weight of a hex bar with a round hole?
+Take the solid hexagon area (&radic;3 ÷ 2) × A², subtract the bore (&pi; ÷ 4) × d², then multiply by length and density. The result is the steel between the flats and the hole.
+What does a 40 mm across-flats hex bar with a 20 mm hole weigh per metre?
+The hexagon is 1,385.6 mm² and the 20 mm bore removes 314.2 mm², leaving 1,071.4 mm², which is about 8.41 kg/m. The same bar without the hole weighs 10.88 kg/m.
+How large can the hole be for a given across-flats size?
+The bore has to stay inside the flats, so the hole diameter must be smaller than A; in practice the wall left around the hole must still carry the load. The calculator accepts any positive d, so check your drawing for the minimum wall thickness.
+What is this profile used for?
+Bored hexagon bar is stock for socket-type components: lock nuts, coupling nuts, hex bushes, valve parts and machined fasteners that need a hex outside and a bore inside.
+Does the calculator assume the hole runs the full length?
+Yes. It treats the bore as a through hole of constant diameter, so a blind or stepped bore will weigh more than the calculated figure.
+How much does changing the hole from 10 mm to 30 mm save?
+On a 40 mm across-flats bar the bore removes 0.62 kg/m at 10 mm, 2.47 kg/m at 20 mm and 5.55 kg/m at 30 mm, taking the bar from 10.88 kg/m down to 5.33 kg/m at the largest size.
+Can I enter the bore in inches?
+Yes, switch the unit to Inches and give the across-flats, hole diameter and length in inches. The output remains in kilograms because the density list is metric.
+Why is the calculated weight different from the cut piece on the scale?
+The hexagon corners are rounded, the bore may be slightly oversize after drilling or broaching, and bar is rolled to a minus tolerance. All three make the real piece a little lighter than the sharp-corner theory.
+Current category: Special Hollow Bars
+Round Bar with Hexagonal Hole
+Special Hollow Bars
+@hexagonal bar with round hole front and side engineering views
+@Enter across-flats
+I Channel Weight Calculator | Metal Weight Calculator
+I Channel Weight Calculator
+W = [2 × B × T
++ (H &minus; 2T
+Carbon Steel I Section
+Calculate cross-sectional area: Area = 2×B×T
+B is flange width, H overall height, T
+web thickness, L length, and &rho; density. Both flange junctions are counted once.
+Theoretical I-section with parallel flanges, uniform thicknesses, and sharp corners. Standard I-beams often have radii/tapers, so actual weights may differ.
+W = [2×50×8 + (100 &minus; 2×8)×5] × 1000 ×
+Area = 800 + 420 = 1220 mm²; weight &approx; 9.577 kg/m.
+How do you calculate the weight of an I channel or I beam?
+Add the two flanges and the web: 2 × B × T
+gives the cross-section area, which is multiplied by length and density. The web term uses (H &minus; 2T
+) so the flange thickness is not counted twice.
+What is the weight of a 100 × 50 mm I section with 8 mm flanges and a 5 mm web?
+The area is 2 × 50 × 8 + 84 × 5 = 1,220 mm², so the section weighs about 9.58 kg/m in mild steel. A 6 m length is roughly 57.5 kg.
+Should I enter the overall height or the clear web depth?
+Enter the overall height H measured over both flanges. The calculator subtracts 2 × T
+internally to find the clear web, so entering the clear depth would make the section too light.
+What is the difference between an I beam and an H beam?
+Both are I-shaped sections; H sections usually have wider, parallel flanges while rolled I beams often have tapered flanges. The geometry is the same, so enter B, H, T
+and T
+from the section table you are working with.
+Why are both flanges calculated at the full width B?
+Each flange runs across the full width of the section, so its plate area is B × T
+. The web is narrower by the flange thickness at top and bottom, which is why its height is reduced instead.
+Does the calculator include root radii and flange taper?
+No. It assumes sharp corners and parallel flanges of constant thickness. Catalogue weights for hot-rolled I beams are slightly higher because the root radius adds steel and tapered flanges are thicker at the web.
+How do I convert the per-metre weight to kilograms per foot?
+Multiply kg/m by 0.3048, because one foot is 0.3048 m. A 9.58 kg/m section is about 2.92 kg per foot.
+How does web thickness change the weight of an I section?
+Only the web term (H &minus; 2T
+changes, so the weight rises in direct proportion to web thickness while the flanges stay the same.
+Can I calculate a stainless steel I section with this tool?
+Yes. Choose Stainless Steel or type a custom density in g/cm³. The dimensions stay identical, so only the density term changes the result.
+@i channel front and side engineering views
+L Channel Weight Calculator | Metal Weight Calculator
+L Channel Weight Calculator
+Angle Dimensions
+Vertical Leg (B)
+Horizontal Leg (A)
+Single Angle Weight
+W = [A × T + (B &minus; T) × T] × L × &rho; ÷ 10&#8310;
+W = Weight (kg) · B = Vertical leg (mm) · A = Horizontal leg (mm) · T = Thickness (mm) · L = Length (mm) · &rho; = Density (g/cm³)
+Carbon Steel L Angle
+Convert B, A, T, and L to millimetres (mm) if entered in inches.
+Calculate cross-sectional area without double-counting the corner: Area = A×T + (B &minus; T)×T (mm²).
+B (vertical leg) and A (horizontal leg) are outside leg lengths, T is uniform thickness, L is length, and &rho; is density. Corner overlap is counted once (valid when T &lt; A and T &lt; B).
+Theoretical sharp-corner geometry with uniform thickness; does not include root/toe radii of rolled sections. Actual weights may vary by standard and tolerances.
+W = [50×5 + (50 &minus; 5)×5] × 1000 ×
+Area = 475 mm²; weight &approx; 3.729 kg per metre.
+3.729 kg
+How do you calculate the weight of an MS angle (L channel)?
+An angle is two plates that share a corner. The area used here is A × T + (B &minus; T) × T, which counts the corner once, and the result is multiplied by the length and the density.
+What is the weight of a 50 × 50 × 5 mm angle per metre?
+Its area is 50 × 5 + 45 × 5 = 475 mm², so it weighs about 3.73 kg/m in mild steel. A 6 m length is roughly 22.4 kg.
+Can I calculate an unequal angle such as 75 × 50 × 6 mm?
+Yes. Enter the vertical leg B and the horizontal leg A separately; the formula does not require them to be equal. Only the shared corner strip T × T is subtracted, so unequal angles are handled correctly.
+Why is the catalogue weight of an angle a little higher than this result?
+Rolled angles have a root radius in the inside corner and rounded toes, which add steel that a sharp-corner model ignores. Tables also publish mass per metre to a standard rounding, so small differences are normal.
+How many metres of 50 × 50 × 5 angle make one tonne?
+At 3.73 kg/m, one tonne is about 268 m, or roughly 44 lengths of 6 m. Use the per-metre weight to plan bundles and transport loads.
+Is an L channel the same thing as an angle?
+Yes, both names describe the same L-shaped section. Fabricators say angle, catalogues say equal or unequal angle, and the L-channel label is common in weight calculators.
+How does the leg thickness affect the weight?
+The area is T(A + B) &minus; T², so it grows almost linearly with thickness. Going from 5 mm to 6 mm on a 50 × 50 angle adds about 18% to the weight.
+What if my drawing gives the legs in inches?
+Switch the unit to Inches and enter both legs, the thickness and the length in inches. The weight is still reported in kilograms, so no further conversion is needed.
+Can this angle calculator be used for aluminium or stainless angles?
+Yes. Pick the material or enter a custom density; an aluminium angle of the same size weighs about 2.7/7.85 of the mild-steel figure.
+@l channel front and side engineering views
+@Enter vertical leg
+@Enter horizontal leg
+Nut & Bolt Weight Calculator | Metal Weight Calculator
+Nut & Bolt Weight Calculator
+Fastener Dimensions
+Bolts
+Studs
+Nuts
+Standard
+Product Type
+Standard Size
+Choosing a standard size fills in the head, thread and nut dimensions from that standard. Every filled dimension can still be edited.
+The density is a material property and does not change when the input unit changes. Standard fastener steel is calculated as carbon steel (7.85 g/cm³). Actual material density may vary by grade and composition.
+0.000 lbs
+Unit Weight
+Volume Per Piece
+0.00 cm³
+Thread Stress Area
+0.0 mm²
+W = Weight (kg) · V = Volume (mm³) · &rho; = Density (g/cm³) · lbs = kg × 2.2046226218
+Solid round portions.
+The plain shank, socket screw head and double-ended stud middle use the cylinder volume V = &pi; × d² × L ÷ 4.
+Threaded portions.
+A thread is not a full cylinder. The physical material area is approximated by the mean of the major and basic root circles: A
+t
+= [A(d) + A(d &minus; 1.226869 × P)] ÷ 2. The tensile stress area A
+s
+= &pi; ÷ 4 × (d &minus; k × P)² (k = 0.9382 ISO, 0.9743 ASME) is reported as a mechanical reference only and is not used for volume.
+Hexagon heads and nuts.
+A regular hexagon across flats
+has area A
+= (&radic;3 ÷ 2) × s². Multiply by head height or nut height, subtract the derived 30&deg; chamfer on hex heads and nuts, then remove the averaged threaded bore from a nut.
+Other head forms.
+Socket head cap screws subtract the hex socket from a cylinder; countersunk screws use a 90&deg; cone frustum; carriage bolts add a spherical dome and square neck.
+d = Nominal diameter · P = Thread pitch · L = Length · s = Width across flats · k = Head height · e = Width across corners · m = Nut height · b = Thread length · &rho; = Material density (g/cm³). All dimensions use the selected unit; internal calculation is performed in mm.
+Standard dimensions are nominal maximum material values. Hex head and hex nut 30&deg; chamfers are derived from the across-flats dimension. Washer faces, under-head radii, socket edge chamfers and thread run-out are not modelled; the nut bore uses the average of the major and minor thread areas; a nylon insert lock nut is metal for its full height less a 1.5 mm nylon collar. Weights are theoretical and exclude coating, manufacturing tolerance and plating.
+M10 × 50 Hex Bolt · Carbon Steel
+Nominal Diameter (d)
+Thread Pitch (P)
+Across Flats (s)
+Head Height (k)
+V = (&radic;3 ÷ 2 × s² × k &minus; V
+chamfer
+) + ([&pi;d² ÷ 4 + &pi;(d &minus; 1.226869P)² ÷ 4] ÷ 2 × L)
+W =
+× V ÷ 1,000,000
+Carbon steel density 7.85 g/cm³ multiplies the total head plus full-thread shank volume.
+0.0366 kg / 0.0808 lbs
+Densities are typical theoretical values in g/cm³. The calculator uses the same values in the volume formula; 1 g/cm³ = 1,000 kg/m³. Actual grade, coating and manufacturing tolerance change the real weight.
+Why is the threaded part not treated as a full cylinder?
+A thread has crests and roots, so a solid cylinder overstates its metal area. The calculator uses a geometric approximation: the mean of the major-diameter circle and the basic root-diameter circle of the 60&deg; thread. The tensile stress area is a strength-design value and is not used for mass.
+Why can the calculated weight differ from a weighbridge?
+Standard dimensions are nominal maximum material values. Real parts carry manufacturing tolerance, under-head radii, plating and coating. Hex head and nut chamfers are modelled; socket edge chamfers and thread run-out are not. The result is a theoretical estimate.
+What is the difference between the metric and ASME thread factors?
+Metric ISO 898-1 threads use k = 0.9382; Unified inch threads to ASME B1.1 use k = 0.9743. The factor converts pitch and nominal diameter into the reference tensile stress area. Physical volume uses the thread root geometry instead, so the two thread systems do not change the theoretical mass independently of their actual dimensions.
+How is a nylon insert lock nut handled?
+The nylon collar is not metal, so it is excluded. The nut is calculated as a chamfered hexagon prism less its averaged threaded bore, with a 1.5 mm collar deducted from its full height.
+Why are both kilograms and pounds shown?
+The calculation is made in kilograms from millimetre volumes and g/cm³ density. Pounds are a convenience conversion using 1 kg = 2.2046226218 lbs; no separate calculation is performed.
+How does quantity affect the result?
+Quantity multiplies the single-piece weight and volume to give the total. The result table and each saved history record keep the quantity so you can see exactly what was calculated.
+What is the difference between full and half thread bolts?
+A full-thread bolt uses the physical thread approximation for its whole length. A half-thread bolt uses the solid shank cylinder for the unthreaded portion and the thread approximation only over the entered thread length.
+When should I use a custom density?
+Select Custom Density when your material or coating is not in the reference table. Enter the density in g/cm³; the same value is used for all fastener parts in the calculation.
+Current category: Fasteners
+Flange Plate
+Hexagonal Bar With Round Hole
+Round Bar With Hexagonal Hole
+@Fastener category
+@fastener engineering views
+@Enter quantity
+Pipe Weight Calculator | Metal Weight Calculator
+Pipe Weight Calculator
+Pipe Dimensions
+Single Pipe Weight
+W = (&pi; ÷ 4) × (OD² &minus; ID²) × L × &rho; ÷ 10&#8310;, ID = OD &minus; 2T
+W = Weight (kg) · OD = Outside diameter (mm) · T = Wall thickness (mm) · ID = Inside diameter (mm) · L = Length (mm) · &rho; = Density (g/cm³)
+Carbon Steel Pipe
+Convert OD, wall thickness, and length to millimetres (mm) if entered in inches.
+Calculate inside diameter: ID = OD &minus; 2T. Ensure wall thickness is less than half of OD.
+Calculate hollow cross-sectional area: A = (&pi;/4) × (OD² &minus; ID²) (mm²).
+Calculate weight: W = A × L × &rho; ÷ 1,000,000 (kg).
+OD is outer diameter, T is wall thickness, ID is inner diameter, L is length, and &rho; is material density. Valid geometry requires T &lt; OD/2.
+Assumes a straight, uniform circular hollow pipe with constant wall thickness. Actual weight may vary due to tolerances, ovality, seam/weld, and material grade.
+Outside Diameter (OD)
+ID = 60 &minus; 2×5 = 50 mm; W = (&pi; ÷ 4) × (60² &minus; 50²) × 1000 ×
+A = (&pi;/4)×(3600 &minus; 2500) &approx; 863.938 mm²; W &approx; 6.782 kg per metre.
+6.782 kg
+How do you calculate the weight of a pipe per metre?
+Use the annulus between the outside and inside diameters: (&pi; ÷ 4) × (OD² &minus; ID²) × length × density, with ID = OD &minus; 2T. In millimetres this is the same as (OD &minus; t) × t × 0.02466 kg/m for steel.
+What is the weight of a 60 mm OD pipe with a 5 mm wall?
+The inside diameter is 50 mm, the metal area is 863.9 mm², and the pipe weighs about 6.78 kg per metre in mild steel. A 6 m length is roughly 40.7 kg.
+What does a 2 inch nominal bore pipe weigh per metre?
+A 2 inch NB pipe has a 60.3 mm outside diameter. With a 3.9 mm wall it weighs about 5.43 kg/m; substitute the actual wall thickness of your schedule to get the exact figure.
+Why is the inside diameter calculated as OD &minus; 2T?
+The wall thickness is present on both sides of the bore, so it is subtracted twice from the outside diameter. Using OD &minus; t by mistake would overstate the metal area.
+Which wall thickness should I use for a Schedule pipe?
+Take the wall thickness from the schedule table for that nominal size and material, not from the nominal bore. The calculator needs the real wall thickness because the weight depends on it directly.
+Does the result include threads, sockets or coatings?
+No. It is the mass of a plain pipe of uniform wall thickness. Threads, couplings, flanges, cement lining and paint are additional.
+Can I use this calculator for round tube or CHS?
+Yes. Tube and circular hollow section are the same geometry as pipe; the words describe the product standard and tolerances, not the weight formula.
+How much does a 6 m length of 60 × 5 mm pipe weigh?
+About 40.7 kg in mild steel at 6.78 kg/m. Enter 6000 mm as the length and set Quantity if you need a bundle total.
+How accurate is the pipe weight for seamless and welded pipe?
+Both are calculated the same way from nominal dimensions. The main uncertainty is the mill's wall-thickness tolerance, since the mass is proportional to wall thickness.
+Current category: Hollow / Tube Sections
+Hexagonal Bar with Round Hole
+@pipe front and side engineering views
+Plate Weight Calculator | Metal Weight Calculator
+Plate Weight Calculator
+Plate Dimensions
+Width (W)
+KG
+LB
+1 pcs
+Weight (kg) = (L × W × T × &rho;) / 10&#8310;
+L = Length (mm) · W = Width (mm) · T = Thickness (mm) · &rho; = Density (g/cm³)
+Carbon Steel Plate
+Weight = (1000 × 1000 × 10 ×
+Material density (7.85 g/cm³) is multiplied in this step.
+78.50 kg
+How do you calculate the weight of a steel plate?
+Multiply length, width and thickness to get the volume, then multiply by the density. In millimetres the formula is L × W × T × &rho; ÷ 10&#8310;, which with 7.85 g/cm³ for mild steel gives kilograms directly.
+What is the weight of a 10 mm MS plate per square metre?
+78.5 kg per m². Every millimetre of mild-steel thickness adds 7.85 kg/m², so a 6 mm plate is 47.1 kg/m² and a 20 mm plate is 157 kg/m².
+How much does a 1000 × 1000 × 10 mm plate weigh?
+78.5 kg in mild steel, because the volume is 10,000,000 mm³ and the density is 7.85 g/cm³. In stainless steel at 8.00 g/cm³ the same plate weighs 80 kg.
+What does a 2500 × 1250 × 10 mm plate weigh?
+About 245.3 kg in mild steel. This is a standard 8 × 4 ft sheet size, which covers 3.125 m² and therefore weighs 3.125 × 78.5 kg.
+What is the weight of a 4 ft × 8 ft plate, 10 mm thick?
+About 233.7 kg, using 1220 × 2440 mm. If your supplier cuts 1250 × 2500 mm instead, the same thickness weighs 245.3 kg, so confirm the actual sheet size before ordering.
+How does plate thickness affect the weight?
+Weight is directly proportional to thickness at constant area: twice the thickness is twice the weight. A 3 mm, 6 mm and 12 mm plate of one square metre weigh 23.6 kg, 47.1 kg and 94.2 kg.
+What density should I use for MS, stainless steel and aluminium plate?
+Mild and carbon steel 7.85 g/cm³, austenitic stainless steel 8.00 g/cm³ and aluminium 2.70 g/cm³. These are the values in the material list, and a custom density is entered in g/cm³.
+How do I convert the plate weight into tonnes?
+Divide the kilogram result by 1,000. The calculator also shows the total in metric tonnes under the main result, which is convenient for purchase orders and transport limits.
+Is a plate heavier than a sheet of the same size and thickness?
+No. Plate and sheet are thickness conventions for flat product; at equal dimensions and density the mass is identical. Only the thickness and the material change the weight.
+Why does the weighbridge weight differ from the calculated figure?
+Rolled plate is supplied within a thickness tolerance, the density varies slightly by grade, and the actual dimensions may be a little over or under the nominal size. The calculated value is the theoretical mass, not a guaranteed shipping weight.
+@plate front and side engineering views
+@Enter width
+@Weight unit
+@Kilograms
+@Pounds
+Solid Round Bar Weight Calculator | Metal Weight Calculator
+Solid Round Bar Weight Calculator
+Solid Round Bar Dimensions
+W = (&pi; ÷ 4) × D² × L × &rho; ÷ 10&#8310;
+W = Weight (kg) · D = Diameter (mm) · L = Length (mm) · &rho; = Density (g/cm³) · &pi; &approx; 3.14159
+Carbon Steel Round Bar
+Convert all dimensions to millimetres (mm) if entered in inches (1 in = 25.4 mm).
+Calculate the cross-sectional area of the solid circle: A = (&pi; ÷ 4) × D² (mm²).
+Calculate volume: V = A × L (mm³).
+Multiply volume by density and divide by 1,000,000 to get weight: W = V × &rho; ÷ 10&#8310; (kg).
+D is the outer diameter, L is the bar length, and &rho; is material density. Result is theoretical weight for a solid round bar.
+Assumes a straight, solid, uniform-diameter cylinder. Actual weight may vary with rolling tolerances, surface condition, and material grade/composition.
+W = (&pi; ÷ 4) × 50² × 1000 ×
+Area = (&pi;/4) × 2500 &approx; 1963.495 mm²; volume = 1,963,495 mm³; weight &approx; 15.41 kg.
+How do you calculate the weight of a round bar?
+The cross-section is a circle, so the area is (&pi; ÷ 4) × D². Multiply by the length and the density to get the mass; in millimetres the whole expression is (&pi; ÷ 4) × D² × L × &rho; ÷ 10&#8310;.
+What is the weight of a 20 mm round bar per metre?
+About 2.47 kg/m in mild steel, because the area is 314.2 mm². This is the familiar shortcut D² ÷ 162 for steel bars in millimetres.
+What does a 25 mm round bar weigh per metre and per 6 m length?
+3.85 kg/m and roughly 23.1 kg for a 6 m bar. Mill bundles are ordered by weight, so the 6 m figure is the one to use for transport planning.
+Where does the D² ÷ 162 rule come from?
+It is the exact circle formula with the density folded in: (&pi; ÷ 4) × 7,850 ÷ 1,000,000 is close to 1 ÷ 162. It is accurate enough for steel quoting and slightly wrong for other metals.
+What is the weight of a 12 mm bar per metre?
+About 0.89 kg/m in steel. The same calculation covers 8 mm (0.40 kg/m) and 16 mm (1.58 kg/m) bars, which is why the D² shortcut is used on site.
+How much heavier is a square bar than a round bar of the same size?
+A square of side D has 4 ÷ &pi;, about 1.27 times the area of a circle of diameter D. A 25 mm square bar therefore weighs 4.91 kg/m against 3.85 kg/m for a 25 mm round bar.
+Is the weight of TMT rebar the same as this round bar result?
+The geometry is the same, so the nominal mass per metre matches the plain round bar of that diameter. Ribs and lugs add a small amount of steel that the nominal calculation does not include.
+How do I weigh a bundle of 100 pieces, each 6 m long?
+Enter 6000 mm as the length and 100 as the quantity, or multiply the per-metre weight by 600 m. The calculator's total weight and tonne figure cover the whole order.
+What density applies to stainless or aluminium round bar?
+Use 8.00 g/cm³ for stainless steel and 2.70 g/cm³ for aluminium, or type your grade's density. A 50 mm stainless bar is about 1.9% heavier than the mild-steel result.
+@solid round bar front and side engineering views
+Round Bar with Hexagonal Hole Weight Calculator | Metal Weight Calculator
+Round Bar with Hexagonal Hole Weight Calculator
+Round Bar Dimensions
+Outer Diameter (D)
+Hex Across-Flats (A)
+W = [(&pi; ÷ 4) × D² &minus; (&radic;3 ÷ 2) × A²] × L × &rho; ÷ 10&#8310;
+W = Weight (kg) · D = Outer diameter (mm) · A = Hexagonal hole across-flats (mm) · L = Length (mm) · &rho; = Density (g/cm³)
+Carbon Steel Round Bar with Hex Hole
+Convert D, A, and L to millimetres (mm) if entered in inches.
+Calculate outer circular area: A
+circle
+= (&pi;/4) × D² (mm²).
+Calculate hexagonal hole area (across-flats A): A
+, then W = net area × L × &rho; ÷ 1,000,000 (kg).
+D is the outer round bar diameter, A is the across-flats size of the concentric regular hexagonal hole, L is length, and &rho; is density. Hex hole must fit inside the circle.
+Assumes a solid round bar with a concentric regular hexagonal through-hole. For a regular hexagon to fit, A must be within the circle limits (A &le; (&radic;3/2)×D). Actual weight may vary with tolerances.
+Hex Hole Across Flats (A)
+W = [(&pi; ÷ 4)×50² &minus; (&radic;3 ÷ 2)×20²] × 1000 ×
+Circle area &approx; 1963.495 mm², hex hole area &approx; 346.410 mm², net &approx; 1617.085 mm², weight &approx; 12.694 kg/m.
+12.694 kg
+How is the weight of a round bar with a hexagonal hole calculated?
+Subtract the hexagon from the circle: (&pi; ÷ 4) × D² &minus; (&radic;3 ÷ 2) × A² gives the metal area, which is multiplied by the length and density.
+What does a 50 mm round bar with a 20 mm hex hole weigh per metre?
+The circle is 1,963.5 mm² and the hexagon removes 346.4 mm², leaving 1,617.1 mm², which is about 12.69 kg/m. The same bar without the hole weighs 15.41 kg/m.
+What is the largest hex hole that fits in a round bar?
+The across-flats size must not exceed 0.866 × D, because a regular hexagon inscribed in a circle of diameter D has across-flats 0.866D. Larger values would cut through the bar surface.
+Where is hexagon-bored round bar used?
+It is stock for parts that need a round outside and a hex socket inside, such as socket screws, hexagon drive couplings, valve stems and special fasteners.
+Why is the hexagon area subtracted rather than the across-corners circle?
+The broached hole is hexagonal, so the material actually removed is the hexagon area (&radic;3 ÷ 2) × A², not the circle that would enclose it. Using the circle would overstate the material removed.
+Does the calculation assume the hex hole is through the whole bar?
+Yes, a constant through bore is assumed. A blind hex socket or a stepped bore leaves more steel and will weigh more than the result shown.
+How much weight does a 10 mm hex hole remove from a 50 mm bar?
+About 0.68 kg per metre, since the hexagon area is 86.6 mm². A 20 mm hex hole removes 2.72 kg/m and a 30 mm hole removes 6.12 kg/m.
+Can I enter the diameter and hole in inches?
+Yes, use the Inches unit button and give both dimensions plus the length in inches. The output stays in kilograms.
+Why might the delivered bar be heavier than calculated?
+A hot-rolled round bar is normally supplied slightly over the nominal diameter, and a broached hexagon can be a little under size. Those tolerances move the real weight by a few percent either way.
+@round bar with hexagonal hole front and side engineering views
+Shell Weight Calculator | Metal Weight Calculator
+Shell Weight Calculator
+Shell Dimensions
+Shell Thickness (T)
+Single Shell Weight
+Volume Per Shell
+W = &pi; × (OD × T &minus; T²) × L × &rho; ÷ 10&#8310;
+W = Weight (kg) · OD = Outside diameter (mm) · T = Shell thickness (mm) · L = Length (mm) · &rho; = Density (g/cm³)
+Equivalent form: W = (&pi; ÷ 4) × (OD² &minus; ID²) × L × &rho; ÷ 10&#8310;, where ID = OD &minus; 2T.
+Carbon Steel Shell
+Convert OD, thickness, and length to millimetres (mm) if entered in inches (1 in = 25.4 mm).
+Calculate inside diameter: ID = OD &minus; 2T. Thickness must be less than half of OD so ID stays positive.
+Calculate the shell wall cross-sectional area: A = &pi; × (OD × T &minus; T²) (mm²), which equals (&pi;/4) × (OD² &minus; ID²).
+Calculate weight: W = V × &rho; ÷ 1,000,000 (kg), then multiply by quantity for total weight.
+OD is outer diameter, T is shell thickness, ID is inner diameter, L is length, and &rho; is material density. Valid geometry requires T &lt; OD/2.
+Assumes a straight cylindrical shell of uniform wall thickness with open ends. Actual weight may vary due to rolling tolerances, ovality, weld seams, and material grade.
+ID = 100 &minus; 2×4 = 92 mm; W = &pi; × (100×4 &minus; 4²) × 1200 ×
+A = &pi;×(400 &minus; 16) &approx; 1206.372 mm²; V = 1,447,646 mm³; W &approx; 11.364 kg.
+11.364 kg
+How do you calculate the weight of a cylindrical shell?
+The shell is a thin-walled cylinder with open ends, so its mass is the circumference at the mean diameter times the thickness times the length times the density. This calculator uses &pi; × (OD × T &minus; T²) × L × &rho;, which is the same as &pi; × D
+mean
+× T × L.
+What is the weight of a 100 mm OD shell, 4 mm thick and 1200 mm long?
+The metal area is &pi; × (100 × 4 &minus; 16) = 1,206 mm², so the shell weighs about 11.36 kg in mild steel.
+What is the difference between a shell and a pipe?
+Nothing in the geometry: both are hollow cylinders described by outside diameter, wall thickness and length. Pipe is a bought product with a standard schedule, while a shell is usually rolled from plate for a vessel or tank.
+Why does the formula use OD × T &minus; T²?
+It is the exact annulus area written with the mean diameter: &pi; × (OD &minus; T) × T. The expanded form &pi; × (OD × T &minus; T²) avoids a rounding step and gives the same answer.
+How much does a 200 mm OD, 6 mm thick shell weigh per metre?
+About 28.7 kg/m in mild steel. A 6 m shell course of the same size is roughly 172 kg.
+Is the shell weight the same as the plate it was rolled from?
+Very nearly. The developed plate area equals &pi; × mean diameter × length, so multiplying that area by thickness and density gives the shell mass; only forming stretch and weld preparation cause small differences.
+Does the result include dish ends, flanges or nozzles?
+No. It covers the cylindrical shell only. Add the weight of heads and fittings separately, for example with the dish end and plate calculators.
+Which length should I enter for a rolled shell?
+The finished length of the cylinder, measured along its axis. The developed width of the plate is already handled by the circumference term, so do not enter the flat plate length.
+How do I get the total tonnage for a tank shell?
+Calculate one course, multiply by the quantity of courses, and read the metric-tonne line under the result. Add the heads and any reinforcing pads to reach the full vessel weight.
+@cylindrical shell front and side engineering views
+Solid Cone Weight Calculator | Metal Weight Calculator
+Solid Cone Weight Calculator
+Cone Dimensions
+Height (H)
+Base Diameter (D)
+Cone Volume
+Single Cone Weight
+Total Weight (Ton)
+0.000000 Ton
+V = (1 ÷ 3) × &pi; × r² × H, r = D ÷ 2, W = V × &rho; ÷ 10&#8310;
+W = Weight (kg) · H = Height (mm) · D = Base diameter (mm) · r = Radius (mm) · V = Volume (mm³) · &rho; = Density (g/cm³)
+Carbon Steel Solid Cone
+Convert diameter D and height h to millimetres (mm) if entered in inches (1 in = 25.4 mm).
+Calculate radius r = D/2.
+Calculate cone volume: V = (1/3) × &pi; × r² × h (mm³).
+Calculate weight: W = V × &rho; ÷ 1,000,000 (kg), where &rho; is in g/cm³ (e.g. carbon steel 7.85 g/cm³).
+H is perpendicular height, D is base diameter, r is base radius. All dimensions are in mm and density is in g/cm³ (1 g/cm³ = 1000 kg/m³).
+Assumes a completely solid right circular cone with uniform material. Actual weight may vary with tolerances, shape accuracy, and material composition.
+r = 50 mm, H = 150 mm; V = (1/3)×&pi;×50²×150 = 392,699 mm³; W = 392,699 ×
+Volume &approx; 392,699 mm³ (0.0003927 m³). Using 7.85 g/cm³ gives weight &approx; 3.083 kg.
+3.083 kg
+How do you calculate the weight of a solid cone?
+The volume of a cone is one third of the base area times the height, V = (&pi; ÷ 3) × r² × h. Multiply that volume by the density, or enter the base diameter and height here.
+What does a 100 mm base diameter, 150 mm high steel cone weigh?
+The base area is 7,854 mm² and the volume 392,699 mm³, so the cone weighs about 3.08 kg in mild steel at 7.85 g/cm³.
+Why is a cone one third of a cylinder with the same base and height?
+That is the geometric volume relationship for any cone or pyramid: three identical cones fill the matching cylinder. It is why cone weights are much lower than a bar of the same diameter.
+How do I weigh a hollow cone or a conical reducer?
+Use the truncated cone calculator, which works from the large and small diameters, vertical height and plate thickness. A hollow cone has no single solid volume, so this solid-cone tool would overstate the weight.
+Is the diameter the base of the cone or the tip?
+It is the base diameter, the widest circle. The tip is a point, so the volume depends entirely on the base size and the height.
+How does cone height affect the weight?
+Weight is directly proportional to height at a fixed base diameter, because the volume term is (&pi; ÷ 3) × r² × h.
+Can I use this for a cast or forged cone?
+Yes, for a solid homogeneous cone of the entered density. Castings may include a draft angle, a riser or a cored bore, which change the real mass.
+What if the cone has a flat top instead of a point?
+That is a truncated cone (frustum). Enter the two end diameters and the height in the truncated cone calculator rather than using this one.
+Does the quantity field multiply the single cone weight?
+Yes. Set Quantity to the number of pieces and the total weight and metric tonnage update; the single-piece weight stays visible for reference.
+Current category: 3D Solid Shapes
+3D Solid Shapes
+@Enter cone height
+@Enter base diameter
+Sphere / Ball Weight Calculator | Metal Weight Calculator
+Sphere / Ball Weight Calculator
+Sphere Dimensions
+Single Ball Weight
+Volume Per Ball
+W = (4 ÷ 3) × &pi; × (D ÷ 2)³ × &rho; ÷ 10&#8310;
+W = Weight (kg) · D = Diameter (mm) · r = D/2 = Radius (mm) · &rho; = Density (g/cm³) · &pi; &approx; 3.14159
+Carbon Steel Sphere/Ball
+Convert diameter D to millimetres (mm) if entered in inches.
+Calculate radius: r = D ÷ 2 (mm).
+Calculate sphere volume: V = (4/3) × &pi; × r³ (mm³).
+Calculate weight: W = V × &rho; ÷ 1,000,000 (kg), where &rho; is in g/cm³.
+Multiply by quantity for total weight of multiple balls.
+D is sphere/ball diameter, r is radius, and &rho; is material density. Volume of a solid sphere is (4/3)&pi;r³.
+Assumes a perfectly solid sphere with uniform diameter and material. Actual ball weight may vary due to tolerances, surface finish, and material composition.
+W = (4 ÷ 3) × &pi; × (100 ÷ 2)³ ×
+r = 50 mm; volume &approx; 523,598.78 mm³; weight &approx; 4.110 kg.
+4.110 kg
+How do you calculate the weight of a steel ball?
+A sphere has volume (4 ÷ 3) × &pi; × r³, where r is half the diameter. Multiply that by the density, and for dimensions in millimetres divide by 1,000,000 to get kilograms.
+What is the weight of a 100 mm solid steel ball?
+The volume is 523,599 mm³, so a mild-steel ball of 100 mm diameter weighs about 4.11 kg. In stainless steel it would be roughly 4.19 kg.
+How much does a 50 mm steel ball weigh?
+About 0.51 kg in mild steel. The volume falls with the cube of the diameter, so halving the size reduces the weight to one eighth.
+How does ball diameter affect weight?
+Weight scales with the cube of the diameter. Doubling the diameter multiplies the volume and the mass by eight, which is why a 200 mm ball is far heavier than two 100 mm balls.
+Can I calculate a hollow sphere or a ball with a bore?
+No, this calculator assumes solid material. For a hollow ball, calculate the outside sphere and subtract a sphere of the inside diameter, or use a shell calculation if the wall is thin.
+Is the diameter the outside diameter of the finished ball?
+Yes, enter the finished outside diameter. Grinding allowance, if the ball will be ground after forming, should be added to the blank size rather than subtracted here.
+Which steel balls is this weight used for?
+Grinding media, ball-mill charges, bearings and decorative or structural balls. Mill and crusher balls are usually specified by diameter and nominal mass per piece, which is what this calculation gives.
+What density should I use for a cast iron or chrome grinding ball?
+Cast iron is about 7.20 g/cm³ in the preset list, and alloy or high-chrome grinding balls are commonly 7.6 to 7.85 g/cm³. Enter the supplier's figure as a custom density for the closest match.
+How do I get the weight of 100 balls?
+Enter the diameter, choose the material and set Quantity to 100. The total weight and metric-tonne figures then cover the complete batch.
+Solid Cone
+@sphere ball front engineering view
+@Enter sphere diameter
+Square Bar Weight Calculator | Metal Weight Calculator
+Square Bar Weight Calculator
+Solid Square Bar Dimensions
+Width (A)
+Height (B)
+W = A × B × L × &rho; ÷ 10&#8310;
+W = Weight (kg) · A = Width (mm) · B = Height (mm) · L = Length (mm) · &rho; = Density (g/cm³)
+Carbon Steel Square Bar
+Calculate cross-sectional area: Area = A × B (mm²).
+Calculate volume: V = A × B × L (mm³).
+A is the width and B is the height of the solid cross-section, L is length, and &rho; is material density.
+Assumes a solid, straight square or rectangular bar with uniform cross-section and no holes. Actual weight may vary due to tolerances, corner radii, and material grade.
+W = 100 × 50 × 1000 ×
+Area = 5000 mm²; volume = 5,000,000 mm³; weight = 39.25 kg.
+39.25 kg
+How do you calculate the weight of a square bar?
+Multiply the two sides to get the cross-section area, then multiply by length and density. The full formula is A × B × L × &rho; ÷ 10&#8310; for millimetres and g/cm³.
+What is the weight of a 20 mm square bar per metre?
+About 3.14 kg/m in mild steel, since the area is 400 mm². The shop shortcut is A² ÷ 127, which gives the same result for steel.
+What does a 25 mm square bar weigh?
+4.91 kg per metre and roughly 29.4 kg for a 6 m length. Square bar is stocked in 6 m lengths, so the piece weight is the number used for lifting and transport.
+Can I use this calculator for a rectangular or flat bar?
+Yes. Enter the width as A and the thickness as B; a 100 × 50 mm bar has an area of 5,000 mm² and weighs about 39.25 kg/m. Square is simply the case where A equals B.
+Why is a square bar heavier than a round bar of the same nominal size?
+A square of side D fills 4 ÷ &pi; times the area of a circle of diameter D. A 25 mm square bar weighs 4.91 kg/m while a 25 mm round bar weighs 3.85 kg/m.
+How do I work out the weight of a bar from its length in metres?
+Use A × B × 0.00785 kg per metre with A and B in millimetres, then multiply by the length in metres. For a 20 mm bar 3 m long: 400 × 0.00785 × 3 = 9.42 kg.
+Does stainless steel square bar weigh more than mild steel?
+Yes, slightly. At 8.00 g/cm³ stainless steel is about 1.9% heavier than the 7.85 g/cm³ mild-steel result for the same dimensions.
+How do I enter dimensions in inches?
+Select Inches and type the two sides and the length in inches. The output remains in kilograms; if you prefer to work by hand, multiply each inch dimension by 25.4 mm first.
+Why is the mill weight a little under the calculated value?
+Rolled square bar has rounded corners and is produced to a minus size tolerance, so the delivered bar contains slightly less steel than the sharp-cornered nominal section.
+@square bar front and side engineering views
+@Enter height
+T Channel Weight Calculator | Metal Weight Calculator
+T Channel Weight Calculator
+W = [B × T
++ (H &minus; T
+Carbon Steel T Section
+Calculate cross-sectional area: Area = B×T
+Theoretical sharp-corner T-section geometry; no fillets/tapers. Actual rolled/fabricated section weights may differ.
+W = [80×8 + (100 &minus; 8)×6] × 1000 ×
+Area = 1192 mm²; weight &approx; 9.357 kg/m.
+9.357 kg
+How is the weight of a T channel calculated?
+A tee is one flange plate plus one web plate: B × T
+is the cross-section area, and multiplying by length and density gives the mass.
+What does a 100 × 80 mm T section weigh with an 8 mm flange and a 6 mm web?
+The area is 80 × 8 + 92 × 6 = 1,192 mm², so it weighs about 9.36 kg/m in mild steel. A 6 m length is roughly 56.1 kg.
+How is a T channel different from a T bar?
+Nothing in the geometry; both are a single flange with a central web. Trading names vary by mill and standard, so use the actual B, H, T
+from your section list.
+Why is the web height written as (H &minus; T
+H is measured over the whole section including the flange. The web only occupies the part below the flange, so its height is H minus one flange thickness.
+Does the formula include the root radius where the web meets the flange?
+No. Sharp corners are assumed, so a rolled T section with fillets is marginally heavier than the calculated weight.
+Can I calculate a tee cut from an I beam or a plate weldment?
+Yes, if you take H as the overall tee height and measure the real flange and web thicknesses. A welded tee with a full-penetration weld adds weld metal that is not included.
+How do I get the weight of a 3 m T section?
+Either enter 3000 mm as the length or multiply the per-metre figure by 3. At 9.36 kg/m a 3 m piece is about 28.1 kg.
+How does flange width affect the weight of a T section?
+Only the flange term B × T
+changes, so widening the flange from 80 mm to 100 mm adds 20 × 8 = 160 mm², about 1.26 kg/m.
+Can I use this for a stainless T section?
+Yes, select Stainless Steel or enter a custom density in g/cm³. The dimensions do not change, only the density.
+@t channel front and side engineering views
+Trapezium Bar Weight Calculator | Metal Weight Calculator
+Trapezium Bar Weight Calculator
+Trapezium Dimensions
+First Parallel Side (A)
+Second Parallel Side (B)
+Perpendicular Height (H)
+W = ((A + B) ÷ 2) × H × L × &rho; ÷ 10&#8310;
+W = Weight (kg) · A, B = Parallel sides (mm) · H = Perpendicular height (mm) · L = Length (mm) · &rho; = Density (g/cm³)
+Carbon Steel Trapezium Bar
+Convert A, B, H, and L to millimetres (mm) if entered in inches.
+Calculate cross-sectional area: Area = ((A + B) / 2) × H (mm²).
+A and B are the lengths of the two parallel sides of the trapezium cross-section, H is the perpendicular distance between them, L is bar length, and &rho; is density.
+Assumes a solid bar with uniform trapezium cross-section and H measured perpendicular to the parallel sides. Actual weight may vary with tolerances and material grade.
+Parallel Side (A)
+Parallel Side (B)
+W = ((60 + 40) ÷ 2) × 30 × 1000 ×
+Average width = 50 mm; area = 50 × 30 = 1500 mm²; weight = 11.775 kg/m.
+11.775 kg
+How do you calculate the weight of a trapezium bar?
+The area of a trapezium is the average of the two parallel sides times the perpendicular height: ((A + B) ÷ 2) × H. Multiply that by length and density for the weight.
+What does a 60 mm / 40 mm trapezium bar weigh if it is 30 mm high?
+The area is ((60 + 40) ÷ 2) × 30 = 1,500 mm², so a one-metre length weighs about 11.78 kg in mild steel.
+What exactly does H mean in this calculator?
+H is the perpendicular distance between the two parallel sides, not the length of the sloping side. Using the slant length would overstate the area and the weight.
+How is a trapezium bar different from the trapezoidal bar calculator?
+Both use the same average-width formula. Trapezium is used here for the isosceles form with two equal sloping sides, while the trapezoidal bar page takes top and bottom widths for any trapezoid, including a right-angled one.
+Can I use this for a keystone, gib or wear bar?
+Yes, these are common trapezium sections. Measure the two parallel widths and the perpendicular height on the drawing, and the calculator returns the nominal mass.
+What happens if the two parallel sides are equal?
+The shape becomes a rectangle; the formula collapses to A × H and matches a rectangular bar of the same size. That is a quick way to sanity-check your inputs.
+I only know the sloping side length. How do I find H?
+For an isosceles trapezium, H = &radic;(side² &minus; ((A &minus; B) ÷ 2)²). For an unequal trapezoid, take the perpendicular height directly from the drawing.
+How do I calculate the weight of a 2 m trapezium bar?
+Enter 2000 mm as the length, or multiply the per-metre weight by 2. At 11.78 kg/m a 2 m bar is about 23.6 kg.
+Why might the delivered bar differ from the calculated weight?
+Tapered sections are rolled to tolerances on both widths and on the height, and the corners may be rounded. The calculated value is the nominal mass from the dimensions you enter.
+@trapezium bar front and side engineering views
+@Enter first parallel side
+@Enter second parallel side
+@Enter perpendicular height
+Trapezoidal Bar Weight Calculator | Metal Weight Calculator
+Trapezoidal Bar Weight Calculator
+Trapezoidal Dimensions
+Top Parallel Side (A)
+Bottom Parallel Side (B)
+Carbon Steel Trapezoidal Bar
+A and B are parallel sides, H is perpendicular height between them, L is length, and &rho; is density.
+Assumes a solid uniform trapezoidal bar with perpendicular height H. Actual weight may vary due to tolerances and material grade.
+Area = 1500 mm²; volume = 1,500,000 mm³; weight = 11.775 kg/m.
+How is the weight of a trapezoidal bar calculated?
+Use the mean of the two parallel sides: ((A + B) ÷ 2) × H gives the cross-section area, then multiply by the bar length and the material density for the mass.
+What does an 80 mm / 50 mm trapezoidal bar weigh per metre at 25 mm high?
+The area is ((80 + 50) ÷ 2) × 25 = 1,625 mm², which is about 12.76 kg/m in mild steel.
+Does the formula still work if the sloping sides are not equal?
+Yes. The area of any trapezoid depends only on the two parallel sides and the perpendicular distance between them, so a right-angled or skewed trapezoid is handled by the same average-width expression.
+What is the difference between this page and the trapezium bar calculator?
+The geometry is identical; the naming follows the top/bottom-width convention used for trapezoidal sections. Use whichever page matches the labels on your drawing, and do not add both results together.
+How do I model a tapered flat bar?
+Treat the wide end as B, the narrow end as A and the thickness as H. A bar tapering from 80 mm to 50 mm at 25 mm thick weighs 12.76 kg/m, which is a useful check against the blank plate weight.
+Is H the slant length of the sloping face?
+No. H must be the perpendicular height between the parallel sides. Entering the slant length makes the section taller than it really is and overstates the weight.
+How do I get the total weight of several trapezoidal pieces?
+Set Quantity to the number of pieces. The calculator multiplies the single-piece weight and shows the order total, including the metric-tonnage line.
+Can this calculator approximate a dovetail slide?
+It is a reasonable approximation for a dovetail when the angled faces are treated as a trapezoid, but the undercut geometry means the true area is slightly different. Use the average width for estimating only.
+What units does the calculator expect?
+Millimetres with the MM button or inches with the Inches button, for both widths, the height and the length. The result is always shown in kilograms.
+@trapezoidal bar front and side engineering views
+@Enter top parallel side
+@Enter bottom parallel side
+Triangular Bar Weight Calculator | Metal Weight Calculator
+Triangular Bar Weight Calculator
+Triangular Dimensions
+Base (B)
+W = (B × H ÷ 2) × L × &rho; ÷ 10&#8310;
+W = Weight (kg) · B = Base (mm) · H = Perpendicular height (mm) · L = Length (mm) · &rho; = Density (g/cm³)
+Carbon Steel Triangular Bar
+Convert B, H, and L to millimetres (mm) if entered in inches.
+Calculate triangular cross-sectional area: Area = (B × H) ÷ 2 (mm²).
+B is the triangle base, H is the perpendicular height, L is bar length, and &rho; is material density.
+Assumes a solid uniform triangular bar and H is the perpendicular height to base B. Actual weight may vary with tolerances and material grade.
+W = (50 × 40 ÷ 2) × 1000 ×
+Area = 1000 mm²; volume = 1,000,000 mm³; weight = 7.85 kg/m.
+7.85 kg
+How do you calculate the weight of a triangular bar?
+The area of a triangle is half the base times the perpendicular height, (B × H) ÷ 2. Multiply that by the bar length and the density to get the weight.
+What is the weight of a 50 mm base, 40 mm high triangular bar per metre?
+The area is 50 × 40 ÷ 2 = 1,000 mm², so one metre weighs about 7.85 kg in mild steel. A 3 m piece is roughly 23.6 kg.
+Does the triangle have to be a right triangle?
+No. Any triangle with base B and perpendicular height H has the same area, so scalene and isosceles triangular bars are calculated correctly as long as you enter the true perpendicular height.
+How do I find the height of an equilateral triangular bar?
+For an equilateral triangle H = 0.866 × side. A 40 mm equilateral section has a height of 34.64 mm and an area of 692.8 mm², about 5.44 kg/m.
+How much lighter is a triangular bar than a rectangular bar of the same size?
+Exactly half, because the triangle is half of the rectangle with the same base and height. A 50 × 40 triangle (7.85 kg/m) is half of a 50 × 40 flat bar (15.70 kg/m).
+What are triangular bars used for?
+Machine keys, guide rails, wear strips, corner fillets and decorative or structural profiles. The weight per metre is what matters when ordering mill lengths.
+Can I enter the dimensions in inches?
+Yes. Choose Inches, enter the base, height and length in inches, and the result is still in kilograms.
+How does bar length change the result?
+Weight is directly proportional to length: doubling the length doubles the mass. Enter the cut length if you are weighing pieces rather than ordering stock bars.
+Why is the actual bar weight slightly different?
+Rolled triangular bar has rounded corners and is produced within dimensional tolerances, so the sharp-corner calculation is a nominal value rather than a guaranteed mass.
+@triangular bar front and side engineering views
+@Enter base
+Truncated Cone Weight Calculator | Metal Weight Calculator
+Truncated Cone (Conical Reducer) Weight Calculator
+Reducer Dimensions
+Large End Diameter (D)
+Small End Diameter (d)
+Vertical Height (H)
+Plate Thickness (T)
+L = &radic;(H² + (R &minus; r)²) · A = &pi; × (R + r) × L · V = A × T · Weight = V × Density
+Slant Height (L)
+0.00 mm
+Lateral Surface Area (A)
+0.000000 m²
+Plate Volume (V)
+Single Reducer Weight
+s = &radic;(H² + (R &minus; r)²), A = &pi;(R + r)s, W = A × T × &rho; ÷ 10&#8310;
+W = Weight (kg) · D = Large end diameter (mm) · d = Small end diameter (mm) · H = Vertical height (mm) · T = Plate thickness (mm) · R=D/2, r=d/2 · s = Slant height · A = Lateral area (mm²) · &rho; = Density (g/cm³)
+Carbon Steel Conical Reducer
+Convert diameters, height, and plate thickness to millimetres (mm) if entered in inches.
+Calculate radii R = D/2 and r = d/2, and slant height s = &radic;(H² + (R &minus; r)²).
+Calculate lateral surface area of the frustum: A = &pi; × (R + r) × s.
+Calculate plate volume V = A × t (mm³) and weight W = V × &rho; ÷ 1,000,000 (kg), where &rho; is in g/cm³.
+Multiply by quantity for total weight of multiple reducers.
+This calculator is for a hollow conical reducer (frustum) fabricated from plate. D is the large end diameter, d the small end diameter, H the vertical height, T the plate thickness, R = D/2 and r = d/2 the end radii, s the slant height, A the lateral surface area. Density is in g/cm³.
+Assumes a hollow conical frustum (reducer) made from plate of uniform thickness with ends open (lateral surface only). Does not include flanges, seams/weld allowances, or end plates unless modeled separately. Actual weight may vary by fabrication method and tolerances.
+R=100, r=50, H=150 mm &rArr; s=&radic;(150²+50²)=158.114 mm; A=&pi;(150)(158.114)=74,509 mm²; V=74,509×5=372,545 mm³; W = 372,545 ×
+Lateral area &approx; 74,509 mm², plate volume &approx; 372,545 mm³. Using 7.85 g/cm³ gives weight &approx; 2.924 kg.
+2.924 kg
+How do you calculate the weight of a conical reducer?
+Find the slant height s = &radic;(H² + (R &minus; r)²), then the lateral area A = &pi; × (R + r) × s, and finally W = A × T × &rho;. This gives the mass of the plate in the cone, not a solid cone.
+What does a 200 mm to 100 mm reducer weigh at 150 mm high with a 5 mm wall?
+The slant height is 158.1 mm and the lateral area about 74,513 mm², so the reducer weighs roughly 2.92 kg in mild steel.
+What is slant height and why is the vertical height not used directly?
+The plate surface runs along the sloping face, so its area depends on the slant height. The vertical height alone would underestimate the area, which is why the calculator converts it first.
+How is this different from the solid cone calculator?
+This page treats a hollow plate cone with a known wall thickness, like a fabricated reducer. The solid cone page uses the full cone volume, which would massively overstate the weight of a reducer.
+How do I find the flat pattern size for a reducer?
+The developed area A is the plate area you need; a rough blank uses the mean circumference &pi;(R + r) times the slant height, with extra allowance for joints and trimming.
+Are knuckle radii or straight flanges included?
+No. The reducer is treated as a plain conical frustum of constant plate thickness, so formed knuckles, flanges and weld bevels are additional.
+What if the two diameters are almost the same?
+The shape approaches a cylinder. The formula still works, but the shell calculator is simpler and gives the same result for equal diameters.
+Is the height entered the vertical or the slanted length?
+Enter the vertical height between the two end planes. The calculator derives the slant length from the height and the radius difference.
+How do I get the weight of ten reducers?
+Enter one reducer's dimensions and set Quantity to 10; the total weight and metric tonnage cover the batch.
+Truncated Cone (Conical Reducer) Weight Calculator | Metal Weight Calculator
+@truncated cone front and top engineering views
+@Enter large end diameter
+@Enter small end diameter
+@Enter vertical height
+@Enter plate thickness
+Metal Weight Calculator | Engineering Tools
+Skip to engineering tools
+PRECISION ENGINEERING TOOLS
+Smart Tools for
+Smarter Engineering.
+Explore All Calculators
+Loading engineering tools...
+Engineering Materials &ndash; Density Reference
+Note: Density values are approximate and may vary depending on material grade and composition.
+@About us
+@About Us
+@Engineering tool categories
+@Filter engineering tools by category

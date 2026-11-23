@@ -1,0 +1,8 @@
+de,fr,pt :: @Marathi
+de,pt :: @Hindi
+mr,de :: Deutsch
+mr,es :: Español
+mr,fr :: Français
+de :: © 2026 Jadhav Group of Industries
+fr :: Angle (°)
+pt :: Português
